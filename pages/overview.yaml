@@ -1,0 +1,476 @@
+id: overview
+type: PageSidebarLayout
+properties:
+  title: Dashboard
+  padding: compact
+  siderStorageKey: erpnext
+  sider:
+    width: 260
+    collapsible: true
+  logo:
+    src: /logo.svg
+    srcMobile: /logo-mark.svg
+    alt: ERP Copilot
+    style:
+      height: 34px
+      width: auto
+  breadcrumb:
+    list:
+    - label: ERPNext Control Centre
+    - label: Control Centre
+  menu:
+    links:
+      _ref: menus/main.yaml
+requests:
+- id: ov_req
+  type: AxiosHttp
+  connectionId: copilot
+  properties:
+    url: /overview
+    timeout: 60000
+- id: health_req
+  type: AxiosHttp
+  connectionId: copilot
+  properties:
+    url: /health
+    timeout: 20000
+events:
+  onInitAsync:
+  - id: init_ov
+    type: Request
+    params: ov_req
+  - id: init_health
+    type: Request
+    params: health_req
+blocks:
+- id: page
+  type: Box
+  class:
+    .element: flex flex-col gap-6
+  blocks:
+  - id: hero
+    type: Box
+    class:
+      .element: page-hero flex flex-wrap items-center justify-between gap-4
+    blocks:
+    - id: hero_text
+      type: Box
+      class:
+        .element: flex flex-col gap-1
+      blocks:
+      - id: hero_title
+        type: Title
+        properties:
+          content: Control Centre
+          level: 3
+      - id: subtitle
+        type: Paragraph
+        properties:
+          content: Live stock, exceptions and ERPNext connection at a glance.
+    - id: hero_status
+      type: Box
+      class:
+        .element: flex flex-wrap items-center gap-2
+      blocks:
+      - id: erp_status_tag
+        type: Tag
+        properties:
+          color:
+            _if:
+              test:
+                _eq:
+                - _request: health_req.data.erpnext.reachable
+                - true
+              then: success
+              else: error
+          title:
+            _if:
+              test:
+                _eq:
+                - _request: health_req.data.erpnext.reachable
+                - true
+              then: ERPNext connected
+              else: ERPNext unreachable
+      - id: erp_version_tag
+        type: Tag
+        properties:
+          color: purple
+          title:
+            _string.concat:
+            - v
+            - _if_none:
+              - _request: health_req.data.erpnext.erpnext_version
+              - "?"
+      - id: ov_refresh
+        type: Button
+        properties:
+          title: Refresh
+          icon: RefreshCw
+          variant: outlined
+        events:
+          onClick:
+          - id: ov_refresh_req
+            type: Request
+            params:
+            - ov_req
+            - health_req
+  - id: t_stock
+    type: Title
+    class:
+      .element: section-title
+    properties:
+      content: Stock
+      level: 4
+  - id: kpi_grid
+    type: Box
+    class:
+      .element: grid grid-cols-2 lg:grid-cols-4 gap-4
+    blocks:
+    - id: k_items_card
+      type: Card
+      class:
+        .element: kpi kpi-sky
+      properties:
+        size: small
+      blocks:
+      - id: k_items
+        type: Statistic
+        properties:
+          title: Items
+          prefixIcon: Package
+          value:
+            _if_none:
+            - _request: ov_req.data.kpis.items
+            - 0
+    - id: k_units_card
+      type: Card
+      class:
+        .element: kpi kpi-violet
+      properties:
+        size: small
+      blocks:
+      - id: k_units
+        type: Statistic
+        properties:
+          title: Stock units
+          prefixIcon: Boxes
+          value:
+            _if_none:
+            - _request: ov_req.data.kpis.stock_units
+            - 0
+    - id: k_wh_card
+      type: Card
+      class:
+        .element: kpi kpi-lime
+      properties:
+        size: small
+      blocks:
+      - id: k_wh
+        type: Statistic
+        properties:
+          title: Warehouses
+          prefixIcon: Warehouse
+          value:
+            _if_none:
+            - _request: ov_req.data.kpis.warehouses
+            - 0
+    - id: k_val_card
+      type: Card
+      class:
+        .element: kpi kpi-mint
+      properties:
+        size: small
+      blocks:
+      - id: k_val
+        type: Statistic
+        properties:
+          title: Stock value
+          prefixIcon: Wallet
+          value:
+            _if_none:
+            - _request: ov_req.data.kpis.stock_value
+            - 0
+          suffix: MYR
+  - id: t_attention
+    type: Title
+    class:
+      .element: section-title
+    properties:
+      content: Needs attention
+      level: 4
+  - id: attention_grid
+    type: Box
+    class:
+      .element: grid grid-cols-2 lg:grid-cols-4 gap-4
+    blocks:
+    - id: k_low_card
+      type: Card
+      class:
+        .element: kpi kpi-amber
+      properties:
+        size: small
+      blocks:
+      - id: k_low
+        type: Statistic
+        properties:
+          title: Low stock
+          prefixIcon: TrendingDown
+          value:
+            _if_none:
+            - _request: ov_req.data.kpis.low_stock
+            - 0
+    - id: k_out_card
+      type: Card
+      class:
+        .element: kpi kpi-coral
+      properties:
+        size: small
+      blocks:
+      - id: k_out
+        type: Statistic
+        properties:
+          title: Out of stock
+          prefixIcon: PackageX
+          value:
+            _if_none:
+            - _request: ov_req.data.kpis.out_of_stock
+            - 0
+    - id: k_exc_card
+      type: Card
+      class:
+        .element: kpi kpi-orange
+      properties:
+        size: small
+      blocks:
+      - id: k_exc
+        type: Statistic
+        properties:
+          title: Open exceptions
+          prefixIcon: AlertTriangle
+          value:
+            _if_none:
+            - _request: ov_req.data.kpis.open_exceptions
+            - 0
+    - id: k_crit_card
+      type: Card
+      class:
+        .element: kpi kpi-pink
+      properties:
+        size: small
+      blocks:
+      - id: k_crit
+        type: Statistic
+        properties:
+          title: Critical
+          prefixIcon: Flame
+          value:
+            _if_none:
+            - _request: ov_req.data.kpis.critical
+            - 0
+  - id: mid_grid
+    type: Box
+    class:
+      .element: grid grid-cols-1 xl:grid-cols-3 gap-4
+    blocks:
+    - id: c_wh
+      type: Card
+      class: xl:col-span-2
+      properties:
+        title: Stock by warehouse
+        size: small
+      blocks:
+      - id: wh_table
+        type: Table
+        properties:
+          data:
+            _request: ov_req.data.warehouse_stock
+          rowKey: warehouse
+          size: compact
+          pagination: false
+          emptyText: No rows.
+          columns:
+          - key: warehouse
+            title: Warehouse
+            minWidth: 200
+            flex: 1
+            wrap: true
+          - key: items
+            title: Items
+            type: number
+            width: 90
+          - key: qty
+            title: Qty
+            type: number
+            width: 100
+          - key: value
+            title: Value (MYR)
+            type: number
+            width: 130
+    - id: c_sev
+      type: Card
+      properties:
+        title: Exceptions by severity
+        size: small
+      blocks:
+      - id: sev_table
+        type: Table
+        properties:
+          data:
+            _request: ov_req.data.severity_breakdown
+          rowKey: severity
+          size: compact
+          pagination: false
+          emptyText: No open exceptions.
+          columns:
+          - key: severity
+            title: Severity
+            type: status
+            minWidth: 120
+            flex: 1
+            options:
+              critical:
+                label: Critical
+                color: "#fb7185"
+              high:
+                label: High
+                color: "#fb923c"
+              medium:
+                label: Medium
+                color: "#fbbf24"
+              low:
+                label: Low
+                color: "#38bdf8"
+          - key: count
+            title: Count
+            type: number
+            width: 90
+  - id: c_moves
+    type: Card
+    properties:
+      title: Recent stock movements
+      size: small
+    blocks:
+    - id: moves_table
+      type: Table
+      properties:
+        data:
+          _request: ov_req.data.recent_movements
+        rowKey: name
+        size: compact
+        pagination: true
+        pageSize: 8
+        emptyText: No recent movements.
+        columns:
+        - key: name
+          title: Document
+          minWidth: 190
+        - key: date
+          title: Date
+          width: 120
+        - key: type
+          title: Type
+          minWidth: 160
+          flex: 1
+          wrap: true
+        - key: status
+          title: Status
+          type: status
+          width: 130
+          options:
+            Submitted:
+              label: Submitted
+              color: "#2dd4bf"
+            Draft:
+              label: Draft
+              color: "#fbbf24"
+            Cancelled:
+              label: Cancelled
+              color: "#fb7185"
+        - key: item_code
+          title: Item
+          minWidth: 160
+          flex: 1
+          wrap: true
+  - id: t_system
+    type: Title
+    class:
+      .element: section-title
+    properties:
+      content: System
+      level: 4
+  - id: health_grid
+    type: Box
+    class:
+      .element: grid grid-cols-2 lg:grid-cols-4 gap-4
+    blocks:
+    - id: h_exc_card
+      type: Card
+      class:
+        .element: kpi kpi-violet
+      properties:
+        size: small
+      blocks:
+      - id: h_exc
+        type: Statistic
+        properties:
+          title: Exceptions stored
+          prefixIcon: Database
+          value:
+            _if_none:
+            - _request: health_req.data.database.exceptions
+            - 0
+    - id: h_audit_card
+      type: Card
+      class:
+        .element: kpi kpi-sky
+      properties:
+        size: small
+      blocks:
+      - id: h_audit
+        type: Statistic
+        properties:
+          title: Audit entries
+          prefixIcon: ScrollText
+          value:
+            _if_none:
+            - _request: health_req.data.database.audit_entries
+            - 0
+    - id: h_poll_card
+      type: Card
+      class:
+        .element: kpi kpi-mint
+      properties:
+        size: small
+      blocks:
+      - id: h_poll
+        type: Statistic
+        properties:
+          title: Poll interval
+          prefixIcon: Timer
+          value:
+            _if_none:
+            - _request: health_req.data.settings.poll_seconds
+            - 0
+          suffix: s
+    - id: h_scan_card
+      type: Card
+      class:
+        .element: kpi kpi-lime
+      properties:
+        size: small
+      blocks:
+      - id: h_scan
+        type: Statistic
+        properties:
+          title: Camera scanner
+          prefixIcon: ScanLine
+          value:
+            _if:
+              test:
+                _ne:
+                - _if_none:
+                  - _request: health_req.data.scanner_url
+                  - none
+                - none
+              then: Online
+              else: Offline

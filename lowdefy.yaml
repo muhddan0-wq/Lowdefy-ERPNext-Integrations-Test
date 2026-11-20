@@ -1,0 +1,99 @@
+lowdefy: 7.1.0
+name: ERPNext Copilot
+
+plugins:
+  - name: '@lowdefy/blocks-antd'
+    version: 7.1.0
+  - name: '@lowdefy/blocks-basic'
+    version: 7.1.0
+  - name: '@lowdefy/blocks-table'
+    version: 7.1.0
+  - name: '@lowdefy/blocks-echarts'
+    version: 7.1.0
+  - name: '@lowdefy/connection-axios-http'
+    version: 7.1.0
+
+connections:
+  - id: copilot
+    type: AxiosHttp
+    properties:
+      baseURL:
+        _secret: COPILOT_API_URL
+      timeout: 120000
+  - id: local_http
+    type: AxiosHttp
+  - id: erpnext
+    type: AxiosHttp
+    properties:
+      baseURL: http://localhost:8000
+      timeout: 30000
+      headers:
+        Authorization:
+          _string.concat:
+            - 'token '
+            - _secret: ERP_TOKEN
+
+websockets:
+  - id: tick
+    type: Interval
+    properties:
+      ms: 15000
+
+theme:
+  darkMode: dark
+  antd:
+    token:
+      colorPrimary: "#2DD4BF"
+      colorSuccess: "#34D399"
+      colorWarning: "#FBBF24"
+      colorError: "#FB7185"
+      colorInfo: "#38BDF8"
+      colorLink: "#5EEAD4"
+      colorBgLayout: "#101116"
+      colorBgContainer: "#1B1C23"
+      colorBgElevated: "#22232B"
+      colorBgSpotlight: "#2A2B35"
+      colorBorder: "#2C2D38"
+      colorBorderSecondary: "#23242D"
+      colorText: "#F4F5F8"
+      colorTextSecondary: "#A3A7B7"
+      colorTextTertiary: "#6E7284"
+      fontFamily: "'Segoe UI Variable Text', 'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, sans-serif"
+      fontSize: 14
+      borderRadius: 10
+      controlHeight: 36
+    components:
+      Layout:
+        siderBg: "#15161C"
+        bodyBg: "#101116"
+        headerBg: "#101116"
+        headerHeight: 64
+      Menu:
+        darkItemBg: "#15161C"
+        darkSubMenuItemBg: "#15161C"
+        darkItemSelectedBg: "#1F2A2C"
+        darkItemColor: "#A3A7B7"
+        darkItemHoverColor: "#FFFFFF"
+        darkItemSelectedColor: "#FFFFFF"
+        itemBorderRadius: 12
+        itemMarginInline: 6
+        iconMarginInlineEnd: 12
+      Table:
+        headerBg: "#15161C"
+        headerColor: "#6E7284"
+        rowHoverBg: "#1F2A2C"
+        borderColor: "#23242D"
+      Card:
+        headerFontSize: 14
+      Statistic:
+        contentFontSize: 26
+pages:
+  - _ref: pages/overview.yaml
+  - _ref: pages/inventory.yaml
+  - _ref: pages/scan.yaml
+  - _ref: pages/floor.yaml
+  - _ref: pages/movements.yaml
+  - _ref: pages/exceptions.yaml
+  - _ref: pages/orders.yaml
+  - _ref: pages/reports.yaml
+  - _ref: pages/settings.yaml

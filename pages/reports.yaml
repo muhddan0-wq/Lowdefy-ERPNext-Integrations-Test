@@ -1,0 +1,594 @@
+id: reports
+type: PageSidebarLayout
+properties:
+  title: Reports
+  padding: compact
+  siderStorageKey: erpnext
+  sider:
+    width: 260
+    collapsible: true
+  logo:
+    src: /logo.svg
+    srcMobile: /logo-mark.svg
+    alt: ERP Copilot
+    style:
+      height: 34px
+      width: auto
+  breadcrumb:
+    list:
+    - label: ERPNext Control Centre
+    - label: Reports & Analytics
+  menu:
+    links:
+      _ref: menus/main.yaml
+requests:
+- id: reports_req
+  type: AxiosHttp
+  connectionId: copilot
+  payload:
+    days:
+      _state: rDays
+    from:
+      _state: rFrom
+    to:
+      _state: rTo
+    warehouse:
+      _state: rWarehouse
+    group:
+      _state: rGroup
+  properties:
+    url: /reports
+    timeout: 60000
+    params:
+      days:
+        _payload: days
+      from:
+        _payload: from
+      to:
+        _payload: to
+      warehouse:
+        _payload: warehouse
+      group:
+        _payload: group
+- id: report_options_req
+  type: AxiosHttp
+  connectionId: copilot
+  properties:
+    url: /options
+    timeout: 20000
+events:
+  onInit:
+  - id: rep_state
+    type: SetState
+    params:
+      rDays: 30
+      rFrom: ""
+      rTo: ""
+      rWarehouse: ""
+      rGroup: ""
+  onInitAsync:
+  - id: rep_fetch
+    type: Request
+    params: reports_req
+  - id: rep_options
+    type: Request
+    params: report_options_req
+blocks:
+- id: page_box
+  type: Box
+  blocks:
+  - id: header
+    type: Box
+    style:
+      .element:
+        display: flex
+        flexWrap: wrap
+        gap: 16px
+        alignItems: flex-start
+        justifyContent: space-between
+    blocks:
+    - id: header_left
+      type: Box
+      style:
+        .element:
+          display: flex
+          flexDirection: column
+          gap: 4px
+      blocks:
+      - id: page_title
+        type: Title
+        properties:
+          content: Reports and analytics
+          level: 3
+      - id: page_desc
+        type: Markdown
+        properties:
+          content:
+            _string.concat:
+            - "Window "
+            - _request: reports_req.data.window.from
+            - " to "
+            - _request: reports_req.data.window.to
+            - . Every figure is aggregated from ERPNext Bin, Stock Ledger Entry, Stock Entry and Purchase Order records.
+    - id: report_refresh
+      type: Button
+      properties:
+        title: Refresh
+        icon: RefreshCw
+        variant: outlined
+      events:
+        onClick:
+        - id: report_refresh_run
+          type: Request
+          params: reports_req
+    class:
+      .element: page-hero
+  - id: report_filters
+    type: Card
+    properties:
+      size: small
+    blocks:
+    - id: report_filter_grid
+      type: Box
+      blocks:
+      - id: rf_days
+        type: Selector
+        properties:
+          title: Rolling window
+          allowClear: false
+          options:
+          - label: Last 7 days
+            value: 7
+          - label: Last 14 days
+            value: 14
+          - label: Last 30 days
+            value: 30
+          - label: Last 90 days
+            value: 90
+        events:
+          onChange:
+          - id: rf_days_set
+            type: SetState
+            params:
+              rDays:
+                _event: value
+      - id: rf_from
+        type: TextInput
+        properties:
+          title: From (YYYY-MM-DD)
+          placeholder: optional
+          allowClear: true
+        events:
+          onChange:
+          - id: rf_from_set
+            type: SetState
+            params:
+              rFrom:
+                _event: value
+      - id: rf_to
+        type: TextInput
+        properties:
+          title: To (YYYY-MM-DD)
+          placeholder: optional
+          allowClear: true
+        events:
+          onChange:
+          - id: rf_to_set
+            type: SetState
+            params:
+              rTo:
+                _event: value
+      - id: rf_warehouse
+        type: Selector
+        properties:
+          title: Warehouse
+          allowClear: false
+          showSearch: true
+          options:
+            _request: reports_req.data.warehouse_options
+        events:
+          onChange:
+          - id: rf_wh_set
+            type: SetState
+            params:
+              rWarehouse:
+                _event: value
+      - id: rf_group
+        type: Selector
+        properties:
+          title: Item group
+          allowClear: false
+          showSearch: true
+          options:
+            _request: reports_req.data.group_options
+        events:
+          onChange:
+          - id: rf_group_set
+            type: SetState
+            params:
+              rGroup:
+                _event: value
+      - id: rf_apply
+        type: Button
+        properties:
+          title: Apply
+          icon: Filter
+          color: primary
+          variant: solid
+        events:
+          onClick:
+          - id: rf_apply_run
+            type: Request
+            params: reports_req
+        class:
+          block: self-end
+      class:
+        .element: grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4 items-end
+  - id: report_kpis
+    type: Box
+    blocks:
+    - id: rk_units_card
+      type: Card
+      blocks:
+      - id: rk_units
+        type: Statistic
+        properties:
+          title: Units in scope
+          precision: 0
+          value:
+            _request: reports_req.data.total_units
+      class:
+        .element: kpi kpi-sky
+    - id: rk_value_card
+      type: Card
+      blocks:
+      - id: rk_value
+        type: Statistic
+        properties:
+          title: Stock value in scope
+          precision: 2
+          value:
+            _request: reports_req.data.total_value
+      class:
+        .element: kpi kpi-violet
+    - id: rk_resolution_card
+      type: Card
+      blocks:
+      - id: rk_resolution
+        type: Statistic
+        properties:
+          title: Avg resolution (hours)
+          precision: 1
+          value:
+            _if_none:
+            - _request: reports_req.data.avg_resolution_hours
+            - 0
+      class:
+        .element: kpi kpi-mint
+    - id: rk_resolved_card
+      type: Card
+      blocks:
+      - id: rk_resolved
+        type: Statistic
+        properties:
+          title: Exceptions resolved
+          value:
+            _request: reports_req.data.resolved_count
+      class:
+        .element: kpi kpi-amber
+    class:
+      .element: grid grid-cols-2 lg:grid-cols-4 gap-4
+  - id: warehouse_chart_card
+    type: Card
+    properties:
+      title: Where stock value sits - stock value by warehouse
+    blocks:
+    - id: warehouse_chart
+      type: EChart
+      properties:
+        option:
+          tooltip:
+            trigger: axis
+            axisPointer:
+              type: shadow
+            backgroundColor: "#22232b"
+            borderColor: "#2c2d38"
+            textStyle:
+              color: "#f4f5f8"
+          grid:
+            left: 8
+            right: 48
+            top: 8
+            bottom: 8
+            containLabel: true
+          xAxis:
+            axisLine: &a1
+              lineStyle:
+                color: "#2c2d38"
+            axisTick: &a2
+              show: false
+            axisLabel: &a3
+              color: "#a3a7b7"
+              fontSize: 11
+            splitLine: &a4
+              lineStyle:
+                color: "#23242d"
+                type: dashed
+            type: value
+          yAxis:
+            axisLine: *a1
+            axisTick: *a2
+            axisLabel: *a3
+            splitLine: *a4
+            type: category
+            data:
+              _request: reports_req.data.chart_data.warehouse_names
+          series:
+          - type: bar
+            barWidth: 18
+            itemStyle:
+              borderRadius:
+              - 0
+              - 4
+              - 4
+              - 0
+            label:
+              show: true
+              position: right
+              color: "#a3a7b7"
+            data:
+              _request: reports_req.data.chart_data.warehouse_values
+            colorBy: data
+          color: &a5
+            - "#2dd4bf"
+            - "#a78bfa"
+            - "#38bdf8"
+            - "#fbbf24"
+            - "#f472b6"
+            - "#a3e635"
+            - "#fb923c"
+            - "#fb7185"
+          backgroundColor: transparent
+          textStyle:
+            color: "#a3a7b7"
+            fontFamily: Segoe UI, Inter, sans-serif
+  - id: movement_chart_card
+    type: Card
+    properties:
+      title: How busy was stock movement - Stock Entry documents per day
+    blocks:
+    - id: movement_chart
+      type: EChart
+      properties:
+        option:
+          tooltip:
+            trigger: axis
+            backgroundColor: "#22232b"
+            borderColor: "#2c2d38"
+            textStyle:
+              color: "#f4f5f8"
+          grid:
+            left: 8
+            right: 24
+            top: 16
+            bottom: 8
+            containLabel: true
+          xAxis:
+            axisLine: *a1
+            axisTick: *a2
+            axisLabel: *a3
+            splitLine: *a4
+            type: category
+            data:
+              _request: reports_req.data.chart_data.movement_dates
+          yAxis:
+            axisLine: *a1
+            axisTick: *a2
+            axisLabel: *a3
+            splitLine: *a4
+            type: value
+            minInterval: 1
+          series:
+          - type: line
+            smooth: true
+            symbolSize: 7
+            lineStyle:
+              width: 3
+              color: "#2dd4bf"
+            itemStyle:
+              color: "#2dd4bf"
+            areaStyle:
+              color:
+                type: linear
+                x: 0
+                y: 0
+                x2: 0
+                y2: 1
+                colorStops:
+                - offset: 0
+                  color: rgba(45,212,191,0.35)
+                - offset: 1
+                  color: rgba(45,212,191,0)
+            data:
+              _request: reports_req.data.chart_data.movement_counts
+          color: *a5
+          backgroundColor: transparent
+          textStyle:
+            color: "#a3a7b7"
+            fontFamily: Segoe UI, Inter, sans-serif
+  - id: top_items_card
+    type: Card
+    properties:
+      title: Which products move most - absolute quantity moved
+    blocks:
+    - id: top_items_chart
+      type: EChart
+      properties:
+        option:
+          tooltip:
+            trigger: axis
+            axisPointer:
+              type: shadow
+            backgroundColor: "#22232b"
+            borderColor: "#2c2d38"
+            textStyle:
+              color: "#f4f5f8"
+          grid:
+            left: 8
+            right: 48
+            top: 8
+            bottom: 8
+            containLabel: true
+          xAxis:
+            axisLine: *a1
+            axisTick: *a2
+            axisLabel: *a3
+            splitLine: *a4
+            type: value
+          yAxis:
+            axisLine: *a1
+            axisTick: *a2
+            axisLabel: *a3
+            splitLine: *a4
+            type: category
+            data:
+              _request: reports_req.data.chart_data.top_item_names
+          series:
+          - type: bar
+            barWidth: 16
+            itemStyle:
+              borderRadius:
+              - 0
+              - 4
+              - 4
+              - 0
+            label:
+              show: true
+              position: right
+              color: "#a3a7b7"
+            data:
+              _request: reports_req.data.chart_data.top_item_qty
+            colorBy: data
+          color: *a5
+          backgroundColor: transparent
+          textStyle:
+            color: "#a3a7b7"
+            fontFamily: Segoe UI, Inter, sans-serif
+  - id: exception_chart_card
+    type: Card
+    properties:
+      title: What is going wrong - open exception categories
+    blocks:
+    - id: exception_chart
+      type: EChart
+      properties:
+        option:
+          tooltip:
+            trigger: axis
+            axisPointer:
+              type: shadow
+            backgroundColor: "#22232b"
+            borderColor: "#2c2d38"
+            textStyle:
+              color: "#f4f5f8"
+          grid:
+            left: 8
+            right: 24
+            top: 16
+            bottom: 8
+            containLabel: true
+          xAxis:
+            axisLine: *a1
+            axisTick: *a2
+            axisLabel:
+              rotate: 20
+            splitLine: *a4
+            type: category
+            data:
+              _request: reports_req.data.chart_data.exception_categories
+          yAxis:
+            axisLine: *a1
+            axisTick: *a2
+            axisLabel: *a3
+            splitLine: *a4
+            type: value
+            minInterval: 1
+          series:
+          - type: bar
+            barWidth: 20
+            itemStyle:
+              borderRadius:
+              - 4
+              - 4
+              - 0
+              - 0
+            label:
+              show: true
+              position: top
+              color: "#a3a7b7"
+            data:
+              _request: reports_req.data.chart_data.exception_counts
+            colorBy: data
+          color: *a5
+          backgroundColor: transparent
+          textStyle:
+            color: "#a3a7b7"
+            fontFamily: Segoe UI, Inter, sans-serif
+  - id: overdue_table_card
+    type: Card
+    properties:
+      title: Which suppliers are late - outstanding purchase orders
+    blocks:
+    - id: overdue_table
+      type: Table
+      properties:
+        rowKey: supplier
+        size: compact
+        bordered: true
+        pagination: false
+        emptyText: No overdue purchase orders in this ERPNext site.
+        columns:
+        - key: supplier
+          title: Supplier
+          flex: 1
+          minWidth: 280
+        - key: orders
+          title: Overdue orders
+          type: number
+          width: 150
+        - key: max_days
+          title: Worst delay (days)
+          type: number
+          width: 170
+        data:
+          _request: reports_req.data.overdue_by_supplier
+  - id: category_table_card
+    type: Card
+    properties:
+      title: Exception volume by category
+    blocks:
+    - id: category_table
+      type: Table
+      properties:
+        rowKey: category_key
+        size: compact
+        bordered: true
+        pagination: false
+        emptyText: No exceptions have been detected yet.
+        columns:
+        - key: category
+          title: Category
+          flex: 1
+          minWidth: 240
+        - key: n
+          title: Exceptions
+          type: number
+          width: 120
+        data:
+          _request: reports_req.data.exceptions_by_category
+  - id: report_footer
+    type: Markdown
+    properties:
+      content: Rolling windows are calculated from ERPNext posting dates. Custom From/To dates override the window when they are valid `YYYY-MM-DD` values. Resolution time is measured from detection to the resolved timestamp stored in the app database.
+  class:
+    .element: flex flex-col gap-5

@@ -1,0 +1,732 @@
+id: inventory
+type: PageSidebarLayout
+properties:
+  title: Inventory
+  padding: compact
+  siderStorageKey: erpnext
+  sider:
+    width: 260
+    collapsible: true
+  logo:
+    src: /logo.svg
+    srcMobile: /logo-mark.svg
+    alt: ERP Copilot
+    style:
+      height: 34px
+      width: auto
+  breadcrumb:
+    list:
+    - label: ERPNext Control Centre
+    - label: Inventory Management
+  menu:
+    links:
+      _ref: menus/main.yaml
+requests:
+- id: inventory_req
+  type: AxiosHttp
+  connectionId: copilot
+  payload:
+    search:
+      _state: fSearch
+    warehouse:
+      _state: fWarehouse
+    group:
+      _state: fGroup
+    status:
+      _state: fStatus
+  properties:
+    url: /inventory
+    timeout: 40000
+    params:
+      search:
+        _payload: search
+      warehouse:
+        _payload: warehouse
+      group:
+        _payload: group
+      status:
+        _payload: status
+- id: item_req
+  type: AxiosHttp
+  connectionId: copilot
+  payload:
+    code:
+      _state: selectedCode
+  properties:
+    url: /item
+    timeout: 40000
+    params:
+      code:
+        _payload: code
+events:
+  onInit:
+  - id: inv_state
+    type: SetState
+    params:
+      fSearch: ""
+      fWarehouse: ""
+      fGroup: ""
+      fStatus: ""
+      selectedCode: ""
+      selectedWarehouse: ""
+  onInitAsync:
+  - id: inv_fetch
+    type: Request
+    params: inventory_req
+blocks:
+- id: page_box
+  type: Box
+  blocks:
+  - id: header
+    type: Box
+    style:
+      .element:
+        display: flex
+        flexWrap: wrap
+        gap: 16px
+        alignItems: flex-start
+        justifyContent: space-between
+    blocks:
+    - id: header_left
+      type: Box
+      style:
+        .element:
+          display: flex
+          flexDirection: column
+          gap: 4px
+      blocks:
+      - id: page_title
+        type: Title
+        properties:
+          content: Inventory management
+          level: 3
+      - id: page_desc
+        type: Markdown
+        properties:
+          content: Search and filter live stock by warehouse and item group. Click any row to open its detail panel, serial numbers, movements and related exceptions.
+    - id: header_right
+      type: Box
+      style:
+        .element:
+          display: flex
+          flexWrap: wrap
+          gap: 8px
+          alignItems: center
+      blocks:
+      - id: count_tag
+        type: Tag
+        properties:
+          color: processing
+          title:
+            _string.concat:
+            - ""
+            - _if_none:
+              - _request: inventory_req.data.count
+              - 0
+            - " / "
+            - _if_none:
+              - _request: inventory_req.data.total
+              - 0
+            - " rows"
+      - id: refresh_btn
+        type: Button
+        properties:
+          title: Refresh
+          icon: RefreshCw
+          variant: outlined
+        events:
+          onClick:
+          - id: inv_refresh
+            type: Request
+            params: inventory_req
+    class:
+      .element: page-hero
+  - id: filter_bar
+    type: Card
+    properties:
+      size: small
+    blocks:
+    - id: filters
+      type: Box
+      blocks:
+      - id: f_search
+        type: TextInput
+        properties:
+          title: Search
+          placeholder: Item code or product name
+          allowClear: true
+        events:
+          onChange:
+          - id: f_search_set
+            type: SetState
+            params:
+              fSearch:
+                _event: value
+          onPressEnter:
+          - id: f_search_run
+            type: Request
+            params: inventory_req
+      - id: f_warehouse
+        type: Selector
+        properties:
+          title: Warehouse
+          showSearch: true
+          allowClear: false
+          options:
+            _request: inventory_req.data.warehouse_options
+        events:
+          onChange:
+          - id: f_wh_set
+            type: SetState
+            params:
+              fWarehouse:
+                _event: value
+      - id: f_group
+        type: Selector
+        properties:
+          title: Item group
+          showSearch: true
+          allowClear: false
+          options:
+            _request: inventory_req.data.group_options
+        events:
+          onChange:
+          - id: f_group_set
+            type: SetState
+            params:
+              fGroup:
+                _event: value
+      - id: f_status
+        type: Selector
+        properties:
+          title: Stock status
+          allowClear: false
+          options:
+            _request: inventory_req.data.status_options
+        events:
+          onChange:
+          - id: f_status_set
+            type: SetState
+            params:
+              fStatus:
+                _event: value
+      - id: apply_btn
+        type: Button
+        properties:
+          title: Apply filters
+          icon: Filter
+          color: primary
+          variant: solid
+        events:
+          onClick:
+          - id: apply_run
+            type: Request
+            params: inventory_req
+        class:
+          block: self-end
+      - id: reset_btn
+        type: Button
+        properties:
+          title: Reset
+          variant: outlined
+        events:
+          onClick:
+          - id: reset_state
+            type: SetState
+            params:
+              fSearch: ""
+              fWarehouse: ""
+              fGroup: ""
+              fStatus: ""
+          - id: reset_run
+            type: Request
+            params: inventory_req
+        class:
+          block: self-end
+      class:
+        .element: grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4 items-end
+  - id: inventory_card
+    type: Card
+    properties:
+      padding: none
+    blocks:
+    - id: inventory_table
+      type: Table
+      properties:
+        rowKey: code
+        size: compact
+        bordered: true
+        pagination: true
+        pageSize: 25
+        toolbar:
+          search: true
+          filter: true
+          sort: true
+          columns: true
+          density: true
+          export: true
+        emptyText: No inventory rows match these filters.
+        defaultView:
+          sort:
+          - key: available
+            desc: true
+        columns:
+        - key: code
+          title: Item code
+          width: 170
+          pinned: start
+        - key: name
+          title: Product
+          wrap: true
+          flex: 1
+          minWidth: 260
+        - key: group
+          title: Category
+          width: 150
+        - key: warehouse
+          title: Warehouse
+          width: 200
+        - key: available
+          title: Available
+          type: number
+          width: 110
+        - key: uom
+          title: UOM
+          width: 80
+        - key: reorder_level
+          title: Reorder level
+          type: number
+          width: 120
+        - key: status
+          title: Status
+          type: status
+          width: 130
+          options:
+            normal:
+              label: Normal
+              color: "#34d399"
+            low:
+              label: Low stock
+              color: "#fbbf24"
+            out:
+              label: Out of stock
+              color: "#f87171"
+            inactive:
+              label: Inactive
+              color: "#6b7280"
+            service:
+              label: Non-stock
+              color: "#60a5fa"
+        - key: stock_value
+          title: Stock value
+          type: number
+          width: 120
+        - key: last_updated
+          title: Last updated
+          type: date
+          width: 140
+        data:
+          _request: inventory_req.data.rows
+      events:
+        onRowClick:
+        - id: row_select
+          type: SetState
+          params:
+            selectedCode:
+              _event: row.code
+            selectedWarehouse:
+              _event: row.warehouse
+        - id: row_fetch
+          type: Request
+          params: item_req
+        - id: row_open
+          type: CallMethod
+          params:
+            blockId: item_drawer
+            method: toggleOpen
+  class:
+    .element: flex flex-col gap-5
+- id: item_drawer
+  type: Drawer
+  properties:
+    title:
+      _string.concat:
+      - "Item "
+      - _state: selectedCode
+    width: 620
+    placement: right
+    size: 620
+    padding: compact
+  blocks:
+  - id: item_not_found
+    type: Alert
+    visible:
+      _eq:
+      - _request: item_req.data.found
+      - false
+    properties:
+      type: warning
+      showIcon: true
+      message: No item found
+      description: The selected code was not returned by ERPNext. Refresh the list and try again.
+  - id: item_body
+    type: Box
+    style:
+      .element:
+        display: flex
+        flexDirection: column
+        gap: 16px
+    blocks:
+    - id: item_head
+      type: Box
+      style:
+        .element:
+          display: flex
+          flexWrap: wrap
+          gap: 12px
+          alignItems: flex-start
+          justifyContent: space-between
+      blocks:
+      - id: item_head_left
+        type: Box
+        style:
+          .element:
+            display: flex
+            flexDirection: column
+            gap: 4px
+        blocks:
+        - id: item_name
+          type: Title
+          properties:
+            level: 4
+            content:
+              _request: item_req.data.item.name
+          class:
+            .element: section-title
+        - id: item_meta
+          type: Markdown
+          properties:
+            content:
+              _string.concat:
+              - "**Item code:** "
+              - _request: item_req.data.item.code
+              - |2-
+                  
+                **Group:** 
+              - _request: item_req.data.item.group
+              - |2-
+                  
+                **UOM:** 
+              - _request: item_req.data.item.uom
+              - |2-
+                  
+                **Warehouses:** 
+              - _request: item_req.data.bins.length
+      - id: item_tags
+        type: Box
+        style:
+          .element:
+            display: flex
+            flexWrap: wrap
+            gap: 8px
+        blocks:
+        - id: tag_serial
+          type: Tag
+          visible:
+            _request: item_req.data.item.has_serial
+          properties:
+            color: purple
+            title: Serial tracked
+        - id: tag_batch
+          type: Tag
+          visible:
+            _request: item_req.data.item.has_batch
+          properties:
+            color: blue
+            title: Batch tracked
+        - id: tag_stock
+          type: Tag
+          visible:
+            _request: item_req.data.item.is_stock
+          properties:
+            color: green
+            title: Stock item
+    - id: item_kpis
+      type: Box
+      blocks:
+      - id: item_avail_card
+        type: Card
+        blocks:
+        - id: item_avail
+          type: Statistic
+          properties:
+            title: Total available
+            value:
+              _request: item_req.data.total_available
+        class:
+          .element: kpi kpi-sky
+      - id: item_value_card
+        type: Card
+        blocks:
+        - id: item_value
+          type: Statistic
+          properties:
+            title: Stock value
+            precision: 2
+            value:
+              _request: item_req.data.stock_value
+        class:
+          .element: kpi kpi-violet
+      class:
+        .element: grid grid-cols-2 lg:grid-cols-2 gap-4
+    - id: item_open_btn
+      type: Button
+      properties:
+        title: Open item in ERPNext
+        icon: ExternalLink
+        variant: outlined
+      events:
+        onClick:
+        - id: item_open_link
+          type: Link
+          params:
+            url:
+              _request: item_req.data.item.url
+            newTab: true
+    - id: item_tabs
+      type: Tabs
+      class:
+        .element: tabs-pill
+      properties:
+        tabs:
+        - key: stock
+          title: Stock
+          icon: Warehouse
+        - key: units
+          title: Serials & batches
+          icon: Barcode
+        - key: moves
+          title: Movements
+          icon: ArrowLeftRight
+        - key: exc
+          title: Exceptions
+          icon: AlertTriangle
+        animated: false
+      slots:
+        stock:
+          blocks:
+          - id: item_tabs_stock
+            type: Box
+            class:
+              .element: flex flex-col gap-4 pt-1
+            blocks:
+            - id: bins_table
+              type: Table
+              properties:
+                rowKey: warehouse
+                size: compact
+                bordered: true
+                pagination: false
+                emptyText: No warehouse bin records for this item.
+                columns:
+                - key: warehouse
+                  title: Warehouse
+                  flex: 1
+                  minWidth: 190
+                - key: available
+                  title: Available
+                  type: number
+                  width: 100
+                - key: reorder_level
+                  title: Reorder level
+                  type: number
+                  width: 120
+                - key: stock_value
+                  title: Value
+                  type: number
+                  width: 100
+                - key: status_label
+                  title: Status
+                  width: 130
+                data:
+                  _request: item_req.data.bins
+        units:
+          blocks:
+          - id: item_tabs_units
+            type: Box
+            class:
+              .element: flex flex-col gap-4 pt-1
+            blocks:
+            - id: serials_block
+              type: Box
+              style:
+                .element:
+                  display: flex
+                  flexDirection: column
+                  gap: 8px
+              blocks:
+              - id: serials_title
+                type: Title
+                properties:
+                  level: 4
+                  content: Individual serial numbers
+                class:
+                  .element: section-title
+              - id: serials_note
+                type: Markdown
+                visible:
+                  _eq:
+                  - _request: item_req.data.item.has_serial
+                  - true
+                properties:
+                  content: Each row is one physical unit tracked by ERPNext Serial No. Use the QR / Barcode Scanner page to look one up or print its QR label.
+              - id: serials_table
+                type: Table
+                properties:
+                  rowKey: serial
+                  size: compact
+                  bordered: true
+                  pagination: false
+                  emptyText: No serial numbers are registered for this item.
+                  columns:
+                  - key: serial
+                    title: Serial number
+                    flex: 1
+                    minWidth: 180
+                  - key: status
+                    title: Status
+                    width: 110
+                  - key: warehouse
+                    title: Warehouse
+                    width: 180
+                  - key: modified
+                    title: Last updated
+                    type: date
+                    width: 140
+                  data:
+                    _request: item_req.data.serials
+            - id: batches_block
+              type: Box
+              style:
+                .element:
+                  display: flex
+                  flexDirection: column
+                  gap: 8px
+              blocks:
+              - id: batches_title
+                type: Title
+                properties:
+                  level: 4
+                  content: Batches
+                class:
+                  .element: section-title
+              - id: batches_table
+                type: Table
+                properties:
+                  rowKey: batch
+                  size: compact
+                  bordered: true
+                  pagination: false
+                  emptyText: No batches are registered for this item.
+                  columns:
+                  - key: batch
+                    title: Batch
+                    flex: 1
+                    minWidth: 160
+                  - key: expiry_date
+                    title: Expiry
+                    type: date
+                    width: 120
+                  - key: qty
+                    title: Batch qty
+                    type: number
+                    width: 100
+                  data:
+                    _request: item_req.data.batches
+        moves:
+          blocks:
+          - id: item_tabs_moves
+            type: Box
+            class:
+              .element: flex flex-col gap-4 pt-1
+            blocks:
+            - id: item_movements
+              type: Table
+              properties:
+                rowKey: name
+                size: compact
+                bordered: true
+                pagination: false
+                emptyText: No stock movements recorded for this item.
+                columns:
+                - key: name
+                  title: Document
+                  flex: 1
+                  minWidth: 170
+                - key: date
+                  title: Date
+                  type: date
+                  width: 110
+                - key: type
+                  title: Type
+                  width: 150
+                - key: qty
+                  title: Qty
+                  type: number
+                  width: 80
+                - key: from_warehouse
+                  title: From
+                  width: 160
+                - key: to_warehouse
+                  title: To
+                  width: 160
+                - key: status
+                  title: Status
+                  width: 100
+                data:
+                  _request: item_req.data.movements
+        exc:
+          blocks:
+          - id: item_tabs_exc
+            type: Box
+            class:
+              .element: flex flex-col gap-4 pt-1
+            blocks:
+            - id: item_exceptions
+              type: Table
+              properties:
+                rowKey: id
+                size: compact
+                bordered: true
+                pagination: false
+                emptyText: No open exceptions for this item.
+                columns:
+                - key: id
+                  title: Exception
+                  width: 110
+                - key: severity
+                  title: Severity
+                  type: status
+                  width: 110
+                  options:
+                    critical:
+                      label: Critical
+                      color: "#f87171"
+                    high:
+                      label: High
+                      color: "#fbbf24"
+                    medium:
+                      label: Medium
+                      color: "#60a5fa"
+                    low:
+                      label: Low
+                      color: "#9ca3af"
+                - key: title
+                  title: Issue
+                  wrap: true
+                  flex: 1
+                - key: status
+                  title: Status
+                  width: 120
+                data:
+                  _request: item_req.data.exceptions

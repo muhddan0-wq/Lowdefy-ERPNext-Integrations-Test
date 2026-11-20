@@ -1,0 +1,19 @@
+{
+  "name": "erpnext-copilot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@lowdefy/blocks-antd": "7.1.0",
+    "@lowdefy/blocks-basic": "7.1.0",
+    "@lowdefy/blocks-table": "7.1.0",
+    "@lowdefy/connection-axios-http": "7.1.0",
+    "@lowdefy/operators-js": "7.1.0"
+  }
+}

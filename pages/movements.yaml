@@ -1,0 +1,857 @@
+id: movements
+type: PageSidebarLayout
+properties:
+  title: Movements
+  padding: compact
+  siderStorageKey: erpnext
+  sider:
+    width: 260
+    collapsible: true
+  logo:
+    src: /logo.svg
+    srcMobile: /logo-mark.svg
+    alt: ERP Copilot
+    style:
+      height: 34px
+      width: auto
+  breadcrumb:
+    list:
+    - label: ERPNext Control Centre
+    - label: Stock Movements
+  menu:
+    links:
+      _ref: menus/main.yaml
+requests:
+- id: movements_req
+  type: AxiosHttp
+  connectionId: copilot
+  payload:
+    search:
+      _state: fSearch
+    warehouse:
+      _state: fWarehouse
+    docstatus:
+      _state: fDocstatus
+  properties:
+    url: /movements
+    timeout: 45000
+    params:
+      search:
+        _payload: search
+      warehouse:
+        _payload: warehouse
+      docstatus:
+        _payload: docstatus
+- id: options_req
+  type: AxiosHttp
+  connectionId: copilot
+  properties:
+    url: /options
+    timeout: 20000
+- id: item_options_req
+  type: AxiosHttp
+  connectionId: copilot
+  properties:
+    url: /item-options
+    timeout: 30000
+- id: transfer_item_req
+  type: AxiosHttp
+  connectionId: copilot
+  payload:
+    code:
+      _state: tItem
+  properties:
+    url: /item
+    timeout: 30000
+    params:
+      code:
+        _payload: code
+- id: serial_options_req
+  type: AxiosHttp
+  connectionId: copilot
+  payload:
+    item_code:
+      _state: tItem
+    warehouse:
+      _state: tSource
+  properties:
+    url: /serial-options
+    timeout: 30000
+    params:
+      item_code:
+        _payload: item_code
+      warehouse:
+        _payload: warehouse
+- id: transfer_req
+  type: AxiosHttp
+  connectionId: copilot
+  payload:
+    body:
+      item_code:
+        _state: tItem
+      source_warehouse:
+        _state: tSource
+      target_warehouse:
+        _state: tTarget
+      qty:
+        _state: tQty
+      serials:
+        _if:
+          test:
+            _eq:
+            - _state: tSerialText
+            - ""
+          then:
+            _state: tSerials
+          else:
+            _state: tSerialText
+      submit:
+        _state: tSubmit
+      actor:
+        _state: actor
+      role:
+        _state: role
+  properties:
+    url: /transfer
+    method: post
+    timeout: 60000
+    data:
+      _payload: body
+events:
+  onInit:
+  - id: mov_state
+    type: SetState
+    params:
+      fSearch: ""
+      fWarehouse: ""
+      fDocstatus: ""
+      tItem: ""
+      tSource: ""
+      tTarget: ""
+      tQty: 1
+      tSerials: []
+      tSerialText: ""
+      tSubmit: false
+      tConfirm: false
+      transferResult: null
+      selectedMovement: null
+      actor: inventory.manager
+      role: inventory_manager
+  onInitAsync:
+  - id: mov_fetch
+    type: Request
+    params: movements_req
+  - id: mov_options
+    type: Request
+    params: options_req
+  - id: mov_item_options
+    type: Request
+    params: item_options_req
+blocks:
+- id: page_box
+  type: Box
+  blocks:
+  - id: header
+    type: Box
+    style:
+      .element:
+        display: flex
+        flexWrap: wrap
+        gap: 16px
+        alignItems: flex-start
+        justifyContent: space-between
+    blocks:
+    - id: header_left
+      type: Box
+      style:
+        .element:
+          display: flex
+          flexDirection: column
+          gap: 4px
+      blocks:
+      - id: page_title
+        type: Title
+        properties:
+          content: Stock movements
+          level: 3
+      - id: page_desc
+        type: Markdown
+        properties:
+          content: Every Stock Entry line from ERPNext, including drafts that have not moved stock yet. Click a row for its transaction detail, or create a transfer below.
+    - id: header_right
+      type: Box
+      style:
+        .element:
+          display: flex
+          flexWrap: wrap
+          gap: 8px
+          alignItems: center
+      blocks:
+      - id: new_transfer_btn
+        type: Button
+        properties:
+          title: New transfer
+          icon: Plus
+          color: primary
+          variant: solid
+        events:
+          onClick:
+          - id: open_transfer
+            type: CallMethod
+            params:
+              blockId: transfer_drawer
+              method: toggleOpen
+      - id: mov_count
+        type: Tag
+        properties:
+          color: processing
+          title:
+            _string.concat:
+            - ""
+            - _if_none:
+              - _request: movements_req.data.count
+              - 0
+            - " lines"
+      - id: mov_refresh
+        type: Button
+        properties:
+          title: Refresh
+          icon: RefreshCw
+          variant: outlined
+        events:
+          onClick:
+          - id: mov_refresh_req
+            type: Request
+            params: movements_req
+    class:
+      .element: page-hero
+  - id: movement_filters
+    type: Card
+    properties:
+      size: small
+    blocks:
+    - id: movement_filter_grid
+      type: Box
+      blocks:
+      - id: mf_search
+        type: TextInput
+        properties:
+          title: Search
+          placeholder: Document, item code or product
+          allowClear: true
+        events:
+          onChange:
+          - id: mf_search_set
+            type: SetState
+            params:
+              fSearch:
+                _event: value
+          onPressEnter:
+          - id: mf_search_run
+            type: Request
+            params: movements_req
+      - id: mf_warehouse
+        type: Selector
+        properties:
+          title: Warehouse
+          allowClear: false
+          showSearch: true
+          options:
+            _request: movements_req.data.warehouse_options
+        events:
+          onChange:
+          - id: mf_wh_set
+            type: SetState
+            params:
+              fWarehouse:
+                _event: value
+      - id: mf_status
+        type: Selector
+        properties:
+          title: Document status
+          allowClear: false
+          options:
+            _request: movements_req.data.status_options
+        events:
+          onChange:
+          - id: mf_status_set
+            type: SetState
+            params:
+              fDocstatus:
+                _event: value
+      - id: mf_apply
+        type: Button
+        properties:
+          title: Apply
+          icon: Filter
+          color: primary
+          variant: solid
+        events:
+          onClick:
+          - id: mf_apply_run
+            type: Request
+            params: movements_req
+        class:
+          block: self-end
+      - id: mf_reset
+        type: Button
+        properties:
+          title: Reset
+          variant: outlined
+        events:
+          onClick:
+          - id: mf_reset_state
+            type: SetState
+            params:
+              fSearch: ""
+              fWarehouse: ""
+              fDocstatus: ""
+          - id: mf_reset_run
+            type: Request
+            params: movements_req
+        class:
+          block: self-end
+      class:
+        .element: grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 items-end
+  - id: movements_card
+    type: Card
+    properties:
+      padding: none
+    blocks:
+    - id: movements_table
+      type: Table
+      properties:
+        rowKey: name
+        size: compact
+        bordered: true
+        pagination: true
+        pageSize: 25
+        toolbar:
+          search: true
+          filter: true
+          sort: true
+          columns: true
+          density: true
+          export: true
+        emptyText: No stock movements match these filters.
+        defaultView:
+          sort:
+          - key: date
+            desc: true
+        columns:
+        - key: name
+          title: Stock Entry
+          width: 180
+          pinned: start
+        - key: date
+          title: Date
+          type: date
+          width: 110
+        - key: type
+          title: Type
+          width: 160
+        - key: item_code
+          title: Item
+          width: 150
+        - key: item_name
+          title: Product
+          wrap: true
+          flex: 1
+          minWidth: 220
+        - key: qty
+          title: Qty
+          type: number
+          width: 90
+        - key: uom
+          title: UOM
+          width: 80
+        - key: from_warehouse
+          title: From
+          width: 180
+        - key: to_warehouse
+          title: To
+          width: 180
+        - key: status
+          title: Status
+          type: status
+          width: 120
+          options:
+            Draft:
+              label: Draft
+              color: "#fbbf24"
+            Submitted:
+              label: Submitted
+              color: "#34d399"
+            Cancelled:
+              label: Cancelled
+              color: "#6b7280"
+        data:
+          _request: movements_req.data.rows
+      events:
+        onRowClick:
+        - id: mov_row_select
+          type: SetState
+          params:
+            selectedMovement:
+              _event: row
+        - id: mov_row_open
+          type: CallMethod
+          params:
+            blockId: movement_drawer
+            method: toggleOpen
+  class:
+    .element: flex flex-col gap-5
+- id: movement_drawer
+  type: Drawer
+  properties:
+    title:
+      _string.concat:
+      - "Stock Entry "
+      - _state: selectedMovement.name
+    width: 560
+    placement: right
+    size: 560
+    padding: compact
+  blocks:
+  - id: movement_drawer_body
+    type: Box
+    style:
+      .element:
+        display: flex
+        flexDirection: column
+        gap: 16px
+    blocks:
+    - id: movement_tags
+      type: Box
+      style:
+        .element:
+          display: flex
+          flexWrap: wrap
+          gap: 8px
+      blocks:
+      - id: movement_status_tag
+        type: Tag
+        properties:
+          color:
+            _if:
+              test:
+                _eq:
+                - _state: selectedMovement.docstatus
+                - 1
+              then: green
+              else:
+                _if:
+                  test:
+                    _eq:
+                    - _state: selectedMovement.docstatus
+                    - 0
+                  then: gold
+                  else: default
+          title:
+            _state: selectedMovement.status
+      - id: movement_type_tag
+        type: Tag
+        properties:
+          color: blue
+          title:
+            _state: selectedMovement.type
+    - id: movement_detail
+      type: Markdown
+      properties:
+        content:
+          _string.concat:
+          - "**Transaction date:** "
+          - _state: selectedMovement.date
+          - |2-
+              
+            **Item code:** 
+          - _state: selectedMovement.item_code
+          - |2-
+              
+            **Product:** 
+          - _state: selectedMovement.item_name
+          - |2-
+              
+            **Quantity:** 
+          - _state: selectedMovement.qty
+          - " "
+          - _state: selectedMovement.uom
+          - |2-
+              
+            **Source warehouse:** 
+          - _if_none:
+            - _state: selectedMovement.from_warehouse
+            - not set
+          - |2-
+              
+            **Destination warehouse:** 
+          - _if_none:
+            - _state: selectedMovement.to_warehouse
+            - not set
+          - |2-
+              
+            **Document value:** 
+          - _state: selectedMovement.value
+    - id: movement_serials_title
+      type: Title
+      properties:
+        level: 4
+        content: Serial numbers on this line
+      class:
+        .element: section-title
+    - id: movement_serials
+      type: Markdown
+      properties:
+        content:
+          _if_none:
+          - _state: selectedMovement.serials
+          - No serial numbers recorded on this Stock Entry line.
+    - id: movement_batch_title
+      type: Title
+      properties:
+        level: 4
+        content: Batch
+      class:
+        .element: section-title
+    - id: movement_batch
+      type: Markdown
+      properties:
+        content:
+          _if_none:
+          - _state: selectedMovement.batch
+          - No batch recorded on this line.
+    - id: movement_drawer_actions
+      type: Box
+      style:
+        .element:
+          display: flex
+          flexWrap: wrap
+          gap: 8px
+      blocks:
+      - id: movement_open_btn
+        type: Button
+        properties:
+          title: Open in ERPNext
+          icon: ExternalLink
+          color: primary
+          variant: solid
+        events:
+          onClick:
+          - id: movement_open_link
+            type: Link
+            params:
+              url:
+                _string.concat:
+                - http://localhost:8000/app/stock-entry/
+                - _state: selectedMovement.name
+              newTab: true
+- id: transfer_drawer
+  type: Drawer
+  properties:
+    title: New stock transfer
+    width: 620
+    size: 620
+    placement: right
+    padding: compact
+  blocks:
+  - id: transfer_body
+    type: Box
+    style:
+      .element:
+        display: flex
+        flexDirection: column
+        gap: 16px
+    blocks:
+    - id: transfer_note
+      type: Alert
+      properties:
+        type: info
+        showIcon: true
+        message: Transfers are created in ERPNext as Stock Entry documents
+        description: A draft does not move stock. Only a submitted Stock Entry changes the ERPNext ledger, and the result shown below comes back from ERPNext itself.
+    - id: transfer_grid
+      type: Box
+      blocks:
+      - id: t_item
+        type: Selector
+        properties:
+          title: Item
+          showSearch: true
+          allowClear: false
+          options:
+            _request: item_options_req.data.options
+        events:
+          onChange:
+          - id: t_item_set
+            type: SetState
+            params:
+              tItem:
+                _event: value
+              tSerials: []
+              tSerialText: ""
+          - id: t_item_fetch
+            type: Request
+            params: transfer_item_req
+          - id: t_serial_fetch
+            type: Request
+            params: serial_options_req
+      - id: t_source
+        type: Selector
+        properties:
+          title: Source warehouse
+          showSearch: true
+          allowClear: false
+          options:
+            _request: options_req.data.warehouses
+        events:
+          onChange:
+          - id: t_source_set
+            type: SetState
+            params:
+              tSource:
+                _event: value
+          - id: t_source_serials
+            type: Request
+            params: serial_options_req
+      - id: t_target
+        type: Selector
+        properties:
+          title: Destination warehouse
+          showSearch: true
+          allowClear: false
+          options:
+            _request: options_req.data.warehouses
+        events:
+          onChange:
+          - id: t_target_set
+            type: SetState
+            params:
+              tTarget:
+                _event: value
+      - id: t_qty
+        type: NumberInput
+        properties:
+          title: Quantity
+          min: 0
+          step: 1
+        events:
+          onChange:
+          - id: t_qty_set
+            type: SetState
+            params:
+              tQty:
+                _event: value
+      - id: t_role
+        type: Selector
+        properties:
+          title: Acting role (demo identity)
+          allowClear: false
+          options:
+          - label: Inventory manager
+            value: inventory_manager
+          - label: Administrator
+            value: administrator
+          - label: Employee (read only)
+            value: employee
+          - label: Finance / procurement (read only)
+            value: finance
+        events:
+          onChange:
+          - id: t_role_set
+            type: SetState
+            params:
+              role:
+                _event: value
+      - id: t_submit
+        type: Switch
+        properties:
+          title: Submit to ERPNext immediately
+        events:
+          onChange:
+          - id: t_submit_set
+            type: SetState
+            params:
+              tSubmit:
+                _event: value
+      class:
+        .element: grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4
+    - id: t_serial_block
+      type: Box
+      style:
+        .element:
+          display: flex
+          flexDirection: column
+          gap: 8px
+      visible:
+        _request: transfer_item_req.data.item.has_serial
+      blocks:
+      - id: t_serials
+        type: MultipleSelector
+        properties:
+          title: Serial numbers to move
+          placeholder: Select the individual units
+          allowClear: true
+          options:
+            _request: serial_options_req.data.rows
+      - id: t_serial_text
+        type: TextArea
+        properties:
+          title: Or paste serial numbers (one per line)
+          placeholder: CARWHEEL-0001
+          rows: 2
+        events:
+          onChange:
+          - id: t_serial_text_set
+            type: SetState
+            params:
+              tSerialText:
+                _event: value
+      - id: t_serial_note
+        type: Markdown
+        properties:
+          content: Serial-tracked items require one serial number per unit. ERPNext rejects the Stock Entry when the serials are not Active in the source warehouse. Serials listed here come straight from ERPNext; the paste field exists for labels you scanned offline.
+    - id: t_selected_serials
+      type: Tag
+      visible:
+        _gt:
+        - _state: tSerials.length
+        - 0
+      properties:
+        color: purple
+        title:
+          _string.concat:
+          - "Selected serials: "
+          - _state: tSerials.length
+    - id: t_confirm_alert
+      type: Alert
+      visible:
+        _state: tSubmit
+      properties:
+        type: warning
+        showIcon: true
+        message: This will submit the Stock Entry
+        description: Submitting moves stock in ERPNext immediately and cannot be undone without a reversing entry. Make sure the item, warehouses, quantity and serials are correct.
+    - id: t_actions
+      type: Box
+      style:
+        .element:
+          display: flex
+          flexWrap: wrap
+          gap: 8px
+          alignItems: center
+      blocks:
+      - id: t_run
+        type: Button
+        properties:
+          title:
+            _if:
+              test:
+                _state: tSubmit
+              then: Create and submit transfer
+              else: Create draft transfer
+          icon: ArrowLeftRight
+          color: primary
+          variant: solid
+          disabled:
+            _or:
+            - _not:
+                _state: tItem
+            - _not:
+                _state: tSource
+            - _not:
+                _state: tTarget
+            - _and:
+              - _state: tSubmit
+              - _not:
+                  _state: tConfirm
+        events:
+          onClick:
+          - id: t_run_result_clear
+            type: SetState
+            params:
+              transferResult: null
+          - id: t_run_request
+            type: Request
+            params: transfer_req
+          - id: t_run_store
+            type: SetState
+            params:
+              transferResult:
+                _request: transfer_req.data
+          - id: t_run_movements
+            type: Request
+            params: movements_req
+      - id: t_confirm
+        type: CheckboxSwitch
+        visible:
+          _state: tSubmit
+        properties:
+          title: I understand this submits the document
+        events:
+          onChange:
+          - id: t_confirm_set
+            type: SetState
+            params:
+              tConfirm:
+                _event: value
+      - id: t_clear
+        type: Button
+        properties:
+          title: Clear form
+          variant: outlined
+        events:
+          onClick:
+          - id: t_clear_state
+            type: SetState
+            params:
+              tItem: ""
+              tSource: ""
+              tTarget: ""
+              tQty: 1
+              tSerials: []
+              tSerialText: ""
+              tSubmit: false
+              tConfirm: false
+              transferResult: null
+    - id: transfer_result
+      type: Alert
+      visible:
+        _ne:
+        - _state: transferResult
+        - null
+      properties:
+        type:
+          _if:
+            test:
+              _eq:
+              - _state: transferResult.docstatus
+              - 1
+            then: success
+            else: info
+        showIcon: true
+        message:
+          _state: transferResult.message
+        description:
+          _string.concat:
+          - "Status: "
+          - _state: transferResult.status
+          - " | ERPNext document: "
+          - _state: transferResult.name
+    - id: transfer_link
+      type: Button
+      visible:
+        _ne:
+        - _state: transferResult
+        - null
+      properties:
+        title: Open Stock Entry in ERPNext
+        icon: ExternalLink
+        variant: outlined
+      events:
+        onClick:
+        - id: transfer_link_open
+          type: Link
+          params:
+            url:
+              _state: transferResult.url
+            newTab: true

@@ -1,0 +1,86 @@
+id: floor
+type: PageSidebarLayout
+properties:
+  title: 3D Floor
+  padding: compact
+  siderStorageKey: erpnext
+  sider:
+    width: 260
+    collapsible: true
+  logo:
+    src: /logo.svg
+    srcMobile: /logo-mark.svg
+    alt: ERP Copilot
+    style:
+      height: 34px
+      width: auto
+  breadcrumb:
+    list:
+    - label: ERPNext Control Centre
+    - label: 3D Warehouse Floor
+  menu:
+    links:
+      _ref: menus/main.yaml
+blocks:
+- id: page_box
+  type: Box
+  style:
+    .element:
+      display: flex
+      flexDirection: column
+      gap: 16px
+  blocks:
+  - id: header
+    type: Box
+    style:
+      .element:
+        display: flex
+        flexWrap: wrap
+        gap: 16px
+        alignItems: flex-start
+        justifyContent: space-between
+    class:
+      .element: page-hero
+    blocks:
+    - id: header_left
+      type: Box
+      style:
+        .element:
+          display: flex
+          flexDirection: column
+          gap: 4px
+      blocks:
+      - id: page_title
+        type: Title
+        properties:
+          content: 3D warehouse floor
+          level: 3
+      - id: page_desc
+        type: Markdown
+        properties:
+          content: Supplier trucks at the receiving dock, Stores and Work In Progress silos, workbenches with open Job Cards, the Finished Goods store, then delivery trucks at the dispatch dock - read live from ERPNext through the Copilot data service every 30 seconds. Read-only.
+    - id: open_full
+      type: Button
+      properties:
+        title: Open full screen
+        icon: Maximize2
+        variant: outlined
+      events:
+        onClick:
+        - id: open_floor_tab
+          type: Link
+          params:
+            url: http://127.0.0.1:4010/floor
+            newTab: true
+  - id: floor_frame
+    type: DangerousHtml
+    properties:
+      DOMPurifyOptions:
+        ADD_TAGS:
+        - iframe
+        ADD_ATTR:
+        - allow
+        - allowfullscreen
+        - frameborder
+      html: |-
+        <iframe src="http://127.0.0.1:4010/floor" title="3D warehouse floor" allowfullscreen frameborder="0" style="width:100%;height:calc(100vh - 220px);min-height:640px;border:1px solid var(--cp-line, #2C2D38);border-radius:14px;background:#101116;display:block"></iframe>

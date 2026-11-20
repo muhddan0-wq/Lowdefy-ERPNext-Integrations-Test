@@ -1,0 +1,707 @@
+id: scan
+type: PageSidebarLayout
+properties:
+  title: Scanner
+  padding: compact
+  siderStorageKey: erpnext
+  sider:
+    width: 260
+    collapsible: true
+  logo:
+    src: /logo.svg
+    srcMobile: /logo-mark.svg
+    alt: ERP Copilot
+    style:
+      height: 34px
+      width: auto
+  breadcrumb:
+    list:
+    - label: ERPNext Control Centre
+    - label: QR / Barcode Scanner
+  menu:
+    links:
+      _ref: menus/main.yaml
+requests:
+- id: lookup_req
+  type: AxiosHttp
+  connectionId: copilot
+  payload:
+    code:
+      _state: scanCode
+  properties:
+    url: /lookup
+    timeout: 40000
+    params:
+      code:
+        _payload: code
+events:
+  onInit:
+  - id: scan_state
+    type: SetState
+    params:
+      scanCode:
+        _if_none:
+        - _url_query: code
+        - ""
+  onInitAsync:
+  - id: scan_lookup_init
+    type: Request
+    params: lookup_req
+blocks:
+- id: page_box
+  type: Box
+  blocks:
+  - id: header
+    type: Box
+    style:
+      .element:
+        display: flex
+        flexWrap: wrap
+        gap: 16px
+        alignItems: flex-start
+        justifyContent: space-between
+    blocks:
+    - id: header_left
+      type: Box
+      style:
+        .element:
+          display: flex
+          flexDirection: column
+          gap: 4px
+      blocks:
+      - id: page_title
+        type: Title
+        properties:
+          content: QR / Barcode scanner
+          level: 3
+      - id: page_desc
+        type: Markdown
+        properties:
+          content: Scan a unit label with the camera, or type an item code or serial number. Every lookup runs against ERPNext - no local shadow records.
+    class:
+      .element: page-hero
+  - id: scanner_card
+    type: Card
+    properties:
+      title: Identify a unit or item
+      size: small
+    blocks:
+    - id: scanner_body
+      type: Box
+      style:
+        .element:
+          display: flex
+          flexDirection: column
+          gap: 12px
+      blocks:
+      - id: camera_row
+        type: Box
+        style:
+          .element:
+            display: flex
+            flexWrap: wrap
+            gap: 8px
+            alignItems: center
+        blocks:
+        - id: camera_btn
+          type: Button
+          properties:
+            title: Open camera scanner
+            icon: Camera
+            color: primary
+            variant: solid
+          events:
+            onClick:
+            - id: open_camera
+              type: Link
+              params:
+                url:
+                  _string.concat:
+                  - http://127.0.0.1:4010/scanner?app=
+                  - _location: origin
+                newTab: true
+        - id: camera_note
+          type: Markdown
+          properties:
+            content: The camera opens in a separate page served by the local helper. It uses the built-in BarcodeDetector when available and falls back to the bundled jsQR decoder, so it works in Chrome, Edge, Firefox and Safari. Allow camera access, then the scanned code returns here as `/scan?code=...`.
+      - id: manual_row
+        type: Box
+        blocks:
+        - id: scan_input
+          type: TextInput
+          properties:
+            title: Item code or serial number
+            placeholder: e.g. FRM-001 or CARWHEEL-0002
+            allowClear: true
+          events:
+            onChange:
+            - id: scan_code_set
+              type: SetState
+              params:
+                scanCode:
+                  _event: value
+            onPressEnter:
+            - id: scan_enter_lookup
+              type: Request
+              params: lookup_req
+        - id: scan_lookup_btn
+          type: Button
+          properties:
+            title: Look up
+            icon: Search
+            color: primary
+            variant: solid
+          events:
+            onClick:
+            - id: scan_lookup_run
+              type: Request
+              params: lookup_req
+          class:
+            block: self-end
+        - id: scan_clear_btn
+          type: Button
+          properties:
+            title: Clear
+            variant: outlined
+          events:
+            onClick:
+            - id: scan_clear_set
+              type: SetState
+              params:
+                scanCode: ""
+            - id: scan_clear_run
+              type: Request
+              params: lookup_req
+          class:
+            block: self-end
+        class:
+          .element: grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-3 items-end
+      - id: scan_hint
+        type: Markdown
+        properties:
+          content: "Tip: an item code identifies a product; a serial number identifies one physical unit. If the item is not serial tracked, ERPNext has no per-unit records to show."
+  - id: empty_state
+    type: Alert
+    visible:
+      _eq:
+      - _state: scanCode
+      - ""
+    properties:
+      type: info
+      showIcon: true
+      message: Waiting for a scan
+      description: Open the camera scanner or type an identifier above. The result panel shows the ERPNext record, its warehouse, availability, movements and related exceptions.
+  - id: not_found
+    type: Box
+    style:
+      .element:
+        display: flex
+        flexDirection: column
+        gap: 12px
+    visible:
+      _and:
+      - _ne:
+        - _state: scanCode
+        - ""
+      - _eq:
+        - _request: lookup_req.data.found
+        - false
+    blocks:
+    - id: not_found_alert
+      type: Alert
+      properties:
+        type: warning
+        showIcon: true
+        message: No matching ERPNext record
+        description:
+          _request: lookup_req.data.reason
+    - id: suggestions_card
+      type: Card
+      properties:
+        title: Closest item matches
+        size: small
+      blocks:
+      - id: suggestions_table
+        type: Table
+        properties:
+          rowKey: code
+          size: compact
+          bordered: true
+          pagination: false
+          emptyText: No item code or product name contains that text.
+          columns:
+          - key: code
+            title: Item code
+            width: 160
+          - key: name
+            title: Product
+            wrap: true
+            flex: 1
+          - key: group
+            title: Group
+            width: 150
+          data:
+            _request: lookup_req.data.suggestions
+      - id: suggestions_actions
+        type: Box
+        style:
+          .element:
+            display: flex
+            flexWrap: wrap
+            gap: 8px
+        blocks:
+        - id: use_first_hint
+          type: Markdown
+          properties:
+            content: Copy a code above into the lookup field to open it.
+  - id: serial_result
+    type: Box
+    visible:
+      _eq:
+      - _request: lookup_req.data.type
+      - serial
+    blocks:
+    - id: serial_main_card
+      type: Card
+      style:
+        .element:
+          display: flex
+          flexWrap: wrap
+          gap: 12px
+          alignItems: center
+          gridColumn: span 2
+      properties:
+        title: Individual unit
+      blocks:
+      - id: serial_main
+        type: Box
+        style:
+          .element:
+            display: flex
+            flexDirection: column
+            gap: 16px
+        blocks:
+        - id: serial_head
+          type: Box
+          style:
+            .element:
+              display: flex
+              flexWrap: wrap
+              gap: 12px
+              alignItems: flex-start
+              justifyContent: space-between
+          blocks:
+          - id: serial_head_left
+            type: Box
+            style:
+              .element:
+                display: flex
+                flexDirection: column
+                gap: 4px
+            blocks:
+            - id: serial_title
+              type: Title
+              properties:
+                level: 4
+                content:
+                  _request: lookup_req.data.serial.serial
+              class:
+                .element: section-title
+            - id: serial_sub
+              type: Markdown
+              properties:
+                content:
+                  _string.concat:
+                  - "**Product:** "
+                  - _request: lookup_req.data.item.name
+                  - |2-
+                      
+                    **Item code:** 
+                  - _request: lookup_req.data.serial.item_code
+                  - |2-
+                      
+                    **Warehouse:** 
+                  - _if_none:
+                    - _request: lookup_req.data.serial.warehouse
+                    - not assigned to a warehouse
+                  - |2-
+                      
+                    **Availability:** 
+                  - _request: lookup_req.data.serial.status
+          - id: serial_tags
+            type: Box
+            style:
+              .element:
+                display: flex
+                flexWrap: wrap
+                gap: 8px
+            blocks:
+            - id: serial_status_tag
+              type: Tag
+              properties:
+                color:
+                  _if:
+                    test:
+                      _eq:
+                      - _request: lookup_req.data.serial.status
+                      - Active
+                    then: green
+                    else: default
+                title:
+                  _string.concat:
+                  - "Status: "
+                  - _if_none:
+                    - _request: lookup_req.data.serial.status
+                    - Unknown
+            - id: serial_serial_tag
+              type: Tag
+              properties:
+                color: purple
+                title: Serial tracked
+        - id: serial_values
+          type: Box
+          blocks:
+          - id: serial_avail_card
+            type: Card
+            blocks:
+            - id: serial_avail
+              type: Statistic
+              properties:
+                title: Item available
+                value:
+                  _request: lookup_req.data.total_available
+            class:
+              .element: kpi kpi-sky
+          - id: serial_value_card
+            type: Card
+            blocks:
+            - id: serial_value
+              type: Statistic
+              properties:
+                title: Stock value
+                precision: 2
+                value:
+                  _request: lookup_req.data.stock_value
+            class:
+              .element: kpi kpi-violet
+          - id: serial_wh_card
+            type: Card
+            blocks:
+            - id: serial_wh
+              type: Statistic
+              properties:
+                title: Warehouses
+                value:
+                  _request: lookup_req.data.bins.length
+            class:
+              .element: kpi kpi-mint
+          - id: serial_exc_card
+            type: Card
+            blocks:
+            - id: serial_exc
+              type: Statistic
+              properties:
+                title: Open exceptions
+                value:
+                  _request: lookup_req.data.exceptions.length
+            class:
+              .element: kpi kpi-amber
+          class:
+            .element: grid grid-cols-2 lg:grid-cols-4 gap-4
+        - id: serial_tabs
+          type: Tabs
+          class:
+            .element: tabs-pill
+          properties:
+            tabs:
+            - key: stock
+              title: Warehouse stock
+              icon: Warehouse
+            - key: moves
+              title: Movement history
+              icon: ArrowLeftRight
+            - key: exc
+              title: Exceptions
+              icon: AlertTriangle
+            animated: false
+          slots:
+            stock:
+              blocks:
+              - id: serial_tabs_stock
+                type: Box
+                class:
+                  .element: flex flex-col gap-4 pt-1
+                blocks:
+                - id: serial_bins
+                  type: Table
+                  properties:
+                    rowKey: warehouse
+                    size: compact
+                    bordered: true
+                    pagination: false
+                    emptyText: No bin records.
+                    columns:
+                    - key: warehouse
+                      title: Warehouse
+                      flex: 1
+                      minWidth: 190
+                    - key: available
+                      title: Available
+                      type: number
+                      width: 100
+                    - key: reorder_level
+                      title: Reorder level
+                      type: number
+                      width: 120
+                    - key: status_label
+                      title: Status
+                      width: 130
+                    data:
+                      _request: lookup_req.data.bins
+            moves:
+              blocks:
+              - id: serial_tabs_moves
+                type: Box
+                class:
+                  .element: flex flex-col gap-4 pt-1
+                blocks:
+                - id: serial_moves
+                  type: Table
+                  properties:
+                    rowKey: name
+                    size: compact
+                    bordered: true
+                    pagination: false
+                    emptyText: No movement lines reference this serial number.
+                    columns:
+                    - key: name
+                      title: Document
+                      flex: 1
+                      minWidth: 170
+                    - key: date
+                      title: Date
+                      type: date
+                      width: 110
+                    - key: type
+                      title: Type
+                      width: 150
+                    - key: qty
+                      title: Qty
+                      type: number
+                      width: 80
+                    - key: from_warehouse
+                      title: From
+                      width: 160
+                    - key: to_warehouse
+                      title: To
+                      width: 160
+                    data:
+                      _request: lookup_req.data.movements
+            exc:
+              blocks:
+              - id: serial_tabs_exc
+                type: Box
+                class:
+                  .element: flex flex-col gap-4 pt-1
+                blocks:
+                - id: serial_exc_table
+                  type: Table
+                  properties:
+                    rowKey: id
+                    size: compact
+                    bordered: true
+                    pagination: false
+                    emptyText: No open exceptions for this item.
+                    columns:
+                    - key: id
+                      title: Exception
+                      width: 110
+                    - key: severity
+                      title: Severity
+                      type: status
+                      width: 110
+                      options:
+                        critical:
+                          label: Critical
+                          color: "#f87171"
+                        high:
+                          label: High
+                          color: "#fbbf24"
+                        medium:
+                          label: Medium
+                          color: "#60a5fa"
+                        low:
+                          label: Low
+                          color: "#9ca3af"
+                    - key: title
+                      title: Issue
+                      wrap: true
+                      flex: 1
+                    data:
+                      _request: lookup_req.data.exceptions
+    - id: serial_qr_card
+      type: Card
+      properties:
+        title: Unit QR label
+      blocks:
+      - id: serial_qr_body
+        type: Box
+        style:
+          .element:
+            display: flex
+            flexDirection: column
+            gap: 12px
+            alignItems: center
+        blocks:
+        - id: serial_qr
+          type: QRCode
+          properties:
+            value:
+              _request: lookup_req.data.serial.qr_value
+            size: 220
+            bgColor: "#FFFFFF"
+            color: "#000000"
+            errorLevel: M
+        - id: serial_qr_code
+          type: Markdown
+          properties:
+            content:
+              _string.concat:
+              - "**"
+              - _request: lookup_req.data.serial.serial
+              - |
+                **  
+              - _request: lookup_req.data.item.name
+              - |2-
+                  
+                Item: 
+              - _request: lookup_req.data.serial.item_code
+        - id: serial_qr_note
+          type: Markdown
+          properties:
+            content: The QR encodes the ERPNext Serial No. Scanning it opens this page with the unit pre-loaded. Use your browser print dialog (Ctrl+P) to print the label.
+        - id: serial_open_btn
+          type: Button
+          properties:
+            title: Open item in ERPNext
+            icon: ExternalLink
+            variant: outlined
+          events:
+            onClick:
+            - id: serial_open_link
+              type: Link
+              params:
+                url:
+                  _request: lookup_req.data.item.url
+                newTab: true
+    class:
+      .element: grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4
+  - id: item_result
+    type: Box
+    style:
+      .element:
+        display: flex
+        flexDirection: column
+        gap: 16px
+    visible:
+      _eq:
+      - _request: lookup_req.data.type
+      - item
+    blocks:
+    - id: item_result_alert
+      type: Alert
+      properties:
+        type: info
+        showIcon: true
+        message: This is an item code, not an individual unit
+        description:
+          _string.concat:
+          - "ERPNext returned the item master for "
+          - _request: lookup_req.data.item.code
+          - . Per-unit tracking needs ERPNext serial numbers enabled on the item and units received with serial numbers.
+    - id: item_result_card
+      type: Card
+      properties:
+        title: Item record
+      blocks:
+      - id: item_result_body
+        type: Box
+        style:
+          .element:
+            display: flex
+            flexDirection: column
+            gap: 16px
+        blocks:
+        - id: item_result_title
+          type: Title
+          properties:
+            level: 4
+            content:
+              _request: lookup_req.data.item.name
+          class:
+            .element: section-title
+        - id: item_result_meta
+          type: Markdown
+          properties:
+            content:
+              _string.concat:
+              - "**Item code:** "
+              - _request: lookup_req.data.item.code
+              - |2-
+                  
+                **Item group:** 
+              - _request: lookup_req.data.item.group
+              - |2-
+                  
+                **UOM:** 
+              - _request: lookup_req.data.item.uom
+              - |2-
+                  
+                **Serial tracked:** 
+              - _if:
+                  test:
+                    _request: lookup_req.data.item.has_serial
+                  then: Yes
+                  else: No
+        - id: item_result_bins
+          type: Table
+          properties:
+            rowKey: warehouse
+            size: compact
+            bordered: true
+            pagination: false
+            emptyText: No bin records.
+            columns:
+            - key: warehouse
+              title: Warehouse
+              flex: 1
+              minWidth: 190
+            - key: available
+              title: Available
+              type: number
+              width: 100
+            - key: reorder_level
+              title: Reorder level
+              type: number
+              width: 120
+            - key: status_label
+              title: Status
+              width: 130
+            data:
+              _request: lookup_req.data.bins
+        - id: item_result_open_btn
+          type: Button
+          properties:
+            title: Open item in ERPNext
+            icon: ExternalLink
+            variant: outlined
+          events:
+            onClick:
+            - id: item_result_open_link
+              type: Link
+              params:
+                url:
+                  _request: lookup_req.data.item.url
+                newTab: true
+  class:
+    .element: flex flex-col gap-5

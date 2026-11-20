@@ -1,0 +1,522 @@
+id: orders
+type: PageSidebarLayout
+properties:
+  title: Orders
+  padding: compact
+  siderStorageKey: erpnext
+  sider:
+    width: 260
+    collapsible: true
+  logo:
+    src: /logo.svg
+    srcMobile: /logo-mark.svg
+    alt: ERP Copilot
+    style:
+      height: 34px
+      width: auto
+  breadcrumb:
+    list:
+    - label: ERPNext Control Centre
+    - label: Orders
+  menu:
+    links:
+      _ref: menus/main.yaml
+requests:
+- id: orders_req
+  type: AxiosHttp
+  connectionId: erpnext
+  properties:
+    url: /api/resource/Sales Order
+    timeout: 30000
+    params:
+      limit_page_length: 200
+      order_by: creation desc
+      fields: '["name","customer","status","transaction_date","delivery_date","grand_total","currency"]'
+- id: wo_req
+  type: AxiosHttp
+  connectionId: erpnext
+  properties:
+    url: /api/resource/Work Order
+    timeout: 30000
+    params:
+      limit_page_length: 200
+      order_by: creation desc
+      fields: '["name","production_item","item_name","qty","produced_qty","status","planned_start_date"]'
+- id: purchasing_req
+  type: AxiosHttp
+  connectionId: copilot
+  properties:
+    url: /purchasing
+    timeout: 90000
+events:
+  onInitAsync:
+  - id: init_o
+    type: Request
+    params: orders_req
+  - id: init_w
+    type: Request
+    params: wo_req
+  - id: init_p
+    type: Request
+    params: purchasing_req
+blocks:
+- id: page
+  type: Box
+  class:
+    .element: flex flex-col gap-5
+  blocks:
+  - id: hero
+    type: Box
+    class:
+      .element: page-hero flex flex-col gap-1
+    blocks:
+    - id: hero_title
+      type: Title
+      properties:
+        content: Orders
+        level: 3
+    - id: subtitle
+      type: Paragraph
+      properties:
+        content: Sales orders, work orders and reorder suggestions in one place.
+  - id: main_tabs
+    type: Tabs
+    class:
+      .element: page-tabs
+    properties:
+      tabs:
+      - key: sales
+        title: Sales orders
+        icon: ShoppingCart
+      - key: production
+        title: Production
+        icon: Factory
+      - key: purchasing
+        title: Purchasing
+        icon: ShoppingBag
+      destroyOnHidden: false
+    slots:
+      sales:
+        blocks:
+        - id: so_tab_body
+          type: Box
+          class:
+            .element: flex flex-col gap-5 pt-2
+          blocks:
+          - id: kpi_grid
+            type: Box
+            blocks:
+            - id: o_count_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: o_count
+                type: Statistic
+                properties:
+                  title: Orders loaded
+                  value:
+                    _array.length:
+                      _request: orders_req.data.data
+              class:
+                .element: kpi kpi-sky
+            - id: o_draft_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: o_draft
+                type: Statistic
+                properties:
+                  title: Draft
+                  value:
+                    _array.length:
+                      _array.filter:
+                        on:
+                          _request: orders_req.data.data
+                        callback:
+                          _function:
+                            __eq:
+                            - __args: 0.status
+                            - Draft
+              class:
+                .element: kpi kpi-violet
+            - id: o_todeliver_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: o_todeliver
+                type: Statistic
+                properties:
+                  title: To deliver
+                  value:
+                    _array.length:
+                      _array.filter:
+                        on:
+                          _request: orders_req.data.data
+                        callback:
+                          _function:
+                            __eq:
+                            - __args: 0.status
+                            - To Deliver
+              class:
+                .element: kpi kpi-mint
+            class:
+              .element: grid grid-cols-2 lg:grid-cols-3 gap-4
+          - id: orders_table
+            type: Table
+            properties:
+              data:
+                _request: orders_req.data.data
+              rowKey: name
+              size: compact
+              bordered: true
+              pagination: true
+              pageSize: 25
+              emptyText: No rows.
+              columns:
+              - key: name
+                title: Sales order
+                wrap: true
+                flex: 1
+                minWidth: 190
+              - key: customer
+                title: Customer
+                wrap: true
+                flex: 1
+                minWidth: 240
+              - key: status
+                title: Status
+                width: 140
+              - key: transaction_date
+                title: Date
+                width: 120
+              - key: delivery_date
+                title: Delivery
+                width: 120
+              - key: grand_total
+                title: Total
+                width: 120
+              - key: currency
+                title: Cur
+                width: 80
+      production:
+        blocks:
+        - id: wo_tab_body
+          type: Box
+          class:
+            .element: flex flex-col gap-5 pt-2
+          blocks:
+          - id: wo_kpi_grid
+            type: Box
+            blocks:
+            - id: w_count_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: w_count
+                type: Statistic
+                properties:
+                  title: Work orders
+                  value:
+                    _array.length:
+                      _request: wo_req.data.data
+              class:
+                .element: kpi kpi-sky
+            - id: w_open_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: w_open
+                type: Statistic
+                properties:
+                  title: Open
+                  value:
+                    _array.length:
+                      _array.filter:
+                        on:
+                          _request: wo_req.data.data
+                        callback:
+                          _function:
+                            __eq:
+                            - __args: 0.status
+                            - Not Started
+              class:
+                .element: kpi kpi-violet
+            - id: w_prog_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: w_prog
+                type: Statistic
+                properties:
+                  title: In process
+                  value:
+                    _array.length:
+                      _array.filter:
+                        on:
+                          _request: wo_req.data.data
+                        callback:
+                          _function:
+                            __eq:
+                            - __args: 0.status
+                            - In Process
+              class:
+                .element: kpi kpi-mint
+            class:
+              .element: grid grid-cols-2 lg:grid-cols-3 gap-4
+          - id: wo_table
+            type: Table
+            properties:
+              data:
+                _request: wo_req.data.data
+              rowKey: name
+              size: compact
+              bordered: true
+              pagination: true
+              pageSize: 25
+              emptyText: No rows.
+              columns:
+              - key: name
+                title: Work order
+                wrap: true
+                flex: 1
+                minWidth: 190
+              - key: item_name
+                title: Product
+                wrap: true
+                flex: 1
+                minWidth: 240
+              - key: qty
+                title: Qty
+                width: 90
+              - key: produced_qty
+                title: Produced
+                width: 110
+              - key: status
+                title: Status
+                width: 140
+              - key: planned_start_date
+                title: Start
+                width: 150
+      purchasing:
+        blocks:
+        - id: po_tab_body
+          type: Box
+          class:
+            .element: flex flex-col gap-5 pt-2
+          blocks:
+          - id: po_kpi_grid
+            type: Box
+            blocks:
+            - id: c_crit_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: c_crit
+                type: Statistic
+                properties:
+                  title: Critical stock
+                  value:
+                    _request: purchasing_req.data.counts.critical
+                  theme:
+                    colorText: "#f87171"
+              class:
+                .element: kpi kpi-coral
+            - id: c_soon_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: c_soon
+                type: Statistic
+                properties:
+                  title: Low stock
+                  value:
+                    _request: purchasing_req.data.counts.soon
+                  theme:
+                    colorText: "#fbbf24"
+              class:
+                .element: kpi kpi-amber
+            - id: c_ok_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: c_ok
+                type: Statistic
+                properties:
+                  title: Healthy stock
+                  value:
+                    _request: purchasing_req.data.counts.ok
+                  theme:
+                    colorText: "#34d399"
+              class:
+                .element: kpi kpi-mint
+            - id: c_total_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: c_total
+                type: Statistic
+                properties:
+                  title: Tracked items
+                  value:
+                    _request: purchasing_req.data.counts.total
+              class:
+                .element: kpi kpi-amber
+            - id: c_sup_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: c_sup
+                type: Statistic
+                properties:
+                  title: Suppliers
+                  value:
+                    _request: purchasing_req.data.counts.suppliers
+              class:
+                .element: kpi kpi-pink
+            class:
+              .element: grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4
+          - id: meta_grid
+            type: Box
+            blocks:
+            - id: m_win_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: m_win
+                type: Statistic
+                properties:
+                  title: Sales window
+                  value:
+                    _request: purchasing_req.data.window_days
+                  suffix: d
+              class:
+                .element: kpi kpi-sky
+            - id: m_lead_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: m_lead
+                type: Statistic
+                properties:
+                  title: Lead time
+                  value:
+                    _request: purchasing_req.data.lead_time_days
+                  suffix: d
+              class:
+                .element: kpi kpi-violet
+            - id: m_safety_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: m_safety
+                type: Statistic
+                properties:
+                  title: Safety stock
+                  value:
+                    _request: purchasing_req.data.safety_stock_days
+                  suffix: d
+              class:
+                .element: kpi kpi-mint
+            - id: m_cover_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: m_cover
+                type: Statistic
+                properties:
+                  title: Cover days
+                  value:
+                    _request: purchasing_req.data.cover_days
+                  suffix: d
+              class:
+                .element: kpi kpi-amber
+            class:
+              .element: grid grid-cols-2 lg:grid-cols-4 gap-4
+          - id: t_lines
+            type: Title
+            properties:
+              content: Reorder lines
+              level: 4
+            class:
+              .element: section-title
+          - id: lines_table
+            type: Table
+            properties:
+              data:
+                _request: purchasing_req.data.lines
+              rowKey: item_code
+              size: compact
+              bordered: true
+              pagination: true
+              pageSize: 25
+              emptyText: No rows.
+              columns:
+              - key: item_code
+                title: Item code
+                wrap: true
+                flex: 1
+                minWidth: 170
+              - key: item_name
+                title: Product
+                wrap: true
+                flex: 1
+                minWidth: 240
+              - key: supplier
+                title: Supplier
+                wrap: true
+                flex: 1
+                minWidth: 220
+              - key: sold_qty
+                title: Sold
+                width: 90
+              - key: avg_daily
+                title: Avg / day
+                width: 110
+              - key: stock
+                title: Stock
+                width: 90
+              - key: available
+                title: Available
+                width: 110
+          - id: t_groups
+            type: Title
+            properties:
+              content: Grouped by supplier
+              level: 4
+            class:
+              .element: section-title
+          - id: groups_table
+            type: Table
+            properties:
+              data:
+                _request: purchasing_req.data.groups
+              rowKey: supplier
+              size: compact
+              bordered: true
+              pagination: true
+              pageSize: 15
+              emptyText: No supplier groups returned.
+              columns:
+              - key: supplier
+                title: Supplier
+                wrap: true
+                flex: 1
+                minWidth: 300
+              - key: priority
+                title: Priority
+                width: 140

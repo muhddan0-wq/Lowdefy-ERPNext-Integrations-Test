@@ -1,0 +1,736 @@
+id: settings
+type: PageSidebarLayout
+properties:
+  title: Settings
+  padding: compact
+  siderStorageKey: erpnext
+  sider:
+    width: 260
+    collapsible: true
+  logo:
+    src: /logo.svg
+    srcMobile: /logo-mark.svg
+    alt: ERP Copilot
+    style:
+      height: 34px
+      width: auto
+  breadcrumb:
+    list:
+    - label: ERPNext Control Centre
+    - label: Settings
+  menu:
+    links:
+      _ref: menus/main.yaml
+requests:
+- id: settings_req
+  type: AxiosHttp
+  connectionId: copilot
+  properties:
+    url: /settings
+    timeout: 20000
+- id: save_req
+  type: AxiosHttp
+  connectionId: copilot
+  payload:
+    body:
+      company:
+        _state: company
+      default_reorder_level:
+        _state: default_reorder_level
+      pending_transfer_days:
+        _state: pending_transfer_days
+      unusual_qty_threshold:
+        _state: unusual_qty_threshold
+      expiring_batch_days:
+        _state: expiring_batch_days
+      delayed_po_days:
+        _state: delayed_po_days
+      reopen_cooldown_hours:
+        _state: reopen_cooldown_hours
+      trend_days:
+        _state: trend_days
+      draft_so_days:
+        _state: draft_so_days
+      sales_window_days:
+        _state: sales_window_days
+      lead_time_days:
+        _state: lead_time_days
+      safety_stock_days:
+        _state: safety_stock_days
+      cover_days:
+        _state: cover_days
+      actor:
+        _state: actor
+      role:
+        _state: role
+  properties:
+    url: /settings
+    method: put
+    timeout: 20000
+    data:
+      _payload: body
+- id: health_req
+  type: AxiosHttp
+  connectionId: copilot
+  properties:
+    url: /health
+    timeout: 10000
+- id: sys_health_req
+  type: AxiosHttp
+  connectionId: copilot
+  properties:
+    url: /health
+    timeout: 20000
+- id: err_req
+  type: AxiosHttp
+  connectionId: erpnext
+  properties:
+    url: /api/resource/Error Log
+    timeout: 30000
+    params:
+      limit_page_length: 100
+      order_by: creation desc
+      fields: '["name","method","error","creation"]'
+- id: audit_req
+  type: AxiosHttp
+  connectionId: copilot
+  properties:
+    url: /audit
+    timeout: 20000
+    params:
+      limit: 500
+events:
+  onInit:
+  - id: settings_state
+    type: SetState
+    params:
+      actor: inventory.manager
+      role: administrator
+      saveResult: null
+  onInitAsync:
+  - id: settings_fetch
+    type: Request
+    params: settings_req
+  - id: settings_seed
+    type: SetState
+    params:
+      company:
+        _request: settings_req.data.company
+      default_reorder_level:
+        _request: settings_req.data.default_reorder_level
+      pending_transfer_days:
+        _request: settings_req.data.pending_transfer_days
+      unusual_qty_threshold:
+        _request: settings_req.data.unusual_qty_threshold
+      expiring_batch_days:
+        _request: settings_req.data.expiring_batch_days
+      delayed_po_days:
+        _request: settings_req.data.delayed_po_days
+      reopen_cooldown_hours:
+        _request: settings_req.data.reopen_cooldown_hours
+      trend_days:
+        _request: settings_req.data.trend_days
+      draft_so_days:
+        _request: settings_req.data.draft_so_days
+      sales_window_days:
+        _request: settings_req.data.sales_window_days
+      lead_time_days:
+        _request: settings_req.data.lead_time_days
+      safety_stock_days:
+        _request: settings_req.data.safety_stock_days
+      cover_days:
+        _request: settings_req.data.cover_days
+  - id: settings_health
+    type: Request
+    params: health_req
+  - id: init_h
+    type: Request
+    params: sys_health_req
+  - id: init_e
+    type: Request
+    params: err_req
+  - id: fetch_audit
+    type: Request
+    params: audit_req
+blocks:
+- id: page
+  type: Box
+  class:
+    .element: flex flex-col gap-5
+  blocks:
+  - id: hero
+    type: Box
+    class:
+      .element: page-hero flex flex-col gap-1
+    blocks:
+    - id: hero_title
+      type: Title
+      properties:
+        content: Settings
+        level: 3
+    - id: subtitle
+      type: Paragraph
+      properties:
+        content: Detection rules, system health, ERPNext error log and the audit trail.
+  - id: main_tabs
+    type: Tabs
+    class:
+      .element: page-tabs
+    properties:
+      tabs:
+      - key: rules
+        title: Rules
+        icon: SlidersHorizontal
+      - key: system
+        title: System health
+        icon: Activity
+      - key: errors
+        title: Error log
+        icon: Bug
+      - key: audit
+        title: Audit log
+        icon: ScrollText
+      destroyOnHidden: false
+    slots:
+      rules:
+        blocks:
+        - id: set_tab_body
+          type: Box
+          class:
+            .element: flex flex-col gap-5 pt-2
+          blocks:
+          - id: toolbar
+            type: Box
+            class:
+              .element: flex flex-wrap items-end justify-end gap-2
+            blocks:
+            - id: settings_role
+              type: Selector
+              properties:
+                title: Acting role (demo identity)
+                allowClear: false
+                options:
+                - label: Administrator
+                  value: administrator
+                - label: Inventory manager
+                  value: inventory_manager
+              events:
+                onChange:
+                - id: settings_role_set
+                  type: SetState
+                  params:
+                    role:
+                      _event: value
+          - id: save_result_alert
+            type: Alert
+            visible:
+              _ne:
+              - _state: saveResult
+              - null
+            properties:
+              type: success
+              showIcon: true
+              closable: true
+              message: Settings saved
+              description:
+                _string.concat:
+                - "Reopen cooldown is now "
+                - _state: saveResult.reopen_cooldown_hours
+                - " hours and the unusual movement threshold is "
+                - _state: saveResult.unusual_qty_threshold
+                - " units. Run an exception scan to apply the new rules."
+          - id: settings_card
+            type: Card
+            properties:
+              title: Detection and display rules
+            blocks:
+            - id: settings_body
+              type: Box
+              style:
+                .element:
+                  display: flex
+                  flexDirection: column
+                  gap: 16px
+              blocks:
+              - id: settings_grid
+                type: Box
+                blocks:
+                - id: company
+                  type: TextInput
+                  properties:
+                    title: ERPNext company
+                    allowClear: false
+                - id: default_reorder_level
+                  type: NumberInput
+                  properties:
+                    title: Default reorder level
+                    min: 0
+                    step: 1
+                - id: pending_transfer_days
+                  type: NumberInput
+                  properties:
+                    title: Draft transfer age (days)
+                    min: 0
+                    step: 1
+                - id: unusual_qty_threshold
+                  type: NumberInput
+                  properties:
+                    title: Unusual movement threshold (units)
+                    min: 1
+                    step: 1
+                - id: expiring_batch_days
+                  type: NumberInput
+                  properties:
+                    title: Batch expiry warning (days)
+                    min: 1
+                    step: 1
+                - id: delayed_po_days
+                  type: NumberInput
+                  properties:
+                    title: Purchase order grace (days)
+                    min: 0
+                    step: 1
+                - id: reopen_cooldown_hours
+                  type: NumberInput
+                  properties:
+                    title: Reopen cooldown (hours)
+                    min: 0
+                    step: 1
+                - id: trend_days
+                  type: NumberInput
+                  properties:
+                    title: Trend window (days)
+                    min: 1
+                    step: 1
+                - id: draft_so_days
+                  type: NumberInput
+                  properties:
+                    title: Stale draft order age (days)
+                    min: 0
+                    step: 1
+                - id: sales_window_days
+                  type: NumberInput
+                  properties:
+                    title: Sales velocity window (days)
+                    min: 1
+                    step: 1
+                - id: lead_time_days
+                  type: NumberInput
+                  properties:
+                    title: Supplier lead time (days)
+                    min: 0
+                    step: 1
+                - id: safety_stock_days
+                  type: NumberInput
+                  properties:
+                    title: Safety stock (days)
+                    min: 0
+                    step: 1
+                - id: cover_days
+                  type: NumberInput
+                  properties:
+                    title: Target cover (days)
+                    min: 1
+                    step: 1
+                class:
+                  .element: grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4
+              - id: settings_note
+                type: Markdown
+                properties:
+                  content: The default reorder level is used only when an item has no warehouse-specific Item Reorder row. The purchase order grace lets you ignore orders that are only slightly late. The reopen cooldown stops a resolved issue from immediately reappearing.
+              - id: save_btn
+                type: Button
+                properties:
+                  title: Save settings
+                  icon: Save
+                  color: primary
+                  variant: solid
+                  disabled:
+                    _ne:
+                    - _state: role
+                    - administrator
+                events:
+                  onClick:
+                  - id: save_clear
+                    type: SetState
+                    params:
+                      saveResult: null
+                  - id: save_call
+                    type: Request
+                    params: save_req
+                  - id: save_store
+                    type: SetState
+                    params:
+                      saveResult:
+                        _request: save_req.data
+              - id: save_role_note
+                type: Markdown
+                properties:
+                  content: Only the administrator role can save settings. The helper enforces this on every PUT, so changing the selector to a non-administrator role makes the save call fail with HTTP 403 even if the button is clicked directly.
+          - id: security_card
+            type: Card
+            properties:
+              title: Security model and current limitation
+            blocks:
+            - id: security_note
+              type: Markdown
+              properties:
+                content: |
+                  Role checks are enforced by the helper service, not by hiding buttons:
+
+                  | Action | Administrator | Inventory manager | Employee | Finance |
+                  | --- | --- | --- | --- | --- |
+                  | View inventory, serials, movements | yes | yes | yes | yes |
+                  | Create / submit stock transfer | yes | yes | denied | denied |
+                  | Change exception status | yes | yes | denied | denied |
+                  | Change settings | yes | denied | denied | denied |
+
+                  **Known limitation:** this Lowdefy app does not have an identity provider configured, so the "acting role" selector is a demonstration identity, not authentication. In production, connect an auth provider (for example BetterAuth with a Mongo adapter, as supported by Lowdefy 7), map the signed-in user to ERPNext roles, and pass the verified role to the helper. The helper already refuses privileged actions from roles it does not recognise, so it is ready for that integration.
+      system:
+        blocks:
+        - id: sys_tab_body
+          type: Box
+          class:
+            .element: flex flex-col gap-5 pt-2
+          blocks:
+          - id: health_grid
+            type: Box
+            blocks:
+            - id: s_erp_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: s_erp
+                type: Statistic
+                properties:
+                  title: ERPNext
+                  value:
+                    _if:
+                      test:
+                        _eq:
+                        - _request: sys_health_req.data.erpnext.reachable
+                        - true
+                      then: Connected
+                      else: Unreachable
+                  theme:
+                    colorText: "#34d399"
+                  prefixIcon: PlugZap
+              class:
+                .element: kpi kpi-mint
+            - id: s_ver_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: s_ver
+                type: Statistic
+                properties:
+                  title: ERPNext version
+                  value:
+                    _if_none:
+                    - _request: sys_health_req.data.erpnext.erpnext_version
+                    - unknown
+                  prefixIcon: Tag
+              class:
+                .element: kpi kpi-violet
+            - id: s_frappe_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: s_frappe
+                type: Statistic
+                properties:
+                  title: Frappe version
+                  value:
+                    _if_none:
+                    - _request: sys_health_req.data.erpnext.frappe_version
+                    - unknown
+                  prefixIcon: Layers
+              class:
+                .element: kpi kpi-mint
+            - id: s_exc_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: s_exc
+                type: Statistic
+                properties:
+                  title: Exceptions stored
+                  value:
+                    _request: sys_health_req.data.database.exceptions
+                  prefixIcon: Database
+              class:
+                .element: kpi kpi-pink
+            - id: s_audit_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: s_audit
+                type: Statistic
+                properties:
+                  title: Audit entries
+                  value:
+                    _request: sys_health_req.data.database.audit_entries
+                  prefixIcon: ScrollText
+              class:
+                .element: kpi kpi-lime
+            class:
+              .element: grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4
+          - id: t_conn
+            type: Title
+            properties:
+              content: Endpoints
+              level: 4
+            class:
+              .element: section-title
+          - id: conn_grid
+            type: Box
+            blocks:
+            - id: e_erp_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: e_erp
+                type: Statistic
+                properties:
+                  title: ERPNext API
+                  value:
+                    _request: sys_health_req.data.erp_url
+                  prefixIcon: Server
+              class:
+                .element: kpi kpi-sky kpi-sm
+            - id: e_api_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: e_api
+                type: Statistic
+                properties:
+                  title: Copilot helper
+                  value: 127.0.0.1:4010
+                  prefixIcon: Cpu
+              class:
+                .element: kpi kpi-violet kpi-sm
+            - id: e_app_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: e_app
+                type: Statistic
+                properties:
+                  title: Control Centre
+                  value:
+                    _request: sys_health_req.data.app_url
+                  prefixIcon: LayoutDashboard
+              class:
+                .element: kpi kpi-mint kpi-sm
+            - id: e_scan_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: e_scan
+                type: Statistic
+                properties:
+                  title: Camera scanner
+                  value:
+                    _request: sys_health_req.data.scanner_url
+                  prefixIcon: ScanLine
+              class:
+                .element: kpi kpi-amber kpi-sm
+            class:
+              .element: grid grid-cols-2 lg:grid-cols-4 gap-4
+          - id: t_settings
+            type: Title
+            properties:
+              content: Runtime settings
+              level: 4
+            class:
+              .element: section-title
+          - id: settings_table
+            type: Table
+            properties:
+              data:
+              - key: Company
+                value:
+                  _request: sys_health_req.data.settings.company
+              - key: Trend window (days)
+                value:
+                  _request: sys_health_req.data.settings.trend_days
+              - key: Draft SO age (days)
+                value:
+                  _request: sys_health_req.data.settings.draft_so_days
+              - key: Sales window (days)
+                value:
+                  _request: sys_health_req.data.settings.sales_window_days
+              - key: Lead time (days)
+                value:
+                  _request: sys_health_req.data.settings.lead_time_days
+              - key: Safety stock (days)
+                value:
+                  _request: sys_health_req.data.settings.safety_stock_days
+              - key: Cover days
+                value:
+                  _request: sys_health_req.data.settings.cover_days
+              rowKey: key
+              size: compact
+              bordered: true
+              pagination: true
+              pageSize: 10
+              emptyText: No rows.
+              columns:
+              - key: key
+                title: Setting
+                flex: 1
+                minWidth: 260
+              - key: value
+                title: Value
+                width: 220
+      errors:
+        blocks:
+        - id: err_tab_body
+          type: Box
+          class:
+            .element: flex flex-col gap-5 pt-2
+          blocks:
+          - id: kpi_grid
+            type: Box
+            blocks:
+            - id: e_count_card
+              type: Card
+              properties:
+                size: small
+              blocks:
+              - id: e_count
+                type: Statistic
+                properties:
+                  title: Errors loaded
+                  value:
+                    _array.length:
+                      _request: err_req.data.data
+                  theme:
+                    colorText: "#fbbf24"
+              class:
+                .element: kpi kpi-amber
+            class:
+              .element: grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4
+          - id: err_table
+            type: Table
+            properties:
+              data:
+                _request: err_req.data.data
+              rowKey: name
+              size: compact
+              bordered: true
+              pagination: true
+              pageSize: 25
+              emptyText: No rows.
+              columns:
+              - key: creation
+                title: When
+                width: 170
+              - key: method
+                title: Method
+                wrap: true
+                flex: 1
+                minWidth: 260
+              - key: error
+                title: Error
+                wrap: false
+                flex: 1
+                minWidth: 620
+      audit:
+        blocks:
+        - id: aud_tab_body
+          type: Box
+          class:
+            .element: flex flex-col gap-5 pt-2
+          blocks:
+          - id: toolbar
+            type: Box
+            class:
+              .element: flex flex-wrap items-end justify-end gap-2
+            blocks:
+            - id: refresh_btn
+              type: Button
+              properties:
+                title: Refresh
+                icon: RefreshCw
+                variant: outlined
+              events:
+                onClick:
+                - id: refresh_audit
+                  type: Request
+                  params: audit_req
+          - id: audit_card
+            type: Card
+            properties:
+              padding: none
+            blocks:
+            - id: audit_table
+              type: Table
+              properties:
+                rowKey: id
+                size: compact
+                bordered: true
+                pagination: true
+                pageSize: 25
+                toolbar:
+                  search: true
+                  filter: true
+                  sort: true
+                  columns: true
+                  density: true
+                  export: true
+                emptyText: No audit entries yet. Run a transfer, a scan or an exception action.
+                defaultView:
+                  sort:
+                  - key: ts
+                    desc: true
+                columns:
+                - key: ts
+                  title: When
+                  type: date
+                  width: 170
+                - key: actor
+                  title: Actor
+                  width: 150
+                - key: role
+                  title: Role
+                  width: 150
+                - key: action
+                  title: Action
+                  width: 200
+                - key: doctype
+                  title: DocType
+                  width: 150
+                - key: docname
+                  title: Document
+                  width: 180
+                - key: result
+                  title: Result
+                  type: status
+                  width: 110
+                  options:
+                    ok:
+                      label: OK
+                      color: "#16a34a"
+                    denied:
+                      label: Denied
+                      color: "#dc2626"
+                    failed:
+                      label: Failed
+                      color: "#dc2626"
+                - key: message
+                  title: Message
+                  wrap: true
+                  flex: 1
+                data:
+                  _request: audit_req.data.rows

@@ -1,0 +1,64 @@
+- id: grp_operations
+  type: MenuGroup
+  properties:
+    title: Operations
+  links:
+    - id: nav_overview
+      type: MenuLink
+      pageId: overview
+      properties:
+        title: Dashboard
+        icon: LayoutDashboard
+    - id: nav_inventory
+      type: MenuLink
+      pageId: inventory
+      properties:
+        title: Inventory
+        icon: Boxes
+    - id: nav_scan
+      type: MenuLink
+      pageId: scan
+      properties:
+        title: Scanner
+        icon: ScanLine
+    - id: nav_floor
+      type: MenuLink
+      pageId: floor
+      properties:
+        title: 3D Floor
+        icon: Box
+    - id: nav_movements
+      type: MenuLink
+      pageId: movements
+      properties:
+        title: Movements
+        icon: ArrowLeftRight
+    - id: nav_exceptions
+      type: MenuLink
+      pageId: exceptions
+      properties:
+        title: Exceptions
+        icon: AlertTriangle
+    - id: nav_orders
+      type: MenuLink
+      pageId: orders
+      properties:
+        title: Orders
+        icon: ShoppingCart
+    - id: nav_reports
+      type: MenuLink
+      pageId: reports
+      properties:
+        title: Reports
+        icon: BarChart3
+- id: grp_system
+  type: MenuGroup
+  properties:
+    title: System
+  links:
+    - id: nav_settings
+      type: MenuLink
+      pageId: settings
+      properties:
+        title: Settings
+        icon: Settings

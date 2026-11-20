@@ -1,0 +1,1161 @@
+id: exceptions
+type: PageSidebarLayout
+properties:
+  title: Exceptions
+  padding: compact
+  siderStorageKey: erpnext
+  sider:
+    width: 260
+    collapsible: true
+  logo:
+    src: /logo.svg
+    srcMobile: /logo-mark.svg
+    alt: ERP Copilot
+    style:
+      height: 34px
+      width: auto
+  breadcrumb:
+    list:
+    - label: ERPNext Control Centre
+    - label: Exception Centre
+  menu:
+    links:
+      _ref: menus/main.yaml
+requests:
+- id: exceptions_req
+  type: AxiosHttp
+  connectionId: copilot
+  payload:
+    status:
+      _state: fStatus
+    severity:
+      _state: fSeverity
+    category:
+      _state: fCategory
+    source:
+      _state: fSource
+  properties:
+    url: /exceptions
+    timeout: 30000
+    params:
+      status:
+        _payload: status
+      severity:
+        _payload: severity
+      category:
+        _payload: category
+      source:
+        _payload: source
+- id: exception_req
+  type: AxiosHttp
+  connectionId: copilot
+  payload:
+    id:
+      _state: selectedExceptionId
+  properties:
+    url: /exception
+    timeout: 30000
+    params:
+      id:
+        _payload: id
+- id: action_req
+  type: AxiosHttp
+  connectionId: copilot
+  payload:
+    body:
+      id:
+        _state: selectedExceptionId
+      action:
+        _state: action
+      actor:
+        _state: actor
+      role:
+        _state: role
+      assignee:
+        _state: assignee
+      note:
+        _state: note
+  properties:
+    url: /exceptions/action
+    method: post
+    timeout: 30000
+    data:
+      _payload: body
+- id: scan_req
+  type: AxiosHttp
+  connectionId: copilot
+  properties:
+    url: /exceptions/scan
+    method: post
+    timeout: 120000
+- id: submit_doc_req
+  type: AxiosHttp
+  connectionId: copilot
+  payload:
+    body:
+      doctype:
+        _state: selectedException.doctype
+      name:
+        _state: selectedException.docname
+      actor:
+        _state: actor
+      role:
+        _state: role
+  properties:
+    url: /submit-document
+    method: post
+    timeout: 60000
+    data:
+      _payload: body
+- id: comment_req
+  type: AxiosHttp
+  connectionId: copilot
+  payload:
+    body:
+      doctype:
+        _state: selectedException.doctype
+      name:
+        _state: selectedException.docname
+      text:
+        _if_none:
+        - _state: reminder
+        - Please follow up on this record.
+      actor:
+        _state: actor
+      role:
+        _state: role
+  properties:
+    url: /comment
+    method: post
+    timeout: 60000
+    data:
+      _payload: body
+events:
+  onInit:
+  - id: exc_state
+    type: SetState
+    params:
+      fStatus: new
+      fSeverity: ""
+      fCategory: ""
+      fSource: ""
+      selectedException: null
+      selectedExceptionId: ""
+      action: ""
+      assignee: ""
+      note: ""
+      reminder: ""
+      actionResult: null
+      scanResult: null
+      docActionResult: null
+      actor: inventory.manager
+      role: inventory_manager
+  onInitAsync:
+  - id: exc_fetch
+    type: Request
+    params: exceptions_req
+blocks:
+- id: page_box
+  type: Box
+  blocks:
+  - id: header
+    type: Box
+    style:
+      .element:
+        display: flex
+        flexWrap: wrap
+        gap: 16px
+        alignItems: flex-start
+        justifyContent: space-between
+    blocks:
+    - id: header_left
+      type: Box
+      style:
+        .element:
+          display: flex
+          flexDirection: column
+          gap: 4px
+      blocks:
+      - id: page_title
+        type: Title
+        properties:
+          content: Exception centre
+          level: 3
+      - id: page_desc
+        type: Markdown
+        properties:
+          content: Detected inventory problems with the rule that fired, the ERPNext record behind it, and a tracked investigation lifecycle. Duplicate active exceptions are suppressed by a stable key.
+    - id: header_right
+      type: Box
+      style:
+        .element:
+          display: flex
+          flexWrap: wrap
+          gap: 8px
+          alignItems: center
+      blocks:
+      - id: exc_role
+        type: Selector
+        properties:
+          title: Acting role (demo identity)
+          allowClear: false
+          options:
+          - label: Inventory manager
+            value: inventory_manager
+          - label: Administrator
+            value: administrator
+          - label: Employee (read only)
+            value: employee
+          - label: Finance / procurement (read only)
+            value: finance
+        events:
+          onChange:
+          - id: exc_role_set
+            type: SetState
+            params:
+              role:
+                _event: value
+      - id: exc_scan_btn
+        type: Button
+        properties:
+          title: Detect exceptions now
+          icon: ScanSearch
+          color: primary
+          variant: solid
+        events:
+          onClick:
+          - id: exc_scan_clear
+            type: SetState
+            params:
+              scanResult: null
+          - id: exc_scan_call
+            type: Request
+            params: scan_req
+          - id: exc_scan_store
+            type: SetState
+            params:
+              scanResult:
+                _request: scan_req.data
+          - id: exc_scan_refresh
+            type: Request
+            params: exceptions_req
+    class:
+      .element: page-hero
+  - id: scan_result_alert
+    type: Alert
+    visible:
+      _ne:
+      - _state: scanResult
+      - null
+    properties:
+      type: success
+      showIcon: true
+      closable: true
+      message:
+        _string.concat:
+        - "Detection finished: "
+        - _state: scanResult.findings
+        - " findings ("
+        - _state: scanResult.created
+        - " created, "
+        - _state: scanResult.reopened
+        - " reopened, "
+        - _state: scanResult.refreshed
+        - " still open)."
+      description:
+        _if_none:
+        - _state: scanResult.note
+        - Rules for all eight categories ran against live ERPNext data.
+  - id: kpi_row
+    type: Box
+    blocks:
+    - id: kpi_active_card
+      type: Card
+      blocks:
+      - id: kpi_active
+        type: Statistic
+        properties:
+          title: Active exceptions
+          value:
+            _request: exceptions_req.data.summary.active
+      class:
+        .element: kpi kpi-sky
+    - id: kpi_critical_card
+      type: Card
+      blocks:
+      - id: kpi_critical
+        type: Statistic
+        properties:
+          title: Critical
+          value:
+            _request: exceptions_req.data.summary.critical
+      class:
+        .element: kpi kpi-violet
+    - id: kpi_high_card
+      type: Card
+      blocks:
+      - id: kpi_high
+        type: Statistic
+        properties:
+          title: High priority
+          value:
+            _request: exceptions_req.data.summary.high
+      class:
+        .element: kpi kpi-mint
+    - id: kpi_review_card
+      type: Card
+      blocks:
+      - id: kpi_review
+        type: Statistic
+        properties:
+          title: Awaiting review
+          value:
+            _request: exceptions_req.data.summary.new
+      class:
+        .element: kpi kpi-amber
+    - id: kpi_investigating_card
+      type: Card
+      blocks:
+      - id: kpi_investigating
+        type: Statistic
+        properties:
+          title: Investigating
+          value:
+            _request: exceptions_req.data.summary.investigating
+      class:
+        .element: kpi kpi-pink
+    - id: kpi_resolved_card
+      type: Card
+      blocks:
+      - id: kpi_resolved
+        type: Statistic
+        properties:
+          title: Resolved / dismissed
+          value:
+            _sum:
+            - _request: exceptions_req.data.summary.resolved
+            - _request: exceptions_req.data.summary.dismissed
+      class:
+        .element: kpi kpi-lime
+    class:
+      .element: grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4
+  - id: exception_filters
+    type: Card
+    properties:
+      size: small
+    blocks:
+    - id: exception_filter_grid
+      type: Box
+      blocks:
+      - id: ef_status
+        type: Selector
+        properties:
+          title: Status
+          allowClear: false
+          options:
+            _request: exceptions_req.data.status_options
+        events:
+          onChange:
+          - id: ef_status_set
+            type: SetState
+            params:
+              fStatus:
+                _event: value
+          - id: ef_status_run
+            type: Request
+            params: exceptions_req
+      - id: ef_source
+        type: Selector
+        properties:
+          title: Source
+          allowClear: false
+          options:
+            _request: exceptions_req.data.source_options
+        events:
+          onChange:
+          - id: ef_source_set
+            type: SetState
+            params:
+              fSource:
+                _event: value
+          - id: ef_source_run
+            type: Request
+            params: exceptions_req
+      - id: ef_severity
+        type: Selector
+        properties:
+          title: Severity
+          allowClear: false
+          options:
+            _request: exceptions_req.data.severity_options
+        events:
+          onChange:
+          - id: ef_sev_set
+            type: SetState
+            params:
+              fSeverity:
+                _event: value
+          - id: ef_sev_run
+            type: Request
+            params: exceptions_req
+      - id: ef_category
+        type: Selector
+        properties:
+          title: Category
+          allowClear: false
+          options:
+            _request: exceptions_req.data.category_options
+        events:
+          onChange:
+          - id: ef_cat_set
+            type: SetState
+            params:
+              fCategory:
+                _event: value
+          - id: ef_cat_run
+            type: Request
+            params: exceptions_req
+      - id: ef_apply
+        type: Button
+        properties:
+          title: Apply
+          icon: Filter
+          color: primary
+          variant: solid
+        events:
+          onClick:
+          - id: ef_apply_run
+            type: Request
+            params: exceptions_req
+        class:
+          block: self-end
+      - id: ef_reset
+        type: Button
+        properties:
+          title: Reset
+          variant: outlined
+        events:
+          onClick:
+          - id: ef_reset_state
+            type: SetState
+            params:
+              fStatus: ""
+              fSeverity: ""
+              fCategory: ""
+              fSource: ""
+          - id: ef_reset_run
+            type: Request
+            params: exceptions_req
+        class:
+          block: self-end
+      class:
+        .element: grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4 items-end
+  - id: exceptions_card
+    type: Card
+    properties:
+      padding: none
+    blocks:
+    - id: exceptions_table
+      type: Table
+      properties:
+        rowKey: id
+        size: compact
+        bordered: true
+        pagination: true
+        pageSize: 25
+        toolbar:
+          search: true
+          filter: true
+          sort: true
+          columns: true
+          density: true
+          export: true
+        emptyText: No exceptions match these filters. Run a detection scan to refresh the queue.
+        defaultView:
+          sort:
+          - key: age_hours
+            desc: false
+        columns:
+        - key: id
+          title: Exception
+          width: 120
+          pinned: start
+        - key: severity
+          title: Severity
+          type: status
+          width: 110
+          options:
+            critical:
+              label: Critical
+              color: "#f87171"
+            high:
+              label: High
+              color: "#fbbf24"
+            medium:
+              label: Medium
+              color: "#60a5fa"
+            low:
+              label: Low
+              color: "#9ca3af"
+        - key: title
+          title: Issue
+          wrap: true
+          flex: 1
+          minWidth: 300
+        - key: category
+          title: Category
+          width: 190
+        - key: docname
+          title: Related record
+          width: 200
+        - key: status
+          title: Status
+          type: status
+          width: 130
+          options:
+            new:
+              label: New
+              color: "#60a5fa"
+            investigating:
+              label: Investigating
+              color: "#fbbf24"
+            resolved:
+              label: Resolved
+              color: "#34d399"
+            dismissed:
+              label: Dismissed
+              color: "#6b7280"
+        - key: assignee
+          title: Assigned to
+          width: 150
+        - key: detected_at
+          title: Detected
+          type: date
+          width: 140
+        - key: age_hours
+          title: Age (h)
+          type: number
+          width: 90
+        data:
+          _request: exceptions_req.data.rows
+      events:
+        onRowClick:
+        - id: exc_row_select
+          type: SetState
+          params:
+            selectedException:
+              _event: row
+            selectedExceptionId:
+              _event: row.id
+            assignee:
+              _event: row.assignee
+            note: ""
+            reminder: ""
+            actionResult: null
+            docActionResult: null
+        - id: exc_row_fetch
+          type: Request
+          params: exception_req
+        - id: exc_row_open
+          type: CallMethod
+          params:
+            blockId: exception_drawer
+            method: toggleOpen
+  class:
+    .element: flex flex-col gap-5
+- id: exception_drawer
+  type: Drawer
+  properties:
+    title:
+      _string.concat:
+      - ""
+      - _state: selectedExceptionId
+      - " - "
+      - _state: selectedException.title
+    width: 640
+    placement: right
+    size: 640
+    padding: compact
+  blocks:
+  - id: exception_drawer_body
+    type: Box
+    style:
+      .element:
+        display: flex
+        flexDirection: column
+        gap: 16px
+    blocks:
+    - id: exc_tags
+      type: Box
+      style:
+        .element:
+          display: flex
+          flexWrap: wrap
+          gap: 8px
+          alignItems: center
+      blocks:
+      - id: exc_sev_tag
+        type: Tag
+        properties:
+          color:
+            _if:
+              test:
+                _eq:
+                - _state: selectedException.severity
+                - critical
+              then: "#f87171"
+              else:
+                _if:
+                  test:
+                    _eq:
+                    - _state: selectedException.severity
+                    - high
+                  then: "#fbbf24"
+                  else: "#60a5fa"
+          title:
+            _state: selectedException.severity
+      - id: exc_cat_tag
+        type: Tag
+        properties:
+          color: processing
+          title:
+            _state: selectedException.category
+      - id: exc_status_tag
+        type: Tag
+        properties:
+          color:
+            _if:
+              test:
+                _eq:
+                - _request: exception_req.data.exception.status
+                - resolved
+              then: green
+              else:
+                _if:
+                  test:
+                    _eq:
+                    - _request: exception_req.data.exception.status
+                    - investigating
+                  then: gold
+                  else: blue
+          title:
+            _request: exception_req.data.exception.status
+      - id: exc_age_tag
+        type: Tag
+        properties:
+          color: default
+          title:
+            _string.concat:
+            - "Open "
+            - _state: selectedException.age_hours
+            - " h"
+    - id: exc_summary
+      type: Markdown
+      properties:
+        content:
+          _string.concat:
+          - |
+            **Detected issue**  
+          - _state: selectedException.description
+          - |2
+              
+
+            **Why it was flagged**  
+          - _state: selectedException.why
+          - |2
+              
+
+            **Detection rule**  
+          - _state: selectedException.rule
+          - |2-
+              
+
+            **Related ERPNext record:** 
+          - _if_none:
+            - _state: selectedException.doctype
+            - n/a
+          - " / "
+          - _if_none:
+            - _state: selectedException.docname
+            - n/a
+          - |2-
+              
+            **Assigned to:** 
+          - _if_none:
+            - _request: exception_req.data.exception.assignee
+            - unassigned
+    - id: exc_action_result
+      type: Alert
+      visible:
+        _ne:
+        - _state: actionResult
+        - null
+      properties:
+        type: success
+        showIcon: true
+        message:
+          _string.concat:
+          - "Exception updated - status: "
+          - _state: actionResult.status
+    - id: exc_tabs
+      type: Tabs
+      class:
+        .element: tabs-pill
+      properties:
+        tabs:
+        - key: details
+          title: Details
+          icon: Info
+        - key: investigate
+          title: Investigate
+          icon: Search
+        - key: erpnext
+          title: ERPNext actions
+          icon: FileCog
+        - key: history
+          title: History
+          icon: History
+        animated: false
+      slots:
+        details:
+          blocks:
+          - id: exc_tabs_details
+            type: Box
+            class:
+              .element: flex flex-col gap-4 pt-1
+            blocks:
+            - id: exc_values
+              type: Markdown
+              properties:
+                content:
+                  _string.concat:
+                  - |
+                    ```json
+                  - _json.stringify:
+                    - _state: selectedException.value
+                  - |-
+                    
+                    ```
+            - id: exc_resolution
+              type: Markdown
+              visible:
+                _or:
+                - _eq:
+                  - _request: exception_req.data.exception.status
+                  - resolved
+                - _eq:
+                  - _request: exception_req.data.exception.status
+                  - dismissed
+              properties:
+                content:
+                  _string.concat:
+                  - "**Resolution note:** "
+                  - _if_none:
+                    - _request: exception_req.data.exception.resolution_note
+                    - none recorded
+                  - |2-
+                      
+                    **Closed at:** 
+                  - _if_none:
+                    - _request: exception_req.data.exception.resolved_at
+                    - n/a
+            - id: exc_open_btn
+              type: Button
+              visible:
+                _ne:
+                - _state: selectedException.doc_url
+                - null
+              properties:
+                title: Open related ERPNext record
+                icon: ExternalLink
+                variant: outlined
+              events:
+                onClick:
+                - id: exc_open_link
+                  type: Link
+                  params:
+                    url:
+                      _state: selectedException.doc_url
+                    newTab: true
+        investigate:
+          blocks:
+          - id: exc_tabs_investigate
+            type: Box
+            class:
+              .element: flex flex-col gap-4 pt-1
+            blocks:
+            - id: exc_action_body
+              type: Box
+              style:
+                .element:
+                  display: flex
+                  flexDirection: column
+                  gap: 12px
+              blocks:
+              - id: exc_role_note
+                type: Markdown
+                properties:
+                  content:
+                    _string.concat:
+                    - "Acting role: **"
+                    - _state: role
+                    - "**. The helper rejects lifecycle changes from roles other than administrator or inventory_manager, even if the button is called directly."
+              - id: exc_assignee
+                type: TextInput
+                properties:
+                  title: Assign to
+                  placeholder: employee username or name
+                  allowClear: true
+                events:
+                  onChange:
+                  - id: exc_assignee_set
+                    type: SetState
+                    params:
+                      assignee:
+                        _event: value
+              - id: exc_note
+                type: TextArea
+                properties:
+                  title: Resolution / activity note
+                  placeholder: What did you check or change?
+                  rows: 2
+                events:
+                  onChange:
+                  - id: exc_note_set
+                    type: SetState
+                    params:
+                      note:
+                        _event: value
+              - id: exc_buttons
+                type: Box
+                style:
+                  .element:
+                    display: flex
+                    flexWrap: wrap
+                    gap: 8px
+                blocks:
+                - id: exc_investigate
+                  type: Button
+                  properties:
+                    title: Investigate
+                    icon: SearchCheck
+                    variant: outlined
+                    disabled:
+                      _not:
+                        _or:
+                        - _eq:
+                          - _state: role
+                          - administrator
+                        - _eq:
+                          - _state: role
+                          - inventory_manager
+                  events:
+                    onClick:
+                    - id: act_investigate_set
+                      type: SetState
+                      params:
+                        action: investigate
+                    - id: act_investigate_call
+                      type: Request
+                      params: action_req
+                    - id: act_investigate_result
+                      type: SetState
+                      params:
+                        actionResult:
+                          _request: action_req.data
+                    - id: act_investigate_refresh
+                      type: Request
+                      params: exception_req
+                    - id: act_investigate_list
+                      type: Request
+                      params: exceptions_req
+                - id: exc_assign
+                  type: Button
+                  properties:
+                    title: Assign
+                    icon: UserPlus
+                    variant: outlined
+                    disabled:
+                      _not:
+                        _or:
+                        - _eq:
+                          - _state: role
+                          - administrator
+                        - _eq:
+                          - _state: role
+                          - inventory_manager
+                  events:
+                    onClick:
+                    - id: act_assign_set
+                      type: SetState
+                      params:
+                        action: assign
+                    - id: act_assign_call
+                      type: Request
+                      params: action_req
+                    - id: act_assign_result
+                      type: SetState
+                      params:
+                        actionResult:
+                          _request: action_req.data
+                    - id: act_assign_refresh
+                      type: Request
+                      params: exception_req
+                    - id: act_assign_list
+                      type: Request
+                      params: exceptions_req
+                - id: exc_resolve
+                  type: Button
+                  properties:
+                    title: Mark resolved
+                    icon: CheckCheck
+                    color: primary
+                    variant: solid
+                    disabled:
+                      _not:
+                        _or:
+                        - _eq:
+                          - _state: role
+                          - administrator
+                        - _eq:
+                          - _state: role
+                          - inventory_manager
+                  events:
+                    onClick:
+                    - id: act_resolve_set
+                      type: SetState
+                      params:
+                        action: resolve
+                    - id: act_resolve_call
+                      type: Request
+                      params: action_req
+                    - id: act_resolve_result
+                      type: SetState
+                      params:
+                        actionResult:
+                          _request: action_req.data
+                    - id: act_resolve_refresh
+                      type: Request
+                      params: exception_req
+                    - id: act_resolve_list
+                      type: Request
+                      params: exceptions_req
+                - id: exc_dismiss
+                  type: Button
+                  properties:
+                    title: Dismiss
+                    icon: XCircle
+                    variant: outlined
+                    disabled:
+                      _not:
+                        _or:
+                        - _eq:
+                          - _state: role
+                          - administrator
+                        - _eq:
+                          - _state: role
+                          - inventory_manager
+                  events:
+                    onClick:
+                    - id: act_dismiss_set
+                      type: SetState
+                      params:
+                        action: dismiss
+                    - id: act_dismiss_call
+                      type: Request
+                      params: action_req
+                    - id: act_dismiss_result
+                      type: SetState
+                      params:
+                        actionResult:
+                          _request: action_req.data
+                    - id: act_dismiss_refresh
+                      type: Request
+                      params: exception_req
+                    - id: act_dismiss_list
+                      type: Request
+                      params: exceptions_req
+                - id: exc_reopen
+                  type: Button
+                  properties:
+                    title: Reopen
+                    icon: RotateCcw
+                    variant: outlined
+                    disabled:
+                      _not:
+                        _or:
+                        - _eq:
+                          - _state: role
+                          - administrator
+                        - _eq:
+                          - _state: role
+                          - inventory_manager
+                  events:
+                    onClick:
+                    - id: act_reopen_set
+                      type: SetState
+                      params:
+                        action: reopen
+                    - id: act_reopen_call
+                      type: Request
+                      params: action_req
+                    - id: act_reopen_result
+                      type: SetState
+                      params:
+                        actionResult:
+                          _request: action_req.data
+                    - id: act_reopen_refresh
+                      type: Request
+                      params: exception_req
+                    - id: act_reopen_list
+                      type: Request
+                      params: exceptions_req
+        erpnext:
+          blocks:
+          - id: exc_tabs_erpnext
+            type: Box
+            class:
+              .element: flex flex-col gap-4 pt-1
+            blocks:
+            - id: exc_doc_actions_body
+              type: Box
+              style:
+                .element:
+                  display: flex
+                  flexDirection: column
+                  gap: 12px
+              blocks:
+              - id: exc_doc_hint
+                type: Markdown
+                properties:
+                  content: Submit a stale draft order, or leave a reminder note on the related ERPNext record. Submit is only offered for draft Sales Orders; the helper re-checks the document state before submitting.
+              - id: exc_doc_result
+                type: Alert
+                visible:
+                  _ne:
+                  - _state: docActionResult
+                  - null
+                properties:
+                  type: success
+                  showIcon: true
+                  closable: true
+                  message: ERPNext document updated
+                  description:
+                    _string.concat:
+                    - ""
+                    - _state: selectedException.doctype
+                    - " "
+                    - _state: selectedException.docname
+              - id: exc_doc_reminder
+                type: TextInput
+                properties:
+                  title: Reminder note
+                  placeholder: What should the owner follow up on?
+                  allowClear: true
+                events:
+                  onChange:
+                  - id: exc_doc_reminder_set
+                    type: SetState
+                    params:
+                      reminder:
+                        _event: value
+              - id: exc_doc_buttons
+                type: Box
+                style:
+                  .element:
+                    display: flex
+                    flexWrap: wrap
+                    gap: 8px
+                blocks:
+                - id: exc_doc_submit
+                  type: Button
+                  visible:
+                    _eq:
+                    - _state: selectedException.category_key
+                    - draft_so
+                  properties:
+                    title: Submit draft order
+                    icon: CheckCircle
+                    color: primary
+                    variant: solid
+                    disabled:
+                      _not:
+                        _state: selectedExceptionId
+                  events:
+                    onClick:
+                    - id: doc_submit_clear
+                      type: SetState
+                      params:
+                        docActionResult: null
+                    - id: doc_submit_call
+                      type: Request
+                      params: submit_doc_req
+                    - id: doc_submit_store
+                      type: SetState
+                      params:
+                        docActionResult:
+                          _request: submit_doc_req.data
+                    - id: doc_submit_refresh
+                      type: Request
+                      params: exception_req
+                    - id: doc_submit_list
+                      type: Request
+                      params: exceptions_req
+                - id: exc_doc_remind
+                  type: Button
+                  properties:
+                    title: Log reminder on record
+                    icon: MessageSquare
+                    variant: outlined
+                    disabled:
+                      _not:
+                        _state: selectedExceptionId
+                  events:
+                    onClick:
+                    - id: doc_remind_clear
+                      type: SetState
+                      params:
+                        docActionResult: null
+                    - id: doc_remind_call
+                      type: Request
+                      params: comment_req
+                    - id: doc_remind_store
+                      type: SetState
+                      params:
+                        docActionResult:
+                          _request: comment_req.data
+                    - id: doc_remind_refresh
+                      type: Request
+                      params: exception_req
+        history:
+          blocks:
+          - id: exc_tabs_history
+            type: Box
+            class:
+              .element: flex flex-col gap-4 pt-1
+            blocks:
+            - id: exc_events
+              type: Table
+              properties:
+                rowKey: ts
+                size: compact
+                bordered: true
+                pagination: false
+                emptyText: No activity recorded yet.
+                columns:
+                - key: ts
+                  title: When
+                  type: date
+                  width: 160
+                - key: actor
+                  title: Who
+                  width: 140
+                - key: action
+                  title: Action
+                  width: 130
+                - key: note
+                  title: Note
+                  wrap: true
+                  flex: 1
+                data:
+                  _request: exception_req.data.events
