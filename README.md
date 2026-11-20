@@ -11,6 +11,15 @@ Built with **Lowdefy 7.1.0** (UI) and a small local **Node helper service**
 (`server/copilot-api.mjs`) that owns SQLite and does all ERPNext aggregation and
 writes server-side. It also serves the camera scanner page.
 
+## Learning guides
+
+New to this project or to Lowdefy? Read these in order:
+
+1. [Getting started](docs/01-getting-started.md): install, configure `.env`, run, troubleshoot
+2. [Lowdefy basics](docs/02-lowdefy-basics.md): blocks, state, requests, events, operators, styling, with examples from this app
+3. [How it works](docs/03-how-it-works.md): architecture, the helper's functions, business rules, the 3D floor
+4. [What was built](docs/04-what-was-built.md): session-by-session history, decisions and known limitations
+
 ## Architecture
 
 ```
