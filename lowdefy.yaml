@@ -20,12 +20,16 @@ connections:
       baseURL:
         _secret: COPILOT_API_URL
       timeout: 120000
+      headers:
+        x-copilot-key:
+          _secret: COPILOT_API_KEY
   - id: local_http
     type: AxiosHttp
   - id: erpnext
     type: AxiosHttp
     properties:
-      baseURL: http://localhost:8000
+      baseURL:
+        _secret: ERP_URL
       timeout: 30000
       headers:
         Authorization:

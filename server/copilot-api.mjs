@@ -3,7 +3,7 @@ import { DatabaseSync } from 'node:sqlite';
 import { readFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { randomUUID } from 'node:crypto';
+import { randomUUID, timingSafeEqual } from 'node:crypto';
 
 const SERVER_DIR = dirname(fileURLToPath(import.meta.url));
 
@@ -24,10 +24,12 @@ const PORT = Number(env.COPILOT_API_PORT || 4010);
 const ERP_URL = (env.ERPNEXT_URL || '').replace(/\/$/, '');
 const AUTH = env.ERPNEXT_AUTH_HEADER || '';
 const DB_PATH = env.COPILOT_DB_PATH;
+const API_KEY = env.COPILOT_API_KEY || '';
 const APP_URL = (env.COPILOT_APP_URL || env.INVENTORY_APP_URL || 'http://localhost:3011').replace(/\/$/, '');
 
 if (!ERP_URL || !AUTH) throw new Error('ERPNEXT_URL / ERPNEXT_AUTH_HEADER missing from .env');
 if (!DB_PATH) throw new Error('COPILOT_DB_PATH missing from .env');
+if (!API_KEY) console.warn('COPILOT_API_KEY missing from .env - all write requests will be refused.');
 
 mkdirSync(dirname(DB_PATH), { recursive: true });
 const db = new DatabaseSync(DB_PATH);
@@ -148,8 +150,27 @@ function getSettings() {
   }
 }
 
+function sanitizeSettings(patch) {
+  const clean = {};
+  const errors = [];
+  for (const [key, value] of Object.entries(patch || {})) {
+    if (!Object.hasOwn(DEFAULT_SETTINGS, key) || value === undefined || value === null) continue;
+    if (typeof DEFAULT_SETTINGS[key] === 'number') {
+      const n = Number(value);
+      if (!Number.isFinite(n) || n < 0 || n > 1_000_000) errors.push(key);
+      else clean[key] = n;
+    } else {
+      const v = String(value).trim();
+      if (v.length > 500) errors.push(key);
+      else clean[key] = v;
+    }
+  }
+  if (errors.length) throw new ErpError(`Invalid value for: ${errors.join(', ')}.`, 400);
+  return clean;
+}
+
 function saveSettings(patch) {
-  const next = { ...getSettings(), ...patch };
+  const next = { ...getSettings(), ...sanitizeSettings(patch) };
   db.prepare(
     "INSERT INTO settings (key, value, updated_at) VALUES ('app', ?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value, updated_at = excluded.updated_at"
   ).run(JSON.stringify(next), new Date().toISOString());
@@ -731,6 +752,17 @@ async function getSerialDetail(code) {
 
 function roleAllowed(role, allowed) {
   return allowed.includes(String(role || '').toLowerCase());
+}
+
+const WRITE_ROLES = ['administrator', 'inventory_manager'];
+
+function requireRole(body, action, allowed = WRITE_ROLES) {
+  const actor = body.actor || 'unknown';
+  const role = String(body.role || '').toLowerCase();
+  if (!roleAllowed(role, allowed)) {
+    audit({ actor, role, action, doctype: body.doctype, docname: body.name, result: 'denied', message: 'Role not allowed.' });
+    throw new ErpError('Your role is not allowed to perform this action.', 403);
+  }
 }
 
 async function createTransfer(body) {
@@ -2035,8 +2067,8 @@ async function createPurchaseOrders(body) {
   const company = body.company || settings.company;
   const groups = Array.isArray(body.groups) ? body.groups : [];
   const actor = body.actor || 'unknown';
-  const role = body.role || 'inventory_manager';
-  if (!roleAllowed(role, ['administrator', 'inventory_manager'])) {
+  const role = body.role || '';
+  if (!roleAllowed(role, WRITE_ROLES)) {
     audit({ actor, role, action: 'create_purchase_order', result: 'denied', message: 'Role not allowed to create purchase orders.' });
     throw new ErpError('Your role is not allowed to create purchase orders.', 403);
   }
@@ -2095,6 +2127,7 @@ async function createPurchaseOrders(body) {
 async function submitDocument(body) {
   const { doctype, name, actor, role } = body;
   if (!doctype || !name) throw new ErpError('doctype and name are required.', 400);
+  requireRole(body, 'submit_document');
   const correlation = randomUUID();
   try {
     const got = await erp('/api/method/frappe.client.get', { params: { doctype, name } });
@@ -2134,6 +2167,7 @@ async function submitDocument(body) {
 async function cancelDocument(body) {
   const { doctype, name, actor, role } = body;
   if (!doctype || !name) throw new ErpError('doctype and name are required.', 400);
+  requireRole(body, 'cancel_document', ['administrator']);
   const correlation = randomUUID();
   try {
     await erp('/api/method/frappe.client.cancel', { method: 'POST', body: { doctype, name } });
@@ -2169,6 +2203,7 @@ async function addComment(body) {
   const { doctype, name, text, actor, role } = body;
   if (!doctype || !name || !text) throw new ErpError('doctype, name and text are required.', 400);
   if (String(text).length > 2000) throw new ErpError('Comment is too long (max 2000 characters).', 400);
+  requireRole(body, 'add_comment');
   const correlation = randomUUID();
   const prefix = actor && actor !== 'unknown' ? `[Copilot - ${actor}] ` : '[Copilot] ';
   const doc = {
@@ -2519,12 +2554,11 @@ async function health() {
     ok: false,
     service: 'ERPNext Copilot API',
     erp_url: ERP_URL,
-    db: DB_PATH,
     app_url: APP_URL,
     scanner_url: `${API_BASE}/scanner`,
     now: new Date().toISOString(),
     erpnext: { url: ERP_URL },
-    database: { path: DB_PATH },
+    database: {},
   };
   try {
     const versions = await erp('/api/method/frappe.utils.change_log.get_versions', { timeout: 8000 });
@@ -2573,9 +2607,7 @@ function send(res, status, payload, contentType = 'application/json') {
   res.writeHead(status, {
     'Content-Type': contentType,
     'Cache-Control': 'no-store',
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': 'Content-Type, x-actor, x-role',
-    'Access-Control-Allow-Methods': 'GET, POST, PUT, OPTIONS',
+    'X-Content-Type-Options': 'nosniff',
   });
   res.end(body);
 }
@@ -2594,6 +2626,26 @@ async function readBody(req) {
   } catch {
     throw new ErpError('Body must be valid JSON.', 400);
   }
+}
+
+const ALLOWED_HOSTS = new Set([`127.0.0.1:${PORT}`, `localhost:${PORT}`, `[::1]:${PORT}`]);
+
+function keyMatches(given) {
+  if (!API_KEY || typeof given !== 'string') return false;
+  const a = Buffer.from(given);
+  const b = Buffer.from(API_KEY);
+  return a.length === b.length && timingSafeEqual(a, b);
+}
+
+function guardRequest(req) {
+  if (!ALLOWED_HOSTS.has(String(req.headers.host || '').toLowerCase())) throw new ErpError('Host not allowed.', 421);
+  if (req.method === 'GET' || req.method === 'HEAD') return;
+  if (req.headers.origin) throw new ErpError('Cross-origin writes are not allowed.', 403);
+  const hasBody = Number(req.headers['content-length'] || 0) > 0 || Boolean(req.headers['transfer-encoding']);
+  if (hasBody && !String(req.headers['content-type'] || '').toLowerCase().startsWith('application/json')) {
+    throw new ErpError('Write requests must be application/json.', 415);
+  }
+  if (!keyMatches(req.headers['x-copilot-key'])) throw new ErpError('Missing or invalid API key.', 401);
 }
 
 function queryObject(url) {
@@ -2825,7 +2877,7 @@ const server = http.createServer(async (req, res) => {
   const url = new URL(req.url, `http://127.0.0.1:${PORT}`);
   const path = url.pathname.replace(/\/$/, '') || '/';
   try {
-    if (req.method === 'OPTIONS') return send(res, 204, {});
+    guardRequest(req);
     if (req.method === 'GET' && path === '/health') return send(res, 200, await health());
     if (req.method === 'GET' && path === '/scanner') return send(res, 200, SCANNER_HTML, 'text/html; charset=utf-8');
     if (req.method === 'GET' && path === '/scanner/jsqr.js') return send(res, 200, JSQR, 'application/javascript; charset=utf-8');
@@ -2957,9 +3009,7 @@ const server = http.createServer(async (req, res) => {
         audit({ actor, role, action: 'settings_update', result: 'denied', message: 'Only administrators can change settings.' });
         throw new ErpError('Only administrators can change application settings.', 403);
       }
-      const patch = { ...body };
-      delete patch.role;
-      delete patch.actor;
+      const patch = sanitizeSettings(body);
       const next = saveSettings(patch);
       audit({ actor, role, action: 'settings_update', detail: patch, result: 'ok' });
       return send(res, 200, next);
