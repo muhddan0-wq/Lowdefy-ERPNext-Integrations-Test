@@ -1,0 +1,17 @@
+Hi boss, I've finished looking into Lowdefy properly, beyond just the app I built. Here's a quick summary of what I found.
+
+Overall, Lowdefy works best for internal tools, the kind of system our own staff or trainees log into and use. It's open source and can be deployed today. I don't think it suits public websites, anything that has to work offline, or systems that mainly do heavy calculations.
+
+What it does well: building screens is really fast because it comes with a lot of ready-made components like tables, forms and charts. It's also secure by default, since all the data calls happen on the server, so the ERPNext API key never reaches the browser. It can connect to most systems (APIs, SQL databases, email, cloud storage, even AI). Login, live updates and AI chat are all built in too.
+
+Its limits: login needs a MongoDB database, and there's no built-in scheduler on our own server, so timed jobs have to come from something like Node-RED. Complex logic is also hard to do in Lowdefy alone, which is why my app has a separate Node service. There's no offline mode, and it has no camera or 3D components, so the scanner and 3D floor had to be separate pages.
+
+I also tested it against our ERPNext sandbox. The speed is fine, Lowdefy only adds around 12 ms per request. But I found that requests get cut off at 30 seconds by default. I also found a few issues in my own app: when data fails to load, the screen shows 0 instead of an error, and one failed request can stop the rest of the page from loading. I have screenshots of all of these and they can be fixed.
+
+For deployment, I think Docker is the best option for us, since it can run together with ERPNext, Metabase and Node-RED. Before it's production-ready, though, I need to add a proper login. Right now anyone can choose the admin role.
+
+As for who uses Lowdefy, most of the real projects come from the team that built it. Their consulting company says they've built CRMs, MRP systems and dashboards for clients, including an MRP system for a food factory. There aren't many public case studies, so the community is smaller compared to tools like Retool or Appsmith.
+
+Where I think it fits us best: ERPNext companion apps, production dashboards, approval flows like purchase or maintenance requests, and training apps for participants.
+
+If you agree, my next steps would be to add proper login, fix the error screens, and set it up with Docker. I've also written a full report with all the details and sources if you'd like to read it.
