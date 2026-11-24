@@ -1,0 +1,64 @@
+code: P1
+name: Shah Alam Plant
+skip_item_tracking_labels: true
+
+company:
+  name: Voltra Power Tools Sdn Bhd
+  abbr: VPT
+  currency: MYR
+  country: Malaysia
+
+calendar:
+  from_date: 2026-01-01
+  to_date: 2027-12-31
+  weekly_off: [Saturday, Sunday]
+  public_holidays_country: MY
+  shifts:
+    - ["08:00:00", "12:00:00"]
+    - ["13:00:00", "17:00:00"]
+
+workstations:
+  moulding:
+    - {code: IMM-01, capacity: 1}
+    - {code: IMM-02, capacity: 1}
+  winding:
+    - {code: WND-01, capacity: 1}
+    - {code: WND-02, capacity: 1}
+  varnish:
+    - {code: OVN-01, capacity: 20}
+  subassembly:
+    - {code: SAB-01, capacity: 1}
+    - {code: SAB-02, capacity: 1}
+  motor_assembly:
+    - {code: MAS-01, capacity: 1}
+  final_assembly:
+    - {code: FAL-01, capacity: 1}
+    - {code: FAL-02, capacity: 1}
+  testing:
+    - {code: TST-01, capacity: 1}
+  packing:
+    - {code: PCK-01, capacity: 1}
+
+demo_plan:
+  FG-DRL-800: 40
+  FG-RH-800: 25
+  FG-CS-1400: 30
+
+history_plans:
+  - {tag: history-2026-W45, start: 2026-11-02, FG-DRL-800: 40, FG-RH-800: 25, FG-CS-1400: 30}
+  - {tag: history-2026-W46, start: 2026-11-09, FG-DRL-800: 45, FG-RH-800: 20, FG-CS-1400: 30}
+  - {tag: history-2026-W47, start: 2026-11-16, FG-DRL-800: 40, FG-RH-800: 25, FG-CS-1400: 25}
+
+operators:
+  P1-IMM-01: Aiman Hakimi
+  P1-IMM-02: Nurul Izzah
+  P1-WND-01: Rajesh Kumar
+  P1-WND-02: Siti Aisyah
+  P1-OVN-01: Lim Wei Jie
+  P1-SAB-01: Farah Nadia
+  P1-SAB-02: Muthu Selvam
+  P1-MAS-01: Tan Mei Ling
+  P1-FAL-01: Hafiz Rahman
+  P1-FAL-02: Priya Devi
+  P1-TST-01: Chong Kar Wai
+  P1-PCK-01: Azlan Shah

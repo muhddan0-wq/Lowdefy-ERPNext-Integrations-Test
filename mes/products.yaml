@@ -1,0 +1,286 @@
+uoms: [Nos, Kg, Litre, Pair, Set, Meter]
+
+operating_components: [Labour, Electricity, Machine Depreciation, Maintenance, Consumables]
+
+processes:
+  moulding:
+    label: Injection Moulding
+    costs: {Labour: 25, Electricity: 38, Machine Depreciation: 22, Maintenance: 10}
+    ideal_factor: 0.78
+    downtime_prob: 0.30
+    scrap_rate: 0.025
+    reasons: {Excessive machine set up time: 4, Machine malfunction: 3, On-machine press checks: 2, Other: 1}
+  winding:
+    label: Coil Winding
+    costs: {Labour: 22, Electricity: 12, Machine Depreciation: 18, Maintenance: 8}
+    ideal_factor: 0.78
+    downtime_prob: 0.22
+    scrap_rate: 0.015
+    reasons: {Machine malfunction: 3, Unplanned machine maintenance: 2, Excessive machine set up time: 2, Other: 1}
+  varnish:
+    label: Varnish Impregnation Oven
+    costs: {Labour: 10, Electricity: 20, Machine Depreciation: 6, Consumables: 4}
+    ideal_factor: 0.85
+    downtime_prob: 0.10
+    scrap_rate: 0.005
+    reasons: {Electricity down: 1, Unplanned machine maintenance: 2}
+  subassembly:
+    label: Sub-Assembly Bench
+    costs: {Labour: 25, Electricity: 3, Consumables: 7}
+    ideal_factor: 0.82
+    downtime_prob: 0.15
+    scrap_rate: 0.006
+    reasons: {Other: 4, Machine operator errors: 2}
+  motor_assembly:
+    label: Motor Assembly
+    costs: {Labour: 28, Electricity: 5, Machine Depreciation: 7, Consumables: 5}
+    ideal_factor: 0.82
+    downtime_prob: 0.18
+    scrap_rate: 0.008
+    reasons: {Other: 3, Machine malfunction: 2, Machine operator errors: 1}
+  final_assembly:
+    label: Final Assembly Line
+    costs: {Labour: 32, Electricity: 6, Machine Depreciation: 6, Consumables: 6}
+    ideal_factor: 0.82
+    downtime_prob: 0.20
+    scrap_rate: 0.006
+    reasons: {Other: 4, Excessive machine set up time: 2, Machine operator errors: 1}
+  testing:
+    label: Electrical Safety & Run Test
+    costs: {Labour: 28, Electricity: 7, Machine Depreciation: 15, Maintenance: 5}
+    ideal_factor: 0.78
+    downtime_prob: 0.12
+    scrap_rate: 0.012
+    reasons: {Machine malfunction: 2, Unplanned machine maintenance: 1, On-machine press checks: 1}
+  packing:
+    label: Packing
+    costs: {Labour: 22, Consumables: 8}
+    ideal_factor: 0.82
+    downtime_prob: 0.08
+    scrap_rate: 0.002
+    reasons: {Other: 3}
+
+operations:
+  Injection Moulding: moulding
+  Grip Overmoulding: moulding
+  Armature Winding: winding
+  Stator Winding: winding
+  Varnish Impregnation: varnish
+  Harness Assembly: subassembly
+  Gearbox Assembly: subassembly
+  Hammer Mechanism Assembly: subassembly
+  Guard & Base Assembly: subassembly
+  Motor Assembly: motor_assembly
+  Motor Run Test: testing
+  Final Assembly: final_assembly
+  Hi-Pot & Function Test: testing
+  Packing: packing
+
+suppliers:
+  Demo Supplier - Polymer Resins: [RM-ABS-GRN, RM-PA6GF-GRN, RM-TPE-GRN]
+  Demo Supplier - Copper & Magnetics: [RM-CU-WIRE, RM-LAM-ARM-S, RM-LAM-ARM-L, RM-LAM-STA-S, RM-LAM-STA-L, RM-VARNISH, RM-INS-PAPER]
+  Demo Supplier - Motor Components: [RM-SHAFT-S, RM-SHAFT-L, RM-COMM-24, RM-BRUSH-6X8, RM-FAN-S, RM-FAN-L]
+  Demo Supplier - Bearings: [RM-BRG-608, RM-BRG-6000, RM-BRG-6201]
+  Demo Supplier - Electrical: [RM-SW-TRIG, RM-SW-SAW, RM-CABLE, RM-STRAIN]
+  Demo Supplier - Precision Metal Parts: [RM-GEAR-DRL, RM-GEAR-RH, RM-GEARCASE-AL, RM-CHUCK-13, RM-SDS-HOLD, RM-PISTON-SET, RM-SPINDLE-CS, RM-BASE-CS, RM-GUARD-CS, RM-LGUARD-CS, RM-BLADE-185, RM-GREASE, RM-SCREW-KIT, RM-SIDE-HDL]
+  Demo Supplier - Packaging & Print: [RM-LABEL, RM-MANUAL, RM-BOX-S, RM-BOX-L, RM-CASE-BMC]
+
+raw_materials:
+  - [RM-ABS-GRN, ABS Resin Granules (Black), Kg, 9.80, 14]
+  - [RM-PA6GF-GRN, PA6 30% Glass-Filled Granules, Kg, 14.50, 14]
+  - [RM-TPE-GRN, TPE Soft-Grip Granules, Kg, 18.00, 14]
+  - [RM-CU-WIRE, Enamelled Copper Wire 0.45mm, Kg, 52.00, 21]
+  - [RM-LAM-ARM-S, Armature Lamination Stack 35mm, Nos, 6.20, 21]
+  - [RM-LAM-ARM-L, Armature Lamination Stack 50mm, Nos, 8.90, 21]
+  - [RM-LAM-STA-S, Stator Lamination Stack 35mm, Nos, 7.40, 21]
+  - [RM-LAM-STA-L, Stator Lamination Stack 50mm, Nos, 10.60, 21]
+  - [RM-VARNISH, Insulating Impregnation Varnish, Litre, 28.00, 10]
+  - [RM-INS-PAPER, Slot Insulation Paper, Meter, 0.90, 10]
+  - [RM-SHAFT-S, Armature Shaft 8mm, Nos, 3.10, 21]
+  - [RM-SHAFT-L, Armature Shaft 10mm, Nos, 4.30, 21]
+  - [RM-COMM-24, Commutator 24-Bar, Nos, 4.80, 21]
+  - [RM-BRUSH-6X8, Carbon Brush 6x8mm, Pair, 2.60, 14]
+  - [RM-FAN-S, Motor Cooling Fan 48mm, Nos, 1.50, 14]
+  - [RM-FAN-L, Motor Cooling Fan 62mm, Nos, 2.10, 14]
+  - [RM-BRG-608, Ball Bearing 608ZZ, Nos, 1.20, 7]
+  - [RM-BRG-6000, Ball Bearing 6000ZZ, Nos, 1.90, 7]
+  - [RM-BRG-6201, Ball Bearing 6201ZZ, Nos, 2.80, 7]
+  - [RM-SW-TRIG, Trigger Switch with Speed Control 10A, Nos, 11.50, 14]
+  - [RM-SW-SAW, Trigger Switch with Lock-Off 16A, Nos, 13.80, 14]
+  - [RM-CABLE, Power Cable 2.5m with BS1363 Plug, Nos, 7.90, 10]
+  - [RM-STRAIN, Cable Strain Relief Sleeve, Nos, 0.40, 10]
+  - [RM-GEAR-DRL, Helical Gear Set (Drill), Set, 14.20, 21]
+  - [RM-GEAR-RH, Gear & Crank Set (Rotary Hammer), Set, 21.50, 21]
+  - [RM-GEARCASE-AL, Aluminium Die-Cast Gear Case, Nos, 12.80, 21]
+  - [RM-CHUCK-13, Keyless Chuck 13mm, Nos, 16.50, 14]
+  - [RM-SDS-HOLD, SDS-Plus Tool Holder Assembly, Nos, 24.00, 21]
+  - [RM-PISTON-SET, Hammer Piston Striker & O-Ring Set, Set, 18.60, 21]
+  - [RM-SPINDLE-CS, Saw Spindle with Blade Flange, Nos, 9.40, 21]
+  - [RM-BASE-CS, Aluminium Base Plate 185mm, Nos, 22.00, 21]
+  - [RM-GUARD-CS, Steel Upper Blade Guard, Nos, 15.50, 21]
+  - [RM-LGUARD-CS, Retractable Lower Guard with Spring, Nos, 11.20, 21]
+  - [RM-BLADE-185, TCT Saw Blade 185mm 24T, Nos, 18.00, 14]
+  - [RM-GREASE, Gearbox Grease, Kg, 24.00, 10]
+  - [RM-SCREW-KIT, Housing Screw Kit M4, Set, 1.10, 7]
+  - [RM-SIDE-HDL, Auxiliary Side Handle with Depth Gauge, Nos, 6.80, 14]
+  - [RM-LABEL, Rating Label & Warning Decal Set, Set, 0.60, 7]
+  - [RM-MANUAL, User Manual (EN/BM), Nos, 0.80, 7]
+  - [RM-BOX-S, Carton Box (Drill / Rotary Hammer), Nos, 3.20, 7]
+  - [RM-BOX-L, Carton Box (Circular Saw), Nos, 4.10, 7]
+  - [RM-CASE-BMC, Blow-Moulded Carry Case, Nos, 14.00, 14]
+
+sub_assemblies:
+  - [SA-ARM-S, Wound Armature 800W]
+  - [SA-ARM-L, Wound Armature 1400W]
+  - [SA-STA-S, Wound Stator 800W]
+  - [SA-STA-L, Wound Stator 1400W]
+  - [SA-MOT-S, Motor Assembly 800W]
+  - [SA-MOT-L, Motor Assembly 1400W]
+  - [SA-HSG-DRL, Drill Housing Set]
+  - [SA-HSG-RH, Rotary Hammer Housing Set]
+  - [SA-HSG-CS, Circular Saw Housing & Handle Set]
+  - [SA-HARN-S, Switch & Cable Harness 10A]
+  - [SA-HARN-L, Switch & Cable Harness 16A]
+  - [SA-GBX-DRL, Drill Gearbox Assembly]
+  - [SA-HMECH-RH, Hammer Mechanism Assembly]
+  - [SA-GUARD-CS, Blade Guard & Base Assembly]
+
+finished_goods:
+  - [FG-DRL-800, 13mm Electric Drill 800W, 289.00]
+  - [FG-RH-800, SDS-Plus Rotary Hammer Drill 800W, 529.00]
+  - [FG-CS-1400, 185mm Circular Saw 1400W, 459.00]
+
+boms:
+  SA-ARM-S:
+    items: {RM-SHAFT-S: 1, RM-LAM-ARM-S: 1, RM-COMM-24: 1, RM-CU-WIRE: 0.18, RM-INS-PAPER: 0.6, RM-VARNISH: 0.02}
+    operations: [[Armature Winding, 6], [Varnish Impregnation, 3]]
+  SA-ARM-L:
+    items: {RM-SHAFT-L: 1, RM-LAM-ARM-L: 1, RM-COMM-24: 1, RM-CU-WIRE: 0.30, RM-INS-PAPER: 0.8, RM-VARNISH: 0.03}
+    operations: [[Armature Winding, 8], [Varnish Impregnation, 3]]
+  SA-STA-S:
+    items: {RM-LAM-STA-S: 1, RM-CU-WIRE: 0.22, RM-INS-PAPER: 0.8, RM-VARNISH: 0.02}
+    operations: [[Stator Winding, 5], [Varnish Impregnation, 3]]
+  SA-STA-L:
+    items: {RM-LAM-STA-L: 1, RM-CU-WIRE: 0.35, RM-INS-PAPER: 1.0, RM-VARNISH: 0.03}
+    operations: [[Stator Winding, 7], [Varnish Impregnation, 3]]
+  SA-MOT-S:
+    items: {SA-ARM-S: 1, SA-STA-S: 1, RM-BRG-608: 1, RM-BRG-6000: 1, RM-BRUSH-6X8: 1, RM-FAN-S: 1}
+    operations: [[Motor Assembly, 6], [Motor Run Test, 2]]
+  SA-MOT-L:
+    items: {SA-ARM-L: 1, SA-STA-L: 1, RM-BRG-6000: 1, RM-BRG-6201: 1, RM-BRUSH-6X8: 1, RM-FAN-L: 1}
+    operations: [[Motor Assembly, 7], [Motor Run Test, 2]]
+  SA-HSG-DRL:
+    items: {RM-ABS-GRN: 0.42, RM-TPE-GRN: 0.05}
+    operations: [[Injection Moulding, 1.5], [Grip Overmoulding, 0.8]]
+  SA-HSG-RH:
+    items: {RM-PA6GF-GRN: 0.65, RM-TPE-GRN: 0.06}
+    operations: [[Injection Moulding, 2.0], [Grip Overmoulding, 0.8]]
+  SA-HSG-CS:
+    items: {RM-PA6GF-GRN: 0.80, RM-TPE-GRN: 0.07}
+    operations: [[Injection Moulding, 2.4], [Grip Overmoulding, 0.8]]
+  SA-HARN-S:
+    items: {RM-SW-TRIG: 1, RM-CABLE: 1, RM-STRAIN: 1}
+    operations: [[Harness Assembly, 3]]
+  SA-HARN-L:
+    items: {RM-SW-SAW: 1, RM-CABLE: 1, RM-STRAIN: 1}
+    operations: [[Harness Assembly, 3]]
+  SA-GBX-DRL:
+    items: {RM-GEAR-DRL: 1, RM-GEARCASE-AL: 1, RM-BRG-608: 1, RM-GREASE: 0.03}
+    operations: [[Gearbox Assembly, 5]]
+  SA-HMECH-RH:
+    items: {RM-GEAR-RH: 1, RM-PISTON-SET: 1, RM-GEARCASE-AL: 1, RM-SDS-HOLD: 1, RM-GREASE: 0.05}
+    operations: [[Hammer Mechanism Assembly, 9]]
+  SA-GUARD-CS:
+    items: {RM-BASE-CS: 1, RM-GUARD-CS: 1, RM-LGUARD-CS: 1, RM-SPINDLE-CS: 1, RM-BRG-6201: 1}
+    operations: [[Guard & Base Assembly, 6]]
+  FG-DRL-800:
+    items: {SA-MOT-S: 1, SA-HSG-DRL: 1, SA-HARN-S: 1, SA-GBX-DRL: 1, RM-CHUCK-13: 1, RM-SIDE-HDL: 1, RM-SCREW-KIT: 1, RM-LABEL: 1, RM-MANUAL: 1, RM-BOX-S: 1}
+    operations: [[Final Assembly, 10], [Hi-Pot & Function Test, 3], [Packing, 2]]
+  FG-RH-800:
+    items: {SA-MOT-S: 1, SA-HSG-RH: 1, SA-HARN-S: 1, SA-HMECH-RH: 1, RM-SIDE-HDL: 1, RM-SCREW-KIT: 1, RM-LABEL: 1, RM-MANUAL: 1, RM-CASE-BMC: 1}
+    operations: [[Final Assembly, 14], [Hi-Pot & Function Test, 4], [Packing, 3]]
+  FG-CS-1400:
+    items: {SA-MOT-L: 1, SA-HSG-CS: 1, SA-HARN-L: 1, SA-GUARD-CS: 1, RM-BLADE-185: 1, RM-SCREW-KIT: 1, RM-LABEL: 1, RM-MANUAL: 1, RM-BOX-L: 1}
+    operations: [[Final Assembly, 12], [Hi-Pot & Function Test, 3], [Packing, 2]]
+
+recipes:
+  - item: SA-HSG-DRL
+    operation: Injection Moulding
+    version: v1
+    status: Approved
+    parameters: [[Barrel Temperature, degC, 230, 220, 240], [Mould Temperature, degC, 60, 50, 70], [Injection Pressure, bar, 900, 850, 950], [Hold Time, s, 6, 5, 7]]
+  - item: SA-HSG-RH
+    operation: Injection Moulding
+    version: v1
+    status: Approved
+    parameters: [[Barrel Temperature, degC, 280, 270, 290], [Mould Temperature, degC, 85, 80, 90], [Injection Pressure, bar, 1100, 1050, 1150], [Hold Time, s, 8, 7, 9]]
+  - item: SA-HSG-CS
+    operation: Injection Moulding
+    version: v1
+    status: Approved
+    parameters: [[Barrel Temperature, degC, 280, 270, 290], [Mould Temperature, degC, 85, 80, 90], [Injection Pressure, bar, 1150, 1100, 1200], [Hold Time, s, 8, 7, 9]]
+  - item: SA-ARM-S
+    operation: Armature Winding
+    version: v1
+    status: Approved
+    parameters: [[Turns per Coil, turns, 42, 42, 42], [Wire Tension, N, 18, 16, 20], [Winding Speed, rpm, 1800, 1600, 2000]]
+  - item: SA-ARM-S
+    operation: Armature Winding
+    version: v2
+    status: Draft
+    bom_change: {RM-CU-WIRE: 0.175}
+    change_note: "ECN-2026-014: optimised winding pattern, 41 turns, copper reduced 0.180 -> 0.175 kg"
+    parameters: [[Turns per Coil, turns, 41, 41, 41], [Wire Tension, N, 18, 16, 20], [Winding Speed, rpm, 1900, 1700, 2100]]
+  - item: SA-ARM-L
+    operation: Armature Winding
+    version: v1
+    status: Approved
+    parameters: [[Turns per Coil, turns, 36, 36, 36], [Wire Tension, N, 24, 22, 26], [Winding Speed, rpm, 1500, 1350, 1650]]
+  - item: SA-ARM-S
+    operation: Varnish Impregnation
+    version: v1
+    status: Approved
+    parameters: [[Oven Temperature, degC, 150, 145, 155], [Cure Time, min, 45, 40, 50]]
+  - item: FG-DRL-800
+    operation: Hi-Pot & Function Test
+    version: v1
+    status: Approved
+    parameters: [[Test Voltage, V, 1250, 1250, 1300], [Dwell Time, s, 3, 3, 5]]
+
+quality_templates:
+  FT-DRL-800 Final Electrical Test:
+    items: [FG-DRL-800]
+    operation: Hi-Pot & Function Test
+    parameters: [[Leakage Current (mA), 0, 3.5, 1.2, 0.35], [Insulation Resistance (MOhm), 7, 1000, 60, 12], [No-Load Speed (rpm), 2800, 3200, 3010, 55]]
+  FT-RH-800 Final Electrical Test:
+    items: [FG-RH-800]
+    operation: Hi-Pot & Function Test
+    parameters: [[Leakage Current (mA), 0, 3.5, 1.3, 0.35], [Insulation Resistance (MOhm), 7, 1000, 55, 12], [No-Load Speed (rpm), 1100, 1300, 1195, 28]]
+  FT-CS-1400 Final Electrical Test:
+    items: [FG-CS-1400]
+    operation: Hi-Pot & Function Test
+    parameters: [[Leakage Current (mA), 0, 3.5, 1.6, 0.4], [Insulation Resistance (MOhm), 7, 1000, 50, 11], [No-Load Speed (rpm), 5000, 5600, 5290, 85]]
+  MRT-800W Motor Run Test:
+    items: [SA-MOT-S]
+    operation: Motor Run Test
+    parameters: [[No-Load Current (A), 1.6, 2.2, 1.9, 0.07], [Motor No-Load Speed (rpm), 30000, 34000, 32100, 450]]
+  MRT-1400W Motor Run Test:
+    items: [SA-MOT-L]
+    operation: Motor Run Test
+    parameters: [[No-Load Current (A), 2.8, 3.6, 3.2, 0.1], [Motor No-Load Speed (rpm), 26000, 30000, 28000, 400]]
+
+work_instructions:
+  Injection Moulding: [Verify the approved recipe (barrel and mould temperature) on the HMI before the first shot., Load dried resin; check moisture is below 0.2 percent for PA6-GF., Run 3 purge shots and inspect the first-off part against the master sample., Record the first-off check and any recipe deviation on the job card.]
+  Grip Overmoulding: [Insert the housing halves into the overmould tool with locators engaged., Confirm TPE barrel temperature is in range., Check grip adhesion with the peel test on the first part of each shift.]
+  Armature Winding: [Load the armature stack and commutator; confirm turns per coil from the recipe., Set wire tension; run one coil and check turns count., Fuse leads to the commutator hooks and check resistance balance between bars.]
+  Stator Winding: [Fit slot insulation paper into every slot., Wind both field coils to recipe turns and terminate leads., Check coil resistance and record out-of-range readings.]
+  Varnish Impregnation: [Pre-heat the oven to recipe temperature., Dip windings for the specified time and drain., Cure for the recipe time; log oven temperature at load and unload.]
+  Harness Assembly: [Crimp the cable to the switch terminals and pull-test one sample per batch., Fit the strain relief sleeve., Continuity-test every harness.]
+  Gearbox Assembly: [Press the bearing into the gear case., Fit the helical gear set and apply 30 g of grease., Spin by hand to check for binding.]
+  Hammer Mechanism Assembly: [Assemble the piston, striker and O-rings with grease., Fit the crank gear and the SDS-plus tool holder., Check impact action on the test anvil.]
+  Guard & Base Assembly: [Mount the upper guard and lower guard spring., Check that the lower guard retracts and returns fully., Fit the spindle and bearing; check runout is below 0.05 mm.]
+  Motor Assembly: [Fit the armature with bearings and fan into the stator., Install carbon brushes and check spring pressure., Spin-test for noise before the run test.]
+  Motor Run Test: [Run the motor at no load for 30 seconds., Record no-load current and speed in the quality inspection., Reject and tag any motor outside limits.]
+  Final Assembly: [Install the motor, gearbox or mechanism and harness into the housing., Route wires and close the housing halves; torque screws to 1.2 Nm., Fit the chuck, side handle or blade as per the BOM.]
+  Hi-Pot & Function Test: [Apply test voltage per recipe; leakage must be at or below 3.5 mA., Measure insulation resistance and no-load speed., Record results in the quality inspection; red-tag failures to the NC rack.]
+  Packing: [Apply the rating label and serial label., Pack the tool with the manual and accessories in the carton or case., Scan the carton and complete the job card quantity.]

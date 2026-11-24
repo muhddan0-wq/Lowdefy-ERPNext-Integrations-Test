@@ -1,0 +1,5 @@
+{
+  "captured": "2026-11-24",
+  "note": "SHRDC record counts before MES build. Item = all items excluding the 59 Voltra codes.",
+  "counts": {"Item": 77, "BOM": 8, "Work Order": 15, "Job Card": 27, "Customer": 320, "Sales Order": 5, "Sales Invoice": 1, "Stock Entry": 9, "Material Request": 14, "Purchase Order": 2, "Delivery Note": 1, "Purchase Receipt": 2, "Stock Ledger Entry": 27, "GL Entry": 10}
+}

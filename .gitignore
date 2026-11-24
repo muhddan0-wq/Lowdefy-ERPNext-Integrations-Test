@@ -10,3 +10,6 @@ data/
 *.sqlite-wal
 .DS_Store
 Thumbs.db
+
+# MES API secrets (never commit)
+mes/.secrets/
