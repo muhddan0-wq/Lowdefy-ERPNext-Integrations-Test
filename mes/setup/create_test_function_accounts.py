@@ -10,7 +10,7 @@ import os
 import frappe
 
 SITE = "frontend"
-DOMAIN = "voltra.local"
+DOMAIN = "local.test"
 FUNCTIONS = ["Finance", "Purchasing", "Inventory", "Sales", "Production", "Quality", "Maintenance", "Human Resources"]
 OUT_DIR = os.environ["OUT_DIR"]
 

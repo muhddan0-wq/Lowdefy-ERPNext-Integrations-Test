@@ -4,7 +4,7 @@ Writes the key/secret to ./appsmith-mes.env (copy it out, then delete it)."""
 import sys
 import frappe
 
-USER = "appsmith-mes@voltra.local"
+USER = "appsmith-mes@local.test"
 COMPANY = "Voltra Power Tools Sdn Bhd"
 ROLES = ["Manufacturing User", "Manufacturing Manager", "Stock User"]
 

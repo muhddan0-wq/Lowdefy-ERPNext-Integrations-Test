@@ -18,7 +18,7 @@ scripts in `mes/server_scripts/`, which hold all the validation.
 2. In Appsmith (http://localhost:8081), go to Workspace, then **Create new**, then **Import**, and pick `mes/appsmith/MES-Phase1.json`.
 3. When the import asks you to configure datasource **ERPNext**:
    - URL: `http://host.docker.internal:8000`
-   - Header: `Authorization` = `token <key>:<secret>` of user `appsmith-mes@voltra.local` (stored in `mes/.secrets/appsmith-mes.env`, which git ignores)
+   - Header: `Authorization` = `token <key>:<secret>` of user `appsmith-mes@local.test` (stored in `mes/.secrets/appsmith-mes.env`, which git ignores)
 4. Deploy the app. The pages are Work Orders, Work Order Detail, New Plan, Schedule Board, Capacity and Workstation Queue.
 
 The REST query runs on the Appsmith server, so the key never reaches the browser.

@@ -32,7 +32,7 @@
 | Step | What | Done when |
 |---|---|---|
 | S1 | Run Appsmith Community Edition in Docker:<br>`docker run -d --name appsmith -p 8081:80 -v appsmith-stacks:/appsmith-stacks --restart unless-stopped appsmith/appsmith-ce`<br>Port 80 is already used on this PC, so Appsmith uses 8081. | `http://localhost:8081` opens and an admin account is created |
-| S2 | Create a dedicated ERPNext user `appsmith-mes@voltra.local` with Manufacturing User, Manufacturing Manager and Stock User roles. Add a User Permission restricting it to Company = Voltra. Generate its API key and secret. Never use Administrator. | The key can read a Voltra Work Order and cannot see SHRDC records |
+| S2 | Create a dedicated ERPNext user `appsmith-mes@local.test` with Manufacturing User, Manufacturing Manager and Stock User roles. Add a User Permission restricting it to Company = Voltra. Generate its API key and secret. Never use Administrator. | The key can read a Voltra Work Order and cannot see SHRDC records |
 | S3 | In Appsmith, add a REST API datasource "ERPNext" with base URL `http://host.docker.internal:8000` and header `Authorization: token <key>:<secret>`. Inside the container, `localhost` means Appsmith itself, so it can't be used here. | A test query `GET /api/resource/Workstation` returns the 12 P1 workstations |
 | S4 | Turn on Appsmith's "Use same-origin" defaults and keep every ERPNext call server-side (Appsmith's default for REST datasources). | The key never appears in browser network calls |
 

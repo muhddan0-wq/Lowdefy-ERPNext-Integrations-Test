@@ -33,9 +33,9 @@ The fix needed after import: the Custom Widget event context (`id`, `path`, `bod
 | What | Name | How to roll back |
 |---|---|---|
 | Site backup taken before the scripts went in | `sites/frontend/private/backups/20261124_133955-frontend-*` | `bench --site frontend restore …` |
-| ERPNext user | `appsmith-mes@voltra.local` (Manufacturing User, Manufacturing Manager, Stock User; no password) | Disable the user |
+| ERPNext user | `appsmith-mes@local.test` (Manufacturing User, Manufacturing Manager, Stock User; no password) | Disable the user |
 | User Permission | Company = Voltra Power Tools Sdn Bhd for that user | Delete the permission |
-| API key | Key and secret of `appsmith-mes@voltra.local`, stored in `mes/.secrets/appsmith-mes.env` (git-ignored) | Rotate with `create_api_user.py --new-keys`, or clear the key on the user |
+| API key | Key and secret of `appsmith-mes@local.test`, stored in `mes/.secrets/appsmith-mes.env` (git-ignored) | Rotate with `create_api_user.py --new-keys`, or clear the key on the user |
 | Server scripts (API) | `mes_work_orders`, `mes_work_order_detail`, `mes_work_order_action`, `mes_create_plan`, `mes_schedule_board`, `mes_schedule_conflicts`, `mes_workstation_load`, `mes_reschedule_job_card`, `mes_workstation_queue` | Disable or delete them. The source is in `mes/server_scripts/` and the installer is `mes/setup/install-server-scripts.ps1` |
 | Test data | Production Plan MFG-PP-2026-00005, WOs MFG-WO-2026-00104 to 00110 (00109 Completed, 00108 Closed), stock entries MAT-STE-2026-00043/44, Tracked Items from item_tracking | Leave as demo data, or cancel. Ask first: these are submitted documents |
 | Docker | Container `appsmith` (appsmith/appsmith-ce, port 8081) and volume `appsmith-stacks` | `docker rm -f appsmith; docker volume rm appsmith-stacks` |
