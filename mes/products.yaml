@@ -194,7 +194,7 @@ boms:
     items: {RM-BASE-CS: 1, RM-GUARD-CS: 1, RM-LGUARD-CS: 1, RM-SPINDLE-CS: 1, RM-BRG-6201: 1}
     operations: [[Guard & Base Assembly, 6]]
   FG-DRL-800:
-    items: {SA-MOT-S: 1, SA-HSG-DRL: 1, SA-HARN-S: 1, SA-GBX-DRL: 1, RM-CHUCK-13: 1, RM-SIDE-HDL: 1, RM-SCREW-KIT: 1, RM-LABEL: 1, RM-MANUAL: 1, RM-BOX-S: 1}
+    items: {SA-MOT-S: 1, SA-HSG-DRL: 1, SA-HARN-S: 1, SA-GBX-DRL: 1, RM-CHUCK-13: 1, RM-SIDE-HDL: 1, RM-SCREW-KIT: 1, RM-BOX-S: 1}
     operations: [[Final Assembly, 10], [Hi-Pot & Function Test, 3], [Packing, 2]]
   FG-RH-800:
     items: {SA-MOT-S: 1, SA-HSG-RH: 1, SA-HARN-S: 1, SA-HMECH-RH: 1, RM-SIDE-HDL: 1, RM-SCREW-KIT: 1, RM-LABEL: 1, RM-MANUAL: 1, RM-CASE-BMC: 1}

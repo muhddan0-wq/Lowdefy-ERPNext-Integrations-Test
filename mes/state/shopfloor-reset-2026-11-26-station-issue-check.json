@@ -1,0 +1,131 @@
+{
+ "work_order": "MFG-WO-2026-00163",
+ "job_card": "PO-JOB00318",
+ "scans": [
+  {
+   "value": "00000086",
+   "unit": "SA-MOT-S-0001",
+   "result": "Invalid",
+   "reason": "Unit SA-MOT-S-0001 was already used on work order MFG-WO-2026-00135"
+  },
+  {
+   "value": "00000106",
+   "unit": "SA-HSG-DRL-0001",
+   "result": "Valid",
+   "reason": "Verified as tracked unit"
+  },
+  {
+   "value": "00000076",
+   "unit": "SA-HARN-S-0001",
+   "result": "Invalid",
+   "reason": "Unit SA-HARN-S-0001 was already used on work order MFG-WO-2026-00036"
+  },
+  {
+   "value": "00000151",
+   "unit": "SA-GBX-DRL-0001",
+   "result": "Valid",
+   "reason": "Verified as tracked unit"
+  },
+  {
+   "value": "00000458",
+   "result": "Valid",
+   "qty": 1.0,
+   "reason": "Verified from batch 00000458"
+  },
+  {
+   "value": "00000459",
+   "result": "Valid",
+   "qty": 1.0,
+   "reason": "Verified from batch 00000459"
+  },
+  {
+   "value": "00000460",
+   "result": "Valid",
+   "qty": 1.0,
+   "reason": "Verified from batch 00000460"
+  },
+  {
+   "value": "00000461",
+   "result": "Valid",
+   "qty": 1.0,
+   "reason": "Verified from batch 00000461"
+  },
+  {
+   "value": "00000462",
+   "result": "Valid",
+   "qty": 1.0,
+   "reason": "Verified from batch 00000462"
+  },
+  {
+   "value": "00000463",
+   "result": "Valid",
+   "qty": 1.0,
+   "reason": "Verified from batch 00000463"
+  }
+ ],
+ "issue": {
+  "http": 200,
+  "response": {
+   "ok": true,
+   "work_order": "MFG-WO-2026-00163",
+   "stock_entry": "MAT-STE-2026-00099",
+   "shortages": [],
+   "qty": 1.0,
+   "status": "In Process",
+   "transferred_qty": 1.0
+  }
+ },
+ "issued_rows_MAT-STE-2026-00099": [
+  [
+   "SA-MOT-S",
+   1,
+   ""
+  ],
+  [
+   "SA-HSG-DRL",
+   1,
+   ""
+  ],
+  [
+   "SA-HARN-S",
+   1,
+   ""
+  ],
+  [
+   "SA-GBX-DRL",
+   1,
+   ""
+  ],
+  [
+   "RM-CHUCK-13-B",
+   1,
+   "RM-CHUCK-13-B-20261126-001"
+  ],
+  [
+   "RM-SIDE-HDL-B",
+   1,
+   "RM-SIDE-HDL-B-20261126-001"
+  ],
+  [
+   "RM-SCREW-KIT-B",
+   1,
+   "RM-SCREW-KIT-B-20261126-001"
+  ],
+  [
+   "RM-BOX-S-B",
+   1,
+   "RM-BOX-S-B-20261126-001"
+  ],
+  [
+   "RM-LABEL-B",
+   1,
+   "00000462"
+  ],
+  [
+   "RM-MANUAL-B",
+   1,
+   "00000463"
+  ]
+ ],
+ "after": "scans voided, MFG-WO-2026-00163 closed; 1 set stays in P1 Work In Progress - VPT"
+}

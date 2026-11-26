@@ -1,0 +1,4086 @@
+{
+ "closed": [
+  {
+   "work_order": "MFG-WO-2026-00036",
+   "item": "FG-DRL-800",
+   "qty": 40.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-FG-DRL-800-001",
+   "production_plan": "MFG-PP-2026-00001"
+  },
+  {
+   "work_order": "MFG-WO-2026-00037",
+   "item": "FG-RH-800",
+   "qty": 25.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-FG-RH-800-001",
+   "production_plan": "MFG-PP-2026-00001"
+  },
+  {
+   "work_order": "MFG-WO-2026-00038",
+   "item": "FG-CS-1400",
+   "qty": 30.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-FG-CS-1400-001",
+   "production_plan": "MFG-PP-2026-00001"
+  },
+  {
+   "work_order": "MFG-WO-2026-00039",
+   "item": "SA-MOT-S",
+   "qty": 65.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-MOT-S-001",
+   "production_plan": "MFG-PP-2026-00001"
+  },
+  {
+   "work_order": "MFG-WO-2026-00040",
+   "item": "SA-ARM-S",
+   "qty": 65.0,
+   "produced": 0.0,
+   "transferred": 65.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-SA-ARM-S-001",
+   "production_plan": "MFG-PP-2026-00001"
+  },
+  {
+   "work_order": "MFG-WO-2026-00041",
+   "item": "SA-STA-S",
+   "qty": 65.0,
+   "produced": 0.0,
+   "transferred": 65.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-SA-STA-S-001",
+   "production_plan": "MFG-PP-2026-00001"
+  },
+  {
+   "work_order": "MFG-WO-2026-00042",
+   "item": "SA-HSG-DRL",
+   "qty": 40.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HSG-DRL-001",
+   "production_plan": "MFG-PP-2026-00001"
+  },
+  {
+   "work_order": "MFG-WO-2026-00044",
+   "item": "SA-GBX-DRL",
+   "qty": 40.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-GBX-DRL-001",
+   "production_plan": "MFG-PP-2026-00001"
+  },
+  {
+   "work_order": "MFG-WO-2026-00045",
+   "item": "SA-HSG-RH",
+   "qty": 25.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HSG-RH-001",
+   "production_plan": "MFG-PP-2026-00001"
+  },
+  {
+   "work_order": "MFG-WO-2026-00046",
+   "item": "SA-HMECH-RH",
+   "qty": 25.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HMECH-RH-001",
+   "production_plan": "MFG-PP-2026-00001"
+  },
+  {
+   "work_order": "MFG-WO-2026-00047",
+   "item": "SA-MOT-L",
+   "qty": 30.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-MOT-L-001",
+   "production_plan": "MFG-PP-2026-00001"
+  },
+  {
+   "work_order": "MFG-WO-2026-00048",
+   "item": "SA-ARM-L",
+   "qty": 30.0,
+   "produced": 0.0,
+   "transferred": 30.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-SA-ARM-L-001",
+   "production_plan": "MFG-PP-2026-00001"
+  },
+  {
+   "work_order": "MFG-WO-2026-00049",
+   "item": "SA-STA-L",
+   "qty": 30.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-STA-L-001",
+   "production_plan": "MFG-PP-2026-00001"
+  },
+  {
+   "work_order": "MFG-WO-2026-00050",
+   "item": "SA-HSG-CS",
+   "qty": 30.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HSG-CS-001",
+   "production_plan": "MFG-PP-2026-00001"
+  },
+  {
+   "work_order": "MFG-WO-2026-00051",
+   "item": "SA-HARN-L",
+   "qty": 30.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HARN-L-001",
+   "production_plan": "MFG-PP-2026-00001"
+  },
+  {
+   "work_order": "MFG-WO-2026-00052",
+   "item": "SA-GUARD-CS",
+   "qty": 30.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-GUARD-CS-001",
+   "production_plan": "MFG-PP-2026-00001"
+  },
+  {
+   "work_order": "MFG-WO-2026-00053",
+   "item": "FG-DRL-800",
+   "qty": 40.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-FG-DRL-800-001",
+   "production_plan": "MFG-PP-2026-00002"
+  },
+  {
+   "work_order": "MFG-WO-2026-00054",
+   "item": "FG-RH-800",
+   "qty": 25.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-FG-RH-800-001",
+   "production_plan": "MFG-PP-2026-00002"
+  },
+  {
+   "work_order": "MFG-WO-2026-00055",
+   "item": "FG-CS-1400",
+   "qty": 30.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-FG-CS-1400-001",
+   "production_plan": "MFG-PP-2026-00002"
+  },
+  {
+   "work_order": "MFG-WO-2026-00056",
+   "item": "SA-MOT-S",
+   "qty": 65.0,
+   "produced": 35.0,
+   "transferred": 50.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-SA-MOT-S-001",
+   "production_plan": "MFG-PP-2026-00002"
+  },
+  {
+   "work_order": "MFG-WO-2026-00057",
+   "item": "SA-ARM-S",
+   "qty": 65.0,
+   "produced": 53.0,
+   "transferred": 59.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-SA-ARM-S-001",
+   "production_plan": "MFG-PP-2026-00002"
+  },
+  {
+   "work_order": "MFG-WO-2026-00058",
+   "item": "SA-STA-S",
+   "qty": 65.0,
+   "produced": 51.0,
+   "transferred": 58.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-SA-STA-S-001",
+   "production_plan": "MFG-PP-2026-00002"
+  },
+  {
+   "work_order": "MFG-WO-2026-00059",
+   "item": "SA-HSG-DRL",
+   "qty": 40.0,
+   "produced": 10.0,
+   "transferred": 25.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HSG-DRL-001",
+   "production_plan": "MFG-PP-2026-00002"
+  },
+  {
+   "work_order": "MFG-WO-2026-00061",
+   "item": "SA-GBX-DRL",
+   "qty": 40.0,
+   "produced": 22.0,
+   "transferred": 31.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-SA-GBX-DRL-001",
+   "production_plan": "MFG-PP-2026-00002"
+  },
+  {
+   "work_order": "MFG-WO-2026-00062",
+   "item": "SA-HSG-RH",
+   "qty": 25.0,
+   "produced": 7.0,
+   "transferred": 16.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HSG-RH-001",
+   "production_plan": "MFG-PP-2026-00002"
+  },
+  {
+   "work_order": "MFG-WO-2026-00063",
+   "item": "SA-HMECH-RH",
+   "qty": 25.0,
+   "produced": 21.0,
+   "transferred": 23.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HMECH-RH-001",
+   "production_plan": "MFG-PP-2026-00002"
+  },
+  {
+   "work_order": "MFG-WO-2026-00064",
+   "item": "SA-MOT-L",
+   "qty": 30.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-SA-MOT-L-001",
+   "production_plan": "MFG-PP-2026-00002"
+  },
+  {
+   "work_order": "MFG-WO-2026-00065",
+   "item": "SA-ARM-L",
+   "qty": 30.0,
+   "produced": 2.0,
+   "transferred": 16.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-SA-ARM-L-001",
+   "production_plan": "MFG-PP-2026-00002"
+  },
+  {
+   "work_order": "MFG-WO-2026-00066",
+   "item": "SA-STA-L",
+   "qty": 30.0,
+   "produced": 4.0,
+   "transferred": 17.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-SA-STA-L-001",
+   "production_plan": "MFG-PP-2026-00002"
+  },
+  {
+   "work_order": "MFG-WO-2026-00070",
+   "item": "FG-DRL-800",
+   "qty": 45.0,
+   "produced": 0.0,
+   "transferred": 45.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-FG-DRL-800-001",
+   "production_plan": "MFG-PP-2026-00003"
+  },
+  {
+   "work_order": "MFG-WO-2026-00071",
+   "item": "FG-RH-800",
+   "qty": 20.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-FG-RH-800-001",
+   "production_plan": "MFG-PP-2026-00003"
+  },
+  {
+   "work_order": "MFG-WO-2026-00072",
+   "item": "FG-CS-1400",
+   "qty": 30.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-FG-CS-1400-001",
+   "production_plan": "MFG-PP-2026-00003"
+  },
+  {
+   "work_order": "MFG-WO-2026-00073",
+   "item": "SA-MOT-S",
+   "qty": 65.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-MOT-S-001",
+   "production_plan": "MFG-PP-2026-00003"
+  },
+  {
+   "work_order": "MFG-WO-2026-00074",
+   "item": "SA-ARM-S",
+   "qty": 65.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-SA-ARM-S-001",
+   "production_plan": "MFG-PP-2026-00003"
+  },
+  {
+   "work_order": "MFG-WO-2026-00075",
+   "item": "SA-STA-S",
+   "qty": 65.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-STA-S-001",
+   "production_plan": "MFG-PP-2026-00003"
+  },
+  {
+   "work_order": "MFG-WO-2026-00076",
+   "item": "SA-HSG-DRL",
+   "qty": 45.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HSG-DRL-001",
+   "production_plan": "MFG-PP-2026-00003"
+  },
+  {
+   "work_order": "MFG-WO-2026-00077",
+   "item": "SA-HARN-S",
+   "qty": 65.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HARN-S-001",
+   "production_plan": "MFG-PP-2026-00003"
+  },
+  {
+   "work_order": "MFG-WO-2026-00078",
+   "item": "SA-GBX-DRL",
+   "qty": 45.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-GBX-DRL-001",
+   "production_plan": "MFG-PP-2026-00003"
+  },
+  {
+   "work_order": "MFG-WO-2026-00079",
+   "item": "SA-HSG-RH",
+   "qty": 20.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HSG-RH-001",
+   "production_plan": "MFG-PP-2026-00003"
+  },
+  {
+   "work_order": "MFG-WO-2026-00080",
+   "item": "SA-HMECH-RH",
+   "qty": 20.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HMECH-RH-001",
+   "production_plan": "MFG-PP-2026-00003"
+  },
+  {
+   "work_order": "MFG-WO-2026-00081",
+   "item": "SA-MOT-L",
+   "qty": 30.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-MOT-L-001",
+   "production_plan": "MFG-PP-2026-00003"
+  },
+  {
+   "work_order": "MFG-WO-2026-00082",
+   "item": "SA-ARM-L",
+   "qty": 30.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-ARM-L-001",
+   "production_plan": "MFG-PP-2026-00003"
+  },
+  {
+   "work_order": "MFG-WO-2026-00083",
+   "item": "SA-STA-L",
+   "qty": 30.0,
+   "produced": 0.0,
+   "transferred": 30.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-SA-STA-L-001",
+   "production_plan": "MFG-PP-2026-00003"
+  },
+  {
+   "work_order": "MFG-WO-2026-00084",
+   "item": "SA-HSG-CS",
+   "qty": 30.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HSG-CS-001",
+   "production_plan": "MFG-PP-2026-00003"
+  },
+  {
+   "work_order": "MFG-WO-2026-00085",
+   "item": "SA-HARN-L",
+   "qty": 30.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HARN-L-001",
+   "production_plan": "MFG-PP-2026-00003"
+  },
+  {
+   "work_order": "MFG-WO-2026-00086",
+   "item": "SA-GUARD-CS",
+   "qty": 30.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-GUARD-CS-001",
+   "production_plan": "MFG-PP-2026-00003"
+  },
+  {
+   "work_order": "MFG-WO-2026-00087",
+   "item": "FG-DRL-800",
+   "qty": 40.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-FG-DRL-800-001",
+   "production_plan": "MFG-PP-2026-00004"
+  },
+  {
+   "work_order": "MFG-WO-2026-00088",
+   "item": "FG-RH-800",
+   "qty": 25.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-FG-RH-800-001",
+   "production_plan": "MFG-PP-2026-00004"
+  },
+  {
+   "work_order": "MFG-WO-2026-00089",
+   "item": "FG-CS-1400",
+   "qty": 25.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-FG-CS-1400-001",
+   "production_plan": "MFG-PP-2026-00004"
+  },
+  {
+   "work_order": "MFG-WO-2026-00090",
+   "item": "SA-MOT-S",
+   "qty": 65.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-MOT-S-001",
+   "production_plan": "MFG-PP-2026-00004"
+  },
+  {
+   "work_order": "MFG-WO-2026-00091",
+   "item": "SA-ARM-S",
+   "qty": 65.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-SA-ARM-S-001",
+   "production_plan": "MFG-PP-2026-00004"
+  },
+  {
+   "work_order": "MFG-WO-2026-00092",
+   "item": "SA-STA-S",
+   "qty": 65.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-STA-S-001",
+   "production_plan": "MFG-PP-2026-00004"
+  },
+  {
+   "work_order": "MFG-WO-2026-00093",
+   "item": "SA-HSG-DRL",
+   "qty": 40.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HSG-DRL-001",
+   "production_plan": "MFG-PP-2026-00004"
+  },
+  {
+   "work_order": "MFG-WO-2026-00094",
+   "item": "SA-HARN-S",
+   "qty": 65.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HARN-S-001",
+   "production_plan": "MFG-PP-2026-00004"
+  },
+  {
+   "work_order": "MFG-WO-2026-00095",
+   "item": "SA-GBX-DRL",
+   "qty": 40.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-GBX-DRL-001",
+   "production_plan": "MFG-PP-2026-00004"
+  },
+  {
+   "work_order": "MFG-WO-2026-00096",
+   "item": "SA-HSG-RH",
+   "qty": 25.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HSG-RH-001",
+   "production_plan": "MFG-PP-2026-00004"
+  },
+  {
+   "work_order": "MFG-WO-2026-00097",
+   "item": "SA-HMECH-RH",
+   "qty": 25.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HMECH-RH-001",
+   "production_plan": "MFG-PP-2026-00004"
+  },
+  {
+   "work_order": "MFG-WO-2026-00098",
+   "item": "SA-MOT-L",
+   "qty": 25.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-MOT-L-001",
+   "production_plan": "MFG-PP-2026-00004"
+  },
+  {
+   "work_order": "MFG-WO-2026-00099",
+   "item": "SA-ARM-L",
+   "qty": 25.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-ARM-L-001",
+   "production_plan": "MFG-PP-2026-00004"
+  },
+  {
+   "work_order": "MFG-WO-2026-00100",
+   "item": "SA-STA-L",
+   "qty": 25.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-STA-L-001",
+   "production_plan": "MFG-PP-2026-00004"
+  },
+  {
+   "work_order": "MFG-WO-2026-00101",
+   "item": "SA-HSG-CS",
+   "qty": 25.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HSG-CS-001",
+   "production_plan": "MFG-PP-2026-00004"
+  },
+  {
+   "work_order": "MFG-WO-2026-00102",
+   "item": "SA-HARN-L",
+   "qty": 25.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HARN-L-001",
+   "production_plan": "MFG-PP-2026-00004"
+  },
+  {
+   "work_order": "MFG-WO-2026-00103",
+   "item": "SA-GUARD-CS",
+   "qty": 25.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-GUARD-CS-001",
+   "production_plan": "MFG-PP-2026-00004"
+  },
+  {
+   "work_order": "MFG-WO-2026-00104",
+   "item": "FG-DRL-800",
+   "qty": 10.0,
+   "produced": 0.0,
+   "transferred": 10.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-FG-DRL-800-001",
+   "production_plan": "MFG-PP-2026-00005"
+  },
+  {
+   "work_order": "MFG-WO-2026-00105",
+   "item": "SA-MOT-S",
+   "qty": 10.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-MOT-S-001",
+   "production_plan": "MFG-PP-2026-00005"
+  },
+  {
+   "work_order": "MFG-WO-2026-00106",
+   "item": "SA-ARM-S",
+   "qty": 10.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-ARM-S-001",
+   "production_plan": "MFG-PP-2026-00005"
+  },
+  {
+   "work_order": "MFG-WO-2026-00107",
+   "item": "SA-STA-S",
+   "qty": 10.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-STA-S-001",
+   "production_plan": "MFG-PP-2026-00005"
+  },
+  {
+   "work_order": "MFG-WO-2026-00110",
+   "item": "SA-GBX-DRL",
+   "qty": 10.0,
+   "produced": 0.0,
+   "transferred": 10.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-SA-GBX-DRL-001",
+   "production_plan": "MFG-PP-2026-00005"
+  },
+  {
+   "work_order": "MFG-WO-2026-00111",
+   "item": "FG-DRL-800",
+   "qty": 10.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-FG-DRL-800-001",
+   "production_plan": "MFG-PP-2026-00006"
+  },
+  {
+   "work_order": "MFG-WO-2026-00112",
+   "item": "SA-MOT-S",
+   "qty": 10.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-MOT-S-001",
+   "production_plan": "MFG-PP-2026-00006"
+  },
+  {
+   "work_order": "MFG-WO-2026-00113",
+   "item": "SA-ARM-S",
+   "qty": 10.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-ARM-S-001",
+   "production_plan": "MFG-PP-2026-00006"
+  },
+  {
+   "work_order": "MFG-WO-2026-00114",
+   "item": "SA-STA-S",
+   "qty": 10.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-STA-S-001",
+   "production_plan": "MFG-PP-2026-00006"
+  },
+  {
+   "work_order": "MFG-WO-2026-00115",
+   "item": "SA-HSG-DRL",
+   "qty": 10.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HSG-DRL-001",
+   "production_plan": "MFG-PP-2026-00006"
+  },
+  {
+   "work_order": "MFG-WO-2026-00116",
+   "item": "SA-HARN-S",
+   "qty": 10.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HARN-S-001",
+   "production_plan": "MFG-PP-2026-00006"
+  },
+  {
+   "work_order": "MFG-WO-2026-00117",
+   "item": "SA-GBX-DRL",
+   "qty": 10.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-GBX-DRL-001",
+   "production_plan": "MFG-PP-2026-00006"
+  },
+  {
+   "work_order": "MFG-WO-2026-00118",
+   "item": "FG-DRL-800",
+   "qty": 1.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-FG-DRL-800-001",
+   "production_plan": "MFG-PP-2026-00007"
+  },
+  {
+   "work_order": "MFG-WO-2026-00119",
+   "item": "SA-MOT-S",
+   "qty": 1.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-MOT-S-001",
+   "production_plan": "MFG-PP-2026-00007"
+  },
+  {
+   "work_order": "MFG-WO-2026-00120",
+   "item": "SA-ARM-S",
+   "qty": 1.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-ARM-S-001",
+   "production_plan": "MFG-PP-2026-00007"
+  },
+  {
+   "work_order": "MFG-WO-2026-00121",
+   "item": "SA-STA-S",
+   "qty": 1.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-STA-S-001",
+   "production_plan": "MFG-PP-2026-00007"
+  },
+  {
+   "work_order": "MFG-WO-2026-00122",
+   "item": "SA-HSG-DRL",
+   "qty": 1.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HSG-DRL-001",
+   "production_plan": "MFG-PP-2026-00007"
+  },
+  {
+   "work_order": "MFG-WO-2026-00123",
+   "item": "SA-HARN-S",
+   "qty": 1.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HARN-S-001",
+   "production_plan": "MFG-PP-2026-00007"
+  },
+  {
+   "work_order": "MFG-WO-2026-00124",
+   "item": "SA-GBX-DRL",
+   "qty": 1.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-GBX-DRL-001",
+   "production_plan": "MFG-PP-2026-00007"
+  },
+  {
+   "work_order": "MFG-WO-2026-00125",
+   "item": "FG-DRL-800",
+   "qty": 30.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-FG-DRL-800-001",
+   "production_plan": "MFG-PP-2026-00008"
+  },
+  {
+   "work_order": "MFG-WO-2026-00126",
+   "item": "SA-MOT-S",
+   "qty": 30.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-MOT-S-001",
+   "production_plan": "MFG-PP-2026-00008"
+  },
+  {
+   "work_order": "MFG-WO-2026-00127",
+   "item": "SA-ARM-S",
+   "qty": 30.0,
+   "produced": 0.0,
+   "transferred": 30.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-SA-ARM-S-001",
+   "production_plan": "MFG-PP-2026-00008"
+  },
+  {
+   "work_order": "MFG-WO-2026-00128",
+   "item": "SA-STA-S",
+   "qty": 30.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-STA-S-001",
+   "production_plan": "MFG-PP-2026-00008"
+  },
+  {
+   "work_order": "MFG-WO-2026-00129",
+   "item": "SA-HSG-DRL",
+   "qty": 30.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HSG-DRL-001",
+   "production_plan": "MFG-PP-2026-00008"
+  },
+  {
+   "work_order": "MFG-WO-2026-00130",
+   "item": "SA-HARN-S",
+   "qty": 30.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-HARN-S-001",
+   "production_plan": "MFG-PP-2026-00008"
+  },
+  {
+   "work_order": "MFG-WO-2026-00131",
+   "item": "SA-GBX-DRL",
+   "qty": 30.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-SA-GBX-DRL-001",
+   "production_plan": "MFG-PP-2026-00008"
+  },
+  {
+   "work_order": "MFG-WO-2026-00132",
+   "item": "FG-DRL-800",
+   "qty": 5.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-FG-DRL-800-003",
+   "production_plan": null
+  },
+  {
+   "work_order": "MFG-WO-2026-00133",
+   "item": "FG-DRL-800",
+   "qty": 45.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-FG-DRL-800-003",
+   "production_plan": null
+  },
+  {
+   "work_order": "MFG-WO-2026-00137",
+   "item": "FG-RH-800",
+   "qty": 5.0,
+   "produced": 0.0,
+   "transferred": 5.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-FG-RH-800-001",
+   "production_plan": null
+  },
+  {
+   "work_order": "MFG-WO-2026-00138",
+   "item": "FG-RH-800",
+   "qty": 1.0,
+   "produced": 0.0,
+   "transferred": 1.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-FG-RH-800-001",
+   "production_plan": null
+  },
+  {
+   "work_order": "MFG-WO-2026-00139",
+   "item": "FG-RH-800",
+   "qty": 1.0,
+   "produced": 0.0,
+   "transferred": 1.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-FG-RH-800-001",
+   "production_plan": null
+  },
+  {
+   "work_order": "MFG-WO-2026-00140",
+   "item": "FG-RH-800",
+   "qty": 1.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-FG-RH-800-001",
+   "production_plan": null
+  },
+  {
+   "work_order": "MFG-WO-2026-00141",
+   "item": "FG-RH-800",
+   "qty": 2.0,
+   "produced": 0.0,
+   "transferred": 2.0,
+   "status_before": "In Process",
+   "status_after": "Closed",
+   "bom": "BOM-FG-RH-800-001",
+   "production_plan": null
+  },
+  {
+   "work_order": "MFG-WO-2026-00142",
+   "item": "FG-RH-800",
+   "qty": 1.0,
+   "produced": 0.0,
+   "transferred": 0.0,
+   "status_before": "Not Started",
+   "status_after": "Closed",
+   "bom": "BOM-FG-RH-800-001",
+   "production_plan": null
+  }
+ ],
+ "voided_scans": [
+  {
+   "name": "MES-SCN-00240",
+   "work_order": "MFG-WO-2026-00048",
+   "item_code": "RM-VARNISH",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 0.9,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00239",
+   "work_order": "MFG-WO-2026-00048",
+   "item_code": "RM-INS-PAPER",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 9.6,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00238",
+   "work_order": "MFG-WO-2026-00048",
+   "item_code": "RM-CU-WIRE",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 9.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00237",
+   "work_order": "MFG-WO-2026-00048",
+   "item_code": "RM-COMM-24",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 30.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00236",
+   "work_order": "MFG-WO-2026-00048",
+   "item_code": "RM-LAM-ARM-L",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 30.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00235",
+   "work_order": "MFG-WO-2026-00048",
+   "item_code": "RM-SHAFT-L",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 30.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00233",
+   "work_order": "MFG-WO-2026-00048",
+   "item_code": "RM-INS-PAPER",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 14.4,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00231",
+   "work_order": "MFG-WO-2026-00141",
+   "item_code": "SA-MOT-S",
+   "unit_id": "SA-MOT-S-0012",
+   "batch_no": null,
+   "qty": 1.0,
+   "unit_key": "SA-MOT-S::SA-MOT-S-0012"
+  },
+  {
+   "name": "MES-SCN-00230",
+   "work_order": "MFG-WO-2026-00141",
+   "item_code": "SA-HMECH-RH",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 1.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00220",
+   "work_order": "MFG-WO-2026-00127",
+   "item_code": "RM-VARNISH",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 0.6,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00219",
+   "work_order": "MFG-WO-2026-00127",
+   "item_code": "RM-INS-PAPER",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 18.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00218",
+   "work_order": "MFG-WO-2026-00127",
+   "item_code": "RM-CU-WIRE",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 2.16,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00217",
+   "work_order": "MFG-WO-2026-00127",
+   "item_code": "RM-COMM-24",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 30.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00216",
+   "work_order": "MFG-WO-2026-00127",
+   "item_code": "RM-LAM-ARM-S",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 30.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00215",
+   "work_order": "MFG-WO-2026-00127",
+   "item_code": "RM-SHAFT-S",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 30.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00213",
+   "work_order": "MFG-WO-2026-00127",
+   "item_code": "RM-CU-WIRE",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 3.24,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00212",
+   "work_order": "MFG-WO-2026-00140",
+   "item_code": "SA-MOT-S",
+   "unit_id": "SA-MOT-S-0010",
+   "batch_no": null,
+   "qty": 1.0,
+   "unit_key": "SA-MOT-S::SA-MOT-S-0010"
+  },
+  {
+   "name": "MES-SCN-00203",
+   "work_order": "MFG-WO-2026-00110",
+   "item_code": "RM-GREASE",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 0.12,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00202",
+   "work_order": "MFG-WO-2026-00110",
+   "item_code": "RM-BRG-608",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 10.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00201",
+   "work_order": "MFG-WO-2026-00110",
+   "item_code": "RM-GEARCASE-AL",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 10.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00200",
+   "work_order": "MFG-WO-2026-00110",
+   "item_code": "RM-GEAR-DRL",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 10.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00198",
+   "work_order": "MFG-WO-2026-00110",
+   "item_code": "RM-GREASE",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 0.18,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00196",
+   "work_order": "MFG-WO-2026-00137",
+   "item_code": "SA-MOT-S",
+   "unit_id": "SA-MOT-S-0008",
+   "batch_no": null,
+   "qty": 1.0,
+   "unit_key": "SA-MOT-S::SA-MOT-S-0008"
+  },
+  {
+   "name": "MES-SCN-00195",
+   "work_order": "MFG-WO-2026-00137",
+   "item_code": "RM-CASE-BMC",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 5.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00185",
+   "work_order": "MFG-WO-2026-00041",
+   "item_code": "RM-VARNISH",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 0.52,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00184",
+   "work_order": "MFG-WO-2026-00041",
+   "item_code": "RM-INS-PAPER",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 52.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00183",
+   "work_order": "MFG-WO-2026-00041",
+   "item_code": "RM-CU-WIRE",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 14.3,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00182",
+   "work_order": "MFG-WO-2026-00041",
+   "item_code": "RM-LAM-STA-S",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 65.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00180",
+   "work_order": "MFG-WO-2026-00041",
+   "item_code": "RM-VARNISH",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 0.78,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00178",
+   "work_order": "MFG-WO-2026-00088",
+   "item_code": "SA-MOT-S",
+   "unit_id": "SA-MOT-S-0006",
+   "batch_no": null,
+   "qty": 1.0,
+   "unit_key": "SA-MOT-S::SA-MOT-S-0006"
+  },
+  {
+   "name": "MES-SCN-00177",
+   "work_order": "MFG-WO-2026-00088",
+   "item_code": "RM-LABEL",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 5.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00097",
+   "work_order": "MFG-WO-2026-00070",
+   "item_code": "SA-HSG-DRL",
+   "unit_id": "SA-HSG-DRL-0001",
+   "batch_no": null,
+   "qty": 1.0,
+   "unit_key": "SA-HSG-DRL::SA-HSG-DRL-0001"
+  },
+  {
+   "name": "MES-SCN-00095",
+   "work_order": "MFG-WO-2026-00070",
+   "item_code": "SA-GBX-DRL",
+   "unit_id": "SA-GBX-DRL-0010",
+   "batch_no": null,
+   "qty": 1.0,
+   "unit_key": "SA-GBX-DRL::SA-GBX-DRL-0010"
+  },
+  {
+   "name": "MES-SCN-00094",
+   "work_order": "MFG-WO-2026-00070",
+   "item_code": "SA-GBX-DRL",
+   "unit_id": "SA-GBX-DRL-0001",
+   "batch_no": null,
+   "qty": 1.0,
+   "unit_key": "SA-GBX-DRL::SA-GBX-DRL-0001"
+  },
+  {
+   "name": "MES-SCN-00092",
+   "work_order": "MFG-WO-2026-00106",
+   "item_code": "RM-VARNISH",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 0.2,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00091",
+   "work_order": "MFG-WO-2026-00106",
+   "item_code": "RM-INS-PAPER",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 6.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00090",
+   "work_order": "MFG-WO-2026-00106",
+   "item_code": "RM-CU-WIRE",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 0.72,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00089",
+   "work_order": "MFG-WO-2026-00106",
+   "item_code": "RM-COMM-24",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 10.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00088",
+   "work_order": "MFG-WO-2026-00106",
+   "item_code": "RM-LAM-ARM-S",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 10.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00087",
+   "work_order": "MFG-WO-2026-00106",
+   "item_code": "RM-SHAFT-S",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 10.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00085",
+   "work_order": "MFG-WO-2026-00106",
+   "item_code": "RM-CU-WIRE",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 1.08,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00084",
+   "work_order": "MFG-WO-2026-00071",
+   "item_code": "SA-HARN-S",
+   "unit_id": "SA-HARN-S-0008",
+   "batch_no": null,
+   "qty": 1.0,
+   "unit_key": "SA-HARN-S::SA-HARN-S-0008"
+  },
+  {
+   "name": "MES-SCN-00073",
+   "work_order": "MFG-WO-2026-00083",
+   "item_code": "RM-VARNISH",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 0.9,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00072",
+   "work_order": "MFG-WO-2026-00083",
+   "item_code": "RM-INS-PAPER",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 30.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00071",
+   "work_order": "MFG-WO-2026-00083",
+   "item_code": "RM-CU-WIRE",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 10.5,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00070",
+   "work_order": "MFG-WO-2026-00083",
+   "item_code": "RM-LAM-STA-L",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 30.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00069",
+   "work_order": "MFG-WO-2026-00049",
+   "item_code": "RM-VARNISH",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 0.9,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00068",
+   "work_order": "MFG-WO-2026-00049",
+   "item_code": "RM-INS-PAPER",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 30.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00067",
+   "work_order": "MFG-WO-2026-00049",
+   "item_code": "RM-CU-WIRE",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 10.5,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00066",
+   "work_order": "MFG-WO-2026-00049",
+   "item_code": "RM-LAM-STA-L",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 30.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00063",
+   "work_order": "MFG-WO-2026-00091",
+   "item_code": "RM-VARNISH",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 1.3,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00062",
+   "work_order": "MFG-WO-2026-00091",
+   "item_code": "RM-INS-PAPER",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 39.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00061",
+   "work_order": "MFG-WO-2026-00091",
+   "item_code": "RM-CU-WIRE",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 4.68,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00060",
+   "work_order": "MFG-WO-2026-00091",
+   "item_code": "RM-COMM-24",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 65.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00059",
+   "work_order": "MFG-WO-2026-00091",
+   "item_code": "RM-LAM-ARM-S",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 65.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00058",
+   "work_order": "MFG-WO-2026-00091",
+   "item_code": "RM-SHAFT-S",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 65.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00056",
+   "work_order": "MFG-WO-2026-00091",
+   "item_code": "RM-CU-WIRE",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 7.02,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00054",
+   "work_order": "MFG-WO-2026-00111",
+   "item_code": "SA-HARN-S",
+   "unit_id": "SA-HARN-S-0006",
+   "batch_no": null,
+   "qty": 1.0,
+   "unit_key": "SA-HARN-S::SA-HARN-S-0006"
+  },
+  {
+   "name": "MES-SCN-00053",
+   "work_order": "MFG-WO-2026-00111",
+   "item_code": "RM-CHUCK-13",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 5.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00044",
+   "work_order": "MFG-WO-2026-00087",
+   "item_code": "SA-HARN-S",
+   "unit_id": "SA-HARN-S-0010",
+   "batch_no": null,
+   "qty": 1.0,
+   "unit_key": "SA-HARN-S::SA-HARN-S-0010"
+  },
+  {
+   "name": "MES-SCN-00043",
+   "work_order": "MFG-WO-2026-00104",
+   "item_code": "SA-HARN-S",
+   "unit_id": "SA-HARN-S-0004",
+   "batch_no": null,
+   "qty": 1.0,
+   "unit_key": "SA-HARN-S::SA-HARN-S-0004"
+  },
+  {
+   "name": "MES-SCN-00042",
+   "work_order": "MFG-WO-2026-00087",
+   "item_code": "RM-CHUCK-13",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 5.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00034",
+   "work_order": "MFG-WO-2026-00087",
+   "item_code": "SA-HARN-S",
+   "unit_id": "SA-HARN-S-0003",
+   "batch_no": null,
+   "qty": 1.0,
+   "unit_key": "SA-HARN-S::SA-HARN-S-0003"
+  },
+  {
+   "name": "MES-SCN-00033",
+   "work_order": "MFG-WO-2026-00074",
+   "item_code": "RM-VARNISH",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 1.3,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00032",
+   "work_order": "MFG-WO-2026-00074",
+   "item_code": "RM-INS-PAPER",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 3.9,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00031",
+   "work_order": "MFG-WO-2026-00074",
+   "item_code": "RM-CU-WIRE",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 4.68,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00030",
+   "work_order": "MFG-WO-2026-00074",
+   "item_code": "RM-COMM-24",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 65.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00029",
+   "work_order": "MFG-WO-2026-00074",
+   "item_code": "RM-LAM-ARM-S",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 65.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00027",
+   "work_order": "MFG-WO-2026-00074",
+   "item_code": "RM-SHAFT-S",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 65.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00024",
+   "work_order": "MFG-WO-2026-00074",
+   "item_code": "RM-INS-PAPER",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 11.7,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00023",
+   "work_order": "MFG-WO-2026-00074",
+   "item_code": "RM-INS-PAPER",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 11.7,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00022",
+   "work_order": "MFG-WO-2026-00074",
+   "item_code": "RM-INS-PAPER",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 11.7,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00021",
+   "work_order": "MFG-WO-2026-00074",
+   "item_code": "RM-CU-WIRE",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 7.02,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00019",
+   "work_order": "MFG-WO-2026-00040",
+   "item_code": "RM-VARNISH",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 1.3,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00018",
+   "work_order": "MFG-WO-2026-00040",
+   "item_code": "RM-INS-PAPER",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 39.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00017",
+   "work_order": "MFG-WO-2026-00040",
+   "item_code": "RM-CU-WIRE",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 4.68,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00016",
+   "work_order": "MFG-WO-2026-00040",
+   "item_code": "RM-COMM-24",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 65.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00015",
+   "work_order": "MFG-WO-2026-00040",
+   "item_code": "RM-LAM-ARM-S",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 65.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00014",
+   "work_order": "MFG-WO-2026-00040",
+   "item_code": "RM-SHAFT-S",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 65.0,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00012",
+   "work_order": "MFG-WO-2026-00040",
+   "item_code": "RM-CU-WIRE",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 7.02,
+   "unit_key": null
+  },
+  {
+   "name": "MES-SCN-00010",
+   "work_order": "MFG-WO-2026-00036",
+   "item_code": "SA-HARN-S",
+   "unit_id": "SA-HARN-S-0002",
+   "batch_no": null,
+   "qty": 1.0,
+   "unit_key": "SA-HARN-S::SA-HARN-S-0002"
+  },
+  {
+   "name": "MES-SCN-00009",
+   "work_order": "MFG-WO-2026-00036",
+   "item_code": "RM-CHUCK-13",
+   "unit_id": "",
+   "batch_no": null,
+   "qty": 5.0,
+   "unit_key": null
+  }
+ ],
+ "paused_logs": [
+  {
+   "job_card": "PO-JOB00151",
+   "from_time": "2026-11-25 16:22:14.681473",
+   "to_time": "2026-11-26 12:45:47.145479",
+   "mins": 1223.5
+  },
+  {
+   "job_card": "PO-JOB00134",
+   "from_time": "2026-11-25 12:15:13.464396",
+   "to_time": "2026-11-26 12:45:47.145479",
+   "mins": 1470.6
+  },
+  {
+   "job_card": "PO-JOB00202",
+   "from_time": "2026-11-25 12:28:22.101453",
+   "to_time": "2026-11-26 12:45:47.145479",
+   "mins": 1457.4
+  },
+  {
+   "job_card": "PO-JOB00070",
+   "from_time": "2026-11-25 11:43:18.678896",
+   "to_time": "2026-11-26 12:45:47.145479",
+   "mins": 1502.5
+  }
+ ],
+ "released_bookings": [
+  {
+   "name": "0ci50senev",
+   "parent": "PO-JOB00218",
+   "work_order": "MFG-WO-2026-00120",
+   "workstation": "P1-WND-01",
+   "from_time": "2026-11-26 08:00:00",
+   "to_time": "2026-11-26 08:06:00",
+   "time_in_mins": "6.0"
+  },
+  {
+   "name": "0cjhd5vc1r",
+   "parent": "PO-JOB00219",
+   "work_order": "MFG-WO-2026-00120",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-26 09:40:00",
+   "to_time": "2026-11-26 09:43:00",
+   "time_in_mins": "3.0"
+  },
+  {
+   "name": "0cmb5rutnd",
+   "parent": "PO-JOB00220",
+   "work_order": "MFG-WO-2026-00121",
+   "workstation": "P1-WND-02",
+   "from_time": "2026-11-26 09:35:00",
+   "to_time": "2026-11-26 09:40:00",
+   "time_in_mins": "5.0"
+  },
+  {
+   "name": "0cn1akpk5e",
+   "parent": "PO-JOB00221",
+   "work_order": "MFG-WO-2026-00121",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-26 10:05:00",
+   "to_time": "2026-11-26 10:08:00",
+   "time_in_mins": "3.0"
+  },
+  {
+   "name": "0csk3hqjk3",
+   "parent": "PO-JOB00222",
+   "work_order": "MFG-WO-2026-00119",
+   "workstation": "P1-MAS-01",
+   "from_time": "2026-11-26 10:08:00",
+   "to_time": "2026-11-26 10:14:00",
+   "time_in_mins": "6.0"
+  },
+  {
+   "name": "0ctl5f22dv",
+   "parent": "PO-JOB00223",
+   "work_order": "MFG-WO-2026-00119",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-26 10:24:00",
+   "to_time": "2026-11-26 10:26:00",
+   "time_in_mins": "2.0"
+  },
+  {
+   "name": "0d04ribe4a",
+   "parent": "PO-JOB00224",
+   "work_order": "MFG-WO-2026-00122",
+   "workstation": "P1-IMM-01",
+   "from_time": "2026-11-26 08:00:00",
+   "to_time": "2026-11-26 08:01:30",
+   "time_in_mins": "1.5"
+  },
+  {
+   "name": "0d0te4gji5",
+   "parent": "PO-JOB00225",
+   "work_order": "MFG-WO-2026-00122",
+   "workstation": "P1-IMM-01",
+   "from_time": "2026-11-26 08:11:30",
+   "to_time": "2026-11-26 08:12:18",
+   "time_in_mins": "0.8"
+  },
+  {
+   "name": "0d4s2jnmkg",
+   "parent": "PO-JOB00226",
+   "work_order": "MFG-WO-2026-00123",
+   "workstation": "P1-SAB-02",
+   "from_time": "2026-11-26 08:00:00",
+   "to_time": "2026-11-26 08:03:00",
+   "time_in_mins": "3.0"
+  },
+  {
+   "name": "0d963rscdp",
+   "parent": "PO-JOB00227",
+   "work_order": "MFG-WO-2026-00124",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-27 09:40:00",
+   "to_time": "2026-11-27 09:45:00",
+   "time_in_mins": "5.0"
+  },
+  {
+   "name": "0dfchudi24",
+   "parent": "PO-JOB00229",
+   "work_order": "MFG-WO-2026-00118",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-27 10:05:00",
+   "to_time": "2026-11-27 10:08:00",
+   "time_in_mins": "3.0"
+  },
+  {
+   "name": "0dfo0qkslm",
+   "parent": "PO-JOB00228",
+   "work_order": "MFG-WO-2026-00118",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-27 09:45:00",
+   "to_time": "2026-11-27 09:55:00",
+   "time_in_mins": "10.0"
+  },
+  {
+   "name": "0dgdmmrtst",
+   "parent": "PO-JOB00230",
+   "work_order": "MFG-WO-2026-00118",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-11-27 10:18:00",
+   "to_time": "2026-11-27 10:20:00",
+   "time_in_mins": "2.0"
+  },
+  {
+   "name": "1in60vbbh4",
+   "parent": "PO-JOB00204",
+   "work_order": "MFG-WO-2026-00104",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-12-03 08:00:00",
+   "to_time": "2026-12-03 08:10:00",
+   "time_in_mins": "10.0"
+  },
+  {
+   "name": "1in7b5ukdm",
+   "parent": "PO-JOB00204",
+   "work_order": "MFG-WO-2026-00104",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-12-02 16:50:00",
+   "to_time": "2026-12-02 17:00:00",
+   "time_in_mins": "10.0"
+  },
+  {
+   "name": "2s3co16ef0",
+   "parent": "PO-JOB00065",
+   "work_order": "MFG-WO-2026-00040",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-26 08:00:00",
+   "to_time": "2026-11-26 09:55:00",
+   "time_in_mins": "115.0"
+  },
+  {
+   "name": "2s3o3earqk",
+   "parent": "PO-JOB00065",
+   "work_order": "MFG-WO-2026-00040",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-25 15:40:00",
+   "to_time": "2026-11-25 17:00:00",
+   "time_in_mins": "80.0"
+  },
+  {
+   "name": "2s7vbg6ik4",
+   "parent": "PO-JOB00067",
+   "work_order": "MFG-WO-2026-00048",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-26 08:00:00",
+   "to_time": "2026-11-26 09:30:00",
+   "time_in_mins": "90.0"
+  },
+  {
+   "name": "2s90q3pig6",
+   "parent": "PO-JOB00068",
+   "work_order": "MFG-WO-2026-00041",
+   "workstation": "P1-WND-02",
+   "from_time": "2026-11-25 13:00:00",
+   "to_time": "2026-11-25 17:00:00",
+   "time_in_mins": "240.0"
+  },
+  {
+   "name": "2s9es7d70s",
+   "parent": "PO-JOB00068",
+   "work_order": "MFG-WO-2026-00041",
+   "workstation": "P1-WND-02",
+   "from_time": "2026-11-26 08:00:00",
+   "to_time": "2026-11-26 09:25:00",
+   "time_in_mins": "85.0"
+  },
+  {
+   "name": "2salp9prnv",
+   "parent": "PO-JOB00069",
+   "work_order": "MFG-WO-2026-00041",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-26 13:00:00",
+   "to_time": "2026-11-26 14:20:00",
+   "time_in_mins": "80.0"
+  },
+  {
+   "name": "2sav0qrsc8",
+   "parent": "PO-JOB00069",
+   "work_order": "MFG-WO-2026-00041",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-26 10:05:00",
+   "to_time": "2026-11-26 12:00:00",
+   "time_in_mins": "115.0"
+  },
+  {
+   "name": "2sc9i7q03c",
+   "parent": "PO-JOB00070",
+   "work_order": "MFG-WO-2026-00049",
+   "workstation": "P1-WND-01",
+   "from_time": "2026-11-26 08:00:00",
+   "to_time": "2026-11-26 10:10:00",
+   "time_in_mins": "130.0"
+  },
+  {
+   "name": "2scpfvbjf1",
+   "parent": "PO-JOB00070",
+   "work_order": "MFG-WO-2026-00049",
+   "workstation": "P1-WND-01",
+   "from_time": "2026-11-25 15:40:00",
+   "to_time": "2026-11-25 17:00:00",
+   "time_in_mins": "80.0"
+  },
+  {
+   "name": "2sd3pq7khb",
+   "parent": "PO-JOB00071",
+   "work_order": "MFG-WO-2026-00049",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-27 08:00:00",
+   "to_time": "2026-11-27 09:30:00",
+   "time_in_mins": "90.0"
+  },
+  {
+   "name": "2sg0vtal9b",
+   "parent": "PO-JOB00073",
+   "work_order": "MFG-WO-2026-00039",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-27 13:00:00",
+   "to_time": "2026-11-27 15:10:00",
+   "time_in_mins": "130.0"
+  },
+  {
+   "name": "2sgdih15eg",
+   "parent": "PO-JOB00072",
+   "work_order": "MFG-WO-2026-00039",
+   "workstation": "P1-MAS-01",
+   "from_time": "2026-11-27 08:00:00",
+   "to_time": "2026-11-27 11:50:00",
+   "time_in_mins": "230.0"
+  },
+  {
+   "name": "2sgmb0tfq1",
+   "parent": "PO-JOB00073",
+   "work_order": "MFG-WO-2026-00039",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-27 12:00:00",
+   "to_time": "2026-11-27 12:00:00",
+   "time_in_mins": "0.0"
+  },
+  {
+   "name": "2sgplqflts",
+   "parent": "PO-JOB00072",
+   "work_order": "MFG-WO-2026-00039",
+   "workstation": "P1-MAS-01",
+   "from_time": "2026-11-26 14:20:00",
+   "to_time": "2026-11-26 17:00:00",
+   "time_in_mins": "160.0"
+  },
+  {
+   "name": "2sj6f4o0pq",
+   "parent": "PO-JOB00074",
+   "work_order": "MFG-WO-2026-00047",
+   "workstation": "P1-MAS-01",
+   "from_time": "2026-11-27 13:00:00",
+   "to_time": "2026-11-27 16:30:00",
+   "time_in_mins": "210.0"
+  },
+  {
+   "name": "2sjf9v0ndj",
+   "parent": "PO-JOB00075",
+   "work_order": "MFG-WO-2026-00047",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-27 16:40:00",
+   "to_time": "2026-11-27 17:00:00",
+   "time_in_mins": "20.0"
+  },
+  {
+   "name": "2sjr8mdote",
+   "parent": "PO-JOB00075",
+   "work_order": "MFG-WO-2026-00047",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-30 08:00:00",
+   "to_time": "2026-11-30 08:40:00",
+   "time_in_mins": "40.0"
+  },
+  {
+   "name": "2sjrqvtupv",
+   "parent": "PO-JOB00074",
+   "work_order": "MFG-WO-2026-00047",
+   "workstation": "P1-MAS-01",
+   "from_time": "2026-11-27 12:00:00",
+   "to_time": "2026-11-27 12:00:00",
+   "time_in_mins": "0.0"
+  },
+  {
+   "name": "2slet35kg9",
+   "parent": "PO-JOB00076",
+   "work_order": "MFG-WO-2026-00042",
+   "workstation": "P1-IMM-01",
+   "from_time": "2026-11-25 08:00:00",
+   "to_time": "2026-11-25 09:00:00",
+   "time_in_mins": "60.0"
+  },
+  {
+   "name": "2smj549m0k",
+   "parent": "PO-JOB00077",
+   "work_order": "MFG-WO-2026-00042",
+   "workstation": "P1-IMM-01",
+   "from_time": "2026-11-25 09:10:00",
+   "to_time": "2026-11-25 09:42:00",
+   "time_in_mins": "32.0"
+  },
+  {
+   "name": "2so9ki3b00",
+   "parent": "PO-JOB00078",
+   "work_order": "MFG-WO-2026-00045",
+   "workstation": "P1-IMM-02",
+   "from_time": "2026-11-25 08:00:00",
+   "to_time": "2026-11-25 08:50:00",
+   "time_in_mins": "50.0"
+  },
+  {
+   "name": "2sorn2i9ct",
+   "parent": "PO-JOB00079",
+   "work_order": "MFG-WO-2026-00045",
+   "workstation": "P1-IMM-02",
+   "from_time": "2026-11-25 09:10:00",
+   "to_time": "2026-11-25 09:30:00",
+   "time_in_mins": "20.0"
+  },
+  {
+   "name": "2sqdafakc9",
+   "parent": "PO-JOB00080",
+   "work_order": "MFG-WO-2026-00050",
+   "workstation": "P1-IMM-01",
+   "from_time": "2026-11-25 09:52:00",
+   "to_time": "2026-11-25 11:04:00",
+   "time_in_mins": "72.0"
+  },
+  {
+   "name": "2sqjk6jmqq",
+   "parent": "PO-JOB00081",
+   "work_order": "MFG-WO-2026-00050",
+   "workstation": "P1-IMM-01",
+   "from_time": "2026-11-25 11:14:00",
+   "to_time": "2026-11-25 11:38:00",
+   "time_in_mins": "24.0"
+  },
+  {
+   "name": "2t23v9iisn",
+   "parent": "PO-JOB00084",
+   "work_order": "MFG-WO-2026-00044",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-25 11:25:00",
+   "to_time": "2026-11-25 12:00:00",
+   "time_in_mins": "35.0"
+  },
+  {
+   "name": "2t2fk6ig8n",
+   "parent": "PO-JOB00084",
+   "work_order": "MFG-WO-2026-00044",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-25 13:00:00",
+   "to_time": "2026-11-25 15:45:00",
+   "time_in_mins": "165.0"
+  },
+  {
+   "name": "2t50uvvpul",
+   "parent": "PO-JOB00085",
+   "work_order": "MFG-WO-2026-00046",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-25 15:55:00",
+   "to_time": "2026-11-25 17:00:00",
+   "time_in_mins": "65.0"
+  },
+  {
+   "name": "2t5hn34gbb",
+   "parent": "PO-JOB00085",
+   "work_order": "MFG-WO-2026-00046",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-26 08:00:00",
+   "to_time": "2026-11-26 10:40:00",
+   "time_in_mins": "160.0"
+  },
+  {
+   "name": "2t8lk13g8o",
+   "parent": "PO-JOB00086",
+   "work_order": "MFG-WO-2026-00052",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-26 10:50:00",
+   "to_time": "2026-11-26 12:00:00",
+   "time_in_mins": "70.0"
+  },
+  {
+   "name": "2t8sj9lk85",
+   "parent": "PO-JOB00086",
+   "work_order": "MFG-WO-2026-00052",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-26 13:00:00",
+   "to_time": "2026-11-26 14:50:00",
+   "time_in_mins": "110.0"
+  },
+  {
+   "name": "2tb5fu5bdb",
+   "parent": "PO-JOB00087",
+   "work_order": "MFG-WO-2026-00036",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-27 15:10:00",
+   "to_time": "2026-11-27 17:00:00",
+   "time_in_mins": "110.0"
+  },
+  {
+   "name": "2tb6e56m83",
+   "parent": "PO-JOB00087",
+   "work_order": "MFG-WO-2026-00036",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-30 08:00:00",
+   "to_time": "2026-11-30 12:00:00",
+   "time_in_mins": "240.0"
+  },
+  {
+   "name": "2tbn479k1k",
+   "parent": "PO-JOB00087",
+   "work_order": "MFG-WO-2026-00036",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-30 13:00:00",
+   "to_time": "2026-11-30 13:50:00",
+   "time_in_mins": "50.0"
+  },
+  {
+   "name": "2tc7mellbn",
+   "parent": "PO-JOB00089",
+   "work_order": "MFG-WO-2026-00036",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-12-01 08:00:00",
+   "to_time": "2026-12-01 08:30:00",
+   "time_in_mins": "30.0"
+  },
+  {
+   "name": "2tcdh11ici",
+   "parent": "PO-JOB00088",
+   "work_order": "MFG-WO-2026-00036",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-30 14:00:00",
+   "to_time": "2026-11-30 16:00:00",
+   "time_in_mins": "120.0"
+  },
+  {
+   "name": "2tci3sajv1",
+   "parent": "PO-JOB00089",
+   "work_order": "MFG-WO-2026-00036",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-11-30 16:10:00",
+   "to_time": "2026-11-30 17:00:00",
+   "time_in_mins": "50.0"
+  },
+  {
+   "name": "2tfl1tmoot",
+   "parent": "PO-JOB00090",
+   "work_order": "MFG-WO-2026-00037",
+   "workstation": "P1-FAL-02",
+   "from_time": "2026-11-30 08:00:00",
+   "to_time": "2026-11-30 12:00:00",
+   "time_in_mins": "240.0"
+  },
+  {
+   "name": "2tftctck7e",
+   "parent": "PO-JOB00090",
+   "work_order": "MFG-WO-2026-00037",
+   "workstation": "P1-FAL-02",
+   "from_time": "2026-11-27 15:10:00",
+   "to_time": "2026-11-27 17:00:00",
+   "time_in_mins": "110.0"
+  },
+  {
+   "name": "2tg36ai4l8",
+   "parent": "PO-JOB00091",
+   "work_order": "MFG-WO-2026-00037",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-12-01 08:00:00",
+   "to_time": "2026-12-01 09:40:00",
+   "time_in_mins": "100.0"
+  },
+  {
+   "name": "2tgkkmafh9",
+   "parent": "PO-JOB00092",
+   "work_order": "MFG-WO-2026-00037",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-12-01 09:50:00",
+   "to_time": "2026-12-01 11:05:00",
+   "time_in_mins": "75.0"
+  },
+  {
+   "name": "2tj057urfb",
+   "parent": "PO-JOB00093",
+   "work_order": "MFG-WO-2026-00038",
+   "workstation": "P1-FAL-02",
+   "from_time": "2026-12-01 08:00:00",
+   "to_time": "2026-12-01 10:00:00",
+   "time_in_mins": "120.0"
+  },
+  {
+   "name": "2tjcsdd7rf",
+   "parent": "PO-JOB00093",
+   "work_order": "MFG-WO-2026-00038",
+   "workstation": "P1-FAL-02",
+   "from_time": "2026-11-30 13:00:00",
+   "to_time": "2026-11-30 17:00:00",
+   "time_in_mins": "240.0"
+  },
+  {
+   "name": "2tk8olmoo1",
+   "parent": "PO-JOB00094",
+   "work_order": "MFG-WO-2026-00038",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-12-01 10:10:00",
+   "to_time": "2026-12-01 11:40:00",
+   "time_in_mins": "90.0"
+  },
+  {
+   "name": "2tkaqmv1ls",
+   "parent": "PO-JOB00095",
+   "work_order": "MFG-WO-2026-00038",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-12-01 13:00:00",
+   "to_time": "2026-12-01 13:50:00",
+   "time_in_mins": "50.0"
+  },
+  {
+   "name": "2tkr2mdqak",
+   "parent": "PO-JOB00095",
+   "work_order": "MFG-WO-2026-00038",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-12-01 11:50:00",
+   "to_time": "2026-12-01 12:00:00",
+   "time_in_mins": "10.0"
+  },
+  {
+   "name": "4tfi9qadgv",
+   "parent": "PO-JOB00205",
+   "work_order": "MFG-WO-2026-00113",
+   "workstation": "P1-WND-01",
+   "from_time": "2026-11-26 10:20:00",
+   "to_time": "2026-11-26 11:20:00",
+   "time_in_mins": "60.0"
+  },
+  {
+   "name": "4tghh5tjcb",
+   "parent": "PO-JOB00206",
+   "work_order": "MFG-WO-2026-00113",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-27 08:00:00",
+   "to_time": "2026-11-27 08:30:00",
+   "time_in_mins": "30.0"
+  },
+  {
+   "name": "4tl1h76d03",
+   "parent": "PO-JOB00207",
+   "work_order": "MFG-WO-2026-00114",
+   "workstation": "P1-WND-01",
+   "from_time": "2026-11-26 11:30:00",
+   "to_time": "2026-11-26 12:00:00",
+   "time_in_mins": "30.0"
+  },
+  {
+   "name": "4tlalq3nil",
+   "parent": "PO-JOB00207",
+   "work_order": "MFG-WO-2026-00114",
+   "workstation": "P1-WND-01",
+   "from_time": "2026-11-26 13:00:00",
+   "to_time": "2026-11-26 13:20:00",
+   "time_in_mins": "20.0"
+  },
+  {
+   "name": "4u3jsjrmaa",
+   "parent": "PO-JOB00208",
+   "work_order": "MFG-WO-2026-00114",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-26 14:30:00",
+   "to_time": "2026-11-26 15:00:00",
+   "time_in_mins": "30.0"
+  },
+  {
+   "name": "4u945rlnj0",
+   "parent": "PO-JOB00209",
+   "work_order": "MFG-WO-2026-00112",
+   "workstation": "P1-MAS-01",
+   "from_time": "2026-11-30 08:00:00",
+   "to_time": "2026-11-30 08:40:00",
+   "time_in_mins": "40.0"
+  },
+  {
+   "name": "4u99d53h50",
+   "parent": "PO-JOB00210",
+   "work_order": "MFG-WO-2026-00112",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-30 08:50:00",
+   "to_time": "2026-11-30 09:10:00",
+   "time_in_mins": "20.0"
+  },
+  {
+   "name": "4u9aj97782",
+   "parent": "PO-JOB00209",
+   "work_order": "MFG-WO-2026-00112",
+   "workstation": "P1-MAS-01",
+   "from_time": "2026-11-27 16:40:00",
+   "to_time": "2026-11-27 17:00:00",
+   "time_in_mins": "20.0"
+  },
+  {
+   "name": "4udihlr7s7",
+   "parent": "PO-JOB00211",
+   "work_order": "MFG-WO-2026-00115",
+   "workstation": "P1-IMM-01",
+   "from_time": "2026-11-25 11:48:00",
+   "to_time": "2026-11-25 12:00:00",
+   "time_in_mins": "12.0"
+  },
+  {
+   "name": "4udqur9d5f",
+   "parent": "PO-JOB00212",
+   "work_order": "MFG-WO-2026-00115",
+   "workstation": "P1-IMM-01",
+   "from_time": "2026-11-25 13:13:00",
+   "to_time": "2026-11-25 13:21:00",
+   "time_in_mins": "8.0"
+  },
+  {
+   "name": "4udu25n6s2",
+   "parent": "PO-JOB00211",
+   "work_order": "MFG-WO-2026-00115",
+   "workstation": "P1-IMM-01",
+   "from_time": "2026-11-25 13:00:00",
+   "to_time": "2026-11-25 13:03:00",
+   "time_in_mins": "3.0"
+  },
+  {
+   "name": "4uhf632205",
+   "parent": "PO-JOB00213",
+   "work_order": "MFG-WO-2026-00116",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-27 08:00:00",
+   "to_time": "2026-11-27 08:30:00",
+   "time_in_mins": "30.0"
+  },
+  {
+   "name": "4unbjd1tv7",
+   "parent": "PO-JOB00214",
+   "work_order": "MFG-WO-2026-00117",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-27 08:40:00",
+   "to_time": "2026-11-27 09:30:00",
+   "time_in_mins": "50.0"
+  },
+  {
+   "name": "4uv17fui8b",
+   "parent": "PO-JOB00215",
+   "work_order": "MFG-WO-2026-00111",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-30 14:00:00",
+   "to_time": "2026-11-30 15:40:00",
+   "time_in_mins": "100.0"
+  },
+  {
+   "name": "4v014iqmfs",
+   "parent": "PO-JOB00216",
+   "work_order": "MFG-WO-2026-00111",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-30 16:10:00",
+   "to_time": "2026-11-30 16:40:00",
+   "time_in_mins": "30.0"
+  },
+  {
+   "name": "4v13gfab50",
+   "parent": "PO-JOB00217",
+   "work_order": "MFG-WO-2026-00111",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-12-01 08:40:00",
+   "to_time": "2026-12-01 09:00:00",
+   "time_in_mins": "20.0"
+  },
+  {
+   "name": "5eb221fg90",
+   "parent": "PO-JOB00232",
+   "work_order": "MFG-WO-2026-00127",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-26 14:30:00",
+   "to_time": "2026-11-26 16:00:00",
+   "time_in_mins": "90.0"
+  },
+  {
+   "name": "5ef060tcee",
+   "parent": "PO-JOB00233",
+   "work_order": "MFG-WO-2026-00128",
+   "workstation": "P1-WND-02",
+   "from_time": "2026-11-26 14:00:00",
+   "to_time": "2026-11-26 16:30:00",
+   "time_in_mins": "150.0"
+  },
+  {
+   "name": "5ef4012tgu",
+   "parent": "PO-JOB00234",
+   "work_order": "MFG-WO-2026-00128",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-26 16:40:00",
+   "to_time": "2026-11-26 17:00:00",
+   "time_in_mins": "20.0"
+  },
+  {
+   "name": "5efkae98tf",
+   "parent": "PO-JOB00234",
+   "work_order": "MFG-WO-2026-00128",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-27 08:00:00",
+   "to_time": "2026-11-27 09:10:00",
+   "time_in_mins": "70.0"
+  },
+  {
+   "name": "5ekfsrbrba",
+   "parent": "PO-JOB00235",
+   "work_order": "MFG-WO-2026-00126",
+   "workstation": "P1-MAS-01",
+   "from_time": "2026-11-30 08:00:00",
+   "to_time": "2026-11-30 11:00:00",
+   "time_in_mins": "180.0"
+  },
+  {
+   "name": "5elkjc6onb",
+   "parent": "PO-JOB00236",
+   "work_order": "MFG-WO-2026-00126",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-30 11:10:00",
+   "to_time": "2026-11-30 12:00:00",
+   "time_in_mins": "50.0"
+  },
+  {
+   "name": "5elrkgar1t",
+   "parent": "PO-JOB00236",
+   "work_order": "MFG-WO-2026-00126",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-30 13:00:00",
+   "to_time": "2026-11-30 13:10:00",
+   "time_in_mins": "10.0"
+  },
+  {
+   "name": "5eo4k8inm3",
+   "parent": "PO-JOB00237",
+   "work_order": "MFG-WO-2026-00129",
+   "workstation": "P1-IMM-02",
+   "from_time": "2026-11-26 08:00:00",
+   "to_time": "2026-11-26 08:45:00",
+   "time_in_mins": "45.0"
+  },
+  {
+   "name": "5epfesrfqj",
+   "parent": "PO-JOB00238",
+   "work_order": "MFG-WO-2026-00129",
+   "workstation": "P1-IMM-01",
+   "from_time": "2026-11-26 08:55:00",
+   "to_time": "2026-11-26 09:19:00",
+   "time_in_mins": "24.0"
+  },
+  {
+   "name": "5esg5c7bls",
+   "parent": "PO-JOB00239",
+   "work_order": "MFG-WO-2026-00130",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-26 15:00:00",
+   "to_time": "2026-11-26 16:30:00",
+   "time_in_mins": "90.0"
+  },
+  {
+   "name": "5f1a2aejl6",
+   "parent": "PO-JOB00240",
+   "work_order": "MFG-WO-2026-00131",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-27 09:55:00",
+   "to_time": "2026-11-27 12:00:00",
+   "time_in_mins": "125.0"
+  },
+  {
+   "name": "5f1f1v0p78",
+   "parent": "PO-JOB00240",
+   "work_order": "MFG-WO-2026-00131",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-26 16:40:00",
+   "to_time": "2026-11-26 17:00:00",
+   "time_in_mins": "20.0"
+  },
+  {
+   "name": "5f1hked6sh",
+   "parent": "PO-JOB00240",
+   "work_order": "MFG-WO-2026-00131",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-27 13:00:00",
+   "to_time": "2026-11-27 13:05:00",
+   "time_in_mins": "5.0"
+  },
+  {
+   "name": "5f81jr5mp0",
+   "parent": "PO-JOB00241",
+   "work_order": "MFG-WO-2026-00125",
+   "workstation": "P1-FAL-02",
+   "from_time": "2026-12-01 13:00:00",
+   "to_time": "2026-12-01 16:10:00",
+   "time_in_mins": "190.0"
+  },
+  {
+   "name": "5f85cfl9ii",
+   "parent": "PO-JOB00241",
+   "work_order": "MFG-WO-2026-00125",
+   "workstation": "P1-FAL-02",
+   "from_time": "2026-12-01 10:10:00",
+   "to_time": "2026-12-01 12:00:00",
+   "time_in_mins": "110.0"
+  },
+  {
+   "name": "5f96g9j5qo",
+   "parent": "PO-JOB00242",
+   "work_order": "MFG-WO-2026-00125",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-12-02 08:00:00",
+   "to_time": "2026-12-02 08:50:00",
+   "time_in_mins": "50.0"
+  },
+  {
+   "name": "5f9a4rknii",
+   "parent": "PO-JOB00242",
+   "work_order": "MFG-WO-2026-00125",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-12-01 16:20:00",
+   "to_time": "2026-12-01 17:00:00",
+   "time_in_mins": "40.0"
+  },
+  {
+   "name": "5f9ln4hm8u",
+   "parent": "PO-JOB00243",
+   "work_order": "MFG-WO-2026-00125",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-12-02 09:00:00",
+   "to_time": "2026-12-02 10:00:00",
+   "time_in_mins": "60.0"
+  },
+  {
+   "name": "aeecbd9m3c",
+   "parent": "PO-JOB00245",
+   "work_order": "MFG-WO-2026-00132",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-26 11:47:35.142419",
+   "to_time": "2026-11-26 12:00:00",
+   "time_in_mins": "12.414293017"
+  },
+  {
+   "name": "aeegnuoh1h",
+   "parent": "PO-JOB00245",
+   "work_order": "MFG-WO-2026-00132",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-26 13:00:00",
+   "to_time": "2026-11-26 13:02:35.142419",
+   "time_in_mins": "2.585706983"
+  },
+  {
+   "name": "aeem1petpn",
+   "parent": "PO-JOB00244",
+   "work_order": "MFG-WO-2026-00132",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-26 10:47:35.142419",
+   "to_time": "2026-11-26 11:37:35.142419",
+   "time_in_mins": "50.0"
+  },
+  {
+   "name": "aefofmk9r9",
+   "parent": "PO-JOB00246",
+   "work_order": "MFG-WO-2026-00132",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-11-26 13:12:35.142419",
+   "to_time": "2026-11-26 13:22:35.142419",
+   "time_in_mins": "10.0"
+  },
+  {
+   "name": "aei0d6ftu1",
+   "parent": "PO-JOB00247",
+   "work_order": "MFG-WO-2026-00133",
+   "workstation": "P1-FAL-02",
+   "from_time": "2026-11-26 13:00:00",
+   "to_time": "2026-11-26 17:00:00",
+   "time_in_mins": "240.0"
+  },
+  {
+   "name": "aeigkpvlf2",
+   "parent": "PO-JOB00247",
+   "work_order": "MFG-WO-2026-00133",
+   "workstation": "P1-FAL-02",
+   "from_time": "2026-11-27 08:00:00",
+   "to_time": "2026-11-27 10:17:00",
+   "time_in_mins": "137.0"
+  },
+  {
+   "name": "aeiundb754",
+   "parent": "PO-JOB00247",
+   "work_order": "MFG-WO-2026-00133",
+   "workstation": "P1-FAL-02",
+   "from_time": "2026-11-26 10:47:00",
+   "to_time": "2026-11-26 12:00:00",
+   "time_in_mins": "73.0"
+  },
+  {
+   "name": "aejgnp5d52",
+   "parent": "PO-JOB00249",
+   "work_order": "MFG-WO-2026-00133",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-11-30 10:25:00",
+   "to_time": "2026-11-30 11:55:00",
+   "time_in_mins": "90.0"
+  },
+  {
+   "name": "aejp2v9gus",
+   "parent": "PO-JOB00248",
+   "work_order": "MFG-WO-2026-00133",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-30 08:00:00",
+   "to_time": "2026-11-30 10:15:00",
+   "time_in_mins": "135.0"
+  },
+  {
+   "name": "aks029gnh7",
+   "parent": "PO-JOB00259",
+   "work_order": "MFG-WO-2026-00137",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-26 11:47:35.142419",
+   "to_time": "2026-11-26 12:00:00",
+   "time_in_mins": "12.414293017"
+  },
+  {
+   "name": "akscoo8h5g",
+   "parent": "PO-JOB00259",
+   "work_order": "MFG-WO-2026-00137",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-26 13:00:00",
+   "to_time": "2026-11-26 13:57:35.142419",
+   "time_in_mins": "57.585706983"
+  },
+  {
+   "name": "akt7n884hq",
+   "parent": "PO-JOB00261",
+   "work_order": "MFG-WO-2026-00137",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-11-26 14:37:35.142419",
+   "to_time": "2026-11-26 14:52:35.142419",
+   "time_in_mins": "15.0"
+  },
+  {
+   "name": "aktne0ihpc",
+   "parent": "PO-JOB00260",
+   "work_order": "MFG-WO-2026-00137",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-26 14:07:35.142419",
+   "to_time": "2026-11-26 14:27:35.142419",
+   "time_in_mins": "20.0"
+  },
+  {
+   "name": "al2utgdoht",
+   "parent": "PO-JOB00262",
+   "work_order": "MFG-WO-2026-00138",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-27 08:00:00",
+   "to_time": "2026-11-27 08:14:00",
+   "time_in_mins": "14.0"
+  },
+  {
+   "name": "al30eaj0ea",
+   "parent": "PO-JOB00263",
+   "work_order": "MFG-WO-2026-00138",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-27 08:24:00",
+   "to_time": "2026-11-27 08:28:00",
+   "time_in_mins": "4.0"
+  },
+  {
+   "name": "al34ucd3qt",
+   "parent": "PO-JOB00264",
+   "work_order": "MFG-WO-2026-00138",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-11-27 08:38:00",
+   "to_time": "2026-11-27 08:41:00",
+   "time_in_mins": "3.0"
+  },
+  {
+   "name": "bu0dhh86pp",
+   "parent": "PO-JOB00265",
+   "work_order": "MFG-WO-2026-00139",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-26 13:00:00",
+   "to_time": "2026-11-26 13:01:35.142419",
+   "time_in_mins": "1.585706983"
+  },
+  {
+   "name": "bu0ncnt017",
+   "parent": "PO-JOB00265",
+   "work_order": "MFG-WO-2026-00139",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-26 11:47:35.142419",
+   "to_time": "2026-11-26 12:00:00",
+   "time_in_mins": "12.414293017"
+  },
+  {
+   "name": "bu1j3i96mj",
+   "parent": "PO-JOB00266",
+   "work_order": "MFG-WO-2026-00139",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-26 13:11:35.142419",
+   "to_time": "2026-11-26 13:15:35.142419",
+   "time_in_mins": "4.0"
+  },
+  {
+   "name": "bu1tfs6h83",
+   "parent": "PO-JOB00267",
+   "work_order": "MFG-WO-2026-00139",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-11-26 13:25:35.142419",
+   "to_time": "2026-11-26 13:28:35.142419",
+   "time_in_mins": "3.0"
+  },
+  {
+   "name": "bu78ah5puh",
+   "parent": "PO-JOB00268",
+   "work_order": "MFG-WO-2026-00140",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-27 08:24:00",
+   "to_time": "2026-11-27 08:38:00",
+   "time_in_mins": "14.0"
+  },
+  {
+   "name": "bu7bojgeft",
+   "parent": "PO-JOB00269",
+   "work_order": "MFG-WO-2026-00140",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-27 08:48:00",
+   "to_time": "2026-11-27 08:52:00",
+   "time_in_mins": "4.0"
+  },
+  {
+   "name": "bu83754aoq",
+   "parent": "PO-JOB00270",
+   "work_order": "MFG-WO-2026-00140",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-11-27 09:02:00",
+   "to_time": "2026-11-27 09:05:00",
+   "time_in_mins": "3.0"
+  },
+  {
+   "name": "cn16kr0k57",
+   "parent": "PO-JOB00271",
+   "work_order": "MFG-WO-2026-00141",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-26 11:47:35.142419",
+   "to_time": "2026-11-26 12:00:00",
+   "time_in_mins": "12.414293017"
+  },
+  {
+   "name": "cn1t3vh3f9",
+   "parent": "PO-JOB00271",
+   "work_order": "MFG-WO-2026-00141",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-26 13:00:00",
+   "to_time": "2026-11-26 13:15:35.142419",
+   "time_in_mins": "15.585706983"
+  },
+  {
+   "name": "cn24469ebt",
+   "parent": "PO-JOB00272",
+   "work_order": "MFG-WO-2026-00141",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-26 13:25:35.142419",
+   "to_time": "2026-11-26 13:33:35.142419",
+   "time_in_mins": "8.0"
+  },
+  {
+   "name": "cn2gcab3f7",
+   "parent": "PO-JOB00273",
+   "work_order": "MFG-WO-2026-00141",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-11-26 13:43:35.142419",
+   "to_time": "2026-11-26 13:49:35.142419",
+   "time_in_mins": "6.0"
+  },
+  {
+   "name": "cn65771b5f",
+   "parent": "PO-JOB00274",
+   "work_order": "MFG-WO-2026-00142",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-27 08:48:00",
+   "to_time": "2026-11-27 09:02:00",
+   "time_in_mins": "14.0"
+  },
+  {
+   "name": "cn7bfrkul8",
+   "parent": "PO-JOB00276",
+   "work_order": "MFG-WO-2026-00142",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-11-27 09:26:00",
+   "to_time": "2026-11-27 09:29:00",
+   "time_in_mins": "3.0"
+  },
+  {
+   "name": "cn7mfmdh83",
+   "parent": "PO-JOB00275",
+   "work_order": "MFG-WO-2026-00142",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-27 09:12:00",
+   "to_time": "2026-11-27 09:16:00",
+   "time_in_mins": "4.0"
+  },
+  {
+   "name": "lqgc2bg0gk",
+   "parent": "PO-JOB00083",
+   "work_order": "MFG-WO-2026-00051",
+   "workstation": "P1-SAB-02",
+   "from_time": "2026-11-25 08:15:00",
+   "to_time": "2026-11-25 09:45:00",
+   "time_in_mins": "90.0"
+  },
+  {
+   "name": "qo4ailg69v",
+   "parent": "PO-JOB00107",
+   "work_order": "MFG-WO-2026-00064",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-05 08:00:00",
+   "to_time": "2026-11-05 08:40:00",
+   "time_in_mins": "40.0"
+  },
+  {
+   "name": "qo4brq032t",
+   "parent": "PO-JOB00107",
+   "work_order": "MFG-WO-2026-00064",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-04 16:40:00",
+   "to_time": "2026-11-04 17:00:00",
+   "time_in_mins": "20.0"
+  },
+  {
+   "name": "qosbqjrt6n",
+   "parent": "PO-JOB00121",
+   "work_order": "MFG-WO-2026-00053",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-11-05 16:10:00",
+   "to_time": "2026-11-05 17:00:00",
+   "time_in_mins": "50.0"
+  },
+  {
+   "name": "qoshhqr0i5",
+   "parent": "PO-JOB00121",
+   "work_order": "MFG-WO-2026-00053",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-11-06 08:00:00",
+   "to_time": "2026-11-06 08:30:00",
+   "time_in_mins": "30.0"
+  },
+  {
+   "name": "qosqaegepv",
+   "parent": "PO-JOB00120",
+   "work_order": "MFG-WO-2026-00053",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-05 14:00:00",
+   "to_time": "2026-11-05 16:00:00",
+   "time_in_mins": "120.0"
+  },
+  {
+   "name": "qp12v066b0",
+   "parent": "PO-JOB00123",
+   "work_order": "MFG-WO-2026-00054",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-06 08:00:00",
+   "to_time": "2026-11-06 09:40:00",
+   "time_in_mins": "100.0"
+  },
+  {
+   "name": "qp1g905u2l",
+   "parent": "PO-JOB00124",
+   "work_order": "MFG-WO-2026-00054",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-11-06 09:50:00",
+   "to_time": "2026-11-06 11:05:00",
+   "time_in_mins": "75.0"
+  },
+  {
+   "name": "qp4c7tt8pg",
+   "parent": "PO-JOB00125",
+   "work_order": "MFG-WO-2026-00055",
+   "workstation": "P1-FAL-02",
+   "from_time": "2026-11-05 13:00:00",
+   "to_time": "2026-11-05 17:00:00",
+   "time_in_mins": "240.0"
+  },
+  {
+   "name": "qp4v5kk9q5",
+   "parent": "PO-JOB00125",
+   "work_order": "MFG-WO-2026-00055",
+   "workstation": "P1-FAL-02",
+   "from_time": "2026-11-06 08:00:00",
+   "to_time": "2026-11-06 10:00:00",
+   "time_in_mins": "120.0"
+  },
+  {
+   "name": "qp505bvld3",
+   "parent": "PO-JOB00127",
+   "work_order": "MFG-WO-2026-00055",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-11-06 13:00:00",
+   "to_time": "2026-11-06 13:50:00",
+   "time_in_mins": "50.0"
+  },
+  {
+   "name": "qp5h1bflk3",
+   "parent": "PO-JOB00127",
+   "work_order": "MFG-WO-2026-00055",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-11-06 11:50:00",
+   "to_time": "2026-11-06 12:00:00",
+   "time_in_mins": "10.0"
+  },
+  {
+   "name": "qp5ne20jck",
+   "parent": "PO-JOB00126",
+   "work_order": "MFG-WO-2026-00055",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-06 10:10:00",
+   "to_time": "2026-11-06 11:40:00",
+   "time_in_mins": "90.0"
+  },
+  {
+   "name": "qpncl6806k",
+   "parent": "PO-JOB00129",
+   "work_order": "MFG-WO-2026-00074",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-10 08:00:00",
+   "to_time": "2026-11-10 09:55:00",
+   "time_in_mins": "115.0"
+  },
+  {
+   "name": "qpnp6qpprt",
+   "parent": "PO-JOB00129",
+   "work_order": "MFG-WO-2026-00074",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-09 15:40:00",
+   "to_time": "2026-11-09 17:00:00",
+   "time_in_mins": "80.0"
+  },
+  {
+   "name": "qpqd8d24jo",
+   "parent": "PO-JOB00131",
+   "work_order": "MFG-WO-2026-00082",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-10 08:00:00",
+   "to_time": "2026-11-10 09:30:00",
+   "time_in_mins": "90.0"
+  },
+  {
+   "name": "qpqmjc83fi",
+   "parent": "PO-JOB00130",
+   "work_order": "MFG-WO-2026-00082",
+   "workstation": "P1-WND-02",
+   "from_time": "2026-11-09 08:00:00",
+   "to_time": "2026-11-09 12:00:00",
+   "time_in_mins": "240.0"
+  },
+  {
+   "name": "qps8ai0j50",
+   "parent": "PO-JOB00132",
+   "work_order": "MFG-WO-2026-00075",
+   "workstation": "P1-WND-02",
+   "from_time": "2026-11-09 13:00:00",
+   "to_time": "2026-11-09 17:00:00",
+   "time_in_mins": "240.0"
+  },
+  {
+   "name": "qpsdiu86q8",
+   "parent": "PO-JOB00132",
+   "work_order": "MFG-WO-2026-00075",
+   "workstation": "P1-WND-02",
+   "from_time": "2026-11-10 08:00:00",
+   "to_time": "2026-11-10 09:25:00",
+   "time_in_mins": "85.0"
+  },
+  {
+   "name": "qpt4n1om1a",
+   "parent": "PO-JOB00133",
+   "work_order": "MFG-WO-2026-00075",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-10 13:00:00",
+   "to_time": "2026-11-10 14:20:00",
+   "time_in_mins": "80.0"
+  },
+  {
+   "name": "qptm9m8rpr",
+   "parent": "PO-JOB00133",
+   "work_order": "MFG-WO-2026-00075",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-10 10:05:00",
+   "to_time": "2026-11-10 12:00:00",
+   "time_in_mins": "115.0"
+  },
+  {
+   "name": "qpv0ii0dpc",
+   "parent": "PO-JOB00135",
+   "work_order": "MFG-WO-2026-00083",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-11 08:00:00",
+   "to_time": "2026-11-11 09:30:00",
+   "time_in_mins": "90.0"
+  },
+  {
+   "name": "qpv1f2fc38",
+   "parent": "PO-JOB00134",
+   "work_order": "MFG-WO-2026-00083",
+   "workstation": "P1-WND-01",
+   "from_time": "2026-11-10 08:00:00",
+   "to_time": "2026-11-10 10:10:00",
+   "time_in_mins": "130.0"
+  },
+  {
+   "name": "qpvkshqhu5",
+   "parent": "PO-JOB00134",
+   "work_order": "MFG-WO-2026-00083",
+   "workstation": "P1-WND-01",
+   "from_time": "2026-11-09 15:40:00",
+   "to_time": "2026-11-09 17:00:00",
+   "time_in_mins": "80.0"
+  },
+  {
+   "name": "qq276r8490",
+   "parent": "PO-JOB00136",
+   "work_order": "MFG-WO-2026-00073",
+   "workstation": "P1-MAS-01",
+   "from_time": "2026-11-11 08:00:00",
+   "to_time": "2026-11-11 11:50:00",
+   "time_in_mins": "230.0"
+  },
+  {
+   "name": "qq2jl9ckh6",
+   "parent": "PO-JOB00136",
+   "work_order": "MFG-WO-2026-00073",
+   "workstation": "P1-MAS-01",
+   "from_time": "2026-11-10 14:20:00",
+   "to_time": "2026-11-10 17:00:00",
+   "time_in_mins": "160.0"
+  },
+  {
+   "name": "qq308pfg2s",
+   "parent": "PO-JOB00137",
+   "work_order": "MFG-WO-2026-00073",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-11 13:00:00",
+   "to_time": "2026-11-11 15:10:00",
+   "time_in_mins": "130.0"
+  },
+  {
+   "name": "qq3cu9qsfk",
+   "parent": "PO-JOB00137",
+   "work_order": "MFG-WO-2026-00073",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-11 12:00:00",
+   "to_time": "2026-11-11 12:00:00",
+   "time_in_mins": "0.0"
+  },
+  {
+   "name": "qq638adlnr",
+   "parent": "PO-JOB00138",
+   "work_order": "MFG-WO-2026-00081",
+   "workstation": "P1-MAS-01",
+   "from_time": "2026-11-11 13:00:00",
+   "to_time": "2026-11-11 16:30:00",
+   "time_in_mins": "210.0"
+  },
+  {
+   "name": "qq680s36mu",
+   "parent": "PO-JOB00139",
+   "work_order": "MFG-WO-2026-00081",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-12 08:00:00",
+   "to_time": "2026-11-12 08:40:00",
+   "time_in_mins": "40.0"
+  },
+  {
+   "name": "qq6k6q3gc7",
+   "parent": "PO-JOB00139",
+   "work_order": "MFG-WO-2026-00081",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-11 16:40:00",
+   "to_time": "2026-11-11 17:00:00",
+   "time_in_mins": "20.0"
+  },
+  {
+   "name": "qq6t6tflka",
+   "parent": "PO-JOB00138",
+   "work_order": "MFG-WO-2026-00081",
+   "workstation": "P1-MAS-01",
+   "from_time": "2026-11-11 12:00:00",
+   "to_time": "2026-11-11 12:00:00",
+   "time_in_mins": "0.0"
+  },
+  {
+   "name": "qq823d9iq6",
+   "parent": "PO-JOB00140",
+   "work_order": "MFG-WO-2026-00076",
+   "workstation": "P1-IMM-01",
+   "from_time": "2026-11-09 08:00:00",
+   "to_time": "2026-11-09 09:07:30",
+   "time_in_mins": "67.5"
+  },
+  {
+   "name": "qq9nqc0f1q",
+   "parent": "PO-JOB00141",
+   "work_order": "MFG-WO-2026-00076",
+   "workstation": "P1-IMM-01",
+   "from_time": "2026-11-09 09:17:30",
+   "to_time": "2026-11-09 09:53:30",
+   "time_in_mins": "36.0"
+  },
+  {
+   "name": "qqamuclbgi",
+   "parent": "PO-JOB00142",
+   "work_order": "MFG-WO-2026-00079",
+   "workstation": "P1-IMM-02",
+   "from_time": "2026-11-09 08:00:00",
+   "to_time": "2026-11-09 08:40:00",
+   "time_in_mins": "40.0"
+  },
+  {
+   "name": "qqbujtvb9u",
+   "parent": "PO-JOB00143",
+   "work_order": "MFG-WO-2026-00079",
+   "workstation": "P1-IMM-02",
+   "from_time": "2026-11-09 08:50:00",
+   "to_time": "2026-11-09 09:06:00",
+   "time_in_mins": "16.0"
+  },
+  {
+   "name": "qqd0a45a20",
+   "parent": "PO-JOB00145",
+   "work_order": "MFG-WO-2026-00084",
+   "workstation": "P1-IMM-01",
+   "from_time": "2026-11-09 11:25:30",
+   "to_time": "2026-11-09 11:49:30",
+   "time_in_mins": "24.0"
+  },
+  {
+   "name": "qqdfsuu1rm",
+   "parent": "PO-JOB00144",
+   "work_order": "MFG-WO-2026-00084",
+   "workstation": "P1-IMM-01",
+   "from_time": "2026-11-09 10:03:30",
+   "to_time": "2026-11-09 11:15:30",
+   "time_in_mins": "72.0"
+  },
+  {
+   "name": "qqgu63thjp",
+   "parent": "PO-JOB00146",
+   "work_order": "MFG-WO-2026-00077",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-09 08:00:00",
+   "to_time": "2026-11-09 11:15:00",
+   "time_in_mins": "195.0"
+  },
+  {
+   "name": "qqiv1r5bs0",
+   "parent": "PO-JOB00147",
+   "work_order": "MFG-WO-2026-00085",
+   "workstation": "P1-SAB-02",
+   "from_time": "2026-11-09 08:00:00",
+   "to_time": "2026-11-09 09:30:00",
+   "time_in_mins": "90.0"
+  },
+  {
+   "name": "qql0b3mhei",
+   "parent": "PO-JOB00148",
+   "work_order": "MFG-WO-2026-00078",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-09 13:00:00",
+   "to_time": "2026-11-09 16:10:00",
+   "time_in_mins": "190.0"
+  },
+  {
+   "name": "qqlp6t45ra",
+   "parent": "PO-JOB00148",
+   "work_order": "MFG-WO-2026-00078",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-09 11:25:00",
+   "to_time": "2026-11-09 12:00:00",
+   "time_in_mins": "35.0"
+  },
+  {
+   "name": "qqnc5nj5e7",
+   "parent": "PO-JOB00149",
+   "work_order": "MFG-WO-2026-00080",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-10 08:00:00",
+   "to_time": "2026-11-10 10:20:00",
+   "time_in_mins": "140.0"
+  },
+  {
+   "name": "qqnjacjh96",
+   "parent": "PO-JOB00149",
+   "work_order": "MFG-WO-2026-00080",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-09 16:20:00",
+   "to_time": "2026-11-09 17:00:00",
+   "time_in_mins": "40.0"
+  },
+  {
+   "name": "qqq9t60ari",
+   "parent": "PO-JOB00150",
+   "work_order": "MFG-WO-2026-00086",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-10 10:30:00",
+   "to_time": "2026-11-10 12:00:00",
+   "time_in_mins": "90.0"
+  },
+  {
+   "name": "qqqo10up0s",
+   "parent": "PO-JOB00150",
+   "work_order": "MFG-WO-2026-00086",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-10 13:00:00",
+   "to_time": "2026-11-10 14:30:00",
+   "time_in_mins": "90.0"
+  },
+  {
+   "name": "qqu590v3n8",
+   "parent": "PO-JOB00151",
+   "work_order": "MFG-WO-2026-00070",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-12 08:00:00",
+   "to_time": "2026-11-12 12:00:00",
+   "time_in_mins": "240.0"
+  },
+  {
+   "name": "qquhq5ao3r",
+   "parent": "PO-JOB00151",
+   "work_order": "MFG-WO-2026-00070",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-12 13:00:00",
+   "to_time": "2026-11-12 14:40:00",
+   "time_in_mins": "100.0"
+  },
+  {
+   "name": "qquissrdum",
+   "parent": "PO-JOB00151",
+   "work_order": "MFG-WO-2026-00070",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-11 15:10:00",
+   "to_time": "2026-11-11 17:00:00",
+   "time_in_mins": "110.0"
+  },
+  {
+   "name": "qqv5asahos",
+   "parent": "PO-JOB00152",
+   "work_order": "MFG-WO-2026-00070",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-12 14:50:00",
+   "to_time": "2026-11-12 17:00:00",
+   "time_in_mins": "130.0"
+  },
+  {
+   "name": "qqvhmut7f2",
+   "parent": "PO-JOB00152",
+   "work_order": "MFG-WO-2026-00070",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-13 08:00:00",
+   "to_time": "2026-11-13 08:05:00",
+   "time_in_mins": "5.0"
+  },
+  {
+   "name": "qqvmr6gbsu",
+   "parent": "PO-JOB00153",
+   "work_order": "MFG-WO-2026-00070",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-11-13 08:15:00",
+   "to_time": "2026-11-13 09:45:00",
+   "time_in_mins": "90.0"
+  },
+  {
+   "name": "qr342s3q8r",
+   "parent": "PO-JOB00154",
+   "work_order": "MFG-WO-2026-00071",
+   "workstation": "P1-FAL-02",
+   "from_time": "2026-11-12 08:00:00",
+   "to_time": "2026-11-12 10:50:00",
+   "time_in_mins": "170.0"
+  },
+  {
+   "name": "qr36g32pd0",
+   "parent": "PO-JOB00154",
+   "work_order": "MFG-WO-2026-00071",
+   "workstation": "P1-FAL-02",
+   "from_time": "2026-11-11 15:10:00",
+   "to_time": "2026-11-11 17:00:00",
+   "time_in_mins": "110.0"
+  },
+  {
+   "name": "qr37prj1e5",
+   "parent": "PO-JOB00155",
+   "work_order": "MFG-WO-2026-00071",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-12 11:00:00",
+   "to_time": "2026-11-12 12:00:00",
+   "time_in_mins": "60.0"
+  },
+  {
+   "name": "qr3j684m18",
+   "parent": "PO-JOB00155",
+   "work_order": "MFG-WO-2026-00071",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-12 13:00:00",
+   "to_time": "2026-11-12 13:20:00",
+   "time_in_mins": "20.0"
+  },
+  {
+   "name": "qr4h74evcr",
+   "parent": "PO-JOB00156",
+   "work_order": "MFG-WO-2026-00071",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-11-12 13:30:00",
+   "to_time": "2026-11-12 14:30:00",
+   "time_in_mins": "60.0"
+  },
+  {
+   "name": "qr83n91pcm",
+   "parent": "PO-JOB00157",
+   "work_order": "MFG-WO-2026-00072",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-13 08:00:00",
+   "to_time": "2026-11-13 11:50:00",
+   "time_in_mins": "230.0"
+  },
+  {
+   "name": "qr84853fsg",
+   "parent": "PO-JOB00158",
+   "work_order": "MFG-WO-2026-00072",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-13 13:00:00",
+   "to_time": "2026-11-13 14:30:00",
+   "time_in_mins": "90.0"
+  },
+  {
+   "name": "qr8oov05v6",
+   "parent": "PO-JOB00158",
+   "work_order": "MFG-WO-2026-00072",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-13 12:00:00",
+   "to_time": "2026-11-13 12:00:00",
+   "time_in_mins": "0.0"
+  },
+  {
+   "name": "qr8uvg9hn4",
+   "parent": "PO-JOB00157",
+   "work_order": "MFG-WO-2026-00072",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-12 14:50:00",
+   "to_time": "2026-11-12 17:00:00",
+   "time_in_mins": "130.0"
+  },
+  {
+   "name": "qr9p25gp09",
+   "parent": "PO-JOB00159",
+   "work_order": "MFG-WO-2026-00072",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-11-13 14:40:00",
+   "to_time": "2026-11-13 15:40:00",
+   "time_in_mins": "60.0"
+  },
+  {
+   "name": "qrsa835u0h",
+   "parent": "PO-JOB00161",
+   "work_order": "MFG-WO-2026-00091",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-16 15:40:00",
+   "to_time": "2026-11-16 17:00:00",
+   "time_in_mins": "80.0"
+  },
+  {
+   "name": "qrsuiktk8v",
+   "parent": "PO-JOB00161",
+   "work_order": "MFG-WO-2026-00091",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-17 08:00:00",
+   "to_time": "2026-11-17 09:55:00",
+   "time_in_mins": "115.0"
+  },
+  {
+   "name": "qrui12kog1",
+   "parent": "PO-JOB00162",
+   "work_order": "MFG-WO-2026-00099",
+   "workstation": "P1-WND-02",
+   "from_time": "2026-11-16 08:00:00",
+   "to_time": "2026-11-16 11:20:00",
+   "time_in_mins": "200.0"
+  },
+  {
+   "name": "qrv0p3ppco",
+   "parent": "PO-JOB00163",
+   "work_order": "MFG-WO-2026-00099",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-16 11:30:00",
+   "to_time": "2026-11-16 12:00:00",
+   "time_in_mins": "30.0"
+  },
+  {
+   "name": "qrvoo1mdh3",
+   "parent": "PO-JOB00163",
+   "work_order": "MFG-WO-2026-00099",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-16 13:00:00",
+   "to_time": "2026-11-16 13:45:00",
+   "time_in_mins": "45.0"
+  },
+  {
+   "name": "qs100j8e29",
+   "parent": "PO-JOB00165",
+   "work_order": "MFG-WO-2026-00092",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-17 13:15:00",
+   "to_time": "2026-11-17 16:30:00",
+   "time_in_mins": "195.0"
+  },
+  {
+   "name": "qs1bvi3h5r",
+   "parent": "PO-JOB00164",
+   "work_order": "MFG-WO-2026-00092",
+   "workstation": "P1-WND-01",
+   "from_time": "2026-11-17 08:00:00",
+   "to_time": "2026-11-17 12:00:00",
+   "time_in_mins": "240.0"
+  },
+  {
+   "name": "qs1ljuqg35",
+   "parent": "PO-JOB00164",
+   "work_order": "MFG-WO-2026-00092",
+   "workstation": "P1-WND-01",
+   "from_time": "2026-11-16 15:40:00",
+   "to_time": "2026-11-16 17:00:00",
+   "time_in_mins": "80.0"
+  },
+  {
+   "name": "qs1rhpvara",
+   "parent": "PO-JOB00164",
+   "work_order": "MFG-WO-2026-00092",
+   "workstation": "P1-WND-01",
+   "from_time": "2026-11-17 13:00:00",
+   "to_time": "2026-11-17 13:05:00",
+   "time_in_mins": "5.0"
+  },
+  {
+   "name": "qs3ca1l09u",
+   "parent": "PO-JOB00166",
+   "work_order": "MFG-WO-2026-00100",
+   "workstation": "P1-WND-01",
+   "from_time": "2026-11-17 13:15:00",
+   "to_time": "2026-11-17 16:10:00",
+   "time_in_mins": "175.0"
+  },
+  {
+   "name": "qs4o5ir5oa",
+   "parent": "PO-JOB00167",
+   "work_order": "MFG-WO-2026-00100",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-17 16:40:00",
+   "to_time": "2026-11-17 17:00:00",
+   "time_in_mins": "20.0"
+  },
+  {
+   "name": "qs4ua5nrbr",
+   "parent": "PO-JOB00167",
+   "work_order": "MFG-WO-2026-00100",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-11-18 08:00:00",
+   "to_time": "2026-11-18 08:55:00",
+   "time_in_mins": "55.0"
+  },
+  {
+   "name": "qs70nkr8lk",
+   "parent": "PO-JOB00168",
+   "work_order": "MFG-WO-2026-00090",
+   "workstation": "P1-MAS-01",
+   "from_time": "2026-11-18 13:00:00",
+   "to_time": "2026-11-18 15:00:00",
+   "time_in_mins": "120.0"
+  },
+  {
+   "name": "qs782g975s",
+   "parent": "PO-JOB00168",
+   "work_order": "MFG-WO-2026-00090",
+   "workstation": "P1-MAS-01",
+   "from_time": "2026-11-17 16:30:00",
+   "to_time": "2026-11-17 17:00:00",
+   "time_in_mins": "30.0"
+  },
+  {
+   "name": "qs7ev2bmu0",
+   "parent": "PO-JOB00169",
+   "work_order": "MFG-WO-2026-00090",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-18 15:10:00",
+   "to_time": "2026-11-18 17:00:00",
+   "time_in_mins": "110.0"
+  },
+  {
+   "name": "qs7fvlte23",
+   "parent": "PO-JOB00169",
+   "work_order": "MFG-WO-2026-00090",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-19 08:00:00",
+   "to_time": "2026-11-19 08:20:00",
+   "time_in_mins": "20.0"
+  },
+  {
+   "name": "qs7mjplis9",
+   "parent": "PO-JOB00168",
+   "work_order": "MFG-WO-2026-00090",
+   "workstation": "P1-MAS-01",
+   "from_time": "2026-11-18 08:00:00",
+   "to_time": "2026-11-18 12:00:00",
+   "time_in_mins": "240.0"
+  },
+  {
+   "name": "qsan549cjl",
+   "parent": "PO-JOB00170",
+   "work_order": "MFG-WO-2026-00098",
+   "workstation": "P1-MAS-01",
+   "from_time": "2026-11-18 15:10:00",
+   "to_time": "2026-11-18 17:00:00",
+   "time_in_mins": "110.0"
+  },
+  {
+   "name": "qsatbe5qaq",
+   "parent": "PO-JOB00170",
+   "work_order": "MFG-WO-2026-00098",
+   "workstation": "P1-MAS-01",
+   "from_time": "2026-11-19 08:00:00",
+   "to_time": "2026-11-19 09:05:00",
+   "time_in_mins": "65.0"
+  },
+  {
+   "name": "qsbpdtacrc",
+   "parent": "PO-JOB00171",
+   "work_order": "MFG-WO-2026-00098",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-19 09:15:00",
+   "to_time": "2026-11-19 10:05:00",
+   "time_in_mins": "50.0"
+  },
+  {
+   "name": "qsda1dp7de",
+   "parent": "PO-JOB00172",
+   "work_order": "MFG-WO-2026-00093",
+   "workstation": "P1-IMM-01",
+   "from_time": "2026-11-16 08:00:00",
+   "to_time": "2026-11-16 09:00:00",
+   "time_in_mins": "60.0"
+  },
+  {
+   "name": "qsdfkakr6p",
+   "parent": "PO-JOB00173",
+   "work_order": "MFG-WO-2026-00093",
+   "workstation": "P1-IMM-01",
+   "from_time": "2026-11-16 09:10:00",
+   "to_time": "2026-11-16 09:42:00",
+   "time_in_mins": "32.0"
+  },
+  {
+   "name": "qsghh36aq9",
+   "parent": "PO-JOB00175",
+   "work_order": "MFG-WO-2026-00096",
+   "workstation": "P1-IMM-02",
+   "from_time": "2026-11-16 09:10:00",
+   "to_time": "2026-11-16 09:30:00",
+   "time_in_mins": "20.0"
+  },
+  {
+   "name": "qsglbjr59h",
+   "parent": "PO-JOB00174",
+   "work_order": "MFG-WO-2026-00096",
+   "workstation": "P1-IMM-02",
+   "from_time": "2026-11-16 08:00:00",
+   "to_time": "2026-11-16 08:50:00",
+   "time_in_mins": "50.0"
+  },
+  {
+   "name": "qsiq03rh54",
+   "parent": "PO-JOB00176",
+   "work_order": "MFG-WO-2026-00101",
+   "workstation": "P1-IMM-01",
+   "from_time": "2026-11-16 09:52:00",
+   "to_time": "2026-11-16 10:52:00",
+   "time_in_mins": "60.0"
+  },
+  {
+   "name": "qsj3rtb34q",
+   "parent": "PO-JOB00177",
+   "work_order": "MFG-WO-2026-00101",
+   "workstation": "P1-IMM-01",
+   "from_time": "2026-11-16 11:02:00",
+   "to_time": "2026-11-16 11:22:00",
+   "time_in_mins": "20.0"
+  },
+  {
+   "name": "qslesmnj5v",
+   "parent": "PO-JOB00178",
+   "work_order": "MFG-WO-2026-00094",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-16 08:00:00",
+   "to_time": "2026-11-16 11:15:00",
+   "time_in_mins": "195.0"
+  },
+  {
+   "name": "qsnnvoev75",
+   "parent": "PO-JOB00179",
+   "work_order": "MFG-WO-2026-00102",
+   "workstation": "P1-SAB-02",
+   "from_time": "2026-11-16 08:00:00",
+   "to_time": "2026-11-16 09:15:00",
+   "time_in_mins": "75.0"
+  },
+  {
+   "name": "qspgm114a9",
+   "parent": "PO-JOB00180",
+   "work_order": "MFG-WO-2026-00095",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-16 13:00:00",
+   "to_time": "2026-11-16 15:45:00",
+   "time_in_mins": "165.0"
+  },
+  {
+   "name": "qspqhttgv6",
+   "parent": "PO-JOB00180",
+   "work_order": "MFG-WO-2026-00095",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-16 11:25:00",
+   "to_time": "2026-11-16 12:00:00",
+   "time_in_mins": "35.0"
+  },
+  {
+   "name": "qssa5mmjnr",
+   "parent": "PO-JOB00181",
+   "work_order": "MFG-WO-2026-00097",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-17 08:00:00",
+   "to_time": "2026-11-17 10:40:00",
+   "time_in_mins": "160.0"
+  },
+  {
+   "name": "qssh5d5oml",
+   "parent": "PO-JOB00181",
+   "work_order": "MFG-WO-2026-00097",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-16 15:55:00",
+   "to_time": "2026-11-16 17:00:00",
+   "time_in_mins": "65.0"
+  },
+  {
+   "name": "qsu30vh029",
+   "parent": "PO-JOB00182",
+   "work_order": "MFG-WO-2026-00103",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-17 13:00:00",
+   "to_time": "2026-11-17 14:20:00",
+   "time_in_mins": "80.0"
+  },
+  {
+   "name": "qsum37a5gs",
+   "parent": "PO-JOB00182",
+   "work_order": "MFG-WO-2026-00103",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-17 10:50:00",
+   "to_time": "2026-11-17 12:00:00",
+   "time_in_mins": "70.0"
+  },
+  {
+   "name": "qt2482fq61",
+   "parent": "PO-JOB00183",
+   "work_order": "MFG-WO-2026-00087",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-19 08:20:00",
+   "to_time": "2026-11-19 12:00:00",
+   "time_in_mins": "220.0"
+  },
+  {
+   "name": "qt26u1ffht",
+   "parent": "PO-JOB00184",
+   "work_order": "MFG-WO-2026-00087",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-19 16:10:00",
+   "to_time": "2026-11-19 17:00:00",
+   "time_in_mins": "50.0"
+  },
+  {
+   "name": "qt2ccip725",
+   "parent": "PO-JOB00183",
+   "work_order": "MFG-WO-2026-00087",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-19 13:00:00",
+   "to_time": "2026-11-19 16:00:00",
+   "time_in_mins": "180.0"
+  },
+  {
+   "name": "qt2om4f6ho",
+   "parent": "PO-JOB00184",
+   "work_order": "MFG-WO-2026-00087",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-20 08:00:00",
+   "to_time": "2026-11-20 09:10:00",
+   "time_in_mins": "70.0"
+  },
+  {
+   "name": "qt3jr3ho0r",
+   "parent": "PO-JOB00185",
+   "work_order": "MFG-WO-2026-00087",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-11-20 09:20:00",
+   "to_time": "2026-11-20 10:40:00",
+   "time_in_mins": "80.0"
+  },
+  {
+   "name": "qt6b2k32i4",
+   "parent": "PO-JOB00186",
+   "work_order": "MFG-WO-2026-00088",
+   "workstation": "P1-FAL-02",
+   "from_time": "2026-11-19 13:00:00",
+   "to_time": "2026-11-19 15:10:00",
+   "time_in_mins": "130.0"
+  },
+  {
+   "name": "qt6vaaks0e",
+   "parent": "PO-JOB00186",
+   "work_order": "MFG-WO-2026-00088",
+   "workstation": "P1-FAL-02",
+   "from_time": "2026-11-19 08:20:00",
+   "to_time": "2026-11-19 12:00:00",
+   "time_in_mins": "220.0"
+  },
+  {
+   "name": "qt70k9q5ba",
+   "parent": "PO-JOB00187",
+   "work_order": "MFG-WO-2026-00088",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-20 09:20:00",
+   "to_time": "2026-11-20 11:00:00",
+   "time_in_mins": "100.0"
+  },
+  {
+   "name": "qt7477thrq",
+   "parent": "PO-JOB00188",
+   "work_order": "MFG-WO-2026-00088",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-11-20 13:00:00",
+   "to_time": "2026-11-20 13:25:00",
+   "time_in_mins": "25.0"
+  },
+  {
+   "name": "qt7piil7ef",
+   "parent": "PO-JOB00188",
+   "work_order": "MFG-WO-2026-00088",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-11-20 11:10:00",
+   "to_time": "2026-11-20 12:00:00",
+   "time_in_mins": "50.0"
+  },
+  {
+   "name": "qtbckfokt8",
+   "parent": "PO-JOB00190",
+   "work_order": "MFG-WO-2026-00089",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-20 13:20:00",
+   "to_time": "2026-11-20 14:35:00",
+   "time_in_mins": "75.0"
+  },
+  {
+   "name": "qtbdd81a4h",
+   "parent": "PO-JOB00189",
+   "work_order": "MFG-WO-2026-00089",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-20 08:00:00",
+   "to_time": "2026-11-20 12:00:00",
+   "time_in_mins": "240.0"
+  },
+  {
+   "name": "qtbko0jsl9",
+   "parent": "PO-JOB00189",
+   "work_order": "MFG-WO-2026-00089",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-20 13:00:00",
+   "to_time": "2026-11-20 13:10:00",
+   "time_in_mins": "10.0"
+  },
+  {
+   "name": "qtbl9oqsij",
+   "parent": "PO-JOB00189",
+   "work_order": "MFG-WO-2026-00089",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-11-19 16:10:00",
+   "to_time": "2026-11-19 17:00:00",
+   "time_in_mins": "50.0"
+  },
+  {
+   "name": "qtcpcq7lrg",
+   "parent": "PO-JOB00191",
+   "work_order": "MFG-WO-2026-00089",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-11-20 14:45:00",
+   "to_time": "2026-11-20 15:35:00",
+   "time_in_mins": "50.0"
+  },
+  {
+   "name": "vga7jmc6h2",
+   "parent": "PO-JOB00192",
+   "work_order": "MFG-WO-2026-00106",
+   "workstation": "P1-WND-01",
+   "from_time": "2026-12-02 08:00:00",
+   "to_time": "2026-12-02 09:00:00",
+   "time_in_mins": "60.0"
+  },
+  {
+   "name": "vgbir2smv4",
+   "parent": "PO-JOB00193",
+   "work_order": "MFG-WO-2026-00106",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-12-02 09:10:00",
+   "to_time": "2026-12-02 09:40:00",
+   "time_in_mins": "30.0"
+  },
+  {
+   "name": "vgfi0837cv",
+   "parent": "PO-JOB00194",
+   "work_order": "MFG-WO-2026-00107",
+   "workstation": "P1-WND-02",
+   "from_time": "2026-12-02 08:00:00",
+   "to_time": "2026-12-02 08:50:00",
+   "time_in_mins": "50.0"
+  },
+  {
+   "name": "vggm1g69d6",
+   "parent": "PO-JOB00195",
+   "work_order": "MFG-WO-2026-00107",
+   "workstation": "P1-OVN-01",
+   "from_time": "2026-12-02 09:50:00",
+   "to_time": "2026-12-02 10:20:00",
+   "time_in_mins": "30.0"
+  },
+  {
+   "name": "vgkhafriv4",
+   "parent": "PO-JOB00197",
+   "work_order": "MFG-WO-2026-00105",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-12-02 11:30:00",
+   "to_time": "2026-12-02 11:50:00",
+   "time_in_mins": "20.0"
+  },
+  {
+   "name": "vgkjlrshgo",
+   "parent": "PO-JOB00196",
+   "work_order": "MFG-WO-2026-00105",
+   "workstation": "P1-MAS-01",
+   "from_time": "2026-12-02 10:20:00",
+   "to_time": "2026-12-02 11:20:00",
+   "time_in_mins": "60.0"
+  },
+  {
+   "name": "vh5dhfnukm",
+   "parent": "PO-JOB00202",
+   "work_order": "MFG-WO-2026-00104",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-12-02 13:00:00",
+   "to_time": "2026-12-02 14:30:00",
+   "time_in_mins": "90.0"
+  },
+  {
+   "name": "vh5idkt097",
+   "parent": "PO-JOB00202",
+   "work_order": "MFG-WO-2026-00104",
+   "workstation": "P1-FAL-01",
+   "from_time": "2026-12-02 11:50:00",
+   "to_time": "2026-12-02 12:00:00",
+   "time_in_mins": "10.0"
+  },
+  {
+   "name": "vh5niilcag",
+   "parent": "PO-JOB00203",
+   "work_order": "MFG-WO-2026-00104",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-12-02 14:40:00",
+   "to_time": "2026-12-02 15:10:00",
+   "time_in_mins": "30.0"
+  }
+ ],
+ "errors": [],
+ "released_bookings_earlier_closed_orders": [
+  {
+   "name": "2sthj6jb6d",
+   "parent": "PO-JOB00082",
+   "work_order": "MFG-WO-2026-00043",
+   "workstation": "P1-SAB-01",
+   "from_time": "2026-11-25 08:00:00",
+   "to_time": "2026-11-25 11:15:00"
+  },
+  {
+   "name": "6cbokr7duj",
+   "parent": "PO-JOB00250",
+   "work_order": "MFG-WO-2026-00134",
+   "workstation": "P1-FAL-02",
+   "from_time": "2026-11-27 10:27:00",
+   "to_time": "2026-11-27 10:47:00"
+  },
+  {
+   "name": "6cc1q12erh",
+   "parent": "PO-JOB00251",
+   "work_order": "MFG-WO-2026-00134",
+   "workstation": "P1-TST-01",
+   "from_time": "2026-11-27 10:57:00",
+   "to_time": "2026-11-27 11:03:00"
+  },
+  {
+   "name": "6cc7f37jsm",
+   "parent": "PO-JOB00252",
+   "work_order": "MFG-WO-2026-00134",
+   "workstation": "P1-PCK-01",
+   "from_time": "2026-11-27 11:13:00",
+   "to_time": "2026-11-27 11:17:00"
+  },
+  {
+   "name": "vgnmscq9bs",
+   "parent": "PO-JOB00199",
+   "work_order": "MFG-WO-2026-00108",
+   "workstation": "P1-IMM-01",
+   "from_time": "2026-12-02 08:25:00",
+   "to_time": "2026-12-02 08:33:00"
+  },
+  {
+   "name": "vgnrv6vko3",
+   "parent": "PO-JOB00198",
+   "work_order": "MFG-WO-2026-00108",
+   "workstation": "P1-IMM-01",
+   "from_time": "2026-12-02 08:00:00",
+   "to_time": "2026-12-02 08:15:00"
+  }
+ ]
+}

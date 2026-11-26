@@ -1,0 +1,7 @@
+batch_no,item_code,item_name,qty_in_p1_stores,uom,date,expiry_date,used_by,label_file
+00000703,RM-BOX-S-B,Carton Box (Drill / Rotary Hammer),60.0,Nos,2026-11-26,,MFG-WO-2026-00160:25.0,batches/00000703.png
+00000704,RM-CHUCK-13-B,Keyless Chuck 13mm,58.0,Nos,2026-11-26,,MFG-WO-2026-00160:25.0,batches/00000704.png
+00000705,RM-LABEL-B,Rating Label & Warning Decal Set (batch),56.0,Set,2026-11-26,,MFG-WO-2026-00160:25.0,batches/00000705.png
+00000706,RM-MANUAL-B,User Manual (EN/BM) (batch),56.0,Nos,2026-11-26,,MFG-WO-2026-00160:25.0,batches/00000706.png
+00000707,RM-SCREW-KIT-B,Housing Screw Kit M4,58.0,Set,2026-11-26,,MFG-WO-2026-00160:25.0,batches/00000707.png
+00000708,RM-SIDE-HDL-B,Auxiliary Side Handle with Depth Gauge,60.0,Nos,2026-11-26,,MFG-WO-2026-00160:25.0,batches/00000708.png

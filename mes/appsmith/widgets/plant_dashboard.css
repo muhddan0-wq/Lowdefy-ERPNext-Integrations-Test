@@ -1,0 +1,51 @@
+/* ---- Plant dashboard (Tulip-style) ---- */
+body.pd { margin: 0; background: #2a3138; color: #1b2430; font: 16px/1.35 "Segoe UI", Roboto, Arial, sans-serif; }
+body.pd * { box-sizing: border-box; }
+.pd-head { display: flex; align-items: center; gap: 16px; padding: 12px 18px; color: #fff; }
+.pd-head .logo { font-weight: 800; letter-spacing: .08em; font-size: 18px; padding-right: 16px; border-right: 1px solid #56606b; }
+.pd-head .logo i { font-style: normal; color: #f08c2e; margin-right: 6px; }
+.pd-head .t { font-size: 22px; flex: 1; }
+.pd-head .clock { font-size: 20px; font-variant-numeric: tabular-nums; }
+.pd-head button { background: #3c4550; color: #fff; border: 1px solid #56606b; border-radius: 4px; padding: 8px 14px; font: inherit; cursor: pointer; }
+.pd-head button.on { background: #f08c2e; border-color: #f08c2e; color: #14213d; font-weight: 700; }
+.pd-head a { color: #9fd3ef; text-decoration: none; font-size: 15px; }
+.pd-grid { display: grid; grid-template-columns: 1fr 320px; gap: 12px; padding: 0 12px 16px; }
+.pd-col { display: grid; gap: 12px; align-content: start; min-width: 0; }
+.pd-card { background: #f1f2f2; border-radius: 4px; padding: 14px 18px; min-width: 0; }
+.pd-card h3 { margin: 0 0 8px; font-size: 15px; letter-spacing: .06em; text-transform: uppercase; color: #3a4350; font-weight: 600; }
+.pd-top { display: grid; grid-template-columns: 250px 1fr 1fr 1fr; padding: 0; overflow: hidden; }
+.pd-top .plant { color: #fff; font-size: 40px; font-weight: 600; display: flex; align-items: center; padding: 0 26px; }
+.pd-top .plant small { display: block; font-size: 15px; font-weight: 400; opacity: .9; }
+.pd-top .plant.ok { background: #2e7d3e; } .pd-top .plant.bad { background: #c0392b; } .pd-top .plant.warn { background: #c27c0e; }
+.pd-top .k { padding: 16px 24px; border-left: 1px solid #d6d9dc; }
+.pd-top .k .l { font-size: 15px; letter-spacing: .05em; color: #3a4350; text-transform: uppercase; }
+.pd-top .k .l span { color: #8a95a3; }
+.pd-top .k .v { font-size: 48px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.pd-row { display: grid; grid-template-columns: 180px 1fr 1fr; gap: 16px; align-items: center; }
+.pd-row.two { grid-template-columns: 180px 1fr; }
+.pd-big { font-size: 50px; font-weight: 300; font-variant-numeric: tabular-nums; }
+.pd-big.good { color: #2e7d3e; } .pd-big.mid { color: #c27c0e; } .pd-big.bad { color: #c0392b; }
+.pd-sub { color: #6b7684; font-size: 14px; }
+.pd-chart svg { width: 100%; height: 170px; display: block; overflow: visible; }
+.pd-chart text { font-size: 10px; fill: #5b6672; }
+.pd-empty { color: #8a95a3; font-size: 14px; height: 170px; display: grid; place-items: center; border: 1px dashed #c7ccd2; border-radius: 4px; }
+.pd-stations { display: grid; gap: 8px; }
+.pd-st { display: grid; grid-template-columns: 1fr auto; gap: 4px 10px; color: #fff; border-radius: 3px; padding: 9px 12px; font-size: 15px; }
+.pd-st b { font-size: 16px; }
+.pd-st span { font-size: 13px; opacity: .9; }
+.pd-st .r { text-align: right; }
+.pd-st.run { background: #2e6b3b; } .pd-st.idle { background: #5e7466; } .pd-st.warn { background: #c27c0e; } .pd-st.down { background: #c0392b; }
+.pd-events { max-height: calc(100vh - 420px); min-height: 260px; overflow: auto; }
+.pd-ev { display: grid; grid-template-columns: 70px 26px 1fr; gap: 8px; padding: 8px 0; border-bottom: 1px solid #dfe2e5; align-items: start; }
+.pd-ev .tm { color: #6b7684; font-size: 13px; padding-top: 2px; }
+.pd-ev .ic { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-size: 12px; font-weight: 900; }
+.pd-ev .ic.done { background: #2e9e4f; } .pd-ev .ic.start { background: #fff; border: 2px solid #2e9e4f; color: #2e9e4f; }
+.pd-ev .ic.defect, .pd-ev .ic.issue { background: #c0392b; } .pd-ev .ic.resolved { background: #2b7bd6; }
+.pd-ev b { display: block; font-size: 15px; }
+.pd-ev span { font-size: 13px; color: #5b6672; }
+.pd-legend { display: flex; gap: 14px; font-size: 13px; color: #5b6672; margin-top: 4px; }
+.pd-legend i { display: inline-block; width: 12px; height: 12px; margin-right: 5px; vertical-align: -1px; }
+body.pd #toast { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); background: #c0392b; color: #fff; padding: 12px 18px; border-radius: 6px; opacity: 0; transition: opacity .2s; z-index: 50; white-space: pre-line; }
+body.pd #toast.show { opacity: 1; }
+@media (max-width: 1100px) { .pd-grid { grid-template-columns: 1fr; } .pd-row { grid-template-columns: 1fr; } .pd-top { grid-template-columns: 1fr 1fr; } }
+/* ---- end Plant dashboard ---- */

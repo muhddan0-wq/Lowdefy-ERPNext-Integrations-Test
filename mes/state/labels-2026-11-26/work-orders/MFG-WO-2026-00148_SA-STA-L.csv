@@ -1,0 +1,5 @@
+work_order,production_item,wo_qty,item_code,item_name,scan_mode,batch_no,tracking_id,barcode,qty,uom,label_file,note
+MFG-WO-2026-00148,SA-STA-L,42.0,RM-LAM-STA-L,Stator Lamination Stack 50mm,"Scan item, then quantity",,,RM-LAM-STA-L,42.0,Nos,items/RM-LAM-STA-L.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00148,SA-STA-L,42.0,RM-CU-WIRE,Enamelled Copper Wire 0.45mm,Confirm quantity,,,RM-CU-WIRE,14.7,Kg,items/RM-CU-WIRE.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00148,SA-STA-L,42.0,RM-INS-PAPER,Slot Insulation Paper,Confirm quantity,,,RM-INS-PAPER,42.0,Meter,items/RM-INS-PAPER.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00148,SA-STA-L,42.0,RM-VARNISH,Insulating Impregnation Varnish,Confirm quantity,,,RM-VARNISH,1.26,Litre,items/RM-VARNISH.png,"no batch or unit label: scan the item code, then enter the quantity"

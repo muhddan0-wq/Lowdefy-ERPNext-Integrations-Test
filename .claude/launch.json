@@ -6,6 +6,12 @@
       "runtimeExecutable": "npx",
       "runtimeArgs": ["-y", "lowdefy@7.1.0", "dev", "--port", "3010", "--no-open"],
       "port": 3011
+    },
+    {
+      "name": "mes-harness",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["mes/appsmith/dev_harness.py"],
+      "port": 8099
     }
   ]
 }

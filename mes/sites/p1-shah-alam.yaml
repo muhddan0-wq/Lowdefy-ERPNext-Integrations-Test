@@ -1,6 +1,44 @@
 code: P1
 name: Shah Alam Plant
+brand: VOLTRA
 skip_item_tracking_labels: true
+
+# Values the MES server scripts read (rendered into _prelude.py at install time).
+plant_floor: P1 Shah Alam Plant
+site_prefix: "P1 "
+horizon_days: 60
+warehouses:
+  stores: P1 Stores - VPT
+  wip: P1 Work In Progress - VPT
+  fg: P1 Finished Goods - VPT
+
+# Where the Appsmith app and install scripts reach this site.
+erp:
+  site: frontend
+  container: comp_demo-bench-1
+  public_url: http://localhost:8000
+  datasource_url: http://host.docker.internal:8000
+appsmith:
+  url: http://localhost:8081
+
+# Generic install (setup/install-mes.ps1). Role -> Workstation Type that role works on.
+sector_roles:
+  MES Injection Moulding: P1 Injection Moulding
+  MES Coil Winding: P1 Coil Winding
+  MES Varnish Oven: P1 Varnish Impregnation Oven
+  MES Sub-Assembly: P1 Sub-Assembly Bench
+  MES Motor Assembly: P1 Motor Assembly
+  MES Final Assembly: P1 Final Assembly Line
+  MES Electrical Test: P1 Electrical Safety & Run Test
+  MES Packing: P1 Packing
+api_user:
+  email: appsmith-mes@local.test
+  roles: [Manufacturing User, Manufacturing Manager, Stock User, MES Batch Reader]
+test_users:
+  - {email: op1@local.test, first: Aina, last: Operator, roles: [Manufacturing User]}
+  - {email: sup1@local.test, first: Hafiz, last: Supervisor, roles: [Manufacturing Manager, Manufacturing User]}
+  - {email: maint1@local.test, first: Ravi, last: Maintenance, roles: [Maintenance User]}
+test_account_domain: local.test
 
 company:
   name: Voltra Power Tools Sdn Bhd

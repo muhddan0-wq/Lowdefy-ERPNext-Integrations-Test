@@ -1,0 +1,3 @@
+work_order,production_item,wo_qty,item_code,item_name,scan_mode,batch_no,tracking_id,barcode,qty,uom,label_file,note
+MFG-WO-2026-00153,SA-HSG-DRL,12.0,RM-ABS-GRN,ABS Resin Granules (Black),Confirm quantity,,,RM-ABS-GRN,5.04,Kg,items/RM-ABS-GRN.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00153,SA-HSG-DRL,12.0,RM-TPE-GRN,TPE Soft-Grip Granules,Confirm quantity,,,RM-TPE-GRN,0.6,Kg,items/RM-TPE-GRN.png,"no batch or unit label: scan the item code, then enter the quantity"

@@ -15,7 +15,7 @@ else:
     rows = frappe.db.sql(
         """select jc.name, jc.work_order, jc.production_item, jc.item_name, jc.operation, jc.status, jc.docstatus,
             jc.is_paused, jc.for_quantity, jc.total_completed_qty, jc.expected_start_date, jc.expected_end_date,
-            jc.custom_work_instructions, jc.actual_start_date, jc.actual_end_date
+            jc.custom_work_instructions, jc.actual_start_date, jc.actual_end_date, jc.operation_id
         from `tabJob Card` jc
         left join `tabWork Order` wo on wo.name = jc.work_order
         left join `tabProduction Plan` pp on pp.name = wo.production_plan
@@ -39,7 +39,19 @@ else:
             state = "Paused"
         else:
             state = "Not started"
-        out.append({"job_card": r.name, "work_order": r.work_order, "item": r.production_item, "item_name": r.item_name,
+        # ERPNext refuses to start/complete an operation until every earlier operation of the same work order
+        # is completed (Job Card.validate_sequence_id). Show that up front instead of letting Start fail.
+        waiting = []
+        if state != "Completed":
+            my_idx = frappe.db.get_value("Work Order Operation", r.operation_id, "idx") or 0
+            earlier = frappe.db.sql(
+                """select jc.name, jc.operation, jc.status, jc.docstatus, op.idx from `tabJob Card` jc
+                join `tabWork Order Operation` op on op.name = jc.operation_id
+                where jc.work_order = %s and jc.docstatus < 2 and jc.name != %s and op.idx < %s
+                order by op.idx""", (r.work_order, r.name, my_idx), as_dict=True)
+            waiting = [{"job_card": e.name, "operation": e.operation, "status": e.status} for e in earlier
+                       if not (e.docstatus == 1 or e.status == "Completed")]
+        out.append({"waiting_for": waiting,"job_card": r.name, "work_order": r.work_order, "item": r.production_item, "item_name": r.item_name,
                     "operation": r.operation, "status": r.status, "state": state, "qty": r.for_quantity,
                     "completed_qty": r.total_completed_qty, "scheduled_start": r.expected_start_date,
                     "scheduled_end": r.expected_end_date, "overdue": 1 if (state != "Completed" and r.expected_end_date and r.expected_end_date < frappe.utils.now_datetime()) else 0,

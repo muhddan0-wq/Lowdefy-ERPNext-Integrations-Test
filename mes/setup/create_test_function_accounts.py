@@ -1,6 +1,6 @@
 """Create one test role per business function and one test account holding only that role (idempotent).
 
-Run inside the bench, with the output directory passed through the environment:
+Run inside the bench, with the output directory passed through the environment (FRAPPE_SITE and TEST_DOMAIN optional):
    docker exec -i -e OUT_DIR=<dir> comp_demo-bench-1 bash -lc "cd /home/frappe/frappe-bench/sites && ../env/bin/python -W ignore -" < mes/setup/create_test_function_accounts.py
 
 Writes one password setup link per new account to OUT_DIR/test_account_links.txt.
@@ -9,8 +9,8 @@ import os
 
 import frappe
 
-SITE = "frontend"
-DOMAIN = "local.test"
+SITE = os.environ.get("FRAPPE_SITE", "frontend")
+DOMAIN = os.environ.get("TEST_DOMAIN", "local.test")
 FUNCTIONS = ["Finance", "Purchasing", "Inventory", "Sales", "Production", "Quality", "Maintenance", "Human Resources"]
 OUT_DIR = os.environ["OUT_DIR"]
 

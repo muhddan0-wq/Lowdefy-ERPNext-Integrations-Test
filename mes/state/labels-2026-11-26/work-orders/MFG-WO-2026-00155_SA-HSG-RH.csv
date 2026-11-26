@@ -1,0 +1,3 @@
+work_order,production_item,wo_qty,item_code,item_name,scan_mode,batch_no,tracking_id,barcode,qty,uom,label_file,note
+MFG-WO-2026-00155,SA-HSG-RH,22.0,RM-PA6GF-GRN,PA6 30% Glass-Filled Granules,Confirm quantity,,,RM-PA6GF-GRN,14.3,Kg,items/RM-PA6GF-GRN.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00155,SA-HSG-RH,22.0,RM-TPE-GRN,TPE Soft-Grip Granules,Confirm quantity,,,RM-TPE-GRN,1.32,Kg,items/RM-TPE-GRN.png,"no batch or unit label: scan the item code, then enter the quantity"

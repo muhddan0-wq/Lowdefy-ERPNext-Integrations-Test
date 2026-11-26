@@ -1,14 +1,10 @@
-# GET /api/method/mes_work_orders?status=&item=&search=&plan=&include_history=0
+# POST /api/method/mes_work_orders {status, item, search, plan, include_history}
 # Work order list + KPI tiles, company Voltra only. Simulated history plans (custom_mes_tag history-*) hidden by default.
+# The KPI tiles count every work order in scope (company, history toggle, item, search, plan) and are NOT
+# narrowed by the status filter; the status filter (incl. "Late") only narrows the returned rows.
 cond = ["wo.company = %(company)s", "wo.docstatus = 1"]
 vals = {"company": M["COMPANY"], "now": frappe.utils.now_datetime()}
-status = M["arg"](M, "status")
-if status and status != "All":
-    if status == "Late":
-        cond.append("wo.status not in ('Completed','Closed','Cancelled') and wo.planned_end_date < %(now)s")
-    else:
-        cond.append("wo.status = %(status)s")
-        vals["status"] = status
+status = M["arg"](M, "status") or "All"
 item = M["arg"](M, "item")
 if item:
     cond.append("wo.production_item = %(item)s")
@@ -24,7 +20,7 @@ if plan:
 if not frappe.utils.cint(M["arg"](M, "include_history", 0)):
     cond.append("ifnull(pp.custom_mes_tag, '') not like %(hist)s")
     vals["hist"] = "history-%"
-rows = frappe.db.sql(
+scope = frappe.db.sql(
     """select wo.name, wo.production_item, wo.item_name, wo.qty, wo.produced_qty,
         wo.material_transferred_for_manufacturing as transferred_qty, wo.status,
         wo.planned_start_date, wo.planned_end_date, wo.actual_start_date, wo.actual_end_date,
@@ -33,8 +29,9 @@ rows = frappe.db.sql(
     where """ + " and ".join(cond) + " order by wo.planned_start_date, wo.name",
     vals, as_dict=True)
 now = vals["now"]
-kpi = {"not_started": 0, "in_process": 0, "completed": 0, "late": 0, "stopped": 0, "total": len(rows)}
-for r in rows:
+kpi = {"not_started": 0, "in_process": 0, "completed": 0, "late": 0, "stopped": 0, "total": len(scope)}
+rows = []
+for r in scope:
     r["progress_pct"] = round(100.0 * (r.produced_qty or 0) / r.qty, 1) if r.qty else 0
     is_late = r.status not in ("Completed", "Closed", "Cancelled") and r.planned_end_date and frappe.utils.get_datetime(r.planned_end_date) < now
     r["late"] = 1 if is_late else 0
@@ -47,4 +44,13 @@ for r in rows:
         kpi["completed"] = kpi["completed"] + 1
     elif r.status == "Stopped":
         kpi["stopped"] = kpi["stopped"] + 1
-frappe.response["message"] = {"kpi": kpi, "rows": rows, "as_of": now}
+    if status == "All" or (status == "Late" and r["late"]) or r.status == status:
+        rows.append(r)
+# item dropdown options: every item in scope ignoring the item/search/status filters, so the list never shrinks
+item_cond = [c for c in cond if "production_item = " not in c and "like %(q)s" not in c]
+items = frappe.db.sql(
+    """select distinct wo.production_item from `tabWork Order` wo
+    left join `tabProduction Plan` pp on pp.name = wo.production_plan
+    where """ + " and ".join(item_cond) + " order by wo.production_item",
+    vals, pluck=True)
+frappe.response["message"] = {"kpi": kpi, "rows": rows, "items": items, "as_of": now, "status": status}

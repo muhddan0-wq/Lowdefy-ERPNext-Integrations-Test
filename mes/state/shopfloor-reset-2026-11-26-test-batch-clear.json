@@ -1,0 +1,185 @@
+{
+ "stock_entry": "MAT-STE-2026-00109",
+ "value": 1929.2,
+ "issued": [
+  [
+   "RM-BOX-S-B-ACC-20261126113513",
+   "RM-BOX-S-B",
+   69.0
+  ],
+  [
+   "RM-BOX-S-B-LOW-20261126113513",
+   "RM-BOX-S-B",
+   1.0
+  ],
+  [
+   "RM-BOX-S-B-ACC-20261126113726",
+   "RM-BOX-S-B",
+   73.0
+  ],
+  [
+   "RM-BOX-S-B-LOW-20261126113726",
+   "RM-BOX-S-B",
+   1.0
+  ],
+  [
+   "RM-BOX-S-B-ACC-20261126113923",
+   "RM-BOX-S-B",
+   73.0
+  ],
+  [
+   "RM-BOX-S-B-LOW-20261126113923",
+   "RM-BOX-S-B",
+   1.0
+  ],
+  [
+   "RM-BOX-S-B-ACC-20261126121904",
+   "RM-BOX-S-B",
+   73.0
+  ],
+  [
+   "RM-BOX-S-B-LOW-20261126121904",
+   "RM-BOX-S-B",
+   1.0
+  ],
+  [
+   "RM-SIDE-HDL-B-ACC-20261126123148",
+   "RM-SIDE-HDL-B",
+   73.0
+  ],
+  [
+   "00000467",
+   "RM-SIDE-HDL-B",
+   1.0
+  ],
+  [
+   "RM-SIDE-HDL-B-LOW-20261126123148",
+   "RM-SIDE-HDL-B",
+   1.0
+  ],
+  [
+   "RM-SIDE-HDL-B-ACC-20261126125750",
+   "RM-SIDE-HDL-B",
+   71.0
+  ],
+  [
+   "00000710",
+   "RM-SIDE-HDL-B",
+   1.0
+  ],
+  [
+   "RM-SIDE-HDL-B-LOW-20261126125750",
+   "RM-SIDE-HDL-B",
+   1.0
+  ],
+  [
+   "TB-TEST-001",
+   "TEST-BATCH-01",
+   10.0
+  ],
+  [
+   "TEST-BATCH-01-20261126-002",
+   "TEST-BATCH-01",
+   2.0
+  ]
+ ],
+ "disabled": [
+  "RM-BOX-S-B-EXP-20261126113513",
+  "RM-BOX-S-B-LOW-20261126113513",
+  "RM-BOX-S-B-EXP-20261126113726",
+  "RM-BOX-S-B-ACC-20261126113726",
+  "RM-BOX-S-B-LOW-20261126113726",
+  "RM-BOX-S-B-EXP-20261126113923",
+  "RM-BOX-S-B-ACC-20261126113923",
+  "RM-BOX-S-B-LOW-20261126113923",
+  "RM-BOX-S-B-EXP-20261126121904",
+  "RM-BOX-S-B-ACC-20261126121904",
+  "00000456",
+  "RM-BOX-S-B-LOW-20261126121904",
+  "RM-SIDE-HDL-B-EXP-20261126123148",
+  "RM-SIDE-HDL-B-ACC-20261126123148",
+  "00000466",
+  "00000467",
+  "RM-SIDE-HDL-B-LOW-20261126123148",
+  "RM-SIDE-HDL-B-EXP-20261126125750",
+  "00000709",
+  "00000710",
+  "RM-SIDE-HDL-B-LOW-20261126125750",
+  "TB-TEST-001",
+  "TEST-BATCH-01-20261126-001",
+  "TEST-BATCH-01-20261126-002"
+ ],
+ "kept_enabled": [
+  [
+   "RM-BOX-S-B-ACC-20261126113513",
+   [
+    {
+     "batch_no": "RM-BOX-S-B-ACC-20261126113513",
+     "warehouse": "P1 Work In Progress - VPT",
+     "qty": 2.0,
+     "expiry_date": null
+    }
+   ]
+  ],
+  [
+   "RM-SIDE-HDL-B-ACC-20261126125750",
+   [
+    {
+     "batch_no": "RM-SIDE-HDL-B-ACC-20261126125750",
+     "warehouse": "P1 Work In Progress - VPT",
+     "qty": 2.0,
+     "expiry_date": null
+    }
+   ]
+  ]
+ ],
+ "first_generation": {
+  "stock_entry": "MAT-STE-2026-00110",
+  "value": 0.0,
+  "issued": [
+   [
+    "RM-BOX-S-B-20261126-001",
+    44.0
+   ],
+   [
+    "RM-CHUCK-13-B-20261126-001",
+    36.0
+   ],
+   [
+    "RM-SCREW-KIT-B-20261126-001",
+    36.0
+   ],
+   [
+    "RM-SIDE-HDL-B-20261126-001",
+    38.0
+   ]
+  ],
+  "disabled": [],
+  "kept_enabled": [
+   [
+    "RM-BOX-S-B-20261126-001",
+    {
+     "P1 Work In Progress - VPT": 1.0
+    }
+   ],
+   [
+    "RM-CHUCK-13-B-20261126-001",
+    {
+     "P1 Work In Progress - VPT": 3.0
+    }
+   ],
+   [
+    "RM-SCREW-KIT-B-20261126-001",
+    {
+     "P1 Work In Progress - VPT": 3.0
+    }
+   ],
+   [
+    "RM-SIDE-HDL-B-20261126-001",
+    {
+     "P1 Work In Progress - VPT": 1.0
+    }
+   ]
+  ]
+ }
+}

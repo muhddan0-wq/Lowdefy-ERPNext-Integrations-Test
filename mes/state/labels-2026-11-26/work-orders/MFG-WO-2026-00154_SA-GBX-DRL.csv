@@ -1,0 +1,5 @@
+work_order,production_item,wo_qty,item_code,item_name,scan_mode,batch_no,tracking_id,barcode,qty,uom,label_file,note
+MFG-WO-2026-00154,SA-GBX-DRL,18.0,RM-GEAR-DRL,Helical Gear Set (Drill),"Scan item, then quantity",,,RM-GEAR-DRL,18.0,Set,items/RM-GEAR-DRL.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00154,SA-GBX-DRL,18.0,RM-GEARCASE-AL,Aluminium Die-Cast Gear Case,"Scan item, then quantity",,,RM-GEARCASE-AL,18.0,Nos,items/RM-GEARCASE-AL.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00154,SA-GBX-DRL,18.0,RM-BRG-608,Ball Bearing 608ZZ,"Scan item, then quantity",,,RM-BRG-608,18.0,Nos,items/RM-BRG-608.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00154,SA-GBX-DRL,18.0,RM-GREASE,Gearbox Grease,Confirm quantity,,,RM-GREASE,0.54,Kg,items/RM-GREASE.png,"no batch or unit label: scan the item code, then enter the quantity"

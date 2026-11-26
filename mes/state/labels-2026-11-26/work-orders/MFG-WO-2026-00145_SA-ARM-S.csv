@@ -1,0 +1,7 @@
+work_order,production_item,wo_qty,item_code,item_name,scan_mode,batch_no,tracking_id,barcode,qty,uom,label_file,note
+MFG-WO-2026-00145,SA-ARM-S,35.0,RM-SHAFT-S,Armature Shaft 8mm,"Scan item, then quantity",,,RM-SHAFT-S,35.0,Nos,items/RM-SHAFT-S.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00145,SA-ARM-S,35.0,RM-LAM-ARM-S,Armature Lamination Stack 35mm,"Scan item, then quantity",,,RM-LAM-ARM-S,35.0,Nos,items/RM-LAM-ARM-S.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00145,SA-ARM-S,35.0,RM-COMM-24,Commutator 24-Bar,"Scan item, then quantity",,,RM-COMM-24,35.0,Nos,items/RM-COMM-24.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00145,SA-ARM-S,35.0,RM-CU-WIRE,Enamelled Copper Wire 0.45mm,Confirm quantity,,,RM-CU-WIRE,6.3,Kg,items/RM-CU-WIRE.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00145,SA-ARM-S,35.0,RM-INS-PAPER,Slot Insulation Paper,Confirm quantity,,,RM-INS-PAPER,21.0,Meter,items/RM-INS-PAPER.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00145,SA-ARM-S,35.0,RM-VARNISH,Insulating Impregnation Varnish,Confirm quantity,,,RM-VARNISH,0.7,Litre,items/RM-VARNISH.png,"no batch or unit label: scan the item code, then enter the quantity"

@@ -1,0 +1,524 @@
+[
+ {
+  "file": "AluminiukGear.jpg",
+  "item_code": "RM-GEARCASE-AL",
+  "item_name": "Aluminium Die-Cast Gear Case",
+  "match": "manual (approved)",
+  "upload": "unchanged",
+  "file_url": "/files/AluminiukGear.jpg",
+  "error": ""
+ },
+ {
+  "file": "AluminiumBaseplate.jpg",
+  "item_code": "RM-BASE-CS",
+  "item_name": "Aluminium Base Plate 185mm",
+  "match": "manual (approved)",
+  "upload": "unchanged",
+  "file_url": "/files/AluminiumBaseplate.jpg",
+  "error": ""
+ },
+ {
+  "file": "Ball Bearing 6001ZZ.jpg",
+  "item_code": "",
+  "item_name": "",
+  "match": "held",
+  "upload": "skipped",
+  "file_url": "",
+  "error": "Different part: ERPNext has 6000ZZ, 608ZZ and 6201ZZ, not 6001ZZ"
+ },
+ {
+  "file": "Ball Bearing 608ZZ.jpg",
+  "item_code": "RM-BRG-608",
+  "item_name": "Ball Bearing 608ZZ",
+  "match": "exact name",
+  "upload": "unchanged",
+  "file_url": "/files/Ball Bearing 608ZZ.jpg",
+  "error": ""
+ },
+ {
+  "file": "BladeGuardBaseplate.jpg",
+  "item_code": "SA-GUARD-CS",
+  "item_name": "Blade Guard & Base Assembly",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/BladeGuardBaseplate.jpg",
+  "error": ""
+ },
+ {
+  "file": "BrushHolder.webp",
+  "item_code": "",
+  "item_name": "",
+  "match": "unmatched",
+  "upload": "skipped",
+  "file_url": "",
+  "error": "no item code or name matches the filename"
+ },
+ {
+  "file": "CarbonBrushSet.jpg",
+  "item_code": "RM-BRUSH-6X8",
+  "item_name": "Carbon Brush 6x8mm",
+  "match": "manual (approved)",
+  "upload": "unchanged",
+  "file_url": "/files/CarbonBrushSet.jpg",
+  "error": ""
+ },
+ {
+  "file": "Carton&FoamInsert.jpg",
+  "item_code": "RM-BOX-S",
+  "item_name": "Carton Box (Drill / Rotary Hammer)",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/Carton&FoamInsert.jpg",
+  "error": ""
+ },
+ {
+  "file": "Circular Saw.jpg",
+  "item_code": "FG-CS-1400",
+  "item_name": "185mm Circular Saw 1400W",
+  "match": "manual (approved)",
+  "upload": "unchanged",
+  "file_url": "/files/Circular Saw.jpg",
+  "error": ""
+ },
+ {
+  "file": "Commutator.jpg",
+  "item_code": "RM-COMM-24",
+  "item_name": "Commutator 24-Bar",
+  "match": "manual (approved)",
+  "upload": "unchanged",
+  "file_url": "/files/Commutator.jpg",
+  "error": ""
+ },
+ {
+  "file": "CoolingFan.jpg",
+  "item_code": "RM-FAN-S",
+  "item_name": "Motor Cooling Fan 48mm",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/CoolingFan.jpg",
+  "error": ""
+ },
+ {
+  "file": "CordStrainRelief.jpg",
+  "item_code": "RM-STRAIN",
+  "item_name": "Cable Strain Relief Sleeve",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/CordStrainRelief.jpg",
+  "error": ""
+ },
+ {
+  "file": "DrillArmature.jpg",
+  "item_code": "SA-ARM-S",
+  "item_name": "Wound Armature 800W",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/DrillArmature.jpg",
+  "error": ""
+ },
+ {
+  "file": "DrillArmatureShaft.jpg",
+  "item_code": "RM-SHAFT-S",
+  "item_name": "Armature Shaft 8mm",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/DrillArmatureShaft.jpg",
+  "error": ""
+ },
+ {
+  "file": "DrillGearBox.jpg",
+  "item_code": "SA-GBX-DRL",
+  "item_name": "Drill Gearbox Assembly",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/DrillGearBox.jpg",
+  "error": ""
+ },
+ {
+  "file": "DrillHousing.jpg",
+  "item_code": "SA-HSG-DRL",
+  "item_name": "Drill Housing Set",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/DrillHousing.jpg",
+  "error": ""
+ },
+ {
+  "file": "DrillHousingShell.jpg",
+  "item_code": "",
+  "item_name": "",
+  "match": "unmatched",
+  "upload": "skipped",
+  "file_url": "",
+  "error": "no item code or name matches the filename"
+ },
+ {
+  "file": "DrillMotor.jpg",
+  "item_code": "SA-MOT-S",
+  "item_name": "Motor Assembly 800W",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/DrillMotor.jpg",
+  "error": ""
+ },
+ {
+  "file": "ElectricDrill.jpg",
+  "item_code": "FG-DRL-800",
+  "item_name": "13mm Electric Drill 800W",
+  "match": "manual (approved)",
+  "upload": "unchanged",
+  "file_url": "/files/ElectricDrill.jpg",
+  "error": ""
+ },
+ {
+  "file": "GearGrease.jpg",
+  "item_code": "RM-GREASE",
+  "item_name": "Gearbox Grease",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/GearGrease.jpg",
+  "error": ""
+ },
+ {
+  "file": "HammerArmature.jpg",
+  "item_code": "",
+  "item_name": "",
+  "match": "unmatched",
+  "upload": "skipped",
+  "file_url": "",
+  "error": "no item code or name matches the filename"
+ },
+ {
+  "file": "HammerArmatureShaft.jpg",
+  "item_code": "",
+  "item_name": "",
+  "match": "unmatched",
+  "upload": "skipped",
+  "file_url": "",
+  "error": "no item code or name matches the filename"
+ },
+ {
+  "file": "HammerHousing.jpg",
+  "item_code": "SA-HSG-RH",
+  "item_name": "Rotary Hammer Housing Set",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/HammerHousing.jpg",
+  "error": ""
+ },
+ {
+  "file": "HammerHousingSHell.jpg",
+  "item_code": "",
+  "item_name": "",
+  "match": "unmatched",
+  "upload": "skipped",
+  "file_url": "",
+  "error": "no item code or name matches the filename"
+ },
+ {
+  "file": "HammerMechanism.png",
+  "item_code": "SA-HMECH-RH",
+  "item_name": "Hammer Mechanism Assembly",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/HammerMechanism.png",
+  "error": ""
+ },
+ {
+  "file": "HammerMotor.jpg",
+  "item_code": "",
+  "item_name": "",
+  "match": "unmatched",
+  "upload": "skipped",
+  "file_url": "",
+  "error": "no item code or name matches the filename"
+ },
+ {
+  "file": "InsulationLiner.jpg",
+  "item_code": "RM-INS-PAPER",
+  "item_name": "Slot Insulation Paper",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/InsulationLiner.jpg",
+  "error": ""
+ },
+ {
+  "file": "IntermediateShaft.jpg",
+  "item_code": "",
+  "item_name": "",
+  "match": "unmatched",
+  "upload": "skipped",
+  "file_url": "",
+  "error": "no item code or name matches the filename"
+ },
+ {
+  "file": "InternalWite.jpg",
+  "item_code": "",
+  "item_name": "",
+  "match": "unmatched",
+  "upload": "skipped",
+  "file_url": "",
+  "error": "no item code or name matches the filename"
+ },
+ {
+  "file": "KeylessChuck.jpg",
+  "item_code": "RM-CHUCK-13",
+  "item_name": "Keyless Chuck 13mm",
+  "match": "manual (approved)",
+  "upload": "unchanged",
+  "file_url": "/files/KeylessChuck.jpg",
+  "error": ""
+ },
+ {
+  "file": "M4Screw.jpg",
+  "item_code": "RM-SCREW-KIT",
+  "item_name": "Housing Screw Kit M4",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/M4Screw.jpg",
+  "error": ""
+ },
+ {
+  "file": "M5Screw.jpg",
+  "item_code": "",
+  "item_name": "",
+  "match": "unmatched",
+  "upload": "skipped",
+  "file_url": "",
+  "error": "no item code or name matches the filename"
+ },
+ {
+  "file": "NeedleBearing.jpg",
+  "item_code": "",
+  "item_name": "",
+  "match": "unmatched",
+  "upload": "skipped",
+  "file_url": "",
+  "error": "no item code or name matches the filename"
+ },
+ {
+  "file": "OutputGear.jpg",
+  "item_code": "",
+  "item_name": "",
+  "match": "unmatched",
+  "upload": "skipped",
+  "file_url": "",
+  "error": "no item code or name matches the filename"
+ },
+ {
+  "file": "PinionGear.jpg",
+  "item_code": "RM-GEAR-DRL",
+  "item_name": "Helical Gear Set (Drill)",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/PinionGear.jpg",
+  "error": ""
+ },
+ {
+  "file": "Piston&RamSet.jpg",
+  "item_code": "RM-PISTON-SET",
+  "item_name": "Hammer Piston Striker & O-Ring Set",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/Piston&RamSet.jpg",
+  "error": ""
+ },
+ {
+  "file": "PowerCord.jpg",
+  "item_code": "RM-CABLE",
+  "item_name": "Power Cable 2.5m with BS1363 Plug",
+  "match": "manual (approved)",
+  "upload": "unchanged",
+  "file_url": "/files/PowerCord.jpg",
+  "error": ""
+ },
+ {
+  "file": "ReturnSpring.jpg",
+  "item_code": "",
+  "item_name": "",
+  "match": "unmatched",
+  "upload": "skipped",
+  "file_url": "",
+  "error": "no item code or name matches the filename"
+ },
+ {
+  "file": "RotaryHammerDrill.jpg",
+  "item_code": "FG-RH-800",
+  "item_name": "SDS-Plus Rotary Hammer Drill 800W",
+  "match": "manual (approved)",
+  "upload": "unchanged",
+  "file_url": "/files/RotaryHammerDrill.jpg",
+  "error": ""
+ },
+ {
+  "file": "SDSPlusChuck.jpg",
+  "item_code": "RM-SDS-HOLD",
+  "item_name": "SDS-Plus Tool Holder Assembly",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/SDSPlusChuck.jpg",
+  "error": ""
+ },
+ {
+  "file": "Saw&HousingHandle.jpeg",
+  "item_code": "SA-HSG-CS",
+  "item_name": "Circular Saw Housing & Handle Set",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/Saw&HousingHandle.jpeg",
+  "error": ""
+ },
+ {
+  "file": "SawArmature.jpg",
+  "item_code": "SA-ARM-L",
+  "item_name": "Wound Armature 1400W",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/SawArmature.jpg",
+  "error": ""
+ },
+ {
+  "file": "SawArmatureShaft.jpg",
+  "item_code": "RM-SHAFT-L",
+  "item_name": "Armature Shaft 10mm",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/SawArmatureShaft.jpg",
+  "error": ""
+ },
+ {
+  "file": "SawBlade185mm.jpg",
+  "item_code": "RM-BLADE-185",
+  "item_name": "TCT Saw Blade 185mm 24T",
+  "match": "manual (approved)",
+  "upload": "unchanged",
+  "file_url": "/files/SawBlade185mm.jpg",
+  "error": ""
+ },
+ {
+  "file": "SawHousingShell.jpg",
+  "item_code": "",
+  "item_name": "",
+  "match": "unmatched",
+  "upload": "skipped",
+  "file_url": "",
+  "error": "no item code or name matches the filename"
+ },
+ {
+  "file": "SawMotor.jpg",
+  "item_code": "SA-MOT-L",
+  "item_name": "Motor Assembly 1400W",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/SawMotor.jpg",
+  "error": ""
+ },
+ {
+  "file": "SawSPindle&GearBox.jpg",
+  "item_code": "",
+  "item_name": "",
+  "match": "unmatched",
+  "upload": "skipped",
+  "file_url": "",
+  "error": "no item code or name matches the filename"
+ },
+ {
+  "file": "SawSpindle.jpg",
+  "item_code": "RM-SPINDLE-CS",
+  "item_name": "Saw Spindle with Blade Flange",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/SawSpindle.jpg",
+  "error": ""
+ },
+ {
+  "file": "SlideHandle&DepthRod.jpg",
+  "item_code": "RM-SIDE-HDL",
+  "item_name": "Auxiliary Side Handle with Depth Gauge",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/SlideHandle&DepthRod.jpg",
+  "error": ""
+ },
+ {
+  "file": "SoftGrip.jpg",
+  "item_code": "",
+  "item_name": "",
+  "match": "unmatched",
+  "upload": "skipped",
+  "file_url": "",
+  "error": "no item code or name matches the filename"
+ },
+ {
+  "file": "StatorCore.jpg",
+  "item_code": "RM-LAM-STA-L",
+  "item_name": "Stator Lamination Stack 50mm",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/StatorCore.jpg",
+  "error": ""
+ },
+ {
+  "file": "SteelBladeGuard.jpg",
+  "item_code": "RM-GUARD-CS",
+  "item_name": "Steel Upper Blade Guard",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/SteelBladeGuard.jpg",
+  "error": ""
+ },
+ {
+  "file": "SteelLamination.jpg",
+  "item_code": "RM-LAM-ARM-L",
+  "item_name": "Armature Lamination Stack 50mm",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/SteelLamination.jpg",
+  "error": ""
+ },
+ {
+  "file": "Striker.jpg",
+  "item_code": "",
+  "item_name": "",
+  "match": "unmatched",
+  "upload": "skipped",
+  "file_url": "",
+  "error": "no item code or name matches the filename"
+ },
+ {
+  "file": "Switch&WiringHarness.jpg",
+  "item_code": "SA-HARN-S",
+  "item_name": "Switch & Cable Harness 10A",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/Switch&WiringHarness.jpg",
+  "error": ""
+ },
+ {
+  "file": "TerminalConnectorSet.jpg",
+  "item_code": "",
+  "item_name": "",
+  "match": "unmatched",
+  "upload": "skipped",
+  "file_url": "",
+  "error": "no item code or name matches the filename"
+ },
+ {
+  "file": "TriggerSwitch.jpg",
+  "item_code": "RM-SW-TRIG",
+  "item_name": "Trigger Switch with Speed Control 10A",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/TriggerSwitch.jpg",
+  "error": ""
+ },
+ {
+  "file": "WireMagnet.jpg",
+  "item_code": "RM-CU-WIRE",
+  "item_name": "Enamelled Copper Wire 0.45mm",
+  "match": "manual (approved)",
+  "upload": "imported",
+  "file_url": "/files/WireMagnet.jpg",
+  "error": ""
+ }
+]

@@ -11,19 +11,27 @@ Run: python mes/appsmith/build_app.py
 import hashlib
 import json
 import pathlib
+import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+import site_config  # noqa: E402
 
 HERE = pathlib.Path(__file__).resolve().parent
 W = HERE / "widgets"
 OUT = HERE / "MES-Phase1.json"
 APP_NAME = "MES Phase 1"
 DATASOURCE = "ERPNext"
-DATASOURCE_URL = "http://host.docker.internal:8000"
+SITE = site_config.load()
+DATASOURCE_URL = SITE["erp"]["datasource_url"]
+ERP_PUBLIC_URL = SITE["erp"]["public_url"]
 DSL_VERSION = 95
 GRID = 64
 
 PAGES = [  # (page name, widget file stem, widget height in rows of 10px)
+    ("Shopfloor", "station", 84),
+    ("Plant Dashboard", "plant_dashboard", 110),
+    ("Shopfloor Admin", "mes_admin", 130),
     ("Work Orders", "work_orders", 90),
-    ("Work Order Detail", "wo_detail", 110),
     ("New Plan", "new_plan", 90),
     ("Schedule Board", "schedule_board", 80),
     ("Capacity", "capacity", 90),
@@ -33,12 +41,16 @@ PAGES = [  # (page name, widget file stem, widget height in rows of 10px)
 # Event handlers. Custom-widget event context ({id, path, body} / {page, params}) is in scope by name.
 # The event context is only in scope while the handler starts, not inside .then(): capture it in an IIFE.
 ON_CALL = (
-    "{{ (function (rid, p, b) { return Erp.run({ path: p, body: b })"
+    "{{ (function (rid, p, b) { if (!/^\\/api\\/method\\/mes_[a-z_]+$/.test(p)) { storeValue('mesResp_' + rid, "
+    "{ ok: false, data: null, msg: 'Blocked: only MES API methods may be called' }, false); return; } "
+    "return Erp.run({ path: p, body: b })"
     ".then(function (d) { storeValue('mesResp_' + rid, { ok: true, data: d }, false); })"
     ".catch(function (e) { storeValue('mesResp_' + rid, { ok: false, data: Erp.data, "
     "status: Erp.responseMeta && Erp.responseMeta.statusCode, msg: e && e.message }, false); }); })(id, path, body) }}"
 )
-ON_NAVIGATE = "{{ navigateTo(page, params || {}, 'SAME_WINDOW') }}"
+# Page names open in the same window; full URLs (ERPNext desk links) open in a new, unsandboxed tab.
+ON_NAVIGATE = "{{ navigateTo(page, params || {}, /^https?:/.test(page) ? 'NEW_WINDOW' : 'SAME_WINDOW') }}"
+ON_PREF = "{{ /^sfPref_[A-Za-z0-9_]+$/.test(key) ? storeValue(key, value, true) : null }}"
 DEFAULT_MODEL = "{{ { store: appsmith.store, query: appsmith.URL.queryParams, user: appsmith.user.email } }}"
 
 
@@ -46,21 +58,82 @@ def gid(*parts):
     return hashlib.sha1("|".join(parts).encode()).hexdigest()[:10]
 
 
+TOKENS = {
+    "__ERP_PUBLIC_URL__": ERP_PUBLIC_URL,
+    "__PLANT_NAME__": SITE["plant_floor"],
+    "__PLANT_CODE__": SITE["code"],
+    "__SITE_PREFIX__": SITE["site_prefix"],
+    "__COMPANY__": SITE["company"]["name"],
+    "__BRAND__": SITE.get("brand") or SITE["company"]["name"].split()[0].upper(),
+}
+
+
 def read(name):
     p = W / name
-    return p.read_text(encoding="utf-8") if p.exists() else ""
+    if not p.exists():
+        return ""
+    text = p.read_text(encoding="utf-8")
+    for k, v in TOKENS.items():
+        text = text.replace(k, json.dumps(str(v))[1:-1])
+    return text
+
+
+SHARED_JS = {"shopfloor": ["sf_base"], "mes_admin": ["sf_base"], "station": ["sf_base", "vendor_jsqr"], "plant_dashboard": ["sf_base"]}
+SHARED_CSS = {"shopfloor": ["sf_base"], "mes_admin": ["sf_base"]}
+SCANNER_ROWS = 6
+SCANNER_PAGES = {"station"}
+ON_CODE = "{{ storeValue('sfCam', { code: CamScan.value, at: Date.now() }, false) }}"
 
 
 def widget_src(stem):
-    css = read("common.css") + "\n" + read(f"{stem}.css")
-    js = read("common.js") + "\n" + read(f"{stem}.js")
+    css = "\n".join(read(f"{p}.css") for p in ["common"] + SHARED_CSS.get(stem, []) + [stem])
+    js = "\n".join(read(f"{p}.js") for p in ["common"] + SHARED_JS.get(stem, []) + [stem])
     html = '<div id="app"></div>\n'
     return {"html": html, "css": css, "js": js}
 
 
-def custom_widget(page, stem, rows):
+def code_scanner(page):
+    return {
+        "widgetName": "CamScan",
+        "type": "CODE_SCANNER_WIDGET",
+        "version": 1,
+        "widgetId": gid(page, "CamScan"),
+        "parentId": "0",
+        "renderMode": "CANVAS",
+        "label": "Camera scan (QR / barcode)",
+        "scannerLayout": "CLICK_TO_SCAN",
+        "isDefaultClickDisabled": True,
+        "isRequired": False,
+        "isDisabled": False,
+        "isVisible": True,
+        "isLoading": False,
+        "animateLoading": True,
+        "placement": "CENTER",
+        "iconName": "camera",
+        "iconAlign": "left",
+        "buttonColor": "#14213d",
+        "borderRadius": "4px",
+        "boxShadow": "none",
+        "onCodeDetected": ON_CODE,
+        "dynamicTriggerPathList": [{"key": "onCodeDetected"}],
+        "dynamicBindingPathList": [],
+        "topRow": 0,
+        "bottomRow": SCANNER_ROWS,
+        "leftColumn": GRID - 18,
+        "rightColumn": GRID,
+        "mobileTopRow": 0,
+        "mobileBottomRow": SCANNER_ROWS,
+        "mobileLeftColumn": GRID - 18,
+        "mobileRightColumn": GRID,
+        "parentColumnSpace": 10,
+        "parentRowSpace": 10,
+        "key": gid(page, "CamScan", "key"),
+    }
+
+
+def custom_widget(page, stem, rows, top=0):
     src = widget_src(stem)
-    top, left, cols = 0, 0, GRID
+    left, cols = 0, GRID
     return {
         "widgetName": "Main",
         "type": "CUSTOM_WIDGET",
@@ -70,16 +143,17 @@ def custom_widget(page, stem, rows):
         "renderMode": "CANVAS",
         "isVisible": True,
         "isLoading": False,
-        "events": ["onCall", "onNavigate"],
+        "events": ["onCall", "onNavigate", "onPref"],
         "onCall": ON_CALL,
         "onNavigate": ON_NAVIGATE,
+        "onPref": ON_PREF,
         "defaultModel": DEFAULT_MODEL,
         "srcDoc": src,
         "uncompiledSrcDoc": src,
         "theme": "{{appsmith.theme}}",
         "dynamicBindingPathList": [{"key": "theme"}, {"key": "defaultModel"}],
-        "dynamicTriggerPathList": [{"key": "onCall"}, {"key": "onNavigate"}],
-        "dynamicPropertyPathList": [{"key": "onCall"}, {"key": "onNavigate"}],
+        "dynamicTriggerPathList": [{"key": "onCall"}, {"key": "onNavigate"}, {"key": "onPref"}],
+        "dynamicPropertyPathList": [{"key": "onCall"}, {"key": "onNavigate"}, {"key": "onPref"}],
         "borderColor": "#E0DEDE",
         "borderWidth": "0",
         "borderRadius": "0px",
@@ -101,6 +175,9 @@ def custom_widget(page, stem, rows):
 
 
 def page_dsl(page, stem, rows):
+    top = SCANNER_ROWS if stem in SCANNER_PAGES else 0
+    children = ([code_scanner(page)] if top else []) + [custom_widget(page, stem, rows, top)]
+    rows = rows + top
     return {
         "widgetName": "MainContainer",
         "type": "CANVAS_WIDGET",
@@ -120,7 +197,7 @@ def page_dsl(page, stem, rows):
         "canExtend": True,
         "dynamicBindingPathList": [],
         "dynamicTriggerPathList": [],
-        "children": [custom_widget(page, stem, rows)],
+        "children": children,
     }
 
 

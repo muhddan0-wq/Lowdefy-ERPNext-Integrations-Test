@@ -1,14 +1,19 @@
-"""Create the dedicated Appsmith API user (idempotent). Run inside the bench:
-   ../env/bin/python -W ignore create_api_user.py [--new-keys]
-Writes the key/secret to ./appsmith-mes.env (copy it out, then delete it)."""
+"""Create the dedicated Appsmith API user (idempotent). Email, roles and company come from the site YAML.
+Run by install-mes.ps1 (-NewKeys rotates). Writes the key/secret to ./appsmith-mes.env when keys are generated;
+install-mes.ps1 moves it to mes/.secrets/ and deletes it from the bench."""
+import os
 import sys
+
 import frappe
 
-USER = "appsmith-mes@local.test"
-COMPANY = "Voltra Power Tools Sdn Bhd"
-ROLES = ["Manufacturing User", "Manufacturing Manager", "Stock User"]
+import site_config
 
-frappe.init(site="frontend", sites_path=".")
+CFG = site_config.from_bench()
+USER = CFG["api_user"]["email"]
+COMPANY = CFG["company"]["name"]
+ROLES = CFG["api_user"]["roles"]
+
+frappe.init(site=os.environ.get("FRAPPE_SITE", CFG["erp"]["site"]), sites_path=".")
 frappe.connect()
 frappe.set_user("Administrator")
 if not frappe.db.exists("User", USER):
@@ -30,9 +35,9 @@ if "--new-keys" in sys.argv or not u.api_key:
     secret = generate_keys(USER)["api_secret"]
     key = frappe.db.get_value("User", USER, "api_key")
     frappe.db.commit()
-    with open("appsmith-mes.env", "w") as fh:
+    with open(os.environ.get("KEY_FILE", "appsmith-mes.env"), "w") as fh:
         fh.write(f"ERP_API_KEY={key}\nERP_API_SECRET={secret}\n")
-    print("keys generated -> appsmith-mes.env")
+    print("KEYS_WRITTEN=" + os.environ.get("KEY_FILE", "appsmith-mes.env"))
 else:
     print("user exists with api_key; use --new-keys to rotate")
 print("roles:", [r.role for r in frappe.get_doc("User", USER).roles])

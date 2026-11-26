@@ -1,0 +1,332 @@
+[
+ {
+  "id": "I1",
+  "criterion": "ERPNext items are retrieved correctly",
+  "result": "PASS",
+  "evidence": "{'FG-RH-800': '/files/RotaryHammerDrill.jpg', 'RM-SHAFT-L': '/files/SawArmatureShaft.jpg', 'SA-ARM-L': '/files/SawArmature.jpg'}"
+ },
+ {
+  "id": "I2",
+  "criterion": "Imported images are linked to the correct items and served by ERPNext",
+  "result": "PASS",
+  "evidence": "FG-RH-800 image /files/RotaryHammerDrill.jpg"
+ },
+ {
+  "id": "I3",
+  "criterion": "Images are only ERPNext item images or empty (UI shows placeholder, nothing breaks)",
+  "result": "PASS",
+  "evidence": "SA-ARM-L image='/files/SawArmature.jpg'"
+ },
+ {
+  "id": "I4",
+  "criterion": "Materials are issued to each fixture job with stock (ERPNext material transfer, required before production starts)",
+  "result": "PASS",
+  "evidence": "[('PO-JOB00066', {'needed': True, 'issued': 30.0, 'left': 0.0, 'entries': [{'name': 'MAT-STE-2026-00077', 'posting_date': '2026-11-26', 'fg_completed_qty': 30.0}]}), ('PO-JOB00271', {'needed': True, 'issued': 2.0, 'left': 0.0, 'entries': [{'name': 'MAT-STE-2026-00078', 'posting_date': '2026-11-26', 'fg_completed_qty': 2.0}]}), ('PO-JOB00274', {'shortage reported': ['SA-HSG-RH Rotary Hammer Housing Set: need 1.0, 0.0 in P1 Stores - VPT']})]"
+ },
+ {
+  "id": "M1",
+  "criterion": "Employee can open an assigned job / work order",
+  "result": "PASS",
+  "evidence": "{'job_card': 'PO-JOB00271', 'operation': 'Final Assembly', 'workstation': 'P1-FAL-01', 'docstatus': 0, 'status': 'Open', 'qty': 2.0, 'completed_qty': 0.0, 'remaining_qty': 2.0, 'running_since': None, 'time_logs': []}"
+ },
+ {
+  "id": "M2",
+  "criterion": "Employee sees the finished product",
+  "result": "PASS",
+  "evidence": "SDS-Plus Rotary Hammer Drill 800W"
+ },
+ {
+  "id": "M3",
+  "criterion": "Employee sees all required BOM materials",
+  "result": "PASS",
+  "evidence": "['RM-CASE-BMC', 'RM-LABEL', 'RM-MANUAL', 'RM-SCREW-KIT', 'RM-SIDE-HDL', 'SA-HARN-S', 'SA-HMECH-RH', 'SA-HSG-RH', 'SA-MOT-S']"
+ },
+ {
+  "id": "M4",
+  "criterion": "Materials needing unit/serial scanning are identified",
+  "result": "PASS",
+  "evidence": "SA-MOT-S=unit, RM-SHAFT-L=scan, RM-INS-PAPER=confirm"
+ },
+ {
+  "id": "M5",
+  "criterion": "Valid tracked unit is accepted",
+  "result": "PASS",
+  "evidence": "('Valid', 'Verified as tracked unit', 1)"
+ },
+ {
+  "id": "M6",
+  "criterion": "Duplicate unit scan on the same work order is rejected with a reason",
+  "result": "PASS",
+  "evidence": "Duplicate scan: unit SA-MOT-S-0011 is already recorded on this work order (MES-SCN-00222)"
+ },
+ {
+  "id": "M7",
+  "criterion": "Unit already used on another work order cannot be reused",
+  "result": "PASS",
+  "evidence": "Unit SA-MOT-S-0011 was already used on work order MFG-WO-2026-00141"
+ },
+ {
+  "id": "M8",
+  "criterion": "Incorrect item is rejected and the expected materials are named",
+  "result": "PASS",
+  "evidence": "Incorrect item: RM-BOX-S-B Carton Box (Drill / Rotary Hammer) is not required for work order MFG-WO-2026-00141. Expected: SA-MOT-S, SA-HSG-RH, SA-HARN-S, SA-HMECH-RH, RM-SIDE-HDL, RM-SCREW-KIT, RM-LABEL, RM-MANUAL, RM-CASE-BMC"
+ },
+ {
+  "id": "M9",
+  "criterion": "Unknown barcode is rejected with a reason",
+  "result": "PASS",
+  "evidence": "Unknown barcode or serial number: NO-SUCH-CODE-123 is not an item, barcode, serial number or tracked unit in ERPNext"
+ },
+ {
+  "id": "M10",
+  "criterion": "Scanning the item code of a unit-tracked material is refused (each unit must be scanned)",
+  "result": "PASS",
+  "evidence": "SA-MOT-S is tracked per unit: scan the unit's own label, not the item code"
+ },
+ {
+  "id": "M11",
+  "criterion": "Quantity above the requirement is rejected",
+  "result": "PASS",
+  "evidence": "Quantity exceeds requirement: only 2.0 Nos of SA-HMECH-RH still needed"
+ },
+ {
+  "id": "M12",
+  "criterion": "Invalid scans never count towards verification",
+  "result": "PASS",
+  "evidence": "invalid scans 2 -> 3, verified materials unchanged 0"
+ },
+ {
+  "id": "M13",
+  "criterion": "Fractional quantity of a whole-unit item is rejected",
+  "result": "PASS",
+  "evidence": "SA-HMECH-RH is counted in whole Nos: 2.5 is not a whole number"
+ },
+ {
+  "id": "R1",
+  "criterion": "Duplicate submission (same request id) is stored once",
+  "result": "PASS",
+  "evidence": "first MES-SCN-00230, replay MES-SCN-00230 replayed=True, verified 1"
+ },
+ {
+  "id": "R2",
+  "criterion": "Simultaneous scans of the same unit on two work orders: exactly one succeeds",
+  "result": "PASS",
+  "evidence": "results [True, False], requests overlapped in time: True, reasons ['Verified as tracked unit', 'Unit SA-MOT-S-0012 was already used on work order MFG-WO-2026-00141']"
+ },
+ {
+  "id": "R3",
+  "criterion": "Simultaneous quantity confirmations cannot overshoot the requirement (row lock)",
+  "result": "PASS",
+  "evidence": "two x 14.4 of 24.0 required -> verified 14.4; ['Verified as item code', 'Quantity exceeds requirement: only 9.6 Meter of RM-INS-PAPER still needed']"
+ },
+ {
+  "id": "M14",
+  "criterion": "Quantity-based materials can be confirmed until verified",
+  "result": "PASS",
+  "evidence": "{'materials_total': 6, 'materials_verified': 6, 'outstanding': 0, 'invalid_scans': 1, 'defective': 0, 'open_defects': 0}"
+ },
+ {
+  "id": "C1",
+  "criterion": "Unverified materials prevent reporting good units (starting only needs the materials issued)",
+  "result": "PASS",
+  "evidence": "('Work In Progress', 'frappe.exceptions.ValidationError: Scan every required item before reporting finished units. Still to verify: SA-HSG-RH, SA-HARN-S, SA-HMECH-RH, RM-SIDE-HDL, RM')"
+ },
+ {
+  "id": "C2",
+  "criterion": "Missing materials prevent completing production",
+  "result": "PASS",
+  "evidence": "['SA-HSG-RH Rotary Hammer Housing Set: 0.0 of 2.0 Nos verified (Awaiting Scan)', 'SA-HARN-S Switch & Cable Harness 10A: 0.0 of 2.0 Nos verified (Awaiting Scan)']"
+ },
+ {
+  "id": "C3",
+  "criterion": "Partial quantities are reported as blocking (backend gate)",
+  "result": "PASS",
+  "evidence": "['SA-HMECH-RH Hammer Mechanism Assembly: 1.0 of 2.0 Nos verified (Partially Verified)']"
+ },
+ {
+  "id": "D1",
+  "criterion": "Employee can report a defective material with comments",
+  "result": "PASS",
+  "evidence": "{'ok': True, 'replayed': False, 'defect': 'MES-DEF-00014', 'files': [{'file_name': 'damage.png', 'file_url': '/private/files/damage.png'}, {'file_name': 'note.txt', 'file_url': '/private/files/note.txt'}], 'flagged_scans': ['MES-SCN-00222'], 'notified': ['Administrator', 'muhddan0@gmail.com', 'planner@fix.local', 'sup1@local.test']}"
+ },
+ {
+  "id": "D2",
+  "criterion": "Employee can attach photographs and files (stored as ERPNext Files)",
+  "result": "PASS",
+  "evidence": "[{'file_name': 'damage.png', 'file_url': '/private/files/damage.png'}, {'file_name': 'note.txt', 'file_url': '/private/files/note.txt'}]"
+ },
+ {
+  "id": "D3",
+  "criterion": "A defective unit stops counting as verified",
+  "result": "PASS",
+  "evidence": "('Defective Material', 1)"
+ },
+ {
+  "id": "D4",
+  "criterion": "A unit with an open defect cannot be scanned elsewhere",
+  "result": "PASS",
+  "evidence": "Unit SA-MOT-S-0011 was already used on work order MFG-WO-2026-00141"
+ },
+ {
+  "id": "D5",
+  "criterion": "Supervisors can review defect reports (with attachments)",
+  "result": "PASS",
+  "evidence": "defects listed: 14"
+ },
+ {
+  "id": "P1",
+  "criterion": "Shopfloor employee cannot decide (override) a defect",
+  "result": "PASS",
+  "evidence": "frappe.exceptions.PermissionError: Not permitted: only supervisors decide defects"
+ },
+ {
+  "id": "D6",
+  "criterion": "A defect cannot be resolved without a disposition",
+  "result": "PASS",
+  "evidence": "frappe.exceptions.ValidationError: Choose a disposition before marking the defect Resolved"
+ },
+ {
+  "id": "D7",
+  "criterion": "Supervisor can authorise a disposition; a replaced unit stays excluded",
+  "result": "PASS",
+  "evidence": "status Partially Verified, valid units 1 (expected 1 after R2)"
+ },
+ {
+  "id": "D8",
+  "criterion": "Employees can view their own submitted reports",
+  "result": "PASS",
+  "evidence": "14"
+ },
+ {
+  "id": "C4",
+  "criterion": "An open defect blocks completion until a supervisor decides it",
+  "result": "PASS",
+  "evidence": "['RM-SHAFT-L Armature Shaft 10mm: 29.0 of 30.0 Nos verified (Defective Material)', 'Defect MES-DEF-00015 on RM-SHAFT-L is Reported and needs a supervisor decision']"
+ },
+ {
+  "id": "X1",
+  "criterion": "Employee can report a machine breakdown with a photo",
+  "result": "PASS",
+  "evidence": "{'ok': True, 'replayed': False, 'issue': 'MES-MCH-00015', 'severity': 'Critical', 'files': [{'file_name': 'panel.png', 'file_url': '/private/files/damage.png'}], 'notified': ['Administrator', 'maint1@local.test', 'muhddan0@gmail.com', 'planner@fix.local', 'sup1@local.test'], 'blocked_job_cards': ['PO-JOB00233', 'PO-JOB00220', 'PO-JOB00194', 'PO-JOB00162', 'PO-JOB00132', 'PO-JOB00130', 'PO-JOB00068', 'PO-JOB00066']}"
+ },
+ {
+  "id": "X2",
+  "criterion": "Priority follows machine state (Completely Down raises Low to Critical)",
+  "result": "PASS",
+  "evidence": "Critical"
+ },
+ {
+  "id": "X3",
+  "criterion": "Maintenance and managers receive an ERPNext notification",
+  "result": "PASS",
+  "evidence": "['sup1@local.test', 'planner@fix.local', 'muhddan0@gmail.com', 'maint1@local.test', 'Administrator']"
+ },
+ {
+  "id": "X4",
+  "criterion": "Employee can report a machine stall (priority raised to High)",
+  "result": "PASS",
+  "evidence": "{'ok': True, 'replayed': False, 'issue': 'MES-MCH-00016', 'severity': 'High', 'files': [], 'notified': ['Administrator', 'maint1@local.test', 'muhddan0@gmail.com', 'planner@fix.local', 'sup1@local.test'], 'blocked_job_cards': []}"
+ },
+ {
+  "id": "X5",
+  "criterion": "Machine issues appear on the maintenance dashboard",
+  "result": "PASS",
+  "evidence": "16"
+ },
+ {
+  "id": "X6",
+  "criterion": "A Completely Down machine blocks the affected job",
+  "result": "PASS",
+  "evidence": "['Machine P1-WND-02 is Completely Down (issue MES-MCH-00015); maintenance must resolve it first']"
+ },
+ {
+  "id": "X7",
+  "criterion": "Other workstations are not stopped by one machine's issue",
+  "result": "PASS",
+  "evidence": "15 jobs on P1-FAL-01, none flagged down"
+ },
+ {
+  "id": "P2",
+  "criterion": "Shopfloor employee cannot resolve a machine issue",
+  "result": "PASS",
+  "evidence": "frappe.exceptions.PermissionError: Not permitted: only maintenance can assign, progress or resolve machine issues"
+ },
+ {
+  "id": "P3",
+  "criterion": "Supervisor cannot resolve a machine issue (maintenance only)",
+  "result": "PASS",
+  "evidence": "frappe.exceptions.PermissionError: Not permitted: only maintenance can assign, progress or resolve machine issues"
+ },
+ {
+  "id": "X8",
+  "criterion": "Maintenance can acknowledge, assign and resolve (notes required)",
+  "result": "PASS",
+  "evidence": "ack 200, resolve without notes -> 417, resolve with notes -> Resolved"
+ },
+ {
+  "id": "C5",
+  "criterion": "Once defects are decided and the machine is back, the job is clear to start",
+  "result": "PASS",
+  "evidence": "[]"
+ },
+ {
+  "id": "P4",
+  "criterion": "Maintenance-only users cannot record material scans",
+  "result": "PASS",
+  "evidence": "frappe.exceptions.PermissionError: Not permitted: this needs operate rights"
+ },
+ {
+  "id": "C6",
+  "criterion": "Employee can start production once all checks pass",
+  "result": "PASS",
+  "evidence": "{'ok': True, 'action': 'start', 'job_card': 'PO-JOB00066', 'blocking': [], 'status': 'Work In Progress', 'docstatus': 0, 'completed_qty': 0.0, 'qty': 30.0}"
+ },
+ {
+  "id": "C7",
+  "criterion": "Employee can report progress (good quantity) on the ERPNext Job Card",
+  "result": "PASS",
+  "evidence": "{'ok': True, 'action': 'report', 'job_card': 'PO-JOB00066', 'blocking': [], 'running': True, 'status': 'Work In Progress', 'docstatus': 0, 'completed_qty': 15.0, 'qty': 30.0}"
+ },
+ {
+  "id": "C8",
+  "criterion": "A completed quantity above the job quantity is refused",
+  "result": "PASS",
+  "evidence": "frappe.exceptions.ValidationError: Quantity too high: 15.0 already done, 10000.0 more would exceed the job quantity 30.0"
+ },
+ {
+  "id": "C9",
+  "criterion": "Valid completion submits the ERPNext Job Card",
+  "result": "PASS",
+  "evidence": "{'ok': True, 'action': 'complete', 'job_card': 'PO-JOB00066', 'blocking': [], 'status': 'Completed', 'docstatus': 1, 'completed_qty': 30.0, 'qty': 30.0}"
+ },
+ {
+  "id": "C10",
+  "criterion": "The work order operation is updated by ERPNext",
+  "result": "PASS",
+  "evidence": "[('Armature Winding', 30.0, 'Completed')]"
+ },
+ {
+  "id": "C11",
+  "criterion": "Finishing a work order via the planner API is refused while materials are unverified (no stock entry made)",
+  "result": "PASS",
+  "evidence": "MFG-WO-2026-00056: HTTP 417, stock entries 78 -> 78"
+ },
+ {
+  "id": "P5",
+  "criterion": "Calls without a valid ERPNext operator are refused",
+  "result": "PASS",
+  "evidence": "frappe.exceptions.PermissionError: someone@nowhere.test is not an active ERPNext user for the shopfloor"
+ },
+ {
+  "id": "F1",
+  "criterion": "API errors return an error status, never a success payload",
+  "result": "PASS",
+  "evidence": "(417, 'frappe.exceptions.ValidationError: Job card NO-SUCH-JC not found')"
+ },
+ {
+  "id": "A1",
+  "criterion": "Audit history is kept (scans stored, change history on defect reports, comments on work orders)",
+  "result": "PASS",
+  "evidence": "defect report versions: 14"
+ }
+]

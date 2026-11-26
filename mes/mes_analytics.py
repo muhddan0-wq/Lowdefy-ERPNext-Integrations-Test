@@ -215,9 +215,9 @@ def charts():
     return list(specs)
 
 
-def workspace(cards, chart_names, extra_links):
+def workspace(cards, chart_names, extra_links, plant_name):
     name = "MES Dashboard"
-    content = [{"id": "h1", "type": "header", "data": {"text": "<span class=\"h4\"><b>MES Dashboard - P1 Shah Alam Plant</b></span>", "col": 12}}]
+    content = [{"id": "h1", "type": "header", "data": {"text": "<span class=\"h4\"><b>MES Dashboard - " + frappe.utils.escape_html(plant_name) + "</b></span>", "col": 12}}]
     for i, c in enumerate(cards):
         content.append({"id": f"nc{i}", "type": "number_card", "data": {"number_card_name": c, "col": 4}})
     for i, c in enumerate(chart_names):
@@ -288,7 +288,7 @@ def build(P, S, extra_links=(), extra_charts=()):
         upsert_report(name, ref, query)
     cards = number_cards(S["code"])
     chart_names = charts() + list(extra_charts)
-    workspace(cards, chart_names, list(CORE_LINKS) + list(extra_links))
+    workspace(cards, chart_names, list(CORE_LINKS) + list(extra_links), S.get("plant_floor") or S["code"])
     frappe.db.commit()
     return cards, chart_names
 

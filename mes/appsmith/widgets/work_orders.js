@@ -21,7 +21,8 @@ function kpiTile(key, label, value, cls) {
 function render() {
   const d = S.data || { kpi: {}, rows: [] };
   const k = d.kpi || {};
-  const items = Array.from(new Set((d.rows || []).map((r) => r.production_item))).sort();
+  // full item list from the server (does not shrink when a status/item filter is applied)
+  const items = d.items || Array.from(new Set((d.rows || []).map((r) => r.production_item))).sort();
   const rows = (d.rows || []).slice().sort((a, b) => {
     const x = a[S.sort], y = b[S.sort];
     return (x > y ? 1 : x < y ? -1 : 0) * S.dir;
@@ -30,7 +31,7 @@ function render() {
   $("#app").innerHTML =
     navBar("Work Orders") +
     '<div class="row" style="justify-content:space-between"><h2>Work Orders <span class="spin"></span></h2>' +
-    '<span class="muted small">As of ' + esc(fmtDT(d.as_of)) + " · company Voltra Power Tools Sdn Bhd</span></div>" +
+    '<span class="muted small">As of ' + esc(fmtDT(d.as_of)) + " · company __COMPANY__</span></div>" +
     '<div class="kpis">' +
     kpiTile("Not Started", "Not Started", k.not_started, "k-grey") +
     kpiTile("In Process", "In Process", k.in_process, "k-amber") +
@@ -55,7 +56,7 @@ function render() {
         "</td><td>" + esc(fmtDT(r.planned_end_date)) + "</td><td>" + badge(r.status) + (r.late ? " " + badge("Late") : "") +
         '</td><td class="small">' + esc(r.production_plan || "") + (r.plan_tag ? '<div class="muted">' + esc(r.plan_tag) + "</div>" : "") + "</td></tr>").join("") +
       "</tbody></table>" : '<div class="card empty">No work orders match these filters.</div>') +
-    '<p class="muted small">' + rows.length + " work order(s). Click a row for detail.</p>";
+    '<p class="muted small">' + rows.length + " work order(s). Click a row to open it on the shopfloor: work order detail, issue materials and build.</p>";
 }
 
 document.addEventListener("click", (e) => {
@@ -70,7 +71,7 @@ document.addEventListener("click", (e) => {
     return;
   }
   const tr = e.target.closest("tr[data-wo]");
-  if (tr) { MES.navigate("Work Order Detail", { wo: tr.dataset.wo }); return; }
+  if (tr) { MES.navigate("Shopfloor", { wo: tr.dataset.wo }); return; }
   if (e.target.id === "b-refresh") load();
 });
 

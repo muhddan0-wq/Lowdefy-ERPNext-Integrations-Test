@@ -1,0 +1,6 @@
+work_order,production_item,wo_qty,item_code,item_name,scan_mode,batch_no,tracking_id,barcode,qty,uom,label_file,note
+MFG-WO-2026-00158,SA-GUARD-CS,26.0,RM-BASE-CS,Aluminium Base Plate 185mm,"Scan item, then quantity",,,RM-BASE-CS,26.0,Nos,items/RM-BASE-CS.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00158,SA-GUARD-CS,26.0,RM-GUARD-CS,Steel Upper Blade Guard,"Scan item, then quantity",,,RM-GUARD-CS,26.0,Nos,items/RM-GUARD-CS.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00158,SA-GUARD-CS,26.0,RM-LGUARD-CS,Retractable Lower Guard with Spring,"Scan item, then quantity",,,RM-LGUARD-CS,26.0,Nos,items/RM-LGUARD-CS.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00158,SA-GUARD-CS,26.0,RM-SPINDLE-CS,Saw Spindle with Blade Flange,"Scan item, then quantity",,,RM-SPINDLE-CS,26.0,Nos,items/RM-SPINDLE-CS.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00158,SA-GUARD-CS,26.0,RM-BRG-6201,Ball Bearing 6201ZZ,"Scan item, then quantity",,,RM-BRG-6201,26.0,Nos,items/RM-BRG-6201.png,"no batch or unit label: scan the item code, then enter the quantity"

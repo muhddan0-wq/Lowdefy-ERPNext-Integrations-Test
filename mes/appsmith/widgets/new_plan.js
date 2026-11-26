@@ -17,7 +17,7 @@ function render() {
     navBar("New Plan") +
     '<h2>New production plan <span class="spin"></span></h2>' +
     '<div class="card"><p class="muted small" style="margin-top:0">ERPNext creates a Production Plan with all sub-assemblies (combined), makes the work orders, ' +
-    "sets the P1 warehouses and submits them sub-assemblies first, each parent starting when its children finish. Job cards are slotted into " +
+    "sets the __PLANT_CODE__ warehouses and submits them sub-assemblies first, each parent starting when its children finish. Job cards are slotted into " +
     "workstation shifts by ERPNext's capacity planner.</p>" +
     '<div id="lines">' + renderLines() + "</div>" +
     '<div class="row"><button class="btn" id="b-add">+ Add finished good</button><span class="grow"></span>' +
@@ -89,7 +89,7 @@ document.addEventListener("click", (e) => {
   else if (e.target.id === "b-create") create();
   else {
     const tr = e.target.closest("tr[data-wo]");
-    if (tr) MES.navigate("Work Order Detail", { wo: tr.dataset.wo });
+    if (tr) MES.navigate("Shopfloor", { wo: tr.dataset.wo });
   }
 });
 

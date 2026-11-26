@@ -1,0 +1,4 @@
+work_order,production_item,wo_qty,item_code,item_name,scan_mode,batch_no,tracking_id,barcode,qty,uom,label_file,note
+MFG-WO-2026-00151,SA-HARN-S,50.0,RM-SW-TRIG,Trigger Switch with Speed Control 10A,"Scan item, then quantity",,,RM-SW-TRIG,50.0,Nos,items/RM-SW-TRIG.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00151,SA-HARN-S,50.0,RM-CABLE,Power Cable 2.5m with BS1363 Plug,"Scan item, then quantity",,,RM-CABLE,50.0,Nos,items/RM-CABLE.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00151,SA-HARN-S,50.0,RM-STRAIN,Cable Strain Relief Sleeve,"Scan item, then quantity",,,RM-STRAIN,50.0,Nos,items/RM-STRAIN.png,"no batch or unit label: scan the item code, then enter the quantity"

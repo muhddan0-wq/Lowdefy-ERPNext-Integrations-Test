@@ -1,0 +1,486 @@
+{
+ "job_cards": {
+  "MFG-WO-2026-00159": "PO-JOB00306",
+  "MFG-WO-2026-00160": "PO-JOB00309"
+ },
+ "a1_explicit_qty_50": {
+  "http": 200,
+  "request": {
+   "value": "00000461",
+   "qty": 50
+  },
+  "response": {
+   "ok": false,
+   "scan": "MES-SCN-00286",
+   "result": "Invalid",
+   "reason": "Quantity exceeds requirement: only 30.0 Nos of RM-BOX-S-B still needed",
+   "item_code": "RM-BOX-S-B",
+   "item_name": "Carton Box (Drill / Rotary Hammer)",
+   "unit_id": "",
+   "serial_no": "",
+   "batch_no": "00000461",
+   "qty": 50.0,
+   "value": "00000461",
+   "material_after": {
+    "required_qty": 30.0,
+    "verified_qty": 0,
+    "remaining_qty": 30.0,
+    "status": "Invalid Material",
+    "mode": "batch"
+   }
+  }
+ },
+ "a2_remaining_mode": {
+  "http": 200,
+  "request": {
+   "value": "00000461",
+   "qty_mode": "remaining"
+  },
+  "response": {
+   "ok": true,
+   "scan": "MES-SCN-00287",
+   "result": "Valid",
+   "reason": "Verified from batch 00000461",
+   "item_code": "RM-BOX-S-B",
+   "item_name": "Carton Box (Drill / Rotary Hammer)",
+   "unit_id": "",
+   "serial_no": "",
+   "batch_no": "00000461",
+   "qty": 30.0,
+   "value": "00000461",
+   "material_after": {
+    "required_qty": 30.0,
+    "verified_qty": 30.0,
+    "remaining_qty": 0.0,
+    "status": "Verified",
+    "mode": "batch"
+   }
+  }
+ },
+ "a3_same_batch_other_order_remaining": {
+  "http": 200,
+  "request": {
+   "value": "00000461",
+   "qty_mode": "remaining"
+  },
+  "response": {
+   "ok": true,
+   "scan": "MES-SCN-00288",
+   "result": "Valid",
+   "reason": "Verified from batch 00000461",
+   "item_code": "RM-BOX-S-B",
+   "item_name": "Carton Box (Drill / Rotary Hammer)",
+   "unit_id": "",
+   "serial_no": "",
+   "batch_no": "00000461",
+   "qty": 20.0,
+   "value": "00000461",
+   "material_after": {
+    "required_qty": 25.0,
+    "verified_qty": 20.0,
+    "remaining_qty": 5.0,
+    "status": "Partially Verified",
+    "mode": "batch"
+   }
+  }
+ },
+ "a4_rescan_same_order": {
+  "http": 200,
+  "request": {
+   "value": "00000461",
+   "qty_mode": "remaining"
+  },
+  "response": {
+   "ok": false,
+   "scan": "MES-SCN-00289",
+   "result": "Invalid",
+   "reason": "Duplicate: RM-BOX-S-B is already fully verified for this work order",
+   "item_code": "RM-BOX-S-B",
+   "item_name": "Carton Box (Drill / Rotary Hammer)",
+   "unit_id": "",
+   "serial_no": "",
+   "batch_no": "00000461",
+   "qty": 0.0,
+   "value": "00000461",
+   "material_after": {
+    "required_qty": 30.0,
+    "verified_qty": 30.0,
+    "remaining_qty": 0.0,
+    "status": "Verified",
+    "mode": "batch"
+   }
+  }
+ },
+ "a5_batch_stock_unchanged": {
+  "http": 200,
+  "get_batch_qty_00000461_P1_Stores": 50.0
+ },
+ "b1_batch_record": [
+  200,
+  {
+   "name": "00000461",
+   "batch_id": "00000461",
+   "item": "RM-BOX-S-B",
+   "item_name": "Carton Box (Drill / Rotary Hammer)",
+   "batch_qty": 50.0,
+   "stock_uom": "Nos",
+   "manufacturing_date": "2026-11-26",
+   "creation": "2026-11-26 12:30:57.269722",
+   "reference_doctype": "Stock Entry",
+   "reference_name": "MAT-STE-2026-00087"
+  }
+ ],
+ "b1_batch_list_drill": [
+  200,
+  {
+   "data": [
+    {
+     "name": "00000458",
+     "item": "RM-CHUCK-13-B",
+     "batch_qty": 48.0,
+     "creation": "2026-11-26 12:30:56.113265"
+    },
+    {
+     "name": "00000459",
+     "item": "RM-SIDE-HDL-B",
+     "batch_qty": 50.0,
+     "creation": "2026-11-26 12:30:56.753660"
+    },
+    {
+     "name": "00000460",
+     "item": "RM-SCREW-KIT-B",
+     "batch_qty": 48.0,
+     "creation": "2026-11-26 12:30:57.005375"
+    },
+    {
+     "name": "00000461",
+     "item": "RM-BOX-S-B",
+     "batch_qty": 50.0,
+     "creation": "2026-11-26 12:30:57.269722"
+    },
+    {
+     "name": "00000462",
+     "item": "RM-LABEL-B",
+     "batch_qty": 48.0,
+     "creation": "2026-11-26 12:30:57.523672"
+    },
+    {
+     "name": "00000463",
+     "item": "RM-MANUAL-B",
+     "batch_qty": 48.0,
+     "creation": "2026-11-26 12:30:57.786082"
+    },
+    {
+     "name": "00000703",
+     "item": "RM-BOX-S-B",
+     "batch_qty": 60.0,
+     "creation": "2026-11-26 12:48:07.271926"
+    },
+    {
+     "name": "00000704",
+     "item": "RM-CHUCK-13-B",
+     "batch_qty": 60.0,
+     "creation": "2026-11-26 12:48:07.377606"
+    },
+    {
+     "name": "00000705",
+     "item": "RM-LABEL-B",
+     "batch_qty": 60.0,
+     "creation": "2026-11-26 12:48:07.455873"
+    },
+    {
+     "name": "00000706",
+     "item": "RM-MANUAL-B",
+     "batch_qty": 60.0,
+     "creation": "2026-11-26 12:48:07.530267"
+    },
+    {
+     "name": "00000707",
+     "item": "RM-SCREW-KIT-B",
+     "batch_qty": 60.0,
+     "creation": "2026-11-26 12:48:07.616874"
+    },
+    {
+     "name": "00000708",
+     "item": "RM-SIDE-HDL-B",
+     "batch_qty": 60.0,
+     "creation": "2026-11-26 12:48:07.696631"
+    }
+   ]
+  }
+ ],
+ "b2_batch_wise_balance_history_RM-BOX-S-B": {
+  "http": 200,
+  "columns": [
+   "item",
+   "item_name",
+   "description",
+   "warehouse",
+   "batch",
+   "opening_qty",
+   "in_qty",
+   "out_qty",
+   "balance_qty",
+   "valuation_rate",
+   "balance_value",
+   "uom"
+  ],
+  "rows": [
+   {
+    "item": "RM-BOX-S-B",
+    "item_name": "Carton Box (Drill / Rotary Hammer)",
+    "description": "Carton Box (Drill / Rotary Hammer) (batch tracked)",
+    "warehouse": "P1 Stores - VPT",
+    "batch": "00000461",
+    "opening_qty": 0.0,
+    "in_qty": 50.0,
+    "out_qty": 0.0,
+    "balance_qty": 50.0,
+    "valuation_rate": 3.2,
+    "balance_value": 160.0,
+    "uom": "Nos"
+   },
+   {
+    "item": "RM-BOX-S-B",
+    "item_name": "Carton Box (Drill / Rotary Hammer)",
+    "description": "Carton Box (Drill / Rotary Hammer) (batch tracked)",
+    "warehouse": "P1 Stores - VPT",
+    "batch": "00000703",
+    "opening_qty": 0.0,
+    "in_qty": 60.0,
+    "out_qty": 0.0,
+    "balance_qty": 60.0,
+    "valuation_rate": 2.832,
+    "balance_value": 169.903,
+    "uom": "Nos"
+   }
+  ]
+ },
+ "b3_erpnext_scan_barcode_00000461": [
+  200,
+  {
+   "batch_no": "00000461",
+   "item_code": "RM-BOX-S-B",
+   "has_batch_no": 1,
+   "has_serial_no": 0
+  }
+ ],
+ "b4_item_tracking_lookup_00000461": [
+  200,
+  {
+   "item_code": "RM-BOX-S-B",
+   "item_name": "Carton Box (Drill / Rotary Hammer)",
+   "stock_qty": 451.0,
+   "tracked_count": 45,
+   "is_item": true
+  }
+ ],
+ "b3_erpnext_scan_barcode_00000703": [
+  200,
+  {
+   "batch_no": "00000703",
+   "item_code": "RM-BOX-S-B",
+   "has_batch_no": 1,
+   "has_serial_no": 0
+  }
+ ],
+ "b4_item_tracking_lookup_00000703": [
+  200,
+  {
+   "item_code": "RM-BOX-S-B",
+   "item_name": "Carton Box (Drill / Rotary Hammer)",
+   "stock_qty": 451.0,
+   "tracked_count": 45,
+   "is_item": true
+  }
+ ],
+ "b3_erpnext_scan_barcode_00000673": [
+  200,
+  {}
+ ],
+ "b4_item_tracking_lookup_00000673": [
+  200,
+  {
+   "tracking_id": "SA-MOT-S-0083",
+   "serial_no": "SN-00000673",
+   "item_code": "SA-MOT-S",
+   "item_name": "Motor Assembly 800W",
+   "current_warehouse": "P1 Stores - VPT",
+   "current_status": "In Stock",
+   "last_transaction": null,
+   "last_movement_date": null,
+   "in_transit": false,
+   "status_history": []
+  }
+ ],
+ "b3_erpnext_scan_barcode_SA-MOT-S-0083": [
+  200,
+  {}
+ ],
+ "b4_item_tracking_lookup_SA-MOT-S-0083": [
+  200,
+  {
+   "tracking_id": "SA-MOT-S-0083",
+   "serial_no": "SN-00000673",
+   "item_code": "SA-MOT-S",
+   "item_name": "Motor Assembly 800W",
+   "current_warehouse": "P1 Stores - VPT",
+   "current_status": "In Stock",
+   "last_transaction": null,
+   "last_movement_date": null,
+   "in_transit": false,
+   "status_history": []
+  }
+ ],
+ "b3_erpnext_scan_barcode_SN-00000673": [
+  200,
+  {}
+ ],
+ "b4_item_tracking_lookup_SN-00000673": [
+  200,
+  {}
+ ],
+ "b6_serial_no_record_SN-00000673": [
+  404,
+  "{\"exc_type\":\"DoesNotExistError\",\"_server_messages\":\"[\\\"{\\\\\\\"message\\\\\\\":\\\\\\\"Serial No SN-00000673 not found\\\\\\\",\\\\\\\"as_table\\\\\\\":false,\\\\\\\"title\\\\\\\":\\\\\\\"Message\\\\\\\",\\\\\\\"indicator\\\\\\\":\\\\\\\"red\\\\\\\",\\\\\\\"raise_exception\\\\\\\":1,\\\\\\\"__frappe_exc_id\\\\\\\":\\\\\\\"fb3b845d3d3cfaafe5bb37169ead403f8c290ae34b67ef04bd5c7741\\\\\\\"}\\\"]\"}"
+ ],
+ "b6_tracked_item_by_barcode_00000673": [
+  200,
+  {
+   "data": [
+    {
+     "name": "SA-MOT-S-0083",
+     "item_code": "SA-MOT-S",
+     "serial_no": "SN-00000673",
+     "barcode": "00000673",
+     "current_status": "In Stock",
+     "current_warehouse": "P1 Stores - VPT"
+    }
+   ]
+  }
+ ],
+ "b7_mes_scan_unit_00000673": {
+  "http": 200,
+  "request": {
+   "value": "00000673"
+  },
+  "response": {
+   "ok": true,
+   "scan": "MES-SCN-00290",
+   "result": "Valid",
+   "reason": "Verified as tracked unit",
+   "item_code": "SA-MOT-S",
+   "item_name": "Motor Assembly 800W",
+   "unit_id": "SA-MOT-S-0083",
+   "serial_no": "SN-00000673",
+   "batch_no": null,
+   "qty": 1.0,
+   "value": "00000673",
+   "material_after": {
+    "required_qty": 30.0,
+    "verified_qty": 1,
+    "remaining_qty": 29.0,
+    "status": "Partially Verified",
+    "mode": "unit"
+   }
+  }
+ },
+ "b7_mes_scan_unit_rescan_00000673": {
+  "http": 200,
+  "request": {
+   "value": "00000673"
+  },
+  "response": {
+   "ok": false,
+   "scan": "MES-SCN-00291",
+   "result": "Invalid",
+   "reason": "Duplicate scan: unit SA-MOT-S-0083 is already recorded on this work order (MES-SCN-00290)",
+   "item_code": "SA-MOT-S",
+   "item_name": "Motor Assembly 800W",
+   "unit_id": "SA-MOT-S-0083",
+   "serial_no": "SN-00000673",
+   "batch_no": null,
+   "qty": 1.0,
+   "value": "00000673",
+   "material_after": {
+    "required_qty": 30.0,
+    "verified_qty": 1,
+    "remaining_qty": 29.0,
+    "status": "Partially Verified",
+    "mode": "unit"
+   }
+  }
+ },
+ "b5_barcode_shrdc_scan_00000461": [
+  200,
+  {
+   "item_code": "RM-BOX-S-B",
+   "barcode": "00000461",
+   "batch_no": "00000461",
+   "serial_no": null
+  }
+ ],
+ "b5_barcode_shrdc_scan_00000673": [
+  200,
+  {}
+ ],
+ "b5_barcode_shrdc_scan_SA-MOT-S-0083": [
+  200,
+  {}
+ ],
+ "b2_stock_ledger_report_00000461": {
+  "note": "Stock Ledger report rejected the batch filter over REST (MariaDB 1064 in the report's own SQL); ledger rows read in the bench as Administrator instead",
+  "stock_ledger_entries": [
+   {
+    "posting_date": "2026-11-26",
+    "voucher_type": "Stock Entry",
+    "voucher_no": "MAT-STE-2026-00087",
+    "item_code": "RM-BOX-S-B",
+    "warehouse": "P1 Stores - VPT",
+    "batch_no": "00000461",
+    "qty": 50.0,
+    "serial_and_batch_bundle": "e999c8e4fff0ab7865c7"
+   },
+   {
+    "posting_date": "2026-11-26",
+    "voucher_type": "Stock Entry",
+    "voucher_no": "MAT-STE-2026-00098",
+    "item_code": "RM-BOX-S-B",
+    "warehouse": "P1 Stores - VPT",
+    "batch_no": "00000703",
+    "qty": 60.0,
+    "serial_and_batch_bundle": "12d7fa29d8c6450b17a7"
+   }
+  ]
+ },
+ "b6_unit_items_erpnext_serial_no": {
+  "serial_no_records": 0,
+  "item_flags": [
+   {
+    "name": "SA-GBX-DRL",
+    "has_serial_no": 0,
+    "has_batch_no": 0
+   },
+   {
+    "name": "SA-HARN-S",
+    "has_serial_no": 0,
+    "has_batch_no": 0
+   },
+   {
+    "name": "SA-HSG-RH",
+    "has_serial_no": 0,
+    "has_batch_no": 0
+   },
+   {
+    "name": "SA-HSG-DRL",
+    "has_serial_no": 0,
+    "has_batch_no": 0
+   },
+   {
+    "name": "SA-MOT-S",
+    "has_serial_no": 0,
+    "has_batch_no": 0
+   }
+  ]
+ }
+}

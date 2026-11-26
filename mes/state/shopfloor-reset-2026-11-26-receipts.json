@@ -1,0 +1,416 @@
+{
+ "unit": {
+  "stock_entry": "MAT-STE-2026-00096",
+  "total_value": 11624.29,
+  "lines": [
+   {
+    "item": "SA-GBX-DRL",
+    "qty": 51.0,
+    "rate": 44.784772727,
+    "value": 2284.02,
+    "batch": null,
+    "batch_qty": null,
+    "units_created": 51,
+    "first_unit": {
+     "name": "SA-GBX-DRL-0046",
+     "barcode": "00000469",
+     "serial_no": "SN-00000469"
+    },
+    "last_unit": {
+     "name": "SA-GBX-DRL-0096",
+     "barcode": "00000519",
+     "serial_no": "SN-00000519"
+    },
+    "bin_after": 55.0
+   },
+   {
+    "item": "SA-HARN-S",
+    "qty": 41.0,
+    "rate": 21.117684211,
+    "value": 865.83,
+    "batch": null,
+    "batch_qty": null,
+    "units_created": 41,
+    "first_unit": {
+     "name": "SA-HARN-S-0046",
+     "barcode": "00000520",
+     "serial_no": "SN-00000520"
+    },
+    "last_unit": {
+     "name": "SA-HARN-S-0086",
+     "barcode": "00000560",
+     "serial_no": "SN-00000560"
+    },
+    "bin_after": 79.0
+   },
+   {
+    "item": "SA-HSG-DRL",
+    "qty": 55.0,
+    "rate": 8.6617,
+    "value": 476.39,
+    "batch": null,
+    "batch_qty": null,
+    "units_created": 55,
+    "first_unit": {
+     "name": "SA-HSG-DRL-0054",
+     "barcode": "00000561",
+     "serial_no": "SN-00000561"
+    },
+    "last_unit": {
+     "name": "SA-HSG-DRL-0108",
+     "barcode": "00000615",
+     "serial_no": "SN-00000615"
+    },
+    "bin_after": 55.0
+   },
+   {
+    "item": "SA-HSG-RH",
+    "qty": 20.0,
+    "rate": 14.9433,
+    "value": 298.87,
+    "batch": null,
+    "batch_qty": null,
+    "units_created": 20,
+    "first_unit": {
+     "name": "SA-HSG-RH-0003",
+     "barcode": "00000616",
+     "serial_no": "SN-00000616"
+    },
+    "last_unit": {
+     "name": "SA-HSG-RH-0022",
+     "barcode": "00000635",
+     "serial_no": "SN-00000635"
+    },
+    "bin_after": 20.0
+   },
+   {
+    "item": "SA-MOT-S",
+    "qty": 67.0,
+    "rate": 114.913071429,
+    "value": 7699.18,
+    "batch": null,
+    "batch_qty": null,
+    "units_created": 67,
+    "first_unit": {
+     "name": "SA-MOT-S-0046",
+     "barcode": "00000636",
+     "serial_no": "SN-00000636"
+    },
+    "last_unit": {
+     "name": "SA-MOT-S-0112",
+     "barcode": "00000702",
+     "serial_no": "SN-00000702"
+    },
+    "bin_after": 75.0
+   }
+  ]
+ },
+ "plain": {
+  "stock_entry": "MAT-STE-2026-00097",
+  "total_value": 11859.72,
+  "lines": [
+   {
+    "item": "SA-ARM-L",
+    "qty": 14.0,
+    "rate": 360.505,
+    "value": 5047.07,
+    "batch": null,
+    "batch_qty": null,
+    "units_created": 0,
+    "first_unit": null,
+    "last_unit": null,
+    "bin_after": 16.0
+   },
+   {
+    "item": "SA-ARM-S",
+    "qty": 37.0,
+    "rate": 35.798301883,
+    "value": 1324.54,
+    "batch": null,
+    "batch_qty": null,
+    "units_created": 0,
+    "first_unit": null,
+    "last_unit": null,
+    "bin_after": 40.0
+   },
+   {
+    "item": "SA-HMECH-RH",
+    "qty": 8.0,
+    "rate": 91.505634921,
+    "value": 732.05,
+    "batch": null,
+    "batch_qty": null,
+    "units_created": 0,
+    "first_unit": null,
+    "last_unit": null,
+    "bin_after": 20.0
+   },
+   {
+    "item": "SA-MOT-L",
+    "qty": 15.0,
+    "rate": 101.1833,
+    "value": 1517.75,
+    "batch": null,
+    "batch_qty": null,
+    "units_created": 0,
+    "first_unit": null,
+    "last_unit": null,
+    "bin_after": 15.0
+   },
+   {
+    "item": "SA-STA-L",
+    "qty": 12.0,
+    "rate": 170.305,
+    "value": 2043.66,
+    "batch": null,
+    "batch_qty": null,
+    "units_created": 0,
+    "first_unit": null,
+    "last_unit": null,
+    "bin_after": 16.0
+   },
+   {
+    "item": "SA-STA-S",
+    "qty": 39.0,
+    "rate": 30.63215685,
+    "value": 1194.65,
+    "batch": null,
+    "batch_qty": null,
+    "units_created": 0,
+    "first_unit": null,
+    "last_unit": null,
+    "bin_after": 40.0
+   }
+  ]
+ },
+ "batch": {
+  "stock_entry": "MAT-STE-2026-00098",
+  "total_value": 1145.01,
+  "lines": [
+   {
+    "item": "RM-BOX-S-B",
+    "qty": 60.0,
+    "rate": 2.831713555,
+    "value": 169.9,
+    "batch": "00000703",
+    "batch_qty": 60.0,
+    "units_created": 0,
+    "first_unit": null,
+    "last_unit": null,
+    "bin_after": 451.0
+   },
+   {
+    "item": "RM-CHUCK-13-B",
+    "qty": 60.0,
+    "rate": 9.103448276,
+    "value": 546.21,
+    "batch": "00000704",
+    "batch_qty": 60.0,
+    "units_created": 0,
+    "first_unit": null,
+    "last_unit": null,
+    "bin_after": 147.0
+   },
+   {
+    "item": "RM-LABEL-B",
+    "qty": 60.0,
+    "rate": 0.6,
+    "value": 36.0,
+    "batch": "00000705",
+    "batch_qty": 60.0,
+    "units_created": 0,
+    "first_unit": null,
+    "last_unit": null,
+    "bin_after": 108.0
+   },
+   {
+    "item": "RM-MANUAL-B",
+    "qty": 60.0,
+    "rate": 0.8,
+    "value": 48.0,
+    "batch": "00000706",
+    "batch_qty": 60.0,
+    "units_created": 0,
+    "first_unit": null,
+    "last_unit": null,
+    "bin_after": 108.0
+   },
+   {
+    "item": "RM-SCREW-KIT-B",
+    "qty": 60.0,
+    "rate": 0.606896552,
+    "value": 36.41,
+    "batch": "00000707",
+    "batch_qty": 60.0,
+    "units_created": 0,
+    "first_unit": null,
+    "last_unit": null,
+    "bin_after": 147.0
+   },
+   {
+    "item": "RM-SIDE-HDL-B",
+    "qty": 60.0,
+    "rate": 5.141463415,
+    "value": 308.49,
+    "batch": "00000708",
+    "batch_qty": 60.0,
+    "units_created": 0,
+    "first_unit": null,
+    "last_unit": null,
+    "bin_after": 224.0
+   }
+  ]
+ },
+ "topup_after_tests": {
+  "stock_entry": "MAT-STE-2026-00105",
+  "total_value": 547.41,
+  "lines": [
+   {
+    "item": "SA-GBX-DRL",
+    "qty": 3.0,
+    "rate": 44.784982517,
+    "value": 134.35,
+    "batch": null,
+    "batch_qty": null,
+    "units_created": 3,
+    "first_unit": {
+     "name": "SA-GBX-DRL-0097",
+     "barcode": "00000712",
+     "serial_no": "SN-00000712"
+    },
+    "last_unit": {
+     "name": "SA-GBX-DRL-0099",
+     "barcode": "00000714",
+     "serial_no": "SN-00000714"
+    },
+    "bin_after": 55.0
+   },
+   {
+    "item": "SA-HARN-S",
+    "qty": 2.0,
+    "rate": 21.169236842,
+    "value": 42.34,
+    "batch": null,
+    "batch_qty": null,
+    "units_created": 2,
+    "first_unit": {
+     "name": "SA-HARN-S-0087",
+     "barcode": "00000715",
+     "serial_no": "SN-00000715"
+    },
+    "last_unit": {
+     "name": "SA-HARN-S-0088",
+     "barcode": "00000716",
+     "serial_no": "SN-00000716"
+    },
+    "bin_after": 78.0
+   },
+   {
+    "item": "SA-HSG-DRL",
+    "qty": 3.0,
+    "rate": 8.661665385,
+    "value": 25.98,
+    "batch": null,
+    "batch_qty": null,
+    "units_created": 3,
+    "first_unit": {
+     "name": "SA-HSG-DRL-0109",
+     "barcode": "00000717",
+     "serial_no": "SN-00000717"
+    },
+    "last_unit": {
+     "name": "SA-HSG-DRL-0111",
+     "barcode": "00000719",
+     "serial_no": "SN-00000719"
+    },
+    "bin_after": 55.0
+   },
+   {
+    "item": "SA-MOT-S",
+    "qty": 3.0,
+    "rate": 114.91284127,
+    "value": 344.74,
+    "batch": null,
+    "batch_qty": null,
+    "units_created": 3,
+    "first_unit": {
+     "name": "SA-MOT-S-0113",
+     "barcode": "00000720",
+     "serial_no": "SN-00000720"
+    },
+    "last_unit": {
+     "name": "SA-MOT-S-0115",
+     "barcode": "00000722",
+     "serial_no": "SN-00000722"
+    },
+    "bin_after": 75.0
+   }
+  ]
+ },
+ "topup_after_issue_fix_check": {
+  "stock_entry": "MAT-STE-2026-00108",
+  "total_value": 336.72,
+  "lines": [
+   {
+    "item": "SA-GBX-DRL",
+    "qty": 2.0,
+    "rate": 44.784995712,
+    "value": 89.57,
+    "batch": null,
+    "batch_qty": null,
+    "units_created": 2,
+    "first_unit": {
+     "name": "SA-GBX-DRL-0100",
+     "barcode": "00000723",
+     "serial_no": "SN-00000723"
+    },
+    "last_unit": {
+     "name": "SA-GBX-DRL-0101",
+     "barcode": "00000724",
+     "serial_no": "SN-00000724"
+    },
+    "bin_after": 55.0
+   },
+   {
+    "item": "SA-HSG-DRL",
+    "qty": 2.0,
+    "rate": 8.661633962,
+    "value": 17.32,
+    "batch": null,
+    "batch_qty": null,
+    "units_created": 2,
+    "first_unit": {
+     "name": "SA-HSG-DRL-0112",
+     "barcode": "00000725",
+     "serial_no": "SN-00000725"
+    },
+    "last_unit": {
+     "name": "SA-HSG-DRL-0113",
+     "barcode": "00000726",
+     "serial_no": "SN-00000726"
+    },
+    "bin_after": 55.0
+   },
+   {
+    "item": "SA-MOT-S",
+    "qty": 2.0,
+    "rate": 114.912665362,
+    "value": 229.83,
+    "batch": null,
+    "batch_qty": null,
+    "units_created": 2,
+    "first_unit": {
+     "name": "SA-MOT-S-0116",
+     "barcode": "00000727",
+     "serial_no": "SN-00000727"
+    },
+    "last_unit": {
+     "name": "SA-MOT-S-0117",
+     "barcode": "00000728",
+     "serial_no": "SN-00000728"
+    },
+    "bin_after": 75.0
+   }
+  ]
+ }
+}

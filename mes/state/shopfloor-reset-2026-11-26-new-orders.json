@@ -1,0 +1,1112 @@
+[
+ {
+  "work_order": "MFG-WO-2026-00145",
+  "item": "SA-ARM-S",
+  "item_name": "Wound Armature 800W",
+  "qty": 35,
+  "bom": "BOM-SA-ARM-S-001",
+  "use_multi_level_bom": 0,
+  "source": "P1 Stores - VPT",
+  "wip": "P1 Work In Progress - VPT",
+  "fg": "P1 Stores - VPT",
+  "status": "Not Started",
+  "planned_start": "2026-11-26 12:46:42.588653",
+  "planned_end": "2026-11-27 14:25:00",
+  "required": [
+   {
+    "item_code": "RM-SHAFT-S",
+    "item_name": "Armature Shaft 8mm",
+    "qty": 35.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-LAM-ARM-S",
+    "item_name": "Armature Lamination Stack 35mm",
+    "qty": 35.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-COMM-24",
+    "item_name": "Commutator 24-Bar",
+    "qty": 35.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-CU-WIRE",
+    "item_name": "Enamelled Copper Wire 0.45mm",
+    "qty": 6.3,
+    "uom": "Kg"
+   },
+   {
+    "item_code": "RM-INS-PAPER",
+    "item_name": "Slot Insulation Paper",
+    "qty": 21.0,
+    "uom": "Meter"
+   },
+   {
+    "item_code": "RM-VARNISH",
+    "item_name": "Insulating Impregnation Varnish",
+    "qty": 0.7,
+    "uom": "Litre"
+   }
+  ],
+  "job_cards": [
+   {
+    "name": "PO-JOB00283",
+    "operation": "Armature Winding",
+    "workstation": "P1-WND-01",
+    "status": "Open"
+   },
+   {
+    "name": "PO-JOB00284",
+    "operation": "Varnish Impregnation",
+    "workstation": "P1-OVN-01",
+    "status": "Open"
+   }
+  ]
+ },
+ {
+  "work_order": "MFG-WO-2026-00146",
+  "item": "SA-STA-S",
+  "item_name": "Wound Stator 800W",
+  "qty": 45,
+  "bom": "BOM-SA-STA-S-001",
+  "use_multi_level_bom": 0,
+  "source": "P1 Stores - VPT",
+  "wip": "P1 Work In Progress - VPT",
+  "fg": "P1 Stores - VPT",
+  "status": "Not Started",
+  "planned_start": "2026-11-26 12:46:43.442764",
+  "planned_end": "2026-11-30 09:50:00",
+  "required": [
+   {
+    "item_code": "RM-LAM-STA-S",
+    "item_name": "Stator Lamination Stack 35mm",
+    "qty": 45.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-CU-WIRE",
+    "item_name": "Enamelled Copper Wire 0.45mm",
+    "qty": 9.9,
+    "uom": "Kg"
+   },
+   {
+    "item_code": "RM-INS-PAPER",
+    "item_name": "Slot Insulation Paper",
+    "qty": 36.0,
+    "uom": "Meter"
+   },
+   {
+    "item_code": "RM-VARNISH",
+    "item_name": "Insulating Impregnation Varnish",
+    "qty": 0.9,
+    "uom": "Litre"
+   }
+  ],
+  "job_cards": [
+   {
+    "name": "PO-JOB00285",
+    "operation": "Stator Winding",
+    "workstation": "P1-WND-01",
+    "status": "Open"
+   },
+   {
+    "name": "PO-JOB00286",
+    "operation": "Varnish Impregnation",
+    "workstation": "P1-OVN-01",
+    "status": "Open"
+   }
+  ]
+ },
+ {
+  "work_order": "MFG-WO-2026-00147",
+  "item": "SA-ARM-L",
+  "item_name": "Wound Armature 1400W",
+  "qty": 38,
+  "bom": "BOM-SA-ARM-L-001",
+  "use_multi_level_bom": 0,
+  "source": "P1 Stores - VPT",
+  "wip": "P1 Work In Progress - VPT",
+  "fg": "P1 Stores - VPT",
+  "status": "Not Started",
+  "planned_start": "2026-11-26 12:46:43.745263",
+  "planned_end": "2026-11-30 15:43:00",
+  "required": [
+   {
+    "item_code": "RM-SHAFT-L",
+    "item_name": "Armature Shaft 10mm",
+    "qty": 38.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-LAM-ARM-L",
+    "item_name": "Armature Lamination Stack 50mm",
+    "qty": 38.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-COMM-24",
+    "item_name": "Commutator 24-Bar",
+    "qty": 38.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-CU-WIRE",
+    "item_name": "Enamelled Copper Wire 0.45mm",
+    "qty": 11.4,
+    "uom": "Kg"
+   },
+   {
+    "item_code": "RM-INS-PAPER",
+    "item_name": "Slot Insulation Paper",
+    "qty": 30.4,
+    "uom": "Meter"
+   },
+   {
+    "item_code": "RM-VARNISH",
+    "item_name": "Insulating Impregnation Varnish",
+    "qty": 1.14,
+    "uom": "Litre"
+   }
+  ],
+  "job_cards": [
+   {
+    "name": "PO-JOB00287",
+    "operation": "Armature Winding",
+    "workstation": "P1-WND-01",
+    "status": "Open"
+   },
+   {
+    "name": "PO-JOB00288",
+    "operation": "Varnish Impregnation",
+    "workstation": "P1-OVN-01",
+    "status": "Open"
+   }
+  ]
+ },
+ {
+  "work_order": "MFG-WO-2026-00148",
+  "item": "SA-STA-L",
+  "item_name": "Wound Stator 1400W",
+  "qty": 42,
+  "bom": "BOM-SA-STA-L-001",
+  "use_multi_level_bom": 0,
+  "source": "P1 Stores - VPT",
+  "wip": "P1 Work In Progress - VPT",
+  "fg": "P1 Stores - VPT",
+  "status": "Not Started",
+  "planned_start": "2026-11-26 12:46:44.129866",
+  "planned_end": "2026-12-01 08:59:00",
+  "required": [
+   {
+    "item_code": "RM-LAM-STA-L",
+    "item_name": "Stator Lamination Stack 50mm",
+    "qty": 42.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-CU-WIRE",
+    "item_name": "Enamelled Copper Wire 0.45mm",
+    "qty": 14.7,
+    "uom": "Kg"
+   },
+   {
+    "item_code": "RM-INS-PAPER",
+    "item_name": "Slot Insulation Paper",
+    "qty": 42.0,
+    "uom": "Meter"
+   },
+   {
+    "item_code": "RM-VARNISH",
+    "item_name": "Insulating Impregnation Varnish",
+    "qty": 1.26,
+    "uom": "Litre"
+   }
+  ],
+  "job_cards": [
+   {
+    "name": "PO-JOB00289",
+    "operation": "Stator Winding",
+    "workstation": "P1-WND-01",
+    "status": "Open"
+   },
+   {
+    "name": "PO-JOB00290",
+    "operation": "Varnish Impregnation",
+    "workstation": "P1-OVN-01",
+    "status": "Open"
+   }
+  ]
+ },
+ {
+  "work_order": "MFG-WO-2026-00149",
+  "item": "SA-MOT-S",
+  "item_name": "Motor Assembly 800W",
+  "qty": 40,
+  "bom": "BOM-SA-MOT-S-001",
+  "use_multi_level_bom": 0,
+  "source": "P1 Stores - VPT",
+  "wip": "P1 Work In Progress - VPT",
+  "fg": "P1 Stores - VPT",
+  "status": "Not Started",
+  "planned_start": "2026-11-26 12:46:44.448651",
+  "planned_end": "2026-11-30 09:20:00",
+  "required": [
+   {
+    "item_code": "SA-ARM-S",
+    "item_name": "Wound Armature 800W",
+    "qty": 40.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "SA-STA-S",
+    "item_name": "Wound Stator 800W",
+    "qty": 40.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-BRG-608",
+    "item_name": "Ball Bearing 608ZZ",
+    "qty": 40.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-BRG-6000",
+    "item_name": "Ball Bearing 6000ZZ",
+    "qty": 40.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-BRUSH-6X8",
+    "item_name": "Carbon Brush 6x8mm",
+    "qty": 40.0,
+    "uom": "Pair"
+   },
+   {
+    "item_code": "RM-FAN-S",
+    "item_name": "Motor Cooling Fan 48mm",
+    "qty": 40.0,
+    "uom": "Nos"
+   }
+  ],
+  "job_cards": [
+   {
+    "name": "PO-JOB00291",
+    "operation": "Motor Assembly",
+    "workstation": "P1-MAS-01",
+    "status": "Open"
+   },
+   {
+    "name": "PO-JOB00292",
+    "operation": "Motor Run Test",
+    "workstation": "P1-TST-01",
+    "status": "Open"
+   }
+  ]
+ },
+ {
+  "work_order": "MFG-WO-2026-00150",
+  "item": "SA-MOT-L",
+  "item_name": "Motor Assembly 1400W",
+  "qty": 16,
+  "bom": "BOM-SA-MOT-L-001",
+  "use_multi_level_bom": 0,
+  "source": "P1 Stores - VPT",
+  "wip": "P1 Work In Progress - VPT",
+  "fg": "P1 Stores - VPT",
+  "status": "Not Started",
+  "planned_start": "2026-11-26 12:46:44.787997",
+  "planned_end": "2026-11-30 10:34:00",
+  "required": [
+   {
+    "item_code": "SA-ARM-L",
+    "item_name": "Wound Armature 1400W",
+    "qty": 16.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "SA-STA-L",
+    "item_name": "Wound Stator 1400W",
+    "qty": 16.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-BRG-6000",
+    "item_name": "Ball Bearing 6000ZZ",
+    "qty": 16.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-BRG-6201",
+    "item_name": "Ball Bearing 6201ZZ",
+    "qty": 16.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-BRUSH-6X8",
+    "item_name": "Carbon Brush 6x8mm",
+    "qty": 16.0,
+    "uom": "Pair"
+   },
+   {
+    "item_code": "RM-FAN-L",
+    "item_name": "Motor Cooling Fan 62mm",
+    "qty": 16.0,
+    "uom": "Nos"
+   }
+  ],
+  "job_cards": [
+   {
+    "name": "PO-JOB00293",
+    "operation": "Motor Assembly",
+    "workstation": "P1-MAS-01",
+    "status": "Open"
+   },
+   {
+    "name": "PO-JOB00294",
+    "operation": "Motor Run Test",
+    "workstation": "P1-TST-01",
+    "status": "Open"
+   }
+  ]
+ },
+ {
+  "work_order": "MFG-WO-2026-00151",
+  "item": "SA-HARN-S",
+  "item_name": "Switch & Cable Harness 10A",
+  "qty": 50,
+  "bom": "BOM-SA-HARN-S-001",
+  "use_multi_level_bom": 0,
+  "source": "P1 Stores - VPT",
+  "wip": "P1 Work In Progress - VPT",
+  "fg": "P1 Stores - VPT",
+  "status": "Not Started",
+  "planned_start": "2026-11-26 12:46:45.181621",
+  "planned_end": "2026-11-27 10:30:00",
+  "required": [
+   {
+    "item_code": "RM-SW-TRIG",
+    "item_name": "Trigger Switch with Speed Control 10A",
+    "qty": 50.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-CABLE",
+    "item_name": "Power Cable 2.5m with BS1363 Plug",
+    "qty": 50.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-STRAIN",
+    "item_name": "Cable Strain Relief Sleeve",
+    "qty": 50.0,
+    "uom": "Nos"
+   }
+  ],
+  "job_cards": [
+   {
+    "name": "PO-JOB00295",
+    "operation": "Harness Assembly",
+    "workstation": "P1-SAB-01",
+    "status": "Open"
+   }
+  ]
+ },
+ {
+  "work_order": "MFG-WO-2026-00152",
+  "item": "SA-HARN-L",
+  "item_name": "Switch & Cable Harness 16A",
+  "qty": 33,
+  "bom": "BOM-SA-HARN-L-001",
+  "use_multi_level_bom": 0,
+  "source": "P1 Stores - VPT",
+  "wip": "P1 Work In Progress - VPT",
+  "fg": "P1 Stores - VPT",
+  "status": "Not Started",
+  "planned_start": "2026-11-26 12:46:45.490762",
+  "planned_end": "2026-11-27 13:19:00",
+  "required": [
+   {
+    "item_code": "RM-SW-SAW",
+    "item_name": "Trigger Switch with Lock-Off 16A",
+    "qty": 33.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-CABLE",
+    "item_name": "Power Cable 2.5m with BS1363 Plug",
+    "qty": 33.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-STRAIN",
+    "item_name": "Cable Strain Relief Sleeve",
+    "qty": 33.0,
+    "uom": "Nos"
+   }
+  ],
+  "job_cards": [
+   {
+    "name": "PO-JOB00296",
+    "operation": "Harness Assembly",
+    "workstation": "P1-SAB-01",
+    "status": "Open"
+   }
+  ]
+ },
+ {
+  "work_order": "MFG-WO-2026-00153",
+  "item": "SA-HSG-DRL",
+  "item_name": "Drill Housing Set",
+  "qty": 12,
+  "bom": "BOM-SA-HSG-DRL-001",
+  "use_multi_level_bom": 0,
+  "source": "P1 Stores - VPT",
+  "wip": "P1 Work In Progress - VPT",
+  "fg": "P1 Stores - VPT",
+  "status": "Not Started",
+  "planned_start": "2026-11-26 12:46:45.738835",
+  "planned_end": "2026-11-27 08:37:36",
+  "required": [
+   {
+    "item_code": "RM-ABS-GRN",
+    "item_name": "ABS Resin Granules (Black)",
+    "qty": 5.04,
+    "uom": "Kg"
+   },
+   {
+    "item_code": "RM-TPE-GRN",
+    "item_name": "TPE Soft-Grip Granules",
+    "qty": 0.6,
+    "uom": "Kg"
+   }
+  ],
+  "job_cards": [
+   {
+    "name": "PO-JOB00297",
+    "operation": "Injection Moulding",
+    "workstation": "P1-IMM-01",
+    "status": "Open"
+   },
+   {
+    "name": "PO-JOB00298",
+    "operation": "Grip Overmoulding",
+    "workstation": "P1-IMM-01",
+    "status": "Open"
+   }
+  ]
+ },
+ {
+  "work_order": "MFG-WO-2026-00154",
+  "item": "SA-GBX-DRL",
+  "item_name": "Drill Gearbox Assembly",
+  "qty": 18,
+  "bom": "BOM-SA-GBX-DRL-001",
+  "use_multi_level_bom": 0,
+  "source": "P1 Stores - VPT",
+  "wip": "P1 Work In Progress - VPT",
+  "fg": "P1 Stores - VPT",
+  "status": "Not Started",
+  "planned_start": "2026-11-26 12:46:45.999547",
+  "planned_end": "2026-11-27 14:59:00",
+  "required": [
+   {
+    "item_code": "RM-GEAR-DRL",
+    "item_name": "Helical Gear Set (Drill)",
+    "qty": 18.0,
+    "uom": "Set"
+   },
+   {
+    "item_code": "RM-GEARCASE-AL",
+    "item_name": "Aluminium Die-Cast Gear Case",
+    "qty": 18.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-BRG-608",
+    "item_name": "Ball Bearing 608ZZ",
+    "qty": 18.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-GREASE",
+    "item_name": "Gearbox Grease",
+    "qty": 0.54,
+    "uom": "Kg"
+   }
+  ],
+  "job_cards": [
+   {
+    "name": "PO-JOB00299",
+    "operation": "Gearbox Assembly",
+    "workstation": "P1-SAB-01",
+    "status": "Open"
+   }
+  ]
+ },
+ {
+  "work_order": "MFG-WO-2026-00155",
+  "item": "SA-HSG-RH",
+  "item_name": "Rotary Hammer Housing Set",
+  "qty": 22,
+  "bom": "BOM-SA-HSG-RH-001",
+  "use_multi_level_bom": 0,
+  "source": "P1 Stores - VPT",
+  "wip": "P1 Work In Progress - VPT",
+  "fg": "P1 Stores - VPT",
+  "status": "Not Started",
+  "planned_start": "2026-11-26 12:46:46.307921",
+  "planned_end": "2026-11-27 09:59:12",
+  "required": [
+   {
+    "item_code": "RM-PA6GF-GRN",
+    "item_name": "PA6 30% Glass-Filled Granules",
+    "qty": 14.3,
+    "uom": "Kg"
+   },
+   {
+    "item_code": "RM-TPE-GRN",
+    "item_name": "TPE Soft-Grip Granules",
+    "qty": 1.32,
+    "uom": "Kg"
+   }
+  ],
+  "job_cards": [
+   {
+    "name": "PO-JOB00300",
+    "operation": "Injection Moulding",
+    "workstation": "P1-IMM-01",
+    "status": "Open"
+   },
+   {
+    "name": "PO-JOB00301",
+    "operation": "Grip Overmoulding",
+    "workstation": "P1-IMM-01",
+    "status": "Open"
+   }
+  ]
+ },
+ {
+  "work_order": "MFG-WO-2026-00156",
+  "item": "SA-HMECH-RH",
+  "item_name": "Hammer Mechanism Assembly",
+  "qty": 28,
+  "bom": "BOM-SA-HMECH-RH-001",
+  "use_multi_level_bom": 0,
+  "source": "P1 Stores - VPT",
+  "wip": "P1 Work In Progress - VPT",
+  "fg": "P1 Stores - VPT",
+  "status": "Not Started",
+  "planned_start": "2026-11-26 12:46:46.571693",
+  "planned_end": "2026-11-30 10:21:00",
+  "required": [
+   {
+    "item_code": "RM-GEAR-RH",
+    "item_name": "Gear & Crank Set (Rotary Hammer)",
+    "qty": 28.0,
+    "uom": "Set"
+   },
+   {
+    "item_code": "RM-PISTON-SET",
+    "item_name": "Hammer Piston Striker & O-Ring Set",
+    "qty": 28.0,
+    "uom": "Set"
+   },
+   {
+    "item_code": "RM-GEARCASE-AL",
+    "item_name": "Aluminium Die-Cast Gear Case",
+    "qty": 28.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-SDS-HOLD",
+    "item_name": "SDS-Plus Tool Holder Assembly",
+    "qty": 28.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-GREASE",
+    "item_name": "Gearbox Grease",
+    "qty": 1.4,
+    "uom": "Kg"
+   }
+  ],
+  "job_cards": [
+   {
+    "name": "PO-JOB00302",
+    "operation": "Hammer Mechanism Assembly",
+    "workstation": "P1-SAB-01",
+    "status": "Open"
+   }
+  ]
+ },
+ {
+  "work_order": "MFG-WO-2026-00157",
+  "item": "SA-HSG-CS",
+  "item_name": "Circular Saw Housing & Handle Set",
+  "qty": 10,
+  "bom": "BOM-SA-HSG-CS-001",
+  "use_multi_level_bom": 0,
+  "source": "P1 Stores - VPT",
+  "wip": "P1 Work In Progress - VPT",
+  "fg": "P1 Stores - VPT",
+  "status": "Not Started",
+  "planned_start": "2026-11-26 12:46:46.893747",
+  "planned_end": "2026-11-27 10:51:12",
+  "required": [
+   {
+    "item_code": "RM-PA6GF-GRN",
+    "item_name": "PA6 30% Glass-Filled Granules",
+    "qty": 8.0,
+    "uom": "Kg"
+   },
+   {
+    "item_code": "RM-TPE-GRN",
+    "item_name": "TPE Soft-Grip Granules",
+    "qty": 0.7,
+    "uom": "Kg"
+   }
+  ],
+  "job_cards": [
+   {
+    "name": "PO-JOB00303",
+    "operation": "Injection Moulding",
+    "workstation": "P1-IMM-01",
+    "status": "Open"
+   },
+   {
+    "name": "PO-JOB00304",
+    "operation": "Grip Overmoulding",
+    "workstation": "P1-IMM-01",
+    "status": "Open"
+   }
+  ]
+ },
+ {
+  "work_order": "MFG-WO-2026-00158",
+  "item": "SA-GUARD-CS",
+  "item_name": "Blade Guard & Base Assembly",
+  "qty": 26,
+  "bom": "BOM-SA-GUARD-CS-001",
+  "use_multi_level_bom": 0,
+  "source": "P1 Stores - VPT",
+  "wip": "P1 Work In Progress - VPT",
+  "fg": "P1 Stores - VPT",
+  "status": "Not Started",
+  "planned_start": "2026-11-26 12:46:47.176750",
+  "planned_end": "2026-11-30 10:36:00",
+  "required": [
+   {
+    "item_code": "RM-BASE-CS",
+    "item_name": "Aluminium Base Plate 185mm",
+    "qty": 26.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-GUARD-CS",
+    "item_name": "Steel Upper Blade Guard",
+    "qty": 26.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-LGUARD-CS",
+    "item_name": "Retractable Lower Guard with Spring",
+    "qty": 26.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-SPINDLE-CS",
+    "item_name": "Saw Spindle with Blade Flange",
+    "qty": 26.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-BRG-6201",
+    "item_name": "Ball Bearing 6201ZZ",
+    "qty": 26.0,
+    "uom": "Nos"
+   }
+  ],
+  "job_cards": [
+   {
+    "name": "PO-JOB00305",
+    "operation": "Guard & Base Assembly",
+    "workstation": "P1-SAB-01",
+    "status": "Open"
+   }
+  ]
+ },
+ {
+  "work_order": "MFG-WO-2026-00159",
+  "item": "FG-DRL-800",
+  "item_name": "13mm Electric Drill 800W",
+  "qty": 30,
+  "bom": "BOM-FG-DRL-800-004",
+  "use_multi_level_bom": 0,
+  "source": "P1 Stores - VPT",
+  "wip": "P1 Work In Progress - VPT",
+  "fg": "P1 Finished Goods - VPT",
+  "status": "Not Started",
+  "planned_start": "2026-11-26 12:46:47.526121",
+  "planned_end": "2026-11-27 16:50:00",
+  "required": [
+   {
+    "item_code": "SA-MOT-S",
+    "item_name": "Motor Assembly 800W",
+    "qty": 30.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "SA-HSG-DRL",
+    "item_name": "Drill Housing Set",
+    "qty": 30.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "SA-HARN-S",
+    "item_name": "Switch & Cable Harness 10A",
+    "qty": 30.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "SA-GBX-DRL",
+    "item_name": "Drill Gearbox Assembly",
+    "qty": 30.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-CHUCK-13-B",
+    "item_name": "Keyless Chuck 13mm",
+    "qty": 30.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-SIDE-HDL-B",
+    "item_name": "Auxiliary Side Handle with Depth Gauge",
+    "qty": 30.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-SCREW-KIT-B",
+    "item_name": "Housing Screw Kit M4",
+    "qty": 30.0,
+    "uom": "Set"
+   },
+   {
+    "item_code": "RM-BOX-S-B",
+    "item_name": "Carton Box (Drill / Rotary Hammer)",
+    "qty": 30.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-LABEL-B",
+    "item_name": "Rating Label & Warning Decal Set (batch)",
+    "qty": 30.0,
+    "uom": "Set"
+   },
+   {
+    "item_code": "RM-MANUAL-B",
+    "item_name": "User Manual (EN/BM) (batch)",
+    "qty": 30.0,
+    "uom": "Nos"
+   }
+  ],
+  "job_cards": [
+   {
+    "name": "PO-JOB00306",
+    "operation": "Final Assembly",
+    "workstation": "P1-FAL-01",
+    "status": "Open"
+   },
+   {
+    "name": "PO-JOB00307",
+    "operation": "Hi-Pot & Function Test",
+    "workstation": "P1-TST-01",
+    "status": "Open"
+   },
+   {
+    "name": "PO-JOB00308",
+    "operation": "Packing",
+    "workstation": "P1-PCK-01",
+    "status": "Open"
+   }
+  ]
+ },
+ {
+  "work_order": "MFG-WO-2026-00160",
+  "item": "FG-DRL-800-B",
+  "item_name": "13mm Electric Drill 800W (batch)",
+  "qty": 25,
+  "bom": "BOM-FG-DRL-800-B-002",
+  "use_multi_level_bom": 0,
+  "source": "P1 Stores - VPT",
+  "wip": "P1 Work In Progress - VPT",
+  "fg": "P1 Finished Goods - VPT",
+  "status": "Not Started",
+  "planned_start": "2026-11-26 12:46:48.020085",
+  "planned_end": "2026-12-01 08:50:00",
+  "required": [
+   {
+    "item_code": "SA-MOT-S",
+    "item_name": "Motor Assembly 800W",
+    "qty": 25.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "SA-HSG-DRL",
+    "item_name": "Drill Housing Set",
+    "qty": 25.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "SA-HARN-S",
+    "item_name": "Switch & Cable Harness 10A",
+    "qty": 25.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "SA-GBX-DRL",
+    "item_name": "Drill Gearbox Assembly",
+    "qty": 25.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-CHUCK-13-B",
+    "item_name": "Keyless Chuck 13mm",
+    "qty": 25.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-SIDE-HDL-B",
+    "item_name": "Auxiliary Side Handle with Depth Gauge",
+    "qty": 25.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-SCREW-KIT-B",
+    "item_name": "Housing Screw Kit M4",
+    "qty": 25.0,
+    "uom": "Set"
+   },
+   {
+    "item_code": "RM-BOX-S-B",
+    "item_name": "Carton Box (Drill / Rotary Hammer)",
+    "qty": 25.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-LABEL-B",
+    "item_name": "Rating Label & Warning Decal Set (batch)",
+    "qty": 25.0,
+    "uom": "Set"
+   },
+   {
+    "item_code": "RM-MANUAL-B",
+    "item_name": "User Manual (EN/BM) (batch)",
+    "qty": 25.0,
+    "uom": "Nos"
+   }
+  ],
+  "job_cards": [
+   {
+    "name": "PO-JOB00309",
+    "operation": "Final Assembly",
+    "workstation": "P1-FAL-01",
+    "status": "Open"
+   },
+   {
+    "name": "PO-JOB00310",
+    "operation": "Hi-Pot & Function Test",
+    "workstation": "P1-TST-01",
+    "status": "Open"
+   },
+   {
+    "name": "PO-JOB00311",
+    "operation": "Packing",
+    "workstation": "P1-PCK-01",
+    "status": "Open"
+   }
+  ]
+ },
+ {
+  "work_order": "MFG-WO-2026-00161",
+  "item": "FG-RH-800",
+  "item_name": "SDS-Plus Rotary Hammer Drill 800W",
+  "qty": 20,
+  "bom": "BOM-FG-RH-800-001",
+  "use_multi_level_bom": 0,
+  "source": "P1 Stores - VPT",
+  "wip": "P1 Work In Progress - VPT",
+  "fg": "P1 Finished Goods - VPT",
+  "status": "Not Started",
+  "planned_start": "2026-11-26 12:46:48.560999",
+  "planned_end": "2026-11-30 16:20:00",
+  "required": [
+   {
+    "item_code": "SA-MOT-S",
+    "item_name": "Motor Assembly 800W",
+    "qty": 20.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "SA-HSG-RH",
+    "item_name": "Rotary Hammer Housing Set",
+    "qty": 20.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "SA-HARN-S",
+    "item_name": "Switch & Cable Harness 10A",
+    "qty": 20.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "SA-HMECH-RH",
+    "item_name": "Hammer Mechanism Assembly",
+    "qty": 20.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-SIDE-HDL",
+    "item_name": "Auxiliary Side Handle with Depth Gauge",
+    "qty": 20.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-SCREW-KIT",
+    "item_name": "Housing Screw Kit M4",
+    "qty": 20.0,
+    "uom": "Set"
+   },
+   {
+    "item_code": "RM-LABEL",
+    "item_name": "Rating Label & Warning Decal Set",
+    "qty": 20.0,
+    "uom": "Set"
+   },
+   {
+    "item_code": "RM-MANUAL",
+    "item_name": "User Manual (EN/BM)",
+    "qty": 20.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-CASE-BMC",
+    "item_name": "Blow-Moulded Carry Case",
+    "qty": 20.0,
+    "uom": "Nos"
+   }
+  ],
+  "job_cards": [
+   {
+    "name": "PO-JOB00312",
+    "operation": "Final Assembly",
+    "workstation": "P1-FAL-01",
+    "status": "Open"
+   },
+   {
+    "name": "PO-JOB00313",
+    "operation": "Hi-Pot & Function Test",
+    "workstation": "P1-TST-01",
+    "status": "Open"
+   },
+   {
+    "name": "PO-JOB00314",
+    "operation": "Packing",
+    "workstation": "P1-PCK-01",
+    "status": "Open"
+   }
+  ]
+ },
+ {
+  "work_order": "MFG-WO-2026-00162",
+  "item": "FG-CS-1400",
+  "item_name": "185mm Circular Saw 1400W",
+  "qty": 15,
+  "bom": "BOM-FG-CS-1400-001",
+  "use_multi_level_bom": 0,
+  "source": "P1 Stores - VPT",
+  "wip": "P1 Work In Progress - VPT",
+  "fg": "P1 Finished Goods - VPT",
+  "status": "Not Started",
+  "planned_start": "2026-11-26 12:46:49.055874",
+  "planned_end": "2026-12-01 09:25:00",
+  "required": [
+   {
+    "item_code": "SA-MOT-L",
+    "item_name": "Motor Assembly 1400W",
+    "qty": 15.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "SA-HSG-CS",
+    "item_name": "Circular Saw Housing & Handle Set",
+    "qty": 15.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "SA-HARN-L",
+    "item_name": "Switch & Cable Harness 16A",
+    "qty": 15.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "SA-GUARD-CS",
+    "item_name": "Blade Guard & Base Assembly",
+    "qty": 15.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-BLADE-185",
+    "item_name": "TCT Saw Blade 185mm 24T",
+    "qty": 15.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-SCREW-KIT",
+    "item_name": "Housing Screw Kit M4",
+    "qty": 15.0,
+    "uom": "Set"
+   },
+   {
+    "item_code": "RM-LABEL",
+    "item_name": "Rating Label & Warning Decal Set",
+    "qty": 15.0,
+    "uom": "Set"
+   },
+   {
+    "item_code": "RM-MANUAL",
+    "item_name": "User Manual (EN/BM)",
+    "qty": 15.0,
+    "uom": "Nos"
+   },
+   {
+    "item_code": "RM-BOX-L",
+    "item_name": "Carton Box (Circular Saw)",
+    "qty": 15.0,
+    "uom": "Nos"
+   }
+  ],
+  "job_cards": [
+   {
+    "name": "PO-JOB00315",
+    "operation": "Final Assembly",
+    "workstation": "P1-FAL-01",
+    "status": "Open"
+   },
+   {
+    "name": "PO-JOB00316",
+    "operation": "Hi-Pot & Function Test",
+    "workstation": "P1-TST-01",
+    "status": "Open"
+   },
+   {
+    "name": "PO-JOB00317",
+    "operation": "Packing",
+    "workstation": "P1-PCK-01",
+    "status": "Open"
+   }
+  ]
+ }
+]

@@ -13,3 +13,11 @@ Thumbs.db
 
 # MES API secrets (never commit)
 mes/.secrets/
+
+# Appsmith database/app backups (contain user records)
+mes/state/appsmith-db-backup-*.gz
+mes/state/appsmith-backup-*.json
+
+# Python caches
+__pycache__/
+*.pyc

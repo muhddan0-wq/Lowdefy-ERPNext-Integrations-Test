@@ -1,7 +1,8 @@
 """Create the MES sector roles and the MES admin role, then assign them (idempotent).
 
-Run inside the bench, with the user email passed through the environment:
-   docker exec -e NEW_USER=<email> comp_demo-bench-1 bash -lc "cd /home/frappe/frappe-bench/sites && ../env/bin/python -W ignore -" < mes/setup/create_sector_roles.py
+Role names and the Workstation Type each role works on come from sector_roles in the site YAML.
+Run by install-mes.ps1, or with a user (the email passed through the environment):
+   mes/setup/install-mes.ps1 -Only roles -AdminUser <email> [-ResetPassword]
 
 Prints PASSWORD_SETUP_LINK=<path> when run with --reset-password; the user sets their own password through it.
 """
@@ -10,17 +11,11 @@ import sys
 
 import frappe
 
-SITE = "frontend"
-SECTOR_ROLES = {
-    "MES Injection Moulding": "P1 Injection Moulding",
-    "MES Coil Winding": "P1 Coil Winding",
-    "MES Varnish Oven": "P1 Varnish Impregnation Oven",
-    "MES Sub-Assembly": "P1 Sub-Assembly Bench",
-    "MES Motor Assembly": "P1 Motor Assembly",
-    "MES Final Assembly": "P1 Final Assembly Line",
-    "MES Electrical Test": "P1 Electrical Safety & Run Test",
-    "MES Packing": "P1 Packing",
-}
+import site_config
+
+CFG = site_config.from_bench()
+SITE = os.environ.get("FRAPPE_SITE", CFG["erp"]["site"])
+SECTOR_ROLES = CFG["sector_roles"]
 ADMIN_ROLE = "MES Admin"
 BASE_ROLES = ["Manufacturing User", "Manufacturing Manager"]
 DEFAULT_ROLES_TO_DROP = {"Customer"}

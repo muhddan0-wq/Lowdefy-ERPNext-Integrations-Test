@@ -1,0 +1,6 @@
+work_order,production_item,wo_qty,item_code,item_name,scan_mode,batch_no,tracking_id,barcode,qty,uom,label_file,note
+MFG-WO-2026-00156,SA-HMECH-RH,28.0,RM-GEAR-RH,Gear & Crank Set (Rotary Hammer),"Scan item, then quantity",,,RM-GEAR-RH,28.0,Set,items/RM-GEAR-RH.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00156,SA-HMECH-RH,28.0,RM-PISTON-SET,Hammer Piston Striker & O-Ring Set,"Scan item, then quantity",,,RM-PISTON-SET,28.0,Set,items/RM-PISTON-SET.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00156,SA-HMECH-RH,28.0,RM-GEARCASE-AL,Aluminium Die-Cast Gear Case,"Scan item, then quantity",,,RM-GEARCASE-AL,28.0,Nos,items/RM-GEARCASE-AL.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00156,SA-HMECH-RH,28.0,RM-SDS-HOLD,SDS-Plus Tool Holder Assembly,"Scan item, then quantity",,,RM-SDS-HOLD,28.0,Nos,items/RM-SDS-HOLD.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00156,SA-HMECH-RH,28.0,RM-GREASE,Gearbox Grease,Confirm quantity,,,RM-GREASE,1.4,Kg,items/RM-GREASE.png,"no batch or unit label: scan the item code, then enter the quantity"

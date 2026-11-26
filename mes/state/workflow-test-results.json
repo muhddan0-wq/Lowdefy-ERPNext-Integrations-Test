@@ -1,0 +1,272 @@
+[
+  {
+    "id": "D1",
+    "criterion": "Finished products are discovered from active BOMs (every finished product, nothing else)",
+    "result": "PASS",
+    "evidence": "7 products found, 7 expected"
+  },
+  {
+    "id": "D2",
+    "criterion": "Sub-assemblies and raw materials are not reported as finished products",
+    "result": "PASS",
+    "evidence": "[]"
+  },
+  {
+    "id": "D3",
+    "criterion": "Nested BOM is retrieved: SA-MOT-L expands into its own components",
+    "result": "PASS",
+    "evidence": "['RM-BRG-6000', 'RM-BRG-6201', 'RM-BRUSH-6X8', 'RM-FAN-L', 'SA-ARM-L', 'SA-STA-L']"
+  },
+  {
+    "id": "D4",
+    "criterion": "Quantities are multiplied down the tree (per finished unit)",
+    "result": "PASS",
+    "evidence": "{'SA-ARM-L': (1.0, 1.0), 'SA-STA-L': (1.0, 1.0), 'RM-BRG-6000': (1.0, 1.0), 'RM-BRG-6201': (1.0, 1.0)}"
+  },
+  {
+    "id": "D5",
+    "criterion": "A component without a BOM is a normal material with no children",
+    "result": "PASS",
+    "evidence": "RM-BLADE-185"
+  },
+  {
+    "id": "D6",
+    "criterion": "An item with no image gets no guessed image and a 'No image' flag",
+    "result": "PASS",
+    "evidence": "35 nodes without image"
+  },
+  {
+    "id": "D7",
+    "criterion": "Images come from ERPNext Item.image, never from a name guess",
+    "result": "PASS",
+    "evidence": "FG-DRL-800: 26 components with images"
+  },
+  {
+    "id": "D8",
+    "criterion": "Circular BOM references are reported without infinite recursion",
+    "result": "NOT TESTED",
+    "evidence": "the sandbox has no circular BOM and this test does not write BOM master data; the cycle guard is in the prelude (mes_bom_node)"
+  },
+  {
+    "id": "D9",
+    "criterion": "BOM signature is stable for an unchanged BOM",
+    "result": "PASS",
+    "evidence": "repeatable"
+  },
+  {
+    "id": "P1",
+    "criterion": "Shopfloor user cannot use workflow discovery",
+    "result": "PASS",
+    "evidence": "denied"
+  },
+  {
+    "id": "G1-FG-CS-1400",
+    "criterion": "Draft generated from the BOM of FG-CS-1400: one step per direct component plus a final check",
+    "result": "FAIL",
+    "evidence": "13 steps (expected 10), status Draft"
+  },
+  {
+    "id": "G2-FG-CS-1400",
+    "criterion": "Every generated step is flagged for review and none is High confidence",
+    "result": "PASS",
+    "evidence": "['Expert Review', 'Missing Image']"
+  },
+  {
+    "id": "G3-FG-CS-1400",
+    "criterion": "Components without an image are flagged Missing Image in the draft",
+    "result": "PASS",
+    "evidence": "4"
+  },
+  {
+    "id": "G4-FG-CS-1400",
+    "criterion": "Sub-assemblies come first and their steps list the ERPNext components to build from",
+    "result": "PASS",
+    "evidence": "Build sub-assembly: Motor Assembly 1400W"
+  },
+  {
+    "id": "G5-FG-CS-1400",
+    "criterion": "A second generate is refused, so an existing draft is never silently replaced",
+    "result": "PASS",
+    "evidence": "refused (417)"
+  },
+  {
+    "id": "G1-FG-RH-800",
+    "criterion": "Draft generated from the BOM of FG-RH-800: one step per direct component plus a final check",
+    "result": "FAIL",
+    "evidence": "13 steps (expected 10), status Draft"
+  },
+  {
+    "id": "G2-FG-RH-800",
+    "criterion": "Every generated step is flagged for review and none is High confidence",
+    "result": "PASS",
+    "evidence": "['Expert Review', 'Missing Image']"
+  },
+  {
+    "id": "G3-FG-RH-800",
+    "criterion": "Components without an image are flagged Missing Image in the draft",
+    "result": "PASS",
+    "evidence": "3"
+  },
+  {
+    "id": "G4-FG-RH-800",
+    "criterion": "Sub-assemblies come first and their steps list the ERPNext components to build from",
+    "result": "PASS",
+    "evidence": "Build sub-assembly: Motor Assembly 800W"
+  },
+  {
+    "id": "G5-FG-RH-800",
+    "criterion": "A second generate is refused, so an existing draft is never silently replaced",
+    "result": "PASS",
+    "evidence": "refused (417)"
+  },
+  {
+    "id": "E1-FG-CS-1400",
+    "criterion": "Admin edits are saved as version 2 with every step stored",
+    "result": "PASS",
+    "evidence": "(2, 14)"
+  },
+  {
+    "id": "E2-FG-CS-1400",
+    "criterion": "A step pointing at an item that does not exist in ERPNext is rejected",
+    "result": "PASS",
+    "evidence": "frappe.exceptions.ValidationError: Step 15: item NOT-A-REAL-ITEM-9 does not exist in ERPNext"
+  },
+  {
+    "id": "E3-FG-CS-1400",
+    "criterion": "Version history keeps both saved versions",
+    "result": "PASS",
+    "evidence": "[(2, 'Draft'), (1, 'Draft')]"
+  },
+  {
+    "id": "E4-FG-CS-1400",
+    "criterion": "Original steps are kept after an edit (saving deletes nothing)",
+    "result": "PASS",
+    "evidence": "14"
+  },
+  {
+    "id": "E1-FG-RH-800",
+    "criterion": "Admin edits are saved as version 2 with every step stored",
+    "result": "PASS",
+    "evidence": "(2, 14)"
+  },
+  {
+    "id": "E2-FG-RH-800",
+    "criterion": "A step pointing at an item that does not exist in ERPNext is rejected",
+    "result": "PASS",
+    "evidence": "frappe.exceptions.ValidationError: Step 15: item NOT-A-REAL-ITEM-9 does not exist in ERPNext"
+  },
+  {
+    "id": "E3-FG-RH-800",
+    "criterion": "Version history keeps both saved versions",
+    "result": "PASS",
+    "evidence": "[(2, 'Draft'), (1, 'Draft')]"
+  },
+  {
+    "id": "E4-FG-RH-800",
+    "criterion": "Original steps are kept after an edit (saving deletes nothing)",
+    "result": "PASS",
+    "evidence": "14"
+  },
+  {
+    "id": "A1",
+    "criterion": "Approval makes the saved version live; the response lists every flagged step",
+    "result": "PASS",
+    "evidence": "approved v2, 13 warnings"
+  },
+  {
+    "id": "A2",
+    "criterion": "Approved steps are retrievable, each with its ERPNext image field",
+    "result": "PASS",
+    "evidence": "14"
+  },
+  {
+    "id": "A3",
+    "criterion": "Generating a new draft over an approved workflow is refused",
+    "result": "PASS",
+    "evidence": "refused"
+  },
+  {
+    "id": "J1",
+    "criterion": "Shopfloor job shows the approved workflow for its work order (dataset B)",
+    "result": "PASS",
+    "evidence": "v2, 14 steps"
+  },
+  {
+    "id": "J2",
+    "criterion": "Employee view carries no admin-only fields (review flags, source, notes)",
+    "result": "PASS",
+    "evidence": "['batch_required', 'checklist', 'comments', 'description', 'image', 'instructions', 'item_code', 'item_name']"
+  },
+  {
+    "id": "J3",
+    "criterion": "Exactly one step is Current",
+    "result": "PASS",
+    "evidence": "1"
+  },
+  {
+    "id": "J4",
+    "criterion": "Work order is bound to the approved version",
+    "result": "PASS",
+    "evidence": "2"
+  },
+  {
+    "id": "J5",
+    "criterion": "Material steps show the required quantity for this work order",
+    "result": "PASS",
+    "evidence": "[('SA-MOT-S', 25.0), ('SA-HSG-RH', 25.0), ('SA-HARN-S', 25.0)]"
+  },
+  {
+    "id": "J6",
+    "criterion": "A newer approved version does not change a work order already bound to an older one",
+    "result": "PASS",
+    "evidence": "still v2"
+  },
+  {
+    "id": "J7",
+    "criterion": "Product with no approved workflow shows status none and no steps, without error",
+    "result": "PASS",
+    "evidence": "none"
+  },
+  {
+    "id": "S1",
+    "criterion": "Sync check on an unchanged BOM reports In Sync",
+    "result": "PASS",
+    "evidence": "FG-CS-1400 In Sync"
+  },
+  {
+    "id": "S2",
+    "criterion": "A quantity change in the BOM flags the matching step for review",
+    "result": "PASS",
+    "evidence": "Quantity Changed"
+  },
+  {
+    "id": "S3",
+    "criterion": "A component removed from the BOM is reported and no step is added for it",
+    "result": "PASS",
+    "evidence": "Component Removed: NO-SUCH-COMPONENT-99 under FG-CS-1400 (was 1.0, now None)\nQuantity Changed: RM-BLADE-185 under FG-CS-1400 (was 3.0, now 1.0)"
+  },
+  {
+    "id": "S4",
+    "criterion": "Approved instructions are unchanged by the sync check",
+    "result": "PASS",
+    "evidence": "approved v2, 14 steps"
+  },
+  {
+    "id": "S5",
+    "criterion": "Steps and version history are not deleted by a sync",
+    "result": "PASS",
+    "evidence": "14 steps, 2 versions"
+  },
+  {
+    "id": "S6",
+    "criterion": "Acknowledging the BOM change returns the workflow to In Sync without regenerating instructions",
+    "result": "PASS",
+    "evidence": "In Sync"
+  },
+  {
+    "id": "P2",
+    "criterion": "Shopfloor user cannot approve workflows",
+    "result": "PASS",
+    "evidence": "denied"
+  }
+]

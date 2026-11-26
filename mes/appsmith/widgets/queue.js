@@ -1,11 +1,11 @@
 // Page: Workstation Queue (M6, operators / tablet). Data: mes_workstation_queue.
 // Actions use ERPNext's own whitelisted Job Card methods via /api/v2/document/Job Card/{name}/method/...
-const S = { ws: "", date: isoDate(new Date()), stations: [], d: null };
+const S = { ws: "", date: isoDate(new Date()), stations: [], d: null, err: {}, ok: {} };
 const V2 = (jc, m) => "/api/v2/document/Job%20Card/" + encodeURIComponent(jc) + "/method/" + m;
 const NO_EMPLOYEE = [{ employee: "" }]; // time logs without an employee (the API user has no Employee access)
 
 async function loadStations() {
-  const m = await MES.post("mes_workstation_queue", {}); // no workstation -> list of P1 workstations
+  const m = await MES.post("mes_workstation_queue", {}); // no workstation -> list of plant workstations
   S.stations = m.stations || [];
 }
 
@@ -32,7 +32,10 @@ function instructions(html) {
 function jobCard(j) {
   const left = Math.max(0, (j.qty || 0) - (j.completed_qty || 0));
   const btns = [];
-  if (j.state === "Not started") btns.push('<button class="btn big primary" data-do="start">▶ Start</button>');
+  const waiting = j.waiting_for || [];
+  if (j.state === "Not started") {
+    btns.push('<button class="btn big primary" data-do="start"' + (waiting.length ? " disabled" : "") + ">▶ Start</button>");
+  }
   if (j.state === "Running") btns.push('<button class="btn big" data-do="pause">❚❚ Pause</button>');
   if (j.state === "Paused") btns.push('<button class="btn big primary" data-do="resume">▶ Resume</button>');
   if (j.state === "Running" || j.state === "Paused") btns.push('<button class="btn big" style="background:#065f46;color:#fff;border-color:#065f46" data-do="complete">✔ Complete</button>');
@@ -42,7 +45,12 @@ function jobCard(j) {
     '<div class="grid2" style="margin:8px 0"><div class="kv"><div class="k">Item</div><div class="v">' + esc(j.item) + " · " + esc(j.item_name) + "</div></div>" +
     '<div class="kv"><div class="k">Quantity</div><div class="v">' + num(j.completed_qty, 0) + " / " + num(j.qty, 0) + "</div></div>" +
     '<div class="kv"><div class="k">Scheduled</div><div class="v">' + esc(fmtDT(j.scheduled_start)) + " → " + esc(fmtDT(j.scheduled_end)) + "</div></div></div>" +
-    instructions(j.work_instructions) + '<div class="row" style="margin-top:10px">' + btns.join("") + "</div></div>";
+    (waiting.length ? '<div class="banner info">⏳ Waiting for the previous operation: ' + waiting.map((w) =>
+      "<b>" + esc(w.operation) + "</b> (" + esc(w.job_card) + ", " + esc(w.status) + ")").join(", ") +
+      ". ERPNext only lets this job start once it is completed.</div>" : "") +
+    instructions(j.work_instructions) + '<div class="row" style="margin-top:10px">' + btns.join("") + "</div>" +
+    (S.err[j.job_card] ? '<div class="banner err">ERPNext refused: ' + esc(S.err[j.job_card]) + "</div>" : "") +
+    (S.ok[j.job_card] ? '<div class="banner ok">' + esc(S.ok[j.job_card]) + "</div>" : "") + "</div>";
 }
 
 function render() {
@@ -53,7 +61,7 @@ function render() {
     '<div class="row"><label class="f">Date<input type="date" id="f-date" value="' + esc(S.date) + '"></label><button class="btn" id="b-refresh">Refresh</button></div></div>' +
     '<div class="ws-grid">' + S.stations.map((w) =>
       '<button class="btn ws ' + (w.name === S.ws ? "primary" : "") + '" data-ws="' + esc(w.name) + '"><b>' + esc(w.name) + "</b><br><small>" +
-      esc(w.workstation_type.replace(/^P1 /, "")) + "</small></button>").join("") + "</div>" +
+      esc(noPrefix(w.workstation_type)) + "</small></button>").join("") + "</div>" +
     (!S.ws ? '<div class="card empty">Choose your workstation.</div>'
       : !d ? "" : (d.jobs.length
         ? '<p class="muted">' + d.jobs.filter((j) => j.state !== "Completed").length + " open job(s) on " + esc(d.workstation) + " up to " + esc(fmtD(d.date)) +
@@ -63,6 +71,8 @@ function render() {
 
 async function act(jc, what, left) {
   const now = isoDT(new Date());
+  delete S.err[jc];
+  delete S.ok[jc];
   try {
     if (what === "start") await MES.request("POST", V2(jc, "start_timer"), { start_time: now, employees: NO_EMPLOYEE });
     if (what === "pause") await MES.request("POST", V2(jc, "pause_job"), { end_time: now });
@@ -75,8 +85,10 @@ async function act(jc, what, left) {
       if (job && job.state === "Paused") await MES.request("POST", V2(jc, "resume_job"), { start_time: now, employees: NO_EMPLOYEE });
       await MES.request("POST", V2(jc, "complete_job_card"), { qty: Number(v.qty), end_time: isoDT(new Date()), auto_submit: 1 });
     }
+    S.ok[jc] = { start: "Started", pause: "Paused", resume: "Resumed", complete: "Completed and submitted" }[what] + " in ERPNext at " + now.slice(11, 16) + ".";
     toast(jc + ": " + what + " recorded in ERPNext");
   } catch (e) {
+    S.err[jc] = e.message || "Request failed";  // shown on the job card itself, not only as a toast
     toast(jc + ": " + e.message, "err");
   }
   await load();

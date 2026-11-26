@@ -401,7 +401,7 @@ def main(P, S):
     ideal_cycle_times(P, company)
     tag_forward_plan(company)
     frappe.db.commit()
-    phase("P1 scrap warehouse, P4 ideal cycle times, custom MES fields ready")
+    phase("scrap warehouse, ideal cycle times, custom MES fields ready")
     ops = operators(S, company)
     frappe.db.commit()
     phase(f"operators ready: {len(ops)}")

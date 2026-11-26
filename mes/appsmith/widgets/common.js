@@ -6,7 +6,7 @@
 const MES = (() => {
   const pending = {};
   const handled = new Set();
-  const ERP_DESK = "http://localhost:8000/desk/";
+  const ERP_DESK = "__ERP_PUBLIC_URL__/desk/";
 
   function uid() {
     return "r" + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
@@ -201,13 +201,27 @@ function setBusy(on) {
   document.body.classList.toggle("busy", !!on);
 }
 
+const SITE_PREFIX = "__SITE_PREFIX__";
+function noPrefix(s) {
+  s = String(s || "");
+  return SITE_PREFIX && s.indexOf(SITE_PREFIX) === 0 ? s.slice(SITE_PREFIX.length) : s;
+}
+
 function navBar(active) {
-  const pages = ["Work Orders", "Work Order Detail", "New Plan", "Schedule Board", "Capacity", "Workstation Queue"];
-  return '<nav class="nav"><b>MES · P1 Shah Alam</b>' + pages.map((p) =>
+  const pages = ["Work Orders", "New Plan", "Schedule Board", "Capacity", "Workstation Queue", "Shopfloor", "Plant Dashboard", "Shopfloor Admin"];
+  return '<nav class="nav"><b>MES · __PLANT_NAME__</b>' + pages.map((p) =>
     '<a href="#" data-nav="' + esc(p) + '" class="' + (p === active ? "on" : "") + '">' + esc(p) + "</a>").join("") + "</nav>";
 }
 
 document.addEventListener("click", (e) => {
+  // External links (ERPNext desk) must not open from inside the sandboxed widget frame: the new tab would inherit the
+  // sandbox, so ERPNext could not use its login cookie and the page hangs. Hand them to Appsmith's navigateTo instead.
+  const ext = e.target.closest && e.target.closest("a[href^='http']");
+  if (ext) {
+    e.preventDefault();
+    appsmith.triggerEvent("onNavigate", { page: ext.getAttribute("href"), params: {} });
+    return;
+  }
   const a = e.target.closest && e.target.closest("[data-nav]");
   if (a) {
     e.preventDefault();

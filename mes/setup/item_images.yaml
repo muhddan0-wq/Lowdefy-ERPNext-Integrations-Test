@@ -1,0 +1,48 @@
+# Item image import mapping for mes/setup/import_item_images.py.
+# Automatic matching runs first: exact item code, then exact item name, then normalised name.
+# "manual" pins a file to an item after a human has confirmed the match.
+# "hold" keeps a file unassigned and records why. A file in neither list that does not match automatically is reported as unmatched.
+
+manual:
+  "ElectricDrill.jpg": FG-DRL-800
+  "RotaryHammerDrill.jpg": FG-RH-800
+  "Circular Saw.jpg": FG-CS-1400
+  "Commutator.jpg": RM-COMM-24
+  "AluminiukGear.jpg": RM-GEARCASE-AL
+  "AluminiumBaseplate.jpg": RM-BASE-CS
+  "SawBlade185mm.jpg": RM-BLADE-185
+  "PowerCord.jpg": RM-CABLE
+  "KeylessChuck.jpg": RM-CHUCK-13
+  "CarbonBrushSet.jpg": RM-BRUSH-6X8
+  "HammerMechanism.png": SA-HMECH-RH
+  "DrillGearBox.jpg": SA-GBX-DRL
+  "BladeGuardBaseplate.jpg": SA-GUARD-CS
+  "SteelBladeGuard.jpg": RM-GUARD-CS
+  "CordStrainRelief.jpg": RM-STRAIN
+  "GearGrease.jpg": RM-GREASE
+  "SawSpindle.jpg": RM-SPINDLE-CS
+  "SlideHandle&DepthRod.jpg": RM-SIDE-HDL
+  "Piston&RamSet.jpg": RM-PISTON-SET
+  "SDSPlusChuck.jpg": RM-SDS-HOLD
+  "DrillArmature.jpg": SA-ARM-S
+  "SawArmature.jpg": SA-ARM-L
+  "DrillMotor.jpg": SA-MOT-S
+  "SawMotor.jpg": SA-MOT-L
+  "DrillHousing.jpg": SA-HSG-DRL
+  "HammerHousing.jpg": SA-HSG-RH
+  "Saw&HousingHandle.jpeg": SA-HSG-CS
+  "Switch&WiringHarness.jpg": SA-HARN-S
+  "DrillArmatureShaft.jpg": RM-SHAFT-S
+  "SawArmatureShaft.jpg": RM-SHAFT-L
+  "StatorCore.jpg": RM-LAM-STA-L
+  "SteelLamination.jpg": RM-LAM-ARM-L
+  "WireMagnet.jpg": RM-CU-WIRE
+  "InsulationLiner.jpg": RM-INS-PAPER
+  "M4Screw.jpg": RM-SCREW-KIT
+  "Carton&FoamInsert.jpg": RM-BOX-S
+  "PinionGear.jpg": RM-GEAR-DRL
+  "TriggerSwitch.jpg": RM-SW-TRIG
+  "CoolingFan.jpg": RM-FAN-S
+
+hold:
+  "Ball Bearing 6001ZZ.jpg": "Different part: ERPNext has 6000ZZ, 608ZZ and 6201ZZ, not 6001ZZ"

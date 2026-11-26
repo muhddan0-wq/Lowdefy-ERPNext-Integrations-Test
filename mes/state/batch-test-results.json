@@ -1,0 +1,128 @@
+[
+ {
+  "id": "P1",
+  "criterion": "API user can read Batch",
+  "result": "PASS",
+  "evidence": "GET /api/resource/Batch -> 200"
+ },
+ {
+  "id": "P2",
+  "criterion": "API user cannot read Maintenance Request, Issue or Asset",
+  "result": "PASS",
+  "evidence": "{'Maintenance Request': 403, 'Issue': 403, 'Asset': 403}"
+ },
+ {
+  "id": "T1",
+  "criterion": "A Manufacturing User (no Stock or System Manager role) cannot create tracked units in bulk",
+  "result": "PASS",
+  "evidence": "API user roles ['MES Batch Reader', 'Manufacturing Manager', 'Manufacturing User', 'Stock User']; HTTP {'bulk_transfer_tracked_items': 403, 'bulk_create_tracked_items': 403, 'bulk_transfer_all_stock_items': 403}; Tracked Items 691 -> 691"
+ },
+ {
+  "id": "B1",
+  "criterion": "One batch ID is created for 75 units with one stock receipt",
+  "result": "PASS",
+  "evidence": "200 {'item_code': 'RM-SIDE-HDL-B', 'batch_id': 'RM-SIDE-HDL-B-ACC-20261126125750', 'warehouse': 'P1 Stores - VPT', 'stock_entry': 'MAT-STE-2026-00100', 'status': 'created', 'qty': 75.0}; batch_qty 75.0"
+ },
+ {
+  "id": "B2",
+  "criterion": "Batch receipts do not create per-unit Tracked Items (item_tracking skips has_batch_no items)",
+  "result": "PASS",
+  "evidence": "Tracked Items for RM-SIDE-HDL-B: 45 -> 45"
+ },
+ {
+  "id": "B3",
+  "criterion": "A second create with the same batch ID is idempotent (no second receipt)",
+  "result": "PASS",
+  "evidence": "200 {'item_code': 'RM-SIDE-HDL-B', 'batch_id': 'RM-SIDE-HDL-B-ACC-20261126125750', 'warehouse': 'P1 Stores - VPT', 'stock_entry': None, 'status': 'exists'}; batch_qty 75.0"
+ },
+ {
+  "id": "N1",
+  "criterion": "A new batch gets an 8-digit number from the sequence it shares with unit serials",
+  "result": "PASS",
+  "evidence": "200 00000709; highest unit serial 702"
+ },
+ {
+  "id": "N5",
+  "criterion": "A batch that ERPNext names itself on a receipt gets the next shared 8-digit number (item_tracking hook)",
+  "result": "PASS",
+  "evidence": "MAT-STE-2026-00101 created batch 00000710"
+ },
+ {
+  "id": "N2",
+  "criterion": "The desk scanner resolves a unit's 8-digit barcode to its tracked unit",
+  "result": "PASS",
+  "evidence": "00000106 -> SA-HSG-DRL-0001"
+ },
+ {
+  "id": "S1",
+  "criterion": "Scanning the item code of a batch-tracked material is refused",
+  "result": "PASS",
+  "evidence": "RM-SIDE-HDL-B is tracked by batch: scan the batch label, not the item code"
+ },
+ {
+  "id": "S2",
+  "criterion": "A batch of an item that is not on the work order is rejected",
+  "result": "PASS",
+  "evidence": "00000457 (FG-DRL-800-B): Incorrect item: FG-DRL-800-B 13mm Electric Drill 800W (batch) is not required for work order MFG-WO-2026-00164. Expected: SA-MOT-S, SA-HSG-DRL, SA-HARN-S, SA-GBX-DRL, RM-CHUCK-13-B, RM-SIDE-HDL-B, RM-SCREW-KIT-B, RM-BOX-S-B, RM-LABEL-B, RM-MANUAL-B"
+ },
+ {
+  "id": "S3",
+  "criterion": "An expired batch is rejected",
+  "result": "PASS",
+  "evidence": "RM-SIDE-HDL-B-EXP-20261126125750: Batch RM-SIDE-HDL-B-EXP-20261126125750 expired on 2026-11-25"
+ },
+ {
+  "id": "S4",
+  "criterion": "A batch with less free quantity than entered is rejected",
+  "result": "PASS",
+  "evidence": "RM-SIDE-HDL-B-LOW-20261126125750 (qty 1), scanned 2: Not enough in batch RM-SIDE-HDL-B-LOW-20261126125750: only 1.0 Nos free"
+ },
+ {
+  "id": "S5",
+  "criterion": "Every rejected scan is stored in the MES scan log with its reason",
+  "result": "PASS",
+  "evidence": "[('MES-SCN-00302', 'RM-SIDE-HDL-B is tracked by batch: scan the batch '), ('MES-SCN-00303', 'Incorrect item: FG-DRL-800-B 13mm Electric Drill 8'), ('MES-SCN-00304', 'Batch RM-SIDE-HDL-B-EXP-20261126125750 expired on '), ('MES-SCN-00305', 'Not enough in batch RM-SIDE-HDL-B-LOW-202611261257')]"
+ },
+ {
+  "id": "S6",
+  "criterion": "The batch label is scanned once and the remaining requirement is taken from it",
+  "result": "PASS",
+  "evidence": "('Valid', 2.0, 'Verified from batch RM-SIDE-HDL-B-ACC-20261126125750')"
+ },
+ {
+  "id": "N3",
+  "criterion": "Unit labels scanned by their 8-digit barcode are verified as the right tracked unit in the MES",
+  "result": "PASS",
+  "evidence": "[('00000106', 'SA-HSG-DRL-0001', 'SA-HSG-DRL-0001', True), ('00000115', 'SA-HSG-DRL-0010', 'SA-HSG-DRL-0010', True), ('00000151', 'SA-GBX-DRL-0001', 'SA-GBX-DRL-0001', True), ('00000160', 'SA-GBX-DRL-0010', 'SA-GBX-DRL-0010', True), ('00000077', 'SA-HARN-S-0002', 'SA-HARN-S-0002', True), ('00000078', 'SA-HARN-S-0003', 'SA-HARN-S-0003', True)]"
+ },
+ {
+  "id": "W1",
+  "criterion": "Issuing materials moves the scanned batch (ERPNext Material Transfer for Manufacture)",
+  "result": "PASS",
+  "evidence": "200 MAT-STE-2026-00103; RM-SIDE-HDL-B rows [('RM-SIDE-HDL-B', 'RM-SIDE-HDL-B-ACC-20261126125750', 2.0)]"
+ },
+ {
+  "id": "W2",
+  "criterion": "Finishing consumes the batch quantity through ERPNext (75 received, 2.0 used)",
+  "result": "PASS",
+  "evidence": "200 MAT-STE-2026-00104; job cards completed; RM-SIDE-HDL-B-ACC-20261126125750 batch_qty now 73.0"
+ },
+ {
+  "id": "W3",
+  "criterion": "The finished-goods batch is created and records the input batches it used",
+  "result": "PASS",
+  "evidence": "output 00000711 qty 2.0; inputs [('RM-CHUCK-13-B', '00000704', 2.0), ('RM-SIDE-HDL-B', 'RM-SIDE-HDL-B-ACC-20261126125750', 2.0), ('RM-SCREW-KIT-B', '00000707', 2.0), ('RM-BOX-S-B', 'RM-BOX-S-B-ACC-20261126113513', 2.0), ('RM-LABEL-B', '00000705', 2.0), ('RM-MANUAL-B', '00000706', 2.0)]"
+ },
+ {
+  "id": "N4",
+  "criterion": "The finished-goods output batch is numbered from the shared sequence",
+  "result": "PASS",
+  "evidence": "00000711"
+ },
+ {
+  "id": "L1",
+  "criterion": "One call prints one CODE128 label per batch (Barcode Printing document + label images)",
+  "result": "PASS",
+  "evidence": "200 {'barcode_printing': 'BP-2026-11-26-00014', 'labels': [('RM-SIDE-HDL-B-ACC-20261126125750', 73.0, '2026-11-26'), ('RM-SIDE-HDL-B-LOW-20261126125750', 1.0, '2026-11-26'), ('00000711', 2.0, '2026-11-26')]}"
+ }
+]

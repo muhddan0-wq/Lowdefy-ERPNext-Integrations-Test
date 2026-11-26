@@ -1,0 +1,366 @@
+work_order,production_item,wo_qty,item_code,item_name,scan_mode,batch_no,tracking_id,barcode,qty,uom,label_file,note
+MFG-WO-2026-00145,SA-ARM-S,35.0,RM-SHAFT-S,Armature Shaft 8mm,"Scan item, then quantity",,,RM-SHAFT-S,35.0,Nos,items/RM-SHAFT-S.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00145,SA-ARM-S,35.0,RM-LAM-ARM-S,Armature Lamination Stack 35mm,"Scan item, then quantity",,,RM-LAM-ARM-S,35.0,Nos,items/RM-LAM-ARM-S.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00145,SA-ARM-S,35.0,RM-COMM-24,Commutator 24-Bar,"Scan item, then quantity",,,RM-COMM-24,35.0,Nos,items/RM-COMM-24.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00145,SA-ARM-S,35.0,RM-CU-WIRE,Enamelled Copper Wire 0.45mm,Confirm quantity,,,RM-CU-WIRE,6.3,Kg,items/RM-CU-WIRE.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00145,SA-ARM-S,35.0,RM-INS-PAPER,Slot Insulation Paper,Confirm quantity,,,RM-INS-PAPER,21.0,Meter,items/RM-INS-PAPER.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00145,SA-ARM-S,35.0,RM-VARNISH,Insulating Impregnation Varnish,Confirm quantity,,,RM-VARNISH,0.7,Litre,items/RM-VARNISH.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00146,SA-STA-S,45.0,RM-LAM-STA-S,Stator Lamination Stack 35mm,"Scan item, then quantity",,,RM-LAM-STA-S,45.0,Nos,items/RM-LAM-STA-S.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00146,SA-STA-S,45.0,RM-CU-WIRE,Enamelled Copper Wire 0.45mm,Confirm quantity,,,RM-CU-WIRE,9.9,Kg,items/RM-CU-WIRE.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00146,SA-STA-S,45.0,RM-INS-PAPER,Slot Insulation Paper,Confirm quantity,,,RM-INS-PAPER,36.0,Meter,items/RM-INS-PAPER.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00146,SA-STA-S,45.0,RM-VARNISH,Insulating Impregnation Varnish,Confirm quantity,,,RM-VARNISH,0.9,Litre,items/RM-VARNISH.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00147,SA-ARM-L,38.0,RM-SHAFT-L,Armature Shaft 10mm,"Scan item, then quantity",,,RM-SHAFT-L,38.0,Nos,items/RM-SHAFT-L.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00147,SA-ARM-L,38.0,RM-LAM-ARM-L,Armature Lamination Stack 50mm,"Scan item, then quantity",,,RM-LAM-ARM-L,38.0,Nos,items/RM-LAM-ARM-L.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00147,SA-ARM-L,38.0,RM-COMM-24,Commutator 24-Bar,"Scan item, then quantity",,,RM-COMM-24,38.0,Nos,items/RM-COMM-24.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00147,SA-ARM-L,38.0,RM-CU-WIRE,Enamelled Copper Wire 0.45mm,Confirm quantity,,,RM-CU-WIRE,11.4,Kg,items/RM-CU-WIRE.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00147,SA-ARM-L,38.0,RM-INS-PAPER,Slot Insulation Paper,Confirm quantity,,,RM-INS-PAPER,30.4,Meter,items/RM-INS-PAPER.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00147,SA-ARM-L,38.0,RM-VARNISH,Insulating Impregnation Varnish,Confirm quantity,,,RM-VARNISH,1.14,Litre,items/RM-VARNISH.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00148,SA-STA-L,42.0,RM-LAM-STA-L,Stator Lamination Stack 50mm,"Scan item, then quantity",,,RM-LAM-STA-L,42.0,Nos,items/RM-LAM-STA-L.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00148,SA-STA-L,42.0,RM-CU-WIRE,Enamelled Copper Wire 0.45mm,Confirm quantity,,,RM-CU-WIRE,14.7,Kg,items/RM-CU-WIRE.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00148,SA-STA-L,42.0,RM-INS-PAPER,Slot Insulation Paper,Confirm quantity,,,RM-INS-PAPER,42.0,Meter,items/RM-INS-PAPER.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00148,SA-STA-L,42.0,RM-VARNISH,Insulating Impregnation Varnish,Confirm quantity,,,RM-VARNISH,1.26,Litre,items/RM-VARNISH.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00149,SA-MOT-S,40.0,SA-ARM-S,Wound Armature 800W,"Scan item, then quantity",,,SA-ARM-S,40.0,Nos,items/SA-ARM-S.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00149,SA-MOT-S,40.0,SA-STA-S,Wound Stator 800W,"Scan item, then quantity",,,SA-STA-S,40.0,Nos,items/SA-STA-S.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00149,SA-MOT-S,40.0,RM-BRG-608,Ball Bearing 608ZZ,"Scan item, then quantity",,,RM-BRG-608,40.0,Nos,items/RM-BRG-608.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00149,SA-MOT-S,40.0,RM-BRG-6000,Ball Bearing 6000ZZ,"Scan item, then quantity",,,RM-BRG-6000,40.0,Nos,items/RM-BRG-6000.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00149,SA-MOT-S,40.0,RM-BRUSH-6X8,Carbon Brush 6x8mm,"Scan item, then quantity",,,RM-BRUSH-6X8,40.0,Pair,items/RM-BRUSH-6X8.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00149,SA-MOT-S,40.0,RM-FAN-S,Motor Cooling Fan 48mm,"Scan item, then quantity",,,RM-FAN-S,40.0,Nos,items/RM-FAN-S.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00150,SA-MOT-L,16.0,SA-ARM-L,Wound Armature 1400W,"Scan item, then quantity",,,SA-ARM-L,16.0,Nos,items/SA-ARM-L.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00150,SA-MOT-L,16.0,SA-STA-L,Wound Stator 1400W,"Scan item, then quantity",,,SA-STA-L,16.0,Nos,items/SA-STA-L.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00150,SA-MOT-L,16.0,RM-BRG-6000,Ball Bearing 6000ZZ,"Scan item, then quantity",,,RM-BRG-6000,16.0,Nos,items/RM-BRG-6000.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00150,SA-MOT-L,16.0,RM-BRG-6201,Ball Bearing 6201ZZ,"Scan item, then quantity",,,RM-BRG-6201,16.0,Nos,items/RM-BRG-6201.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00150,SA-MOT-L,16.0,RM-BRUSH-6X8,Carbon Brush 6x8mm,"Scan item, then quantity",,,RM-BRUSH-6X8,16.0,Pair,items/RM-BRUSH-6X8.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00150,SA-MOT-L,16.0,RM-FAN-L,Motor Cooling Fan 62mm,"Scan item, then quantity",,,RM-FAN-L,16.0,Nos,items/RM-FAN-L.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00151,SA-HARN-S,50.0,RM-SW-TRIG,Trigger Switch with Speed Control 10A,"Scan item, then quantity",,,RM-SW-TRIG,50.0,Nos,items/RM-SW-TRIG.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00151,SA-HARN-S,50.0,RM-CABLE,Power Cable 2.5m with BS1363 Plug,"Scan item, then quantity",,,RM-CABLE,50.0,Nos,items/RM-CABLE.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00151,SA-HARN-S,50.0,RM-STRAIN,Cable Strain Relief Sleeve,"Scan item, then quantity",,,RM-STRAIN,50.0,Nos,items/RM-STRAIN.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00152,SA-HARN-L,33.0,RM-SW-SAW,Trigger Switch with Lock-Off 16A,"Scan item, then quantity",,,RM-SW-SAW,33.0,Nos,items/RM-SW-SAW.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00152,SA-HARN-L,33.0,RM-CABLE,Power Cable 2.5m with BS1363 Plug,"Scan item, then quantity",,,RM-CABLE,33.0,Nos,items/RM-CABLE.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00152,SA-HARN-L,33.0,RM-STRAIN,Cable Strain Relief Sleeve,"Scan item, then quantity",,,RM-STRAIN,33.0,Nos,items/RM-STRAIN.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00153,SA-HSG-DRL,12.0,RM-ABS-GRN,ABS Resin Granules (Black),Confirm quantity,,,RM-ABS-GRN,5.04,Kg,items/RM-ABS-GRN.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00153,SA-HSG-DRL,12.0,RM-TPE-GRN,TPE Soft-Grip Granules,Confirm quantity,,,RM-TPE-GRN,0.6,Kg,items/RM-TPE-GRN.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00154,SA-GBX-DRL,18.0,RM-GEAR-DRL,Helical Gear Set (Drill),"Scan item, then quantity",,,RM-GEAR-DRL,18.0,Set,items/RM-GEAR-DRL.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00154,SA-GBX-DRL,18.0,RM-GEARCASE-AL,Aluminium Die-Cast Gear Case,"Scan item, then quantity",,,RM-GEARCASE-AL,18.0,Nos,items/RM-GEARCASE-AL.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00154,SA-GBX-DRL,18.0,RM-BRG-608,Ball Bearing 608ZZ,"Scan item, then quantity",,,RM-BRG-608,18.0,Nos,items/RM-BRG-608.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00154,SA-GBX-DRL,18.0,RM-GREASE,Gearbox Grease,Confirm quantity,,,RM-GREASE,0.54,Kg,items/RM-GREASE.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00155,SA-HSG-RH,22.0,RM-PA6GF-GRN,PA6 30% Glass-Filled Granules,Confirm quantity,,,RM-PA6GF-GRN,14.3,Kg,items/RM-PA6GF-GRN.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00155,SA-HSG-RH,22.0,RM-TPE-GRN,TPE Soft-Grip Granules,Confirm quantity,,,RM-TPE-GRN,1.32,Kg,items/RM-TPE-GRN.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00156,SA-HMECH-RH,28.0,RM-GEAR-RH,Gear & Crank Set (Rotary Hammer),"Scan item, then quantity",,,RM-GEAR-RH,28.0,Set,items/RM-GEAR-RH.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00156,SA-HMECH-RH,28.0,RM-PISTON-SET,Hammer Piston Striker & O-Ring Set,"Scan item, then quantity",,,RM-PISTON-SET,28.0,Set,items/RM-PISTON-SET.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00156,SA-HMECH-RH,28.0,RM-GEARCASE-AL,Aluminium Die-Cast Gear Case,"Scan item, then quantity",,,RM-GEARCASE-AL,28.0,Nos,items/RM-GEARCASE-AL.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00156,SA-HMECH-RH,28.0,RM-SDS-HOLD,SDS-Plus Tool Holder Assembly,"Scan item, then quantity",,,RM-SDS-HOLD,28.0,Nos,items/RM-SDS-HOLD.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00156,SA-HMECH-RH,28.0,RM-GREASE,Gearbox Grease,Confirm quantity,,,RM-GREASE,1.4,Kg,items/RM-GREASE.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00157,SA-HSG-CS,10.0,RM-PA6GF-GRN,PA6 30% Glass-Filled Granules,Confirm quantity,,,RM-PA6GF-GRN,8.0,Kg,items/RM-PA6GF-GRN.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00157,SA-HSG-CS,10.0,RM-TPE-GRN,TPE Soft-Grip Granules,Confirm quantity,,,RM-TPE-GRN,0.7,Kg,items/RM-TPE-GRN.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00158,SA-GUARD-CS,26.0,RM-BASE-CS,Aluminium Base Plate 185mm,"Scan item, then quantity",,,RM-BASE-CS,26.0,Nos,items/RM-BASE-CS.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00158,SA-GUARD-CS,26.0,RM-GUARD-CS,Steel Upper Blade Guard,"Scan item, then quantity",,,RM-GUARD-CS,26.0,Nos,items/RM-GUARD-CS.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00158,SA-GUARD-CS,26.0,RM-LGUARD-CS,Retractable Lower Guard with Spring,"Scan item, then quantity",,,RM-LGUARD-CS,26.0,Nos,items/RM-LGUARD-CS.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00158,SA-GUARD-CS,26.0,RM-SPINDLE-CS,Saw Spindle with Blade Flange,"Scan item, then quantity",,,RM-SPINDLE-CS,26.0,Nos,items/RM-SPINDLE-CS.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00158,SA-GUARD-CS,26.0,RM-BRG-6201,Ball Bearing 6201ZZ,"Scan item, then quantity",,,RM-BRG-6201,26.0,Nos,items/RM-BRG-6201.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0088,00000678,1,Nos,units/SA-MOT-S/SA-MOT-S-0088.png,SN-00000678
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0089,00000679,1,Nos,units/SA-MOT-S/SA-MOT-S-0089.png,SN-00000679
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0090,00000680,1,Nos,units/SA-MOT-S/SA-MOT-S-0090.png,SN-00000680
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0091,00000681,1,Nos,units/SA-MOT-S/SA-MOT-S-0091.png,SN-00000681
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0092,00000682,1,Nos,units/SA-MOT-S/SA-MOT-S-0092.png,SN-00000682
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0093,00000683,1,Nos,units/SA-MOT-S/SA-MOT-S-0093.png,SN-00000683
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0094,00000684,1,Nos,units/SA-MOT-S/SA-MOT-S-0094.png,SN-00000684
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0095,00000685,1,Nos,units/SA-MOT-S/SA-MOT-S-0095.png,SN-00000685
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0096,00000686,1,Nos,units/SA-MOT-S/SA-MOT-S-0096.png,SN-00000686
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0097,00000687,1,Nos,units/SA-MOT-S/SA-MOT-S-0097.png,SN-00000687
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0098,00000688,1,Nos,units/SA-MOT-S/SA-MOT-S-0098.png,SN-00000688
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0099,00000689,1,Nos,units/SA-MOT-S/SA-MOT-S-0099.png,SN-00000689
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0100,00000690,1,Nos,units/SA-MOT-S/SA-MOT-S-0100.png,SN-00000690
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0101,00000691,1,Nos,units/SA-MOT-S/SA-MOT-S-0101.png,SN-00000691
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0102,00000692,1,Nos,units/SA-MOT-S/SA-MOT-S-0102.png,SN-00000692
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0103,00000693,1,Nos,units/SA-MOT-S/SA-MOT-S-0103.png,SN-00000693
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0104,00000694,1,Nos,units/SA-MOT-S/SA-MOT-S-0104.png,SN-00000694
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0105,00000695,1,Nos,units/SA-MOT-S/SA-MOT-S-0105.png,SN-00000695
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0106,00000696,1,Nos,units/SA-MOT-S/SA-MOT-S-0106.png,SN-00000696
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0107,00000697,1,Nos,units/SA-MOT-S/SA-MOT-S-0107.png,SN-00000697
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0108,00000698,1,Nos,units/SA-MOT-S/SA-MOT-S-0108.png,SN-00000698
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0109,00000699,1,Nos,units/SA-MOT-S/SA-MOT-S-0109.png,SN-00000699
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0110,00000700,1,Nos,units/SA-MOT-S/SA-MOT-S-0110.png,SN-00000700
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0111,00000701,1,Nos,units/SA-MOT-S/SA-MOT-S-0111.png,SN-00000701
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0112,00000702,1,Nos,units/SA-MOT-S/SA-MOT-S-0112.png,SN-00000702
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0113,00000720,1,Nos,units/SA-MOT-S/SA-MOT-S-0113.png,SN-00000720
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0114,00000721,1,Nos,units/SA-MOT-S/SA-MOT-S-0114.png,SN-00000721
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0115,00000722,1,Nos,units/SA-MOT-S/SA-MOT-S-0115.png,SN-00000722
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0116,00000727,1,Nos,units/SA-MOT-S/SA-MOT-S-0116.png,SN-00000727
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0117,00000728,1,Nos,units/SA-MOT-S/SA-MOT-S-0117.png,SN-00000728
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0084,00000591,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0084.png,SN-00000591
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0085,00000592,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0085.png,SN-00000592
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0086,00000593,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0086.png,SN-00000593
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0087,00000594,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0087.png,SN-00000594
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0088,00000595,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0088.png,SN-00000595
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0089,00000596,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0089.png,SN-00000596
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0090,00000597,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0090.png,SN-00000597
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0091,00000598,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0091.png,SN-00000598
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0092,00000599,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0092.png,SN-00000599
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0093,00000600,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0093.png,SN-00000600
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0094,00000601,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0094.png,SN-00000601
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0095,00000602,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0095.png,SN-00000602
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0096,00000603,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0096.png,SN-00000603
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0097,00000604,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0097.png,SN-00000604
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0098,00000605,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0098.png,SN-00000605
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0099,00000606,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0099.png,SN-00000606
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0100,00000607,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0100.png,SN-00000607
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0101,00000608,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0101.png,SN-00000608
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0102,00000609,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0102.png,SN-00000609
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0103,00000610,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0103.png,SN-00000610
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0104,00000611,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0104.png,SN-00000611
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0105,00000612,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0105.png,SN-00000612
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0106,00000613,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0106.png,SN-00000613
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0107,00000614,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0107.png,SN-00000614
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0108,00000615,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0108.png,SN-00000615
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0109,00000717,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0109.png,SN-00000717
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0110,00000718,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0110.png,SN-00000718
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0111,00000719,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0111.png,SN-00000719
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0112,00000725,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0112.png,SN-00000725
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0113,00000726,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0113.png,SN-00000726
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0059,00000533,1,Nos,units/SA-HARN-S/SA-HARN-S-0059.png,SN-00000533
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0060,00000534,1,Nos,units/SA-HARN-S/SA-HARN-S-0060.png,SN-00000534
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0061,00000535,1,Nos,units/SA-HARN-S/SA-HARN-S-0061.png,SN-00000535
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0062,00000536,1,Nos,units/SA-HARN-S/SA-HARN-S-0062.png,SN-00000536
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0063,00000537,1,Nos,units/SA-HARN-S/SA-HARN-S-0063.png,SN-00000537
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0064,00000538,1,Nos,units/SA-HARN-S/SA-HARN-S-0064.png,SN-00000538
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0065,00000539,1,Nos,units/SA-HARN-S/SA-HARN-S-0065.png,SN-00000539
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0066,00000540,1,Nos,units/SA-HARN-S/SA-HARN-S-0066.png,SN-00000540
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0067,00000541,1,Nos,units/SA-HARN-S/SA-HARN-S-0067.png,SN-00000541
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0068,00000542,1,Nos,units/SA-HARN-S/SA-HARN-S-0068.png,SN-00000542
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0069,00000543,1,Nos,units/SA-HARN-S/SA-HARN-S-0069.png,SN-00000543
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0070,00000544,1,Nos,units/SA-HARN-S/SA-HARN-S-0070.png,SN-00000544
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0071,00000545,1,Nos,units/SA-HARN-S/SA-HARN-S-0071.png,SN-00000545
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0072,00000546,1,Nos,units/SA-HARN-S/SA-HARN-S-0072.png,SN-00000546
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0073,00000547,1,Nos,units/SA-HARN-S/SA-HARN-S-0073.png,SN-00000547
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0074,00000548,1,Nos,units/SA-HARN-S/SA-HARN-S-0074.png,SN-00000548
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0075,00000549,1,Nos,units/SA-HARN-S/SA-HARN-S-0075.png,SN-00000549
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0076,00000550,1,Nos,units/SA-HARN-S/SA-HARN-S-0076.png,SN-00000550
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0077,00000551,1,Nos,units/SA-HARN-S/SA-HARN-S-0077.png,SN-00000551
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0078,00000552,1,Nos,units/SA-HARN-S/SA-HARN-S-0078.png,SN-00000552
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0079,00000553,1,Nos,units/SA-HARN-S/SA-HARN-S-0079.png,SN-00000553
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0080,00000554,1,Nos,units/SA-HARN-S/SA-HARN-S-0080.png,SN-00000554
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0081,00000555,1,Nos,units/SA-HARN-S/SA-HARN-S-0081.png,SN-00000555
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0082,00000556,1,Nos,units/SA-HARN-S/SA-HARN-S-0082.png,SN-00000556
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0083,00000557,1,Nos,units/SA-HARN-S/SA-HARN-S-0083.png,SN-00000557
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0084,00000558,1,Nos,units/SA-HARN-S/SA-HARN-S-0084.png,SN-00000558
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0085,00000559,1,Nos,units/SA-HARN-S/SA-HARN-S-0085.png,SN-00000559
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0086,00000560,1,Nos,units/SA-HARN-S/SA-HARN-S-0086.png,SN-00000560
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0087,00000715,1,Nos,units/SA-HARN-S/SA-HARN-S-0087.png,SN-00000715
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0088,00000716,1,Nos,units/SA-HARN-S/SA-HARN-S-0088.png,SN-00000716
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0072,00000495,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0072.png,SN-00000495
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0073,00000496,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0073.png,SN-00000496
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0074,00000497,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0074.png,SN-00000497
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0075,00000498,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0075.png,SN-00000498
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0076,00000499,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0076.png,SN-00000499
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0077,00000500,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0077.png,SN-00000500
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0078,00000501,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0078.png,SN-00000501
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0079,00000502,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0079.png,SN-00000502
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0080,00000503,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0080.png,SN-00000503
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0081,00000504,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0081.png,SN-00000504
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0082,00000505,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0082.png,SN-00000505
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0083,00000506,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0083.png,SN-00000506
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0084,00000507,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0084.png,SN-00000507
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0085,00000508,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0085.png,SN-00000508
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0086,00000509,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0086.png,SN-00000509
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0087,00000510,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0087.png,SN-00000510
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0088,00000511,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0088.png,SN-00000511
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0089,00000512,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0089.png,SN-00000512
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0090,00000513,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0090.png,SN-00000513
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0091,00000514,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0091.png,SN-00000514
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0092,00000515,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0092.png,SN-00000515
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0093,00000516,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0093.png,SN-00000516
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0094,00000517,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0094.png,SN-00000517
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0095,00000518,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0095.png,SN-00000518
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0096,00000519,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0096.png,SN-00000519
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0097,00000712,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0097.png,SN-00000712
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0098,00000713,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0098.png,SN-00000713
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0099,00000714,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0099.png,SN-00000714
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0100,00000723,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0100.png,SN-00000723
+MFG-WO-2026-00159,FG-DRL-800,30.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0101,00000724,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0101.png,SN-00000724
+MFG-WO-2026-00159,FG-DRL-800,30.0,RM-CHUCK-13-B,Keyless Chuck 13mm,"Scan batch label, then quantity",00000458,,00000458,30.0,Nos,batches/00000458.png,batch holds 48.0 in P1 Stores - VPT; the station counts only what this order still needs
+MFG-WO-2026-00159,FG-DRL-800,30.0,RM-SIDE-HDL-B,Auxiliary Side Handle with Depth Gauge,"Scan batch label, then quantity",00000459,,00000459,30.0,Nos,batches/00000459.png,batch holds 50.0 in P1 Stores - VPT; the station counts only what this order still needs
+MFG-WO-2026-00159,FG-DRL-800,30.0,RM-SCREW-KIT-B,Housing Screw Kit M4,"Scan batch label, then quantity",00000460,,00000460,30.0,Set,batches/00000460.png,batch holds 48.0 in P1 Stores - VPT; the station counts only what this order still needs
+MFG-WO-2026-00159,FG-DRL-800,30.0,RM-BOX-S-B,Carton Box (Drill / Rotary Hammer),"Scan batch label, then quantity",00000461,,00000461,30.0,Nos,batches/00000461.png,batch holds 50.0 in P1 Stores - VPT; the station counts only what this order still needs
+MFG-WO-2026-00159,FG-DRL-800,30.0,RM-LABEL-B,Rating Label & Warning Decal Set (batch),"Scan batch label, then quantity",00000462,,00000462,30.0,Set,batches/00000462.png,batch holds 47.0 in P1 Stores - VPT; the station counts only what this order still needs
+MFG-WO-2026-00159,FG-DRL-800,30.0,RM-MANUAL-B,User Manual (EN/BM) (batch),"Scan batch label, then quantity",00000463,,00000463,30.0,Nos,batches/00000463.png,batch holds 47.0 in P1 Stores - VPT; the station counts only what this order still needs
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0063,00000653,1,Nos,units/SA-MOT-S/SA-MOT-S-0063.png,SN-00000653
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0064,00000654,1,Nos,units/SA-MOT-S/SA-MOT-S-0064.png,SN-00000654
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0065,00000655,1,Nos,units/SA-MOT-S/SA-MOT-S-0065.png,SN-00000655
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0066,00000656,1,Nos,units/SA-MOT-S/SA-MOT-S-0066.png,SN-00000656
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0067,00000657,1,Nos,units/SA-MOT-S/SA-MOT-S-0067.png,SN-00000657
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0068,00000658,1,Nos,units/SA-MOT-S/SA-MOT-S-0068.png,SN-00000658
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0069,00000659,1,Nos,units/SA-MOT-S/SA-MOT-S-0069.png,SN-00000659
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0070,00000660,1,Nos,units/SA-MOT-S/SA-MOT-S-0070.png,SN-00000660
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0071,00000661,1,Nos,units/SA-MOT-S/SA-MOT-S-0071.png,SN-00000661
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0072,00000662,1,Nos,units/SA-MOT-S/SA-MOT-S-0072.png,SN-00000662
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0073,00000663,1,Nos,units/SA-MOT-S/SA-MOT-S-0073.png,SN-00000663
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0074,00000664,1,Nos,units/SA-MOT-S/SA-MOT-S-0074.png,SN-00000664
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0075,00000665,1,Nos,units/SA-MOT-S/SA-MOT-S-0075.png,SN-00000665
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0076,00000666,1,Nos,units/SA-MOT-S/SA-MOT-S-0076.png,SN-00000666
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0077,00000667,1,Nos,units/SA-MOT-S/SA-MOT-S-0077.png,SN-00000667
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0078,00000668,1,Nos,units/SA-MOT-S/SA-MOT-S-0078.png,SN-00000668
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0079,00000669,1,Nos,units/SA-MOT-S/SA-MOT-S-0079.png,SN-00000669
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0080,00000670,1,Nos,units/SA-MOT-S/SA-MOT-S-0080.png,SN-00000670
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0081,00000671,1,Nos,units/SA-MOT-S/SA-MOT-S-0081.png,SN-00000671
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0082,00000672,1,Nos,units/SA-MOT-S/SA-MOT-S-0082.png,SN-00000672
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0083,00000673,1,Nos,units/SA-MOT-S/SA-MOT-S-0083.png,SN-00000673
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0084,00000674,1,Nos,units/SA-MOT-S/SA-MOT-S-0084.png,SN-00000674
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0085,00000675,1,Nos,units/SA-MOT-S/SA-MOT-S-0085.png,SN-00000675
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0086,00000676,1,Nos,units/SA-MOT-S/SA-MOT-S-0086.png,SN-00000676
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0087,00000677,1,Nos,units/SA-MOT-S/SA-MOT-S-0087.png,SN-00000677
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0059,00000566,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0059.png,SN-00000566
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0060,00000567,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0060.png,SN-00000567
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0061,00000568,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0061.png,SN-00000568
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0062,00000569,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0062.png,SN-00000569
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0063,00000570,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0063.png,SN-00000570
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0064,00000571,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0064.png,SN-00000571
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0065,00000572,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0065.png,SN-00000572
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0066,00000573,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0066.png,SN-00000573
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0067,00000574,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0067.png,SN-00000574
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0068,00000575,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0068.png,SN-00000575
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0069,00000576,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0069.png,SN-00000576
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0070,00000577,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0070.png,SN-00000577
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0071,00000578,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0071.png,SN-00000578
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0072,00000579,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0072.png,SN-00000579
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0073,00000580,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0073.png,SN-00000580
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0074,00000581,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0074.png,SN-00000581
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0075,00000582,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0075.png,SN-00000582
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0076,00000583,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0076.png,SN-00000583
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0077,00000584,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0077.png,SN-00000584
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0078,00000585,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0078.png,SN-00000585
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0079,00000586,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0079.png,SN-00000586
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0080,00000587,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0080.png,SN-00000587
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0081,00000588,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0081.png,SN-00000588
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0082,00000589,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0082.png,SN-00000589
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0083,00000590,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0083.png,SN-00000590
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0034,00000244,1,Nos,units/SA-HARN-S/SA-HARN-S-0034.png,SN-00000244
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0035,00000245,1,Nos,units/SA-HARN-S/SA-HARN-S-0035.png,SN-00000245
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0036,00000246,1,Nos,units/SA-HARN-S/SA-HARN-S-0036.png,SN-00000246
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0037,00000247,1,Nos,units/SA-HARN-S/SA-HARN-S-0037.png,SN-00000247
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0038,00000248,1,Nos,units/SA-HARN-S/SA-HARN-S-0038.png,SN-00000248
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0039,00000249,1,Nos,units/SA-HARN-S/SA-HARN-S-0039.png,SN-00000249
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0040,00000250,1,Nos,units/SA-HARN-S/SA-HARN-S-0040.png,SN-00000250
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0041,00000251,1,Nos,units/SA-HARN-S/SA-HARN-S-0041.png,SN-00000251
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0042,00000252,1,Nos,units/SA-HARN-S/SA-HARN-S-0042.png,SN-00000252
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0043,00000253,1,Nos,units/SA-HARN-S/SA-HARN-S-0043.png,SN-00000253
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0044,00000254,1,Nos,units/SA-HARN-S/SA-HARN-S-0044.png,SN-00000254
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0045,00000255,1,Nos,units/SA-HARN-S/SA-HARN-S-0045.png,SN-00000255
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0046,00000520,1,Nos,units/SA-HARN-S/SA-HARN-S-0046.png,SN-00000520
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0047,00000521,1,Nos,units/SA-HARN-S/SA-HARN-S-0047.png,SN-00000521
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0048,00000522,1,Nos,units/SA-HARN-S/SA-HARN-S-0048.png,SN-00000522
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0049,00000523,1,Nos,units/SA-HARN-S/SA-HARN-S-0049.png,SN-00000523
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0050,00000524,1,Nos,units/SA-HARN-S/SA-HARN-S-0050.png,SN-00000524
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0051,00000525,1,Nos,units/SA-HARN-S/SA-HARN-S-0051.png,SN-00000525
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0052,00000526,1,Nos,units/SA-HARN-S/SA-HARN-S-0052.png,SN-00000526
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0053,00000527,1,Nos,units/SA-HARN-S/SA-HARN-S-0053.png,SN-00000527
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0054,00000528,1,Nos,units/SA-HARN-S/SA-HARN-S-0054.png,SN-00000528
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0055,00000529,1,Nos,units/SA-HARN-S/SA-HARN-S-0055.png,SN-00000529
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0056,00000530,1,Nos,units/SA-HARN-S/SA-HARN-S-0056.png,SN-00000530
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0057,00000531,1,Nos,units/SA-HARN-S/SA-HARN-S-0057.png,SN-00000531
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0058,00000532,1,Nos,units/SA-HARN-S/SA-HARN-S-0058.png,SN-00000532
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0047,00000470,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0047.png,SN-00000470
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0048,00000471,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0048.png,SN-00000471
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0049,00000472,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0049.png,SN-00000472
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0050,00000473,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0050.png,SN-00000473
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0051,00000474,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0051.png,SN-00000474
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0052,00000475,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0052.png,SN-00000475
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0053,00000476,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0053.png,SN-00000476
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0054,00000477,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0054.png,SN-00000477
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0055,00000478,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0055.png,SN-00000478
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0056,00000479,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0056.png,SN-00000479
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0057,00000480,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0057.png,SN-00000480
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0058,00000481,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0058.png,SN-00000481
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0059,00000482,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0059.png,SN-00000482
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0060,00000483,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0060.png,SN-00000483
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0061,00000484,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0061.png,SN-00000484
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0062,00000485,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0062.png,SN-00000485
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0063,00000486,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0063.png,SN-00000486
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0064,00000487,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0064.png,SN-00000487
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0065,00000488,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0065.png,SN-00000488
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0066,00000489,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0066.png,SN-00000489
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0067,00000490,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0067.png,SN-00000490
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0068,00000491,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0068.png,SN-00000491
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0069,00000492,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0069.png,SN-00000492
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0070,00000493,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0070.png,SN-00000493
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0071,00000494,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0071.png,SN-00000494
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,RM-CHUCK-13-B,Keyless Chuck 13mm,"Scan batch label, then quantity",00000704,,00000704,25.0,Nos,batches/00000704.png,batch holds 58.0 in P1 Stores - VPT; the station counts only what this order still needs
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,RM-SIDE-HDL-B,Auxiliary Side Handle with Depth Gauge,"Scan batch label, then quantity",00000708,,00000708,25.0,Nos,batches/00000708.png,batch holds 60.0 in P1 Stores - VPT; the station counts only what this order still needs
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,RM-SCREW-KIT-B,Housing Screw Kit M4,"Scan batch label, then quantity",00000707,,00000707,25.0,Set,batches/00000707.png,batch holds 58.0 in P1 Stores - VPT; the station counts only what this order still needs
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,RM-BOX-S-B,Carton Box (Drill / Rotary Hammer),"Scan batch label, then quantity",00000703,,00000703,25.0,Nos,batches/00000703.png,batch holds 60.0 in P1 Stores - VPT; the station counts only what this order still needs
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,RM-LABEL-B,Rating Label & Warning Decal Set (batch),"Scan batch label, then quantity",00000705,,00000705,25.0,Set,batches/00000705.png,batch holds 56.0 in P1 Stores - VPT; the station counts only what this order still needs
+MFG-WO-2026-00160,FG-DRL-800-B,25.0,RM-MANUAL-B,User Manual (EN/BM) (batch),"Scan batch label, then quantity",00000706,,00000706,25.0,Nos,batches/00000706.png,batch holds 56.0 in P1 Stores - VPT; the station counts only what this order still needs
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0043,00000206,1,Nos,units/SA-MOT-S/SA-MOT-S-0043.png,SN-00000206
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0044,00000207,1,Nos,units/SA-MOT-S/SA-MOT-S-0044.png,SN-00000207
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0045,00000208,1,Nos,units/SA-MOT-S/SA-MOT-S-0045.png,SN-00000208
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0046,00000636,1,Nos,units/SA-MOT-S/SA-MOT-S-0046.png,SN-00000636
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0047,00000637,1,Nos,units/SA-MOT-S/SA-MOT-S-0047.png,SN-00000637
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0048,00000638,1,Nos,units/SA-MOT-S/SA-MOT-S-0048.png,SN-00000638
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0049,00000639,1,Nos,units/SA-MOT-S/SA-MOT-S-0049.png,SN-00000639
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0050,00000640,1,Nos,units/SA-MOT-S/SA-MOT-S-0050.png,SN-00000640
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0051,00000641,1,Nos,units/SA-MOT-S/SA-MOT-S-0051.png,SN-00000641
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0052,00000642,1,Nos,units/SA-MOT-S/SA-MOT-S-0052.png,SN-00000642
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0053,00000643,1,Nos,units/SA-MOT-S/SA-MOT-S-0053.png,SN-00000643
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0054,00000644,1,Nos,units/SA-MOT-S/SA-MOT-S-0054.png,SN-00000644
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0055,00000645,1,Nos,units/SA-MOT-S/SA-MOT-S-0055.png,SN-00000645
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0056,00000646,1,Nos,units/SA-MOT-S/SA-MOT-S-0056.png,SN-00000646
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0057,00000647,1,Nos,units/SA-MOT-S/SA-MOT-S-0057.png,SN-00000647
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0058,00000648,1,Nos,units/SA-MOT-S/SA-MOT-S-0058.png,SN-00000648
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0059,00000649,1,Nos,units/SA-MOT-S/SA-MOT-S-0059.png,SN-00000649
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0060,00000650,1,Nos,units/SA-MOT-S/SA-MOT-S-0060.png,SN-00000650
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0061,00000651,1,Nos,units/SA-MOT-S/SA-MOT-S-0061.png,SN-00000651
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0062,00000652,1,Nos,units/SA-MOT-S/SA-MOT-S-0062.png,SN-00000652
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0003,00000616,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0003.png,SN-00000616
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0004,00000617,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0004.png,SN-00000617
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0005,00000618,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0005.png,SN-00000618
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0006,00000619,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0006.png,SN-00000619
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0007,00000620,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0007.png,SN-00000620
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0008,00000621,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0008.png,SN-00000621
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0009,00000622,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0009.png,SN-00000622
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0010,00000623,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0010.png,SN-00000623
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0011,00000624,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0011.png,SN-00000624
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0012,00000625,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0012.png,SN-00000625
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0013,00000626,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0013.png,SN-00000626
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0014,00000627,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0014.png,SN-00000627
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0015,00000628,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0015.png,SN-00000628
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0016,00000629,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0016.png,SN-00000629
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0017,00000630,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0017.png,SN-00000630
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0018,00000631,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0018.png,SN-00000631
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0019,00000632,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0019.png,SN-00000632
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0020,00000633,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0020.png,SN-00000633
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0021,00000634,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0021.png,SN-00000634
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0022,00000635,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0022.png,SN-00000635
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0004,00000079,1,Nos,units/SA-HARN-S/SA-HARN-S-0004.png,SN-00000079
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0006,00000081,1,Nos,units/SA-HARN-S/SA-HARN-S-0006.png,SN-00000081
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0008,00000083,1,Nos,units/SA-HARN-S/SA-HARN-S-0008.png,SN-00000083
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0010,00000085,1,Nos,units/SA-HARN-S/SA-HARN-S-0010.png,SN-00000085
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0018,00000228,1,Nos,units/SA-HARN-S/SA-HARN-S-0018.png,SN-00000228
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0019,00000229,1,Nos,units/SA-HARN-S/SA-HARN-S-0019.png,SN-00000229
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0020,00000230,1,Nos,units/SA-HARN-S/SA-HARN-S-0020.png,SN-00000230
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0021,00000231,1,Nos,units/SA-HARN-S/SA-HARN-S-0021.png,SN-00000231
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0022,00000232,1,Nos,units/SA-HARN-S/SA-HARN-S-0022.png,SN-00000232
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0023,00000233,1,Nos,units/SA-HARN-S/SA-HARN-S-0023.png,SN-00000233
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0024,00000234,1,Nos,units/SA-HARN-S/SA-HARN-S-0024.png,SN-00000234
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0025,00000235,1,Nos,units/SA-HARN-S/SA-HARN-S-0025.png,SN-00000235
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0026,00000236,1,Nos,units/SA-HARN-S/SA-HARN-S-0026.png,SN-00000236
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0027,00000237,1,Nos,units/SA-HARN-S/SA-HARN-S-0027.png,SN-00000237
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0028,00000238,1,Nos,units/SA-HARN-S/SA-HARN-S-0028.png,SN-00000238
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0029,00000239,1,Nos,units/SA-HARN-S/SA-HARN-S-0029.png,SN-00000239
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0030,00000240,1,Nos,units/SA-HARN-S/SA-HARN-S-0030.png,SN-00000240
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0031,00000241,1,Nos,units/SA-HARN-S/SA-HARN-S-0031.png,SN-00000241
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0032,00000242,1,Nos,units/SA-HARN-S/SA-HARN-S-0032.png,SN-00000242
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0033,00000243,1,Nos,units/SA-HARN-S/SA-HARN-S-0033.png,SN-00000243
+MFG-WO-2026-00161,FG-RH-800,20.0,SA-HMECH-RH,Hammer Mechanism Assembly,"Scan item, then quantity",,,SA-HMECH-RH,20.0,Nos,items/SA-HMECH-RH.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00161,FG-RH-800,20.0,RM-SIDE-HDL,Auxiliary Side Handle with Depth Gauge,"Scan item, then quantity",,,RM-SIDE-HDL,20.0,Nos,items/RM-SIDE-HDL.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00161,FG-RH-800,20.0,RM-SCREW-KIT,Housing Screw Kit M4,"Scan item, then quantity",,,RM-SCREW-KIT,20.0,Set,items/RM-SCREW-KIT.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00161,FG-RH-800,20.0,RM-LABEL,Rating Label & Warning Decal Set,"Scan item, then quantity",,,RM-LABEL,20.0,Set,items/RM-LABEL.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00161,FG-RH-800,20.0,RM-MANUAL,User Manual (EN/BM),"Scan item, then quantity",,,RM-MANUAL,20.0,Nos,items/RM-MANUAL.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00161,FG-RH-800,20.0,RM-CASE-BMC,Blow-Moulded Carry Case,"Scan item, then quantity",,,RM-CASE-BMC,20.0,Nos,items/RM-CASE-BMC.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00162,FG-CS-1400,15.0,SA-MOT-L,Motor Assembly 1400W,"Scan item, then quantity",,,SA-MOT-L,15.0,Nos,items/SA-MOT-L.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00162,FG-CS-1400,15.0,SA-HSG-CS,Circular Saw Housing & Handle Set,"Scan item, then quantity",,,SA-HSG-CS,15.0,Nos,items/SA-HSG-CS.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00162,FG-CS-1400,15.0,SA-HARN-L,Switch & Cable Harness 16A,"Scan item, then quantity",,,SA-HARN-L,15.0,Nos,items/SA-HARN-L.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00162,FG-CS-1400,15.0,SA-GUARD-CS,Blade Guard & Base Assembly,"Scan item, then quantity",,,SA-GUARD-CS,15.0,Nos,items/SA-GUARD-CS.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00162,FG-CS-1400,15.0,RM-BLADE-185,TCT Saw Blade 185mm 24T,"Scan item, then quantity",,,RM-BLADE-185,15.0,Nos,items/RM-BLADE-185.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00162,FG-CS-1400,15.0,RM-SCREW-KIT,Housing Screw Kit M4,"Scan item, then quantity",,,RM-SCREW-KIT,15.0,Set,items/RM-SCREW-KIT.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00162,FG-CS-1400,15.0,RM-LABEL,Rating Label & Warning Decal Set,"Scan item, then quantity",,,RM-LABEL,15.0,Set,items/RM-LABEL.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00162,FG-CS-1400,15.0,RM-MANUAL,User Manual (EN/BM),"Scan item, then quantity",,,RM-MANUAL,15.0,Nos,items/RM-MANUAL.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00162,FG-CS-1400,15.0,RM-BOX-L,Carton Box (Circular Saw),"Scan item, then quantity",,,RM-BOX-L,15.0,Nos,items/RM-BOX-L.png,"no batch or unit label: scan the item code, then enter the quantity"

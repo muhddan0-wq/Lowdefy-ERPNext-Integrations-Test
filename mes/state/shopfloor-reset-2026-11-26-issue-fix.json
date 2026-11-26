@@ -1,0 +1,110 @@
+{
+ "i1_issue_with_5_unscanned": {
+  "http": 200,
+  "response": {
+   "ok": false,
+   "work_order": "MFG-WO-2026-00165",
+   "stock_entry": null,
+   "shortages": [],
+   "batch_scans_needed": [
+    "RM-CHUCK-13-B Keyless Chuck 13mm: 2.0 Nos to issue, 0.0 covered by scanned batches",
+    "RM-SIDE-HDL-B Auxiliary Side Handle with Depth Gauge: 2.0 Nos to issue, 0.0 covered by scanned batches",
+    "RM-SCREW-KIT-B Housing Screw Kit M4: 2.0 Set to issue, 0.0 covered by scanned batches",
+    "RM-LABEL-B Rating Label & Warning Decal Set (batch): 2.0 Set to issue, 0.0 covered by scanned batches",
+    "RM-MANUAL-B User Manual (EN/BM) (batch): 2.0 Nos to issue, 0.0 covered by scanned batches"
+   ],
+   "message": "Scan the batch label of each batch-tracked material before issuing, so ERPNext moves the batches you took",
+   "status": "Not Started",
+   "transferred_qty": 0.0
+  }
+ },
+ "scans": [
+  {
+   "value": "RM-CHUCK-13-B-20261126-001",
+   "result": "Valid",
+   "qty": 2.0,
+   "reason": "Verified from batch RM-CHUCK-13-B-20261126-001"
+  },
+  {
+   "value": "RM-SIDE-HDL-B-ACC-20261126125750",
+   "result": "Valid",
+   "qty": 2.0,
+   "reason": "Verified from batch RM-SIDE-HDL-B-ACC-20261126125750"
+  },
+  {
+   "value": "RM-SCREW-KIT-B-20261126-001",
+   "result": "Valid",
+   "qty": 2.0,
+   "reason": "Verified from batch RM-SCREW-KIT-B-20261126-001"
+  },
+  {
+   "value": "00000705",
+   "result": "Valid",
+   "qty": 2.0,
+   "reason": "Verified from batch 00000705"
+  },
+  {
+   "value": "00000706",
+   "result": "Valid",
+   "qty": 2.0,
+   "reason": "Verified from batch 00000706"
+  }
+ ],
+ "i2_issue_after_all_scanned": {
+  "http": 200,
+  "response": {
+   "ok": true,
+   "work_order": "MFG-WO-2026-00165",
+   "stock_entry": "MAT-STE-2026-00106",
+   "shortages": [],
+   "batches": [
+    {
+     "item_code": "RM-CHUCK-13-B",
+     "batch_no": "RM-CHUCK-13-B-20261126-001",
+     "qty": 2.0
+    },
+    {
+     "item_code": "RM-SIDE-HDL-B",
+     "batch_no": "RM-SIDE-HDL-B-ACC-20261126125750",
+     "qty": 2.0
+    },
+    {
+     "item_code": "RM-SCREW-KIT-B",
+     "batch_no": "RM-SCREW-KIT-B-20261126-001",
+     "qty": 2.0
+    },
+    {
+     "item_code": "RM-BOX-S-B",
+     "batch_no": "RM-BOX-S-B-ACC-20261126113513",
+     "qty": 2.0
+    },
+    {
+     "item_code": "RM-LABEL-B",
+     "batch_no": "00000705",
+     "qty": 2.0
+    },
+    {
+     "item_code": "RM-MANUAL-B",
+     "batch_no": "00000706",
+     "qty": 2.0
+    }
+   ],
+   "qty": 2.0,
+   "status": "In Process",
+   "transferred_qty": 2.0
+  }
+ },
+ "i3_issue_no_batch_items_SA-HARN-L": {
+  "http": 200,
+  "response": {
+   "ok": true,
+   "work_order": "MFG-WO-2026-00166",
+   "stock_entry": "MAT-STE-2026-00107",
+   "shortages": [],
+   "batches": [],
+   "qty": 1.0,
+   "status": "In Process",
+   "transferred_qty": 1.0
+  }
+ }
+}

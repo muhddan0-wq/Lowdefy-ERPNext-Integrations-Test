@@ -40,6 +40,11 @@ function render() {
     '<span class="small muted">Load = scheduled job-card minutes ÷ (shift minutes × capacity). Grey = weekend/holiday. ' +
     '<span class="badge" style="background:#d1fae5">&lt;50%</span> <span class="badge" style="background:#fde68a">50–85%</span> ' +
     '<span class="badge" style="background:#f59e0b">85–100%</span> <span class="badge" style="background:#dc2626;color:#fff">&gt;100%</span></span></div>' +
+    '<div class="banner info small"><b>Where these numbers come from (all ERPNext, via the mes_workstation_load API):</b> ' +
+    "<b>available</b> = the workstation's shift hours (Workstation → Working Hours, 08:00–12:00 + 13:00–17:00 = 480 min) × its Production Capacity " +
+    "(the oven runs 20 jobs at once), and 0 on days in its Holiday List (weekends + Malaysian public holidays). " +
+    "<b>Scheduled</b> = the Job Card scheduled time blocks that ERPNext's capacity planner booked when each work order was submitted " +
+    "(or that were moved on the Schedule Board). <b>Load %</b> = scheduled ÷ available. Hover a cell for the minutes.</div>" +
     '<div style="overflow:auto"><table class="t" style="width:auto"><thead><tr><th>Workstation</th><th class="n">Cap.</th>' +
     d.days.map((day) => {
       const dt = parseDT(day);

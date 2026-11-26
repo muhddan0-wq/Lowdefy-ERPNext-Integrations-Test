@@ -1,7 +1,7 @@
-.g-wrap { position: relative; overflow: auto; height: calc(var(--appsmith-ui-height) * 1px - 190px); min-height: 300px; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; }
+.g-wrap { position: relative; overflow: auto; height: calc(var(--appsmith-ui-height) * 1px - 235px); min-height: 300px; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; }
 .g-inner { position: relative; }
 .g-head { position: sticky; top: 0; z-index: 6; display: flex; height: 40px; background: #f9fafb; border-bottom: 1px solid #e5e7eb; }
-.g-corner { position: sticky; left: 0; z-index: 7; width: 150px; min-width: 150px; padding: 12px 10px; font-weight: 600; background: #f9fafb; border-right: 1px solid #e5e7eb; }
+.g-corner { position: sticky; left: 0; z-index: 7; width: 170px; min-width: 170px; padding: 12px 10px; font-weight: 600; background: #f9fafb; border-right: 1px solid #e5e7eb; }
 .g-days { position: relative; height: 40px; }
 .g-day { position: absolute; top: 0; height: 40px; padding: 3px 6px; font-weight: 600; border-left: 1px solid #d1d5db; white-space: nowrap; overflow: hidden; }
 .g-day.wk { color: #9ca3af; background: #f3f4f6; }
@@ -12,14 +12,29 @@
 .g-off { position: absolute; top: 0; bottom: 0; background: repeating-linear-gradient(45deg, #f3f4f6, #f3f4f6 4px, #fafafa 4px, #fafafa 8px); }
 .g-sep { position: absolute; top: 0; bottom: 0; border-left: 1px solid #d1d5db; }
 .g-now { position: absolute; top: 0; bottom: 0; border-left: 2px solid #ef4444; }
-.g-row { position: absolute; left: 0; right: 0; height: 34px; display: flex; border-bottom: 1px solid #f0f1f3; }
-.g-label { position: sticky; left: 0; z-index: 5; width: 150px; min-width: 150px; padding: 3px 10px; background: #fff; border-right: 1px solid #e5e7eb; line-height: 1.2; }
+.g-row { position: absolute; left: 0; right: 0; display: flex; border-bottom: 1px solid #f0f1f3; }
+.g-label { position: sticky; left: 0; z-index: 5; width: 170px; min-width: 170px; padding: 5px 10px; background: #fff; border-right: 1px solid #e5e7eb; line-height: 1.2; }
 .g-label span { display: block; font-size: 10px; color: #6b7280; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .g-lane { position: relative; height: 100%; }
-.g-bar { position: absolute; top: 5px; height: 24px; border-radius: 4px; color: #fff; font-size: 11px; line-height: 24px; padding: 0 4px; white-space: nowrap;
+.g-bar { position: absolute; top: 6px; height: 30px; border-radius: 5px; color: #fff; font-size: 12px; font-weight: 600; line-height: 30px; padding: 0 6px; white-space: nowrap;
   overflow: hidden; text-overflow: ellipsis; cursor: pointer; box-shadow: 0 1px 2px rgba(0,0,0,.15); user-select: none; touch-action: none; z-index: 2; }
 .g-bar.mv { cursor: grab; }
 .g-bar.cf { outline: 2px solid #dc2626; outline-offset: 1px; }
 .g-bar:hover { filter: brightness(1.1); z-index: 3; }
 .g-bar.ghost { opacity: .8; cursor: grabbing; z-index: 4; box-shadow: 0 4px 12px rgba(0,0,0,.3); overflow: visible; }
 .g-bar[data-tip]::after { content: attr(data-tip); position: absolute; left: 0; top: -22px; background: #111827; color: #fff; padding: 1px 6px; border-radius: 4px; font-size: 11px; line-height: 18px; }
+
+.g-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; margin: 2px 0 6px; }
+.g-legend span { display: inline-flex; align-items: center; gap: 5px; }
+.g-legend i, .g-tip i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; }
+.g-bar.st-done { opacity: .55; }
+.g-bar.st-wip { background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.28) 0 6px, transparent 6px 12px) !important; }
+.g-bar.st-hold { outline: 2px dashed #111827; outline-offset: -2px; }
+.g-tip { display: none; position: fixed; z-index: 30; min-width: 240px; max-width: 340px; background: #111827; color: #f9fafb; border-radius: 8px;
+  padding: 10px 12px; font-size: 12px; box-shadow: 0 6px 20px rgba(0,0,0,.3); pointer-events: none; }
+.g-tip .t1 { font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 6px; }
+.g-tip .t2 { color: #d1d5db; margin-bottom: 6px; }
+.g-tip table { border-collapse: collapse; width: 100%; }
+.g-tip td { padding: 2px 6px 2px 0; vertical-align: top; }
+.g-tip td:first-child { color: #9ca3af; white-space: nowrap; }
+.g-tip .t3 { margin-top: 6px; color: #93c5fd; }

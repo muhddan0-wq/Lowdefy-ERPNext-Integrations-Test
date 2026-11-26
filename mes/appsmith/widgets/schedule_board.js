@@ -1,12 +1,22 @@
 // Page: Schedule Board (M2 read + M5 drag-and-drop). Data: mes_schedule_board; moves: mes_reschedule_job_card.
 // Self-contained SVG-free Gantt (no CDN): one lane per workstation, x axis = each day's 07:00-18:00 window.
-const DAY_START = 7, DAY_END = 18, ROW_H = 34, LABEL_W = 150, SNAP_MIN = 5;
+const DAY_START = 7, DAY_END = 18, ROW_H = 42, LABEL_W = 170, SNAP_MIN = 5;
 const MOVABLE = ["Open", "Material Transferred"];
 const COLORS = {
   "Open": "#3b82f6", "Material Transferred": "#06b6d4", "Work In Progress": "#f59e0b", "On Hold": "#a855f7",
   "Paused": "#a855f7", "Completed": "#10b981", "Submitted": "#10b981",
 };
-const S = { from: isoDate(new Date()), days: 14, type: "", zoom: 24, d: null, drag: null };
+// Product lines, from the item code suffix (P1 naming: FG-DRL-800, SA-HSG-RH, SA-ARM-S = 800W motor parts, ...)
+const FAMILIES = [
+  { key: "DRL", label: "Drill", color: "#2563eb", test: (c) => /-DRL\b/.test(c) },
+  { key: "RH", label: "Rotary Hammer", color: "#7c3aed", test: (c) => /-RH\b/.test(c) },
+  { key: "CS", label: "Circular Saw", color: "#0f766e", test: (c) => /-CS\b/.test(c) },
+  { key: "S", label: "800W motor parts (Drill + Hammer)", color: "#c2410c", test: (c) => /-S$/.test(c) },
+  { key: "L", label: "1400W motor parts (Saw)", color: "#be185d", test: (c) => /-L$/.test(c) },
+];
+const family = (code) => FAMILIES.find((f) => f.test(code || "")) || { key: "?", label: "Other", color: "#6b7280" };
+const shortCode = (code) => String(code || "").replace(/^(SA|FG)-/, "");
+const S = { from: isoDate(new Date()), days: 7, type: "", zoom: 40, colorBy: "product", d: null, drag: null };
 
 const dayW = () => (DAY_END - DAY_START) * S.zoom;
 const fromDate = () => parseDT(S.from);
@@ -68,13 +78,18 @@ function render() {
     const bars = d.items.filter((it) => it.group === g.id).map((it) => {
       const x = timeToX(it.start), w = Math.max(4, timeToX(it.end) - x);
       const movable = MOVABLE.indexOf(it.status) >= 0;
-      return '<div class="g-bar' + (movable ? " mv" : "") + (conflictSet.has(it.job_card) ? " cf" : "") + '" data-jc="' + esc(it.job_card) + '" data-id="' + esc(it.id) +
-        '" style="left:' + x + "px;width:" + w + "px;background:" + (COLORS[it.status] || "#6b7280") + '" title="' +
-        esc(it.job_card + " · " + it.operation + "\n" + it.work_order + " · " + it.item + " × " + it.qty + "\n" + fmtDT(it.start) + " → " + fmtDT(it.end) +
-          "\nStatus: " + it.status + (movable ? "\nDrag to reschedule" : "")) + '">' + esc(it.item + " · " + it.operation) + "</div>";
+      const fill = S.colorBy === "status" ? COLORS[it.status] || "#6b7280" : family(it.item).color;
+      const st = it.status === "Completed" ? " st-done" : it.status === "Work In Progress" ? " st-wip" : (it.status === "On Hold" || it.status === "Paused") ? " st-hold" : "";
+      // shrink the label to fit: "ARM-S ×65" -> "ARM-S" -> "" (about 7px per character); the hover card has everything
+      const tick = it.status === "Completed" ? "✓ " : "";
+      const full = tick + shortCode(it.item) + " ×" + num(it.qty, 0), codeOnly = tick + shortCode(it.item);
+      const fits = (t) => t.length * 7 + 12 <= w;
+      const label = fits(full) ? full : fits(codeOnly) ? codeOnly : "";
+      return '<div class="g-bar' + (movable ? " mv" : "") + st + (conflictSet.has(it.job_card) ? " cf" : "") + '" data-jc="' + esc(it.job_card) + '" data-id="' + esc(it.id) +
+        '" style="left:' + x + "px;width:" + w + "px;background:" + fill + '">' + esc(label) + "</div>";
     }).join("");
-    return '<div class="g-row" data-row="' + gi + '" style="top:' + gi * ROW_H + 'px"><div class="g-label"><b>' + esc(g.id) + "</b><span>" +
-      esc(g.workstation_type.replace(/^P1 /, "")) + (g.capacity > 1 ? " · cap " + g.capacity : "") + '</span></div><div class="g-lane" style="width:' + totalW + 'px">' + bars + "</div></div>";
+    return '<div class="g-row" data-row="' + gi + '" style="top:' + gi * ROW_H + "px;height:" + ROW_H + 'px"><div class="g-label"><b>' + esc(g.id) + "</b><span>" +
+      esc(noPrefix(g.workstation_type)) + (g.capacity > 1 ? " · cap " + g.capacity : "") + '</span></div><div class="g-lane" style="width:' + totalW + 'px">' + bars + "</div></div>";
   }).join("");
 
   $("#app").innerHTML =
@@ -87,9 +102,14 @@ function render() {
       "<option" + (t === S.type ? " selected" : "") + ">" + esc(t) + "</option>").join("") + "</select></label>" +
     '<label class="f">Zoom<select id="f-zoom">' + [[12, "S"], [24, "M"], [40, "L"], [64, "XL"]].map((z) =>
       '<option value="' + z[0] + '"' + (z[0] === S.zoom ? " selected" : "") + ">" + z[1] + "</option>").join("") + "</select></label>" +
-    '<button class="btn" id="b-refresh">Refresh</button><span class="grow"></span>' +
-    '<span class="small">' + Object.keys({ "Open": 1, "Work In Progress": 1, "On Hold": 1, "Completed": 1 }).map((k) =>
-      '<span class="badge" style="background:' + COLORS[k] + ';color:#fff">' + k + "</span>").join(" ") + "</span></div>" +
+    '<label class="f">Colour by<select id="f-color"><option value="product"' + (S.colorBy === "product" ? " selected" : "") + ">Product line</option>" +
+    '<option value="status"' + (S.colorBy === "status" ? " selected" : "") + ">Job status</option></select></label>" +
+    '<button class="btn" id="b-refresh">Refresh</button></div>' +
+    '<div class="g-legend small">' + (S.colorBy === "status"
+      ? ["Open", "Work In Progress", "On Hold", "Completed"].map((k) => '<span><i style="background:' + COLORS[k] + '"></i>' + k + "</span>").join("")
+      : FAMILIES.map((f) => '<span><i style="background:' + f.color + '"></i>' + esc(f.label) + "</span>").join("") +
+        '<span class="muted">✓ completed · striped = in progress · dashed = on hold</span>') +
+    '<span class="muted">Bar label = item code without SA-/FG- and quantity, e.g. "ARM-S ×65". Hover a bar for details.</span></div>' +
     (d.conflicts.count
       ? '<div class="banner err">⚠ ' + d.conflicts.count + " capacity conflict slot(s): " + esc(d.conflicts.job_cards.join(", ")) + " (outlined red)</div>"
       : '<div class="banner ok">No capacity conflicts · ' + d.job_card_count + " job cards, " + d.items.length + " scheduled blocks in view</div>") +
@@ -98,8 +118,37 @@ function render() {
     '<div class="g-body" style="height:' + d.groups.length * ROW_H + 'px"><div class="g-shade" style="left:' + LABEL_W + "px;width:" + totalW + 'px">' + shade +
     (nowX >= 0 ? '<div class="g-now" style="left:' + nowX + 'px"></div>' : "") + "</div>" + lanes + "</div></div></div>" +
     '<p class="muted small">Drag an open job card along its row (or to another workstation of the same type). ERPNext checks shift, holiday, capacity and ' +
-    "operation order first and refuses invalid moves; you confirm valid ones. Click a bar for details.</p>";
+    "operation order first and refuses invalid moves; you confirm valid ones. Click a bar for details.</p>" +
+    '<div id="g-tip" class="g-tip"></div>';
 }
+
+// ---- hover card ----
+document.addEventListener("pointerover", (e) => {
+  const tip = $("#g-tip");
+  if (!tip) return;
+  const bar = e.target.closest && e.target.closest(".g-bar");
+  if (!bar || S.drag) { tip.style.display = "none"; return; }
+  const it = S.d.items.find((i) => i.id === bar.dataset.id);
+  if (!it) return;
+  const info = jobInfo(it.job_card), fam = family(it.item);
+  tip.innerHTML = '<div class="t1"><i style="background:' + fam.color + '"></i>' + esc(it.item) + " × " + num(it.qty, 0) + "</div>" +
+    '<div class="t2">' + esc(it.item_name || "") + "</div><table>" +
+    [["Operation", it.operation], ["Job card", it.job_card + " · " + it.status], ["Work order", it.work_order + (it.plan ? " · " + it.plan : "")],
+      ["Product line", fam.label], ["This block", fmtDT(it.start) + " → " + fmtDT(it.end).slice(-5)],
+      ["Whole job", fmtDT(info.start) + " → " + fmtDT(info.end) + (info.blocks.length > 1 ? " (" + info.blocks.length + " blocks)" : "")],
+      ["Done", num(it.completed_qty, 0) + " of " + num(it.qty, 0)]].map((r) => "<tr><td>" + esc(r[0]) + "</td><td>" + esc(r[1]) + "</td></tr>").join("") +
+    '</table><div class="t3">' + (MOVABLE.indexOf(it.status) >= 0 ? "Drag to reschedule · click for options" : "Started or finished: cannot be moved") + "</div>";
+  tip.style.display = "block";
+});
+document.addEventListener("pointermove", (e) => {
+  const tip = $("#g-tip");
+  if (!tip || tip.style.display !== "block") return;
+  if (S.drag) { tip.style.display = "none"; return; }
+  const x = Math.min(e.clientX + 14, innerWidth - tip.offsetWidth - 8);
+  const y = e.clientY + 16 + tip.offsetHeight > innerHeight ? e.clientY - tip.offsetHeight - 10 : e.clientY + 16;
+  tip.style.left = x + "px";
+  tip.style.top = y + "px";
+});
 
 // ---- drag & drop ----
 document.addEventListener("pointerdown", (e) => {
@@ -186,7 +235,7 @@ async function showDetails(jc) {
       '<div class="kv"><div class="k">' + esc(p[0]) + '</div><div class="v">' + esc(p[1]) + "</div></div>").join("") + "</div>" +
     '<p class="muted small">' + info.blocks.length + " scheduled block(s). " + (MOVABLE.indexOf(f.status) >= 0 ? "Drag the bar to reschedule." : "Started/finished jobs cannot be moved.") + "</p>",
     "Open work order");
-  if (go) MES.navigate("Work Order Detail", { wo: f.work_order });
+  if (go) MES.navigate("Shopfloor", { wo: f.work_order });
 }
 
 document.addEventListener("change", (e) => {
@@ -194,6 +243,7 @@ document.addEventListener("change", (e) => {
   if (e.target.id === "f-days") S.days = Number(e.target.value);
   if (e.target.id === "f-type") S.type = e.target.value;
   if (e.target.id === "f-zoom") { S.zoom = Number(e.target.value); return render(); }
+  if (e.target.id === "f-color") { S.colorBy = e.target.value; return render(); }
   if (["f-from", "f-days", "f-type"].indexOf(e.target.id) >= 0) load();
 });
 document.addEventListener("click", (e) => { if (e.target.id === "b-refresh") load(); });

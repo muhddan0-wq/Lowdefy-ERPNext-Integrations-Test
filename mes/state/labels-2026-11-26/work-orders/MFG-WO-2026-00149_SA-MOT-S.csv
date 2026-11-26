@@ -1,0 +1,7 @@
+work_order,production_item,wo_qty,item_code,item_name,scan_mode,batch_no,tracking_id,barcode,qty,uom,label_file,note
+MFG-WO-2026-00149,SA-MOT-S,40.0,SA-ARM-S,Wound Armature 800W,"Scan item, then quantity",,,SA-ARM-S,40.0,Nos,items/SA-ARM-S.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00149,SA-MOT-S,40.0,SA-STA-S,Wound Stator 800W,"Scan item, then quantity",,,SA-STA-S,40.0,Nos,items/SA-STA-S.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00149,SA-MOT-S,40.0,RM-BRG-608,Ball Bearing 608ZZ,"Scan item, then quantity",,,RM-BRG-608,40.0,Nos,items/RM-BRG-608.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00149,SA-MOT-S,40.0,RM-BRG-6000,Ball Bearing 6000ZZ,"Scan item, then quantity",,,RM-BRG-6000,40.0,Nos,items/RM-BRG-6000.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00149,SA-MOT-S,40.0,RM-BRUSH-6X8,Carbon Brush 6x8mm,"Scan item, then quantity",,,RM-BRUSH-6X8,40.0,Pair,items/RM-BRUSH-6X8.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00149,SA-MOT-S,40.0,RM-FAN-S,Motor Cooling Fan 48mm,"Scan item, then quantity",,,RM-FAN-S,40.0,Nos,items/RM-FAN-S.png,"no batch or unit label: scan the item code, then enter the quantity"
