@@ -21,3 +21,6 @@ mes/state/appsmith-backup-*.json
 # Python caches
 __pycache__/
 *.pyc
+
+# Pre-demo ERPNext site backups (contain user records)
+mes/state/pre-demo-backup-*/

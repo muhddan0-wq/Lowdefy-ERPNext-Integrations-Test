@@ -1,0 +1,27 @@
+work_order,production_item,wo_qty,item_code,item_name,scan_mode,batch_no,tracking_id,barcode,qty,uom,label_file,note
+MFG-WO-2026-00204,FG-DRL-800,5.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0021,00000829,1,Nos,units/SA-MOT-S/SA-MOT-S-0021.png,SN-00000829
+MFG-WO-2026-00204,FG-DRL-800,5.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0022,00000830,1,Nos,units/SA-MOT-S/SA-MOT-S-0022.png,SN-00000830
+MFG-WO-2026-00204,FG-DRL-800,5.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0023,00000831,1,Nos,units/SA-MOT-S/SA-MOT-S-0023.png,SN-00000831
+MFG-WO-2026-00204,FG-DRL-800,5.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0024,00000832,1,Nos,units/SA-MOT-S/SA-MOT-S-0024.png,SN-00000832
+MFG-WO-2026-00204,FG-DRL-800,5.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0025,00000833,1,Nos,units/SA-MOT-S/SA-MOT-S-0025.png,SN-00000833
+MFG-WO-2026-00204,FG-DRL-800,5.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0011,00000789,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0011.png,SN-00000789
+MFG-WO-2026-00204,FG-DRL-800,5.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0012,00000790,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0012.png,SN-00000790
+MFG-WO-2026-00204,FG-DRL-800,5.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0013,00000791,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0013.png,SN-00000791
+MFG-WO-2026-00204,FG-DRL-800,5.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0014,00000792,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0014.png,SN-00000792
+MFG-WO-2026-00204,FG-DRL-800,5.0,SA-HSG-DRL,Drill Housing Set,Scan every unit,,SA-HSG-DRL-0015,00000793,1,Nos,units/SA-HSG-DRL/SA-HSG-DRL-0015.png,SN-00000793
+MFG-WO-2026-00204,FG-DRL-800,5.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0021,00000769,1,Nos,units/SA-HARN-S/SA-HARN-S-0021.png,SN-00000769
+MFG-WO-2026-00204,FG-DRL-800,5.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0022,00000770,1,Nos,units/SA-HARN-S/SA-HARN-S-0022.png,SN-00000770
+MFG-WO-2026-00204,FG-DRL-800,5.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0023,00000771,1,Nos,units/SA-HARN-S/SA-HARN-S-0023.png,SN-00000771
+MFG-WO-2026-00204,FG-DRL-800,5.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0024,00000772,1,Nos,units/SA-HARN-S/SA-HARN-S-0024.png,SN-00000772
+MFG-WO-2026-00204,FG-DRL-800,5.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0025,00000773,1,Nos,units/SA-HARN-S/SA-HARN-S-0025.png,SN-00000773
+MFG-WO-2026-00204,FG-DRL-800,5.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0011,00000739,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0011.png,SN-00000739
+MFG-WO-2026-00204,FG-DRL-800,5.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0012,00000740,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0012.png,SN-00000740
+MFG-WO-2026-00204,FG-DRL-800,5.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0013,00000741,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0013.png,SN-00000741
+MFG-WO-2026-00204,FG-DRL-800,5.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0014,00000742,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0014.png,SN-00000742
+MFG-WO-2026-00204,FG-DRL-800,5.0,SA-GBX-DRL,Drill Gearbox Assembly,Scan every unit,,SA-GBX-DRL-0015,00000743,1,Nos,units/SA-GBX-DRL/SA-GBX-DRL-0015.png,SN-00000743
+MFG-WO-2026-00204,FG-DRL-800,5.0,RM-CHUCK-13-B,Keyless Chuck 13mm,"Scan batch label, then quantity",00000840,,00000840,5.0,Nos,batches/00000840.png,batch holds 60.0 in P1 Stores - VPT; the station counts only what this order still needs
+MFG-WO-2026-00204,FG-DRL-800,5.0,RM-SIDE-HDL-B,Auxiliary Side Handle with Depth Gauge,"Scan batch label, then quantity",00000844,,00000844,5.0,Nos,batches/00000844.png,batch holds 60.0 in P1 Stores - VPT; the station counts only what this order still needs
+MFG-WO-2026-00204,FG-DRL-800,5.0,RM-SCREW-KIT-B,Housing Screw Kit M4,"Scan batch label, then quantity",00000843,,00000843,5.0,Set,batches/00000843.png,batch holds 60.0 in P1 Stores - VPT; the station counts only what this order still needs
+MFG-WO-2026-00204,FG-DRL-800,5.0,RM-BOX-S-B,Carton Box (Drill / Rotary Hammer),"Scan batch label, then quantity",00000839,,00000839,5.0,Nos,batches/00000839.png,batch holds 60.0 in P1 Stores - VPT; the station counts only what this order still needs
+MFG-WO-2026-00204,FG-DRL-800,5.0,RM-LABEL-B,Rating Label & Warning Decal Set (batch),"Scan batch label, then quantity",00000841,,00000841,5.0,Set,batches/00000841.png,batch holds 60.0 in P1 Stores - VPT; the station counts only what this order still needs
+MFG-WO-2026-00204,FG-DRL-800,5.0,RM-MANUAL-B,User Manual (EN/BM) (batch),"Scan batch label, then quantity",00000842,,00000842,5.0,Nos,batches/00000842.png,batch holds 60.0 in P1 Stores - VPT; the station counts only what this order still needs

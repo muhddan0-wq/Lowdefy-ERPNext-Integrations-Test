@@ -1,0 +1,22 @@
+work_order,production_item,wo_qty,item_code,item_name,scan_mode,batch_no,tracking_id,barcode,qty,uom,label_file,note
+MFG-WO-2026-00205,FG-RH-800,5.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0016,00000824,1,Nos,units/SA-MOT-S/SA-MOT-S-0016.png,SN-00000824
+MFG-WO-2026-00205,FG-RH-800,5.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0017,00000825,1,Nos,units/SA-MOT-S/SA-MOT-S-0017.png,SN-00000825
+MFG-WO-2026-00205,FG-RH-800,5.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0018,00000826,1,Nos,units/SA-MOT-S/SA-MOT-S-0018.png,SN-00000826
+MFG-WO-2026-00205,FG-RH-800,5.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0019,00000827,1,Nos,units/SA-MOT-S/SA-MOT-S-0019.png,SN-00000827
+MFG-WO-2026-00205,FG-RH-800,5.0,SA-MOT-S,Motor Assembly 800W,Scan every unit,,SA-MOT-S-0020,00000828,1,Nos,units/SA-MOT-S/SA-MOT-S-0020.png,SN-00000828
+MFG-WO-2026-00205,FG-RH-800,5.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0006,00000804,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0006.png,SN-00000804
+MFG-WO-2026-00205,FG-RH-800,5.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0007,00000805,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0007.png,SN-00000805
+MFG-WO-2026-00205,FG-RH-800,5.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0008,00000806,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0008.png,SN-00000806
+MFG-WO-2026-00205,FG-RH-800,5.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0009,00000807,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0009.png,SN-00000807
+MFG-WO-2026-00205,FG-RH-800,5.0,SA-HSG-RH,Rotary Hammer Housing Set,Scan every unit,,SA-HSG-RH-0010,00000808,1,Nos,units/SA-HSG-RH/SA-HSG-RH-0010.png,SN-00000808
+MFG-WO-2026-00205,FG-RH-800,5.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0016,00000764,1,Nos,units/SA-HARN-S/SA-HARN-S-0016.png,SN-00000764
+MFG-WO-2026-00205,FG-RH-800,5.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0017,00000765,1,Nos,units/SA-HARN-S/SA-HARN-S-0017.png,SN-00000765
+MFG-WO-2026-00205,FG-RH-800,5.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0018,00000766,1,Nos,units/SA-HARN-S/SA-HARN-S-0018.png,SN-00000766
+MFG-WO-2026-00205,FG-RH-800,5.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0019,00000767,1,Nos,units/SA-HARN-S/SA-HARN-S-0019.png,SN-00000767
+MFG-WO-2026-00205,FG-RH-800,5.0,SA-HARN-S,Switch & Cable Harness 10A,Scan every unit,,SA-HARN-S-0020,00000768,1,Nos,units/SA-HARN-S/SA-HARN-S-0020.png,SN-00000768
+MFG-WO-2026-00205,FG-RH-800,5.0,SA-HMECH-RH,Hammer Mechanism Assembly,"Scan item, then quantity",,,SA-HMECH-RH,5.0,Nos,items/SA-HMECH-RH.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00205,FG-RH-800,5.0,RM-SIDE-HDL,Auxiliary Side Handle with Depth Gauge,"Scan item, then quantity",,,RM-SIDE-HDL,5.0,Nos,items/RM-SIDE-HDL.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00205,FG-RH-800,5.0,RM-SCREW-KIT,Housing Screw Kit M4,"Scan item, then quantity",,,RM-SCREW-KIT,5.0,Set,items/RM-SCREW-KIT.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00205,FG-RH-800,5.0,RM-LABEL,Rating Label & Warning Decal Set,"Scan item, then quantity",,,RM-LABEL,5.0,Set,items/RM-LABEL.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00205,FG-RH-800,5.0,RM-MANUAL,User Manual (EN/BM),"Scan item, then quantity",,,RM-MANUAL,5.0,Nos,items/RM-MANUAL.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00205,FG-RH-800,5.0,RM-CASE-BMC,Blow-Moulded Carry Case,"Scan item, then quantity",,,RM-CASE-BMC,5.0,Nos,items/RM-CASE-BMC.png,"no batch or unit label: scan the item code, then enter the quantity"

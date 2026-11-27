@@ -1,0 +1,251 @@
+{
+ "junk": {},
+ "wiped": {
+  "Job Card": 35,
+  "Work Order": 18
+ },
+ "receipts": [],
+ "work_orders": [
+  {
+   "name": "MFG-WO-2026-00203",
+   "item": "FG-DRL-800-B",
+   "qty": 5,
+   "bom": "BOM-FG-DRL-800-B-002",
+   "job_cards": [
+    "PO-JOB00363 P1-FAL-01 Final Assembly",
+    "PO-JOB00364 P1-TST-01 Hi-Pot & Function Test",
+    "PO-JOB00365 P1-PCK-01 Packing"
+   ]
+  },
+  {
+   "name": "MFG-WO-2026-00204",
+   "item": "FG-DRL-800",
+   "qty": 5,
+   "bom": "BOM-FG-DRL-800-004",
+   "job_cards": [
+    "PO-JOB00366 P1-FAL-02 Final Assembly",
+    "PO-JOB00367 P1-TST-01 Hi-Pot & Function Test",
+    "PO-JOB00368 P1-PCK-01 Packing"
+   ]
+  },
+  {
+   "name": "MFG-WO-2026-00205",
+   "item": "FG-RH-800",
+   "qty": 5,
+   "bom": "BOM-FG-RH-800-001",
+   "job_cards": [
+    "PO-JOB00369 P1-FAL-01 Final Assembly",
+    "PO-JOB00370 P1-TST-01 Hi-Pot & Function Test",
+    "PO-JOB00371 P1-PCK-01 Packing"
+   ]
+  },
+  {
+   "name": "MFG-WO-2026-00206",
+   "item": "FG-CS-1400",
+   "qty": 5,
+   "bom": "BOM-FG-CS-1400-001",
+   "job_cards": [
+    "PO-JOB00372 P1-FAL-01 Final Assembly",
+    "PO-JOB00373 P1-TST-01 Hi-Pot & Function Test",
+    "PO-JOB00374 P1-PCK-01 Packing"
+   ]
+  },
+  {
+   "name": "MFG-WO-2026-00207",
+   "item": "SA-ARM-L",
+   "qty": 10,
+   "bom": "BOM-SA-ARM-L-001",
+   "job_cards": [
+    "PO-JOB00375 P1-WND-01 Armature Winding",
+    "PO-JOB00376 P1-OVN-01 Varnish Impregnation"
+   ]
+  },
+  {
+   "name": "MFG-WO-2026-00208",
+   "item": "SA-ARM-S",
+   "qty": 10,
+   "bom": "BOM-SA-ARM-S-001",
+   "job_cards": [
+    "PO-JOB00377 P1-WND-02 Armature Winding",
+    "PO-JOB00378 P1-OVN-01 Varnish Impregnation"
+   ]
+  },
+  {
+   "name": "MFG-WO-2026-00209",
+   "item": "SA-GBX-DRL",
+   "qty": 10,
+   "bom": "BOM-SA-GBX-DRL-001",
+   "job_cards": [
+    "PO-JOB00379 P1-SAB-01 Gearbox Assembly"
+   ]
+  },
+  {
+   "name": "MFG-WO-2026-00210",
+   "item": "SA-GUARD-CS",
+   "qty": 10,
+   "bom": "BOM-SA-GUARD-CS-001",
+   "job_cards": [
+    "PO-JOB00380 P1-SAB-02 Guard & Base Assembly"
+   ]
+  },
+  {
+   "name": "MFG-WO-2026-00211",
+   "item": "SA-HARN-L",
+   "qty": 10,
+   "bom": "BOM-SA-HARN-L-001",
+   "job_cards": [
+    "PO-JOB00381 P1-SAB-02 Harness Assembly"
+   ]
+  },
+  {
+   "name": "MFG-WO-2026-00212",
+   "item": "SA-HARN-S",
+   "qty": 10,
+   "bom": "BOM-SA-HARN-S-001",
+   "job_cards": [
+    "PO-JOB00382 P1-SAB-02 Harness Assembly"
+   ]
+  },
+  {
+   "name": "MFG-WO-2026-00213",
+   "item": "SA-HMECH-RH",
+   "qty": 10,
+   "bom": "BOM-SA-HMECH-RH-001",
+   "job_cards": [
+    "PO-JOB00383 P1-SAB-02 Hammer Mechanism Assembly"
+   ]
+  },
+  {
+   "name": "MFG-WO-2026-00214",
+   "item": "SA-HSG-CS",
+   "qty": 10,
+   "bom": "BOM-SA-HSG-CS-001",
+   "job_cards": [
+    "PO-JOB00384 P1-IMM-01 Injection Moulding",
+    "PO-JOB00385 P1-IMM-01 Grip Overmoulding"
+   ]
+  },
+  {
+   "name": "MFG-WO-2026-00215",
+   "item": "SA-HSG-DRL",
+   "qty": 10,
+   "bom": "BOM-SA-HSG-DRL-001",
+   "job_cards": [
+    "PO-JOB00386 P1-IMM-02 Injection Moulding",
+    "PO-JOB00387 P1-IMM-01 Grip Overmoulding"
+   ]
+  },
+  {
+   "name": "MFG-WO-2026-00216",
+   "item": "SA-HSG-RH",
+   "qty": 10,
+   "bom": "BOM-SA-HSG-RH-001",
+   "job_cards": [
+    "PO-JOB00388 P1-IMM-01 Injection Moulding",
+    "PO-JOB00389 P1-IMM-01 Grip Overmoulding"
+   ]
+  },
+  {
+   "name": "MFG-WO-2026-00217",
+   "item": "SA-MOT-L",
+   "qty": 10,
+   "bom": "BOM-SA-MOT-L-001",
+   "job_cards": [
+    "PO-JOB00390 P1-MAS-01 Motor Assembly",
+    "PO-JOB00391 P1-TST-01 Motor Run Test"
+   ]
+  },
+  {
+   "name": "MFG-WO-2026-00218",
+   "item": "SA-MOT-S",
+   "qty": 10,
+   "bom": "BOM-SA-MOT-S-001",
+   "job_cards": [
+    "PO-JOB00392 P1-MAS-01 Motor Assembly",
+    "PO-JOB00393 P1-TST-01 Motor Run Test"
+   ]
+  },
+  {
+   "name": "MFG-WO-2026-00219",
+   "item": "SA-STA-L",
+   "qty": 10,
+   "bom": "BOM-SA-STA-L-001",
+   "job_cards": [
+    "PO-JOB00394 P1-WND-01 Stator Winding",
+    "PO-JOB00395 P1-OVN-01 Varnish Impregnation"
+   ]
+  },
+  {
+   "name": "MFG-WO-2026-00220",
+   "item": "SA-STA-S",
+   "qty": 10,
+   "bom": "BOM-SA-STA-S-001",
+   "job_cards": [
+    "PO-JOB00396 P1-WND-01 Stator Winding",
+    "PO-JOB00397 P1-OVN-01 Varnish Impregnation"
+   ]
+  }
+ ],
+ "rates": {
+  "RM-ABS-GRN": 9.8,
+  "RM-BASE-CS": 22.0,
+  "RM-BLADE-185": 18.0,
+  "RM-BOX-L": 4.1,
+  "RM-BOX-S-B": 2.986,
+  "RM-BRG-6000": 1.9,
+  "RM-BRG-608": 1.2,
+  "RM-BRG-6201": 2.8,
+  "RM-BRUSH-6X8": 2.6,
+  "RM-CABLE": 8.697979798,
+  "RM-CASE-BMC": 14.0,
+  "RM-CHUCK-13-B": 12.4585,
+  "RM-COMM-24": 5.087640449,
+  "RM-CU-WIRE": 60.859482571,
+  "RM-FAN-L": 2.1,
+  "RM-FAN-S": 1.5,
+  "RM-GEAR-DRL": 14.2,
+  "RM-GEAR-RH": 21.5,
+  "RM-GEARCASE-AL": 12.8,
+  "RM-GREASE": 24.0,
+  "RM-GUARD-CS": 15.5,
+  "RM-INS-PAPER": 1.056646871,
+  "RM-LABEL": 0.6,
+  "RM-LABEL-B": 0.6,
+  "RM-LAM-ARM-L": 8.9,
+  "RM-LAM-ARM-S": 6.2,
+  "RM-LAM-STA-L": 10.6,
+  "RM-LAM-STA-S": 7.4,
+  "RM-LGUARD-CS": 11.2,
+  "RM-MANUAL": 0.8,
+  "RM-MANUAL-B": 0.8,
+  "RM-PA6GF-GRN": 14.5,
+  "RM-PISTON-SET": 18.6,
+  "RM-SCREW-KIT": 1.1,
+  "RM-SCREW-KIT-B": 0.8305,
+  "RM-SDS-HOLD": 24.0,
+  "RM-SHAFT-L": 4.3,
+  "RM-SHAFT-S": 3.1,
+  "RM-SIDE-HDL": 6.8,
+  "RM-SIDE-HDL-B": 5.968,
+  "RM-SPINDLE-CS": 9.4,
+  "RM-STRAIN": 0.44040404,
+  "RM-SW-SAW": 13.8,
+  "RM-SW-TRIG": 11.5,
+  "RM-TPE-GRN": 20.392701998,
+  "RM-VARNISH": 32.51951952,
+  "SA-ARM-L": 360.505,
+  "SA-ARM-S": 35.798301887,
+  "SA-GBX-DRL": 44.785072728,
+  "SA-GUARD-CS": 64.198333333,
+  "SA-HARN-L": 23.849666667,
+  "SA-HARN-S": 21.196575056,
+  "SA-HMECH-RH": 91.506185003,
+  "SA-HSG-CS": 17.452,
+  "SA-HSG-DRL": 13.254090833,
+  "SA-HSG-RH": 18.334344828,
+  "SA-MOT-L": 101.1833,
+  "SA-MOT-S": 114.915530163,
+  "SA-STA-L": 170.305,
+  "SA-STA-S": 30.632156863
+ }
+}

@@ -1,0 +1,14 @@
+employee_id,name,home_station,label_file
+HR-EMP-00001,Aiman Hakimi,P1-IMM-01,badges/HR-EMP-00001.png
+HR-EMP-00002,Nurul Izzah,P1-IMM-02,badges/HR-EMP-00002.png
+HR-EMP-00003,Rajesh Kumar,P1-WND-01,badges/HR-EMP-00003.png
+HR-EMP-00004,Siti Aisyah,P1-WND-02,badges/HR-EMP-00004.png
+HR-EMP-00005,Lim Wei Jie,P1-OVN-01,badges/HR-EMP-00005.png
+HR-EMP-00006,Farah Nadia,P1-SAB-01,badges/HR-EMP-00006.png
+HR-EMP-00007,Muthu Selvam,P1-SAB-02,badges/HR-EMP-00007.png
+HR-EMP-00008,Tan Mei Ling,P1-MAS-01,badges/HR-EMP-00008.png
+HR-EMP-00009,Hafiz Rahman,P1-FAL-01,badges/HR-EMP-00009.png
+HR-EMP-00010,Priya Devi,P1-FAL-02,badges/HR-EMP-00010.png
+HR-EMP-00011,Chong Kar Wai,P1-TST-01,badges/HR-EMP-00011.png
+HR-EMP-00012,Azlan Shah,P1-PCK-01,badges/HR-EMP-00012.png
+HR-EMP-00013,Muhd Dan,,badges/HR-EMP-00013.png

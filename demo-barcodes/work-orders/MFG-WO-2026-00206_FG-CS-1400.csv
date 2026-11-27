@@ -1,0 +1,10 @@
+work_order,production_item,wo_qty,item_code,item_name,scan_mode,batch_no,tracking_id,barcode,qty,uom,label_file,note
+MFG-WO-2026-00206,FG-CS-1400,5.0,SA-MOT-L,Motor Assembly 1400W,"Scan item, then quantity",,,SA-MOT-L,5.0,Nos,items/SA-MOT-L.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00206,FG-CS-1400,5.0,SA-HSG-CS,Circular Saw Housing & Handle Set,"Scan item, then quantity",,,SA-HSG-CS,5.0,Nos,items/SA-HSG-CS.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00206,FG-CS-1400,5.0,SA-HARN-L,Switch & Cable Harness 16A,"Scan item, then quantity",,,SA-HARN-L,5.0,Nos,items/SA-HARN-L.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00206,FG-CS-1400,5.0,SA-GUARD-CS,Blade Guard & Base Assembly,"Scan item, then quantity",,,SA-GUARD-CS,5.0,Nos,items/SA-GUARD-CS.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00206,FG-CS-1400,5.0,RM-BLADE-185,TCT Saw Blade 185mm 24T,"Scan item, then quantity",,,RM-BLADE-185,5.0,Nos,items/RM-BLADE-185.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00206,FG-CS-1400,5.0,RM-SCREW-KIT,Housing Screw Kit M4,"Scan item, then quantity",,,RM-SCREW-KIT,5.0,Set,items/RM-SCREW-KIT.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00206,FG-CS-1400,5.0,RM-LABEL,Rating Label & Warning Decal Set,"Scan item, then quantity",,,RM-LABEL,5.0,Set,items/RM-LABEL.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00206,FG-CS-1400,5.0,RM-MANUAL,User Manual (EN/BM),"Scan item, then quantity",,,RM-MANUAL,5.0,Nos,items/RM-MANUAL.png,"no batch or unit label: scan the item code, then enter the quantity"
+MFG-WO-2026-00206,FG-CS-1400,5.0,RM-BOX-L,Carton Box (Circular Saw),"Scan item, then quantity",,,RM-BOX-L,5.0,Nos,items/RM-BOX-L.png,"no batch or unit label: scan the item code, then enter the quantity"
