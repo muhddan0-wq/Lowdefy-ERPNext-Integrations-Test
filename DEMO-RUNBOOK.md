@@ -90,6 +90,20 @@ The older Lowdefy "ERP Copilot" app (port 3010) is **not part of this demo**. It
 - Open **MES Material Scan**: every scan, valid and invalid, with who, when and why. This is the audit trail.
 - Open **Tracked Item** and search `00000834`: the unit is now consumed against this order.
 
+### F. DSH AI Assistant on the ERPNext desk (3 min, optional)
+
+Your colleague's `dsh_bridge` app (msf4-0/erpnext-v16-integrations-demo PR #15) is installed on the sandbox.
+
+1. In ERPNext, click your avatar, then **Session Defaults**, and set **Company = Voltra Power Tools Sdn Bhd**. The assistant works on the active company, and Administrator's default is SHRDC.
+2. Open http://localhost:8000/app/dsh-assistant.
+3. Prompts that work today:
+   - `show inventory` (or `stock levels`): a live stock table card for the active company.
+   - `create order 2 x FG-DRL-800 for <customer name>`: a **confirmation card** first. Nothing is written until you press Confirm. It then creates a **draft** Sales Order, links to it, and records the action in **DSH Action Log**.
+   - Anything else gets an echo with hints. That is expected.
+4. The yellow **fallback** tag means the built-in rule-based router answered. The LLM "sidecar" (`dsh_deepseek-harness`, which needs a model API key) is not set up on this machine.
+
+Shopify safety: an assistant-created draft order has no Shopify ID, so the Shopify app's order hook does nothing and the live store is not touched.
+
 ## 5. If something goes wrong
 
 | Symptom | Fix |
