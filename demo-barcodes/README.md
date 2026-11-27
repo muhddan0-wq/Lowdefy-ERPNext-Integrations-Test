@@ -2,7 +2,24 @@
 
 Every code here is a real ERPNext record on the sandbox (`http://localhost:8000`, company Voltra Power Tools Sdn Bhd).
 
-## Main test order: MFG-WO-2026-00203, 13mm Electric Drill 800W (batch), FG-DRL-800-B × 5
+## Showcase order: MFG-WO-2026-00223, Go-Kart (assembled), GO-KART × 3
+
+Open `work-orders/MFG-WO-2026-00223_GO-KART.html` and print it. The order runs at **P1-FAL-02 Final Assembly line 2**, then Test, then Packing.
+
+| What | Scan mode | Codes |
+|---|---|---|
+| Frame (FRM-001) | every unit, ERPNext serial number | FRM-001-0075, FRM-001-0076, FRM-001-0077 |
+| Seat (SEAT-001) | every unit, ERPNext serial number | SEAT-001-0007, SEAT-001-0008, SEAT-001-0009 |
+| Steering Wheel (STR-001) | every unit | 00000850 – 00000852 |
+| Wheel (WHL-001), 4 per kart | every unit | 00000873 – 00000884 |
+
+That is 21 scans. **Operator badge:** `HR-EMP-00010` (Priya Devi, P1-FAL-02).
+
+The scanned frame and seat serial numbers are exactly the ones ERPNext issues and consumes, so a go-kart's parts can be traced from its serial number in ERPNext. Finishing the order creates GO-KART serials (GO-KART-0001 …) in P1 Finished Goods.
+
+Spare go-kart stock in P1 Stores covers one more run of 3 (other frame/seat serials, wheels 00000853 – 00000872, steering wheels 00000845 – 00000849). You can print those from `unit-labels.html`, or regenerate the sheet after the first run.
+
+## Drill test order: MFG-WO-2026-00203, 13mm Electric Drill 800W (batch), FG-DRL-800-B × 5
 
 Open `work-orders/MFG-WO-2026-00203_FG-DRL-800-B.html` and print it, or show it on a second screen and scan it from there.
 
@@ -46,5 +63,5 @@ That is 20 unit scans plus 6 batch scans. Each batch holds 60, but the station c
 To regenerate the sheets (from the repo root):
 
 ```powershell
-python mes/setup/export_shopfloor_labels.py demo-barcodes MFG-WO-2026-00203 MFG-WO-2026-00204 MFG-WO-2026-00205 MFG-WO-2026-00206
+python mes/setup/export_shopfloor_labels.py demo-barcodes MFG-WO-2026-00223 MFG-WO-2026-00203 MFG-WO-2026-00204 MFG-WO-2026-00205 MFG-WO-2026-00206
 ```

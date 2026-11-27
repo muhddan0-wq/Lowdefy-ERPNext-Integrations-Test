@@ -3,6 +3,7 @@
 # (stores -> work in progress) for the quantity of the work order not yet transferred, built with
 # work_order.make_stock_entry, then inserted and submitted. Shortages are reported in plain language first.
 # Batch-tracked materials are issued only from the batches scanned on this order; unscanned ones are listed, nothing is issued.
+# Serial-numbered materials scanned before Issue are moved by exactly those serial numbers (otherwise ERPNext picks them).
 # Every batch-tracked material must be scanned (verified) first; per-unit and plain items are scanned later at Build, before
 # units can be reported. The person's ID badge (`employee`) is required and recorded.
 WO_API = "erpnext.manufacturing.doctype.work_order.work_order."
@@ -61,6 +62,18 @@ else:
             result["message"] = "Scan the batch label of each batch-tracked material before issuing, so ERPNext moves the batches you took"
         else:
             result["batches"] = M["batch_split"](M, se, avail, True)
+            result["serials"] = []
+            for row in se.items:
+                if row.s_warehouse and frappe.db.get_value("Item", row.item_code, "has_serial_no"):
+                    sns = frappe.get_all("MES Material Scan", filters={"work_order": wo.name, "item_code": row.item_code, "result": "Valid",
+                                                                        "serial_no": ["is", "set"]}, pluck="serial_no", order_by="creation asc")
+                    sns = [s for s in sns if frappe.db.get_value("Serial No", s, "warehouse") == row.s_warehouse]
+                    need = int(frappe.utils.flt(row.qty))
+                    if need > 0 and len(sns) >= need:
+                        row.serial_no = "\n".join(sns[:need])
+                        row.use_serial_batch_fields = 1
+                        row.serial_and_batch_bundle = None
+                        result["serials"] = result["serials"] + sns[:need]
             se.remarks = "Issued at the shopfloor by %s %s (%s)" % (emp["id"], emp["name"], who["user"])
             se.insert()
             se.submit()

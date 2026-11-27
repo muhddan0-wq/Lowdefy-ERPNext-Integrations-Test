@@ -13,7 +13,8 @@ Clean build prepared on the morning of 27 Nov 2026. The demo company is **Voltra
 - **18 new work orders**, MFG-WO-2026-00203 to 00220, all Not Started, all planned from **Mon 30 Nov 08:00**, so none shows Late today:
   - 4 finished goods × 5 each: FG-DRL-800-B, FG-DRL-800, FG-RH-800, FG-CS-1400.
   - 14 sub-assemblies × 10 each, covering every station (moulding, winding, oven, sub-assembly, motor, test, packing).
-- **Barcodes:** [demo-barcodes/](demo-barcodes/README.md). The main test order is **MFG-WO-2026-00203**.
+- **Go-Kart showcase line:** the existing GO-KART product (shared with SHRDC, linked to Shopify) now has a Voltra BOM, `BOM-GO-KART-002`: Frame, Steering Wheel, 4 Wheels and Seat, routed Final Assembly → Test → Packing. P1 Stores holds parts for 8 karts. **MFG-WO-2026-00223, GO-KART × 3** is the headline order. SHRDC's go-kart BOM, stock and serials are untouched.
+- **Barcodes:** [demo-barcodes/](demo-barcodes/README.md). Showcase order **MFG-WO-2026-00223** (go-kart); drill test order **MFG-WO-2026-00203**.
 - **Backup of the state before the reset:** `mes/state/pre-demo-backup-20261127/` (database plus files). Restoring it is in section 6.
 
 ## 2. Links
@@ -25,6 +26,9 @@ Clean build prepared on the morning of 27 Nov 2026. The demo company is **Voltra
 | MES: Plant Dashboard | http://localhost:8081/app/mes-test/plant-dashboard-6b065bcdbf901dfb352848cd | same |
 | MES: Schedule Board | http://localhost:8081/app/mes-test/schedule-board-6b052d6fbf901dfb3528488e | same |
 | ERPNext desk | http://localhost:8000/app | Administrator or your own user |
+| ERPNext: the go-kart work order | http://localhost:8000/app/work-order/MFG-WO-2026-00223 | |
+| ERPNext: go-kart BOM (Voltra) | http://localhost:8000/app/bom/BOM-GO-KART-002 | |
+| ERPNext: serial numbers | http://localhost:8000/app/serial-no | |
 | ERPNext: the drill work order | http://localhost:8000/app/work-order/MFG-WO-2026-00203 | |
 | ERPNext: drill BOM | http://localhost:8000/app/bom/BOM-FG-DRL-800-B-002 | |
 | ERPNext: tracked units | http://localhost:8000/app/tracked-item | |
@@ -45,7 +49,7 @@ The older Lowdefy "ERP Copilot" app (port 3010) is **not part of this demo**. It
    ```
 
    You should see `comp_demo-bench-1`, `comp_demo-db-1` and `appsmith`, all Up.
-2. Print `demo-barcodes/work-orders/MFG-WO-2026-00203_FG-DRL-800-B.html` and `demo-barcodes/badges.html`. Alternatively, open them on a phone or second screen and scan from there.
+2. Print `demo-barcodes/work-orders/MFG-WO-2026-00223_GO-KART.html` (showcase), `demo-barcodes/work-orders/MFG-WO-2026-00203_FG-DRL-800-B.html` (batch demo) and `demo-barcodes/badges.html`. Alternatively, open them on a phone or second screen and scan from there.
 3. Plug in the USB scanner. Click into the search box on the Shopfloor page, scan `00000839`, and check the code appears as text. Clear it afterwards.
 4. Open the Work Orders and Shopfloor tabs in Chrome. Zoom to 100%.
 
@@ -63,7 +67,19 @@ The older Lowdefy "ERP Copilot" app (port 3010) is **not part of this demo**. It
 - **Capacity:** the load per station. Final Assembly carries the four finished-good orders.
 - Optional: drag or reschedule one job. The server checks for conflicts before it accepts the move.
 
-### C. The shopfloor station (10 min): drill order MFG-WO-2026-00203
+### C. The shopfloor station (10 min): Go-Kart order MFG-WO-2026-00223 (showcase)
+
+1. **Work Orders**, click **MFG-WO-2026-00223 GO-KART**. The app jumps to the Shopfloor at **P1-FAL-02 Final Assembly line 2**.
+2. **Badge sign-in:** scan `HR-EMP-00010` (Priya Devi).
+3. **Issue materials:** scan every part on the go-kart sheet:
+   - 3 frames (FRM-001-0075 to 0077) and 3 seats (SEAT-001-0007 to 0009). These are ERPNext serial numbers.
+   - 3 steering wheels (00000850 to 00000852) and 12 wheels (00000873 to 00000884).
+   - Show a guard rail: scan a wheel twice ("Duplicate scan"), or a drill motor `00000834` ("not required for this order").
+   - Press **Issue**. "ERPNext moved exactly the frames and seats we scanned. Open Serial No FRM-001-0075 and you see it went to this order."
+4. **Build:** start the job, record 3 good, complete. Then Test (P1-TST-01) and Packing (P1-PCK-01), the same way.
+5. **Finish** the order. ERPNext creates 3 go-karts with serials GO-KART-0001 to 0003 in P1 Finished Goods.
+
+### C2. Batch traceability (optional, 5 min): drill order MFG-WO-2026-00203
 
 1. **Work Orders**, click **MFG-WO-2026-00203**. The app jumps to the Shopfloor at the order's first station, P1-FAL-01 Final Assembly Line.
 2. **Badge sign-in:** scan `HR-EMP-00009` (Hafiz Rahman). "Every scan, issue and time log is now recorded against this person."
@@ -86,9 +102,10 @@ The older Lowdefy "ERP Copilot" app (port 3010) is **not part of this demo**. It
 
 ### E. Proof in ERPNext (2 min)
 
-- Open http://localhost:8000/app/work-order/MFG-WO-2026-00203: status, transferred quantity, linked stock entry and job cards.
+- Open http://localhost:8000/app/work-order/MFG-WO-2026-00223: status, transferred quantity, linked stock entries and job cards.
+- Open **Serial No** FRM-001-0075: Consumed, with the go-kart order's stock entries in its history.
 - Open **MES Material Scan**: every scan, valid and invalid, with who, when and why. This is the audit trail.
-- Open **Tracked Item** and search `00000834`: the unit is now consumed against this order.
+- Open **Tracked Item** and search `00000873` (a wheel): the unit's record and barcode.
 
 ### F. DSH AI Assistant on the ERPNext desk (3 min, optional)
 
@@ -133,3 +150,15 @@ docker exec -w /home/frappe/frappe-bench comp_demo-bench-1 bench --site frontend
 ```
 
 A copy of those backup files is also in `mes/state/pre-demo-backup-20261127/`.
+
+After a full reset, re-create the go-kart line (BOM is reused, stock for 8 karts, one order of 3), then regenerate the barcode sheets:
+
+```powershell
+docker cp mes\setup\gokart_setup.py comp_demo-bench-1:/home/frappe/frappe-bench/sites/mes_seed/gokart_setup.py
+```
+
+```powershell
+docker exec -e FRAPPE_SITE=frontend -e DEMO_START="2026-11-30 08:00:00" -w /home/frappe/frappe-bench/sites comp_demo-bench-1 ../env/bin/python -W ignore mes_seed/gokart_setup.py mes_seed/site.yaml --stock-sets 8 --orders 3
+```
+
+`demo_reset.py --orders-only` also drops the open go-kart order, so run the second command (without `--stock-sets`) after it.

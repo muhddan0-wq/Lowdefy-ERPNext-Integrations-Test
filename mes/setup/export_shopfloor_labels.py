@@ -122,8 +122,13 @@ for b in batches:
 pool = {}
 for c in codes:
     if items[c]["mode"] == "unit":
-        units = resource("Tracked Item", ["name", "item_code", "barcode", "serial_no", "creation"],
-                         [["item_code", "=", c], ["current_status", "=", "In Stock"], ["current_warehouse", "=", STORES]], order_by="creation desc")
+        if items[c]["has_serial_no"]:
+            units = [dict(u, item_code=c, barcode=u["name"], serial_no="ERPNext serial number", kind="serial")
+                     for u in resource("Serial No", ["name", "creation"], [["item_code", "=", c], ["status", "=", "Active"], ["warehouse", "=", STORES]],
+                                       order_by="creation desc")]
+        else:
+            units = resource("Tracked Item", ["name", "item_code", "barcode", "serial_no", "creation"],
+                             [["item_code", "=", c], ["current_status", "=", "In Stock"], ["current_warehouse", "=", STORES]], order_by="creation desc")
         pool[c] = [u for u in units if u["name"] not in used_units and u["name"] not in bad_units and u.get("barcode")]
 
 rows_all = []
@@ -164,7 +169,7 @@ for o in orders:
                 rows.append(dict(base, tracking_id=u["name"], barcode=u["barcode"], qty=1, label_file=f, note=u["serial_no"]))
                 unit_labels.append((o["name"], u, f))
             if len(take) < need:
-                rows.append(dict(base, qty=need - len(take), note="SHORT: not enough free tracked units in %s" % STORES))
+                rows.append(dict(base, qty=need - len(take), note="SHORT: not enough free units or serial numbers in %s" % STORES))
         else:
             rows.append(dict(base, barcode=r["item_code"], qty=round(need, 6), label_file="items/%s.png" % r["item_code"],
                              note="no batch or unit label: scan the item code, then enter the quantity"))
@@ -189,7 +194,10 @@ write_csv(OUT / "batches.csv", [{
     ["batch_no", "item_code", "item_name", "qty_in_p1_stores", "uom", "date", "expiry_date", "used_by", "label_file"])
 
 for _, u, f in unit_labels:
-    save_png(post(UNIT_IMG, tracking_id=u["name"]), OUT / f)
+    if u.get("kind") == "serial":
+        save_png(post(CODE_IMG, barcode=u["name"], barcode_type="CODE128", display_value=1), OUT / f)
+    else:
+        save_png(post(UNIT_IMG, tracking_id=u["name"]), OUT / f)
 for c in codes:
     if items[c]["mode"] in ("scan", "confirm"):
         save_png(post(CODE_IMG, barcode=c, barcode_type="CODE128", display_value=1), OUT / "items" / ("%s.png" % c))

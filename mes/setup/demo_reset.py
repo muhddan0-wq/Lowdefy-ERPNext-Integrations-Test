@@ -3,6 +3,8 @@ batches, tracked units) and rebuild a clean demo floor: fresh stock (raw materia
 8-digit barcodes, one batch per -B raw material) and one open work order per default BOM.
 
 Masters stay: company, items, BOMs, workstations, employees, roles, users, server scripts, assembly workflows.
+Items shared with another company (the go-kart parts) keep their other-company serials and units; only Voltra-warehouse ones go.
+After a reset, re-create the go-kart line with gokart_setup.py --stock-sets 8 --orders 3.
 
 Runs inside the bench: FRAPPE_SITE=frontend ../env/bin/python demo_reset.py <products.yaml> <site.yaml> [--wipe-only | --orders-only]
 """
@@ -66,7 +68,10 @@ def voltra_items(company):
     defaults = set(frappe.get_all("Item Default", filters={"company": company, "parenttype": "Item"}, pluck="parent"))
     bom_items = set(frappe.get_all("BOM", filters={"company": company}, pluck="item"))
     bom_items |= set(frappe.db.sql_list("select distinct bi.item_code from `tabBOM Item` bi join tabBOM b on b.name = bi.parent where b.company = %s", company))
-    return sorted(defaults | bom_items)
+    others = set(frappe.get_all("BOM", filters={"company": ("!=", company)}, pluck="item"))
+    others |= set(frappe.db.sql_list("select distinct bi.item_code from `tabBOM Item` bi join tabBOM b on b.name = bi.parent where b.company != %s", company))
+    others |= set(frappe.get_all("Item Default", filters={"company": ("!=", company), "parenttype": "Item"}, pluck="parent"))
+    return sorted((defaults | bom_items) - others), sorted((defaults | bom_items) & others)
 
 
 def snapshot_rates(company):
@@ -77,7 +82,7 @@ def snapshot_rates(company):
     return rates
 
 
-def wipe_voltra(company, items):
+def wipe_voltra(company, items, shared):
     wos = frappe.get_all("Work Order", filters={"company": company}, pluck="name")
     delete_docs("MES Workflow Binding", frappe.get_all("MES Workflow Binding", filters={"work_order": ("in", wos or [""])}, pluck="name"))
     for dt in ("MES Material Scan", "MES Defect Report", "MES Machine Issue"):
@@ -97,6 +102,10 @@ def wipe_voltra(company, items):
         delete_docs("Item Tracking History", frappe.get_all("Item Tracking History", pluck="name"))
     delete_docs("Batch", frappe.get_all("Batch", filters={"item": ("in", items)}, pluck="name"))
     delete_docs("Serial No", frappe.get_all("Serial No", filters={"item_code": ("in", items)}, pluck="name"))
+    whs = frappe.get_all("Warehouse", filters={"company": company}, pluck="name")
+    if shared:
+        delete_docs("Serial No", frappe.get_all("Serial No", filters={"item_code": ("in", shared), "warehouse": ("in", whs)}, pluck="name"))
+        delete_docs("Tracked Item", frappe.get_all("Tracked Item", filters={"item_code": ("in", shared), "current_warehouse": ("in", whs)}, pluck="name"))
     for ws in frappe.get_all("Workstation", filters={"name": ("like", "P1-%")}, pluck="name"):
         if frappe.get_meta("Workstation").has_field("status"):
             frappe.db.set_value("Workstation", ws, "status", "Off", update_modified=False)
@@ -228,13 +237,14 @@ def main():
     frappe.connect()
     frappe.set_user("Administrator")
     try:
-        items = voltra_items(company)
+        items, shared = voltra_items(company)
+        LOG["shared_items"] = shared
         rates = snapshot_rates(company)
         LOG["rates"] = rates
         if "--orders-only" not in sys.argv:
             remove_junk()
             frappe.db.commit()
-            wipe_voltra(company, items)
+            wipe_voltra(company, items, shared)
             frappe.db.commit()
         if "--orders-only" in sys.argv:
             drop_open_orders(company)
